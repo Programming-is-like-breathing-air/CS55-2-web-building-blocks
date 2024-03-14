@@ -1,0 +1,40 @@
+body {
+    margin: 0 !important;
+    padding: 50px;
+    font-family: 'system-ui', 'Helvetica', sans-serif;
+    background-color: #f3f4f6;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.content {
+    transition: opacity 0.5s;
+    max-height: 21px;
+    overflow: hidden;
+}
+
+.hidden {
+    opacity: 8;
+}
+
+.styled-button {
+    margin-top: 15px;
+    background-color: #e64626;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.styled-button:hover {
+    background-color: #c63a1e;
+}
