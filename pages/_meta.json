@@ -31,6 +31,14 @@
     "toast": "Toast",
     "tooltip": "Tooltip",
     "treeview": "Tree View",
+
+    "-- New Components": {
+        "type": "separator",
+        "title": " New Components"
+    },
+    "newchat": " New Chat",
+    "newfileUpload": " New File Upload",
+    
     "-- Pages": {
         "type": "separator",
         "title": "Pages"
