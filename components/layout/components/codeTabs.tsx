@@ -44,10 +44,10 @@ const CodeTabs = ({
                   JavaScript
                 </TabsTrigger>
               )}
-              {/* Add Next.js trigger */}
+              {/* Add React.js trigger */}
               {nextjsDesktop && (
                 <TabsTrigger value="nextjs" className={CODE_TAB_CLASS}>
-                  Next.js
+                  React.js
                 </TabsTrigger>
               )}
             </TabsList>
@@ -68,7 +68,7 @@ const CodeTabs = ({
               <CodeBlock code={jsDesktop} language="js" />
             </TabsContent>
           )}
-          {/* Add Next.js content area */}
+          {/* Add  content area */}
           {nextjsDesktop && (
             <TabsContent value="nextjs">
               <CodeBlock code={nextjsDesktop} language="javascript" />
@@ -95,10 +95,10 @@ const CodeTabs = ({
                   JavaScript
                 </TabsTrigger>
               )}
-              {/* Add Next.js trigger */}
+              {/* Add React.js trigger */}
               {nextjsDesktop && (
                 <TabsTrigger value="nextjs" className={CODE_TAB_CLASS}>
-                  Next.js
+                  React.js
                 </TabsTrigger>
               )}
             </TabsList>
@@ -118,7 +118,7 @@ const CodeTabs = ({
               <CodeBlock code={jsMobile} language="js" />
             </TabsContent>
           )}
-          {/* Add Next.js content area */}
+          {/* Add React.js content area */}
           {nextjsDesktop && (
             <TabsContent value="nextjs">
               <CodeBlock code={nextjsDesktop} language="javascript" />
