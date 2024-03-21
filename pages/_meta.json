@@ -39,6 +39,7 @@
     },
     "newchat": " New Chat",
     "newfileUpload": " New File Upload",
+    "OTP": "input OTP",
     
     "-- Pages": {
         "type": "separator",
