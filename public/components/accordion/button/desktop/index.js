@@ -14,3 +14,15 @@ collapsed2.addEventListener("click", () => {
   expanded2.classList.toggle("hidden");
   icon2.classList.toggle("rotate");
 });
+// New code to add navigation on button click
+document.querySelectorAll('.cta').forEach((element, index) => {
+  element.addEventListener('click', () => {
+    if (index === 0) {
+      // Navigate to the enrollment page when "Enrol now" is clicked
+      window.open('https://www.sydney.edu.au/students/', '_blank');
+    } else if (index === 1) {
+      // Navigate to the information page when "Explore more" is clicked
+      alert('button click');
+    }
+  });
+});

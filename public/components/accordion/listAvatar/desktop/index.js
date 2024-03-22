@@ -14,3 +14,21 @@ collapsed2.addEventListener("click", () => {
   expanded2.classList.toggle("hidden");
   icon2.classList.toggle("rotate");
 });
+// Function to open a modal
+function showModal(modalId) {
+  var modal = document.getElementById(modalId);
+  modal.style.display = "block";
+}
+
+// Function to close a modal
+function closeModal(modalId) {
+  var modal = document.getElementById(modalId);
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target.className === "modal") {
+    event.target.style.display = "none";
+  }
+}

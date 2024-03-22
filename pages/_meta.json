@@ -38,7 +38,8 @@
     },
     "newchat": " New Chat",
     "newfileUpload": " New File Upload",
-    
+    "newaccordion": "New Accordion",
+
     "-- Pages": {
         "type": "separator",
         "title": "Pages"
