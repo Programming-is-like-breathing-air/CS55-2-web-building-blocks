@@ -3,6 +3,7 @@ import CodeBlock from "./codeBlock";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { TABS_CTNT_CLASS, CODE_TAB_CLASS } from "../constants/strings";
 
+//需要修改
 const CodeTabs = ({
   htmlDesktop,
   cssDesktop,

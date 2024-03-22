@@ -20,6 +20,7 @@
     "links": "Links",
     "modal": "Modal",
     "navigation": "Navigation",
+    "newlink":"newlink",
     "panel": "Panel",
     "pagination": "Pagination",
     "radioGroup": "Radio Group",
@@ -31,6 +32,15 @@
     "toast": "Toast",
     "tooltip": "Tooltip",
     "treeview": "Tree View",
+
+    "-- New Components": {
+        "type": "separator",
+        "title": " New Components"
+    },
+    "newchat": " New Chat",
+    "newfileUpload": " New File Upload",
+    "newcard":" New Card",
+    
     "-- Pages": {
         "type": "separator",
         "title": "Pages"

@@ -32,3 +32,7 @@ export function ActiveButton() {
 export function IconButton() {
   return <Theme componentName="button" componentStyle="icon" />;
 }
+export function NewButton() {
+  return <Theme componentName="button" componentStyle="active1" />;
+}
+

@@ -1,0 +1,29 @@
+body {
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'system-ui', 'Helvetica', sans-serif;
+}
+
+.styled-link {
+    font-weight: 500;
+    color: #e64626;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.styled-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+    .styled-link {
+        color: #79a69a;
+    }
+}
+
+.styled-link:focus {
+    outline: 2px solid #79a69a;
+}
