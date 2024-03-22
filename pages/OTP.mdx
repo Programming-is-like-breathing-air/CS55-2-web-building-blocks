@@ -1,0 +1,39 @@
+import {
+    InputOTP
+}from "../components/ui/OTP";
+
+# Checkbox Component
+
+**Contributed by Xinyu Chen**
+
+A checkbox component allows users to make a binary choice.
+
+## Basic Input OTP Component
+<InputOTP />
+
+
+### Usability
+
+1. **Ease of Use**: By breaking down the OTP input into individual character boxes, users can focus more easily on entering each digit. This reduces the likelihood of input errors and enhances the overall user experience.
+
+2. **Automatic Focus Movement**: The focus automatically moves to the next input box after a user enters a digit, reducing the steps needed for users to manually click or move to the next box, thereby speeding up the input process and enhancing convenience.
+
+3. **Clear Visual Feedback**: The input boxes change the border color when focused, providing clear visual feedback to the user on which box is currently active. This helps users better understand the input flow.
+
+4. **Completion Notification**: An alert pops up with the user-entered OTP once all input boxes are filled, providing clear feedback to the user that the input is complete. This strengthens user awareness of the operation result.
+
+### Accessibility
+
+1. **Keyboard Navigation Support**: By binding the `onkeyup` event to implement automatic focus shifting between input boxes, keyboard users can also navigate smoothly between the boxes, marking a step towards accessible design.
+
+2. **Lack of Labels**: The current implementation lacks text labels (`<label>`) associated with each input box, which could cause understanding and operational difficulties for users utilizing screen readers. Adding clear labels for each input box, associated via the `for` attribute with the corresponding input box IDs, would significantly improve accessibility.
+
+3. **Insufficient Error Handling and Guidance**: There is no error handling or auxiliary guidance for cases where users might enter incorrect digits or miss a digit. For visually impaired users, feedback should be provided in a screen reader-friendly manner when there is an input mistake or a need for correction.
+
+4. **Missing ARIA Attributes**: Using ARIA (Accessible Rich Internet Applications) attributes could further enhance the accessibility of the application. For instance, employing the `aria-live` attribute to inform screen readers to automatically read out dynamically changing content, such as input validation errors or success messages, can make the content more accessible to visually impaired users.
+
+
+## Version
+| Version | Editor | Author | Date | Description |
+| ---- | ---- | ---- | ---- | ---- |
+| v1.0 | Xinyu Chen | Xinyu Chen | 22/Mar/2024 | Initial version |
