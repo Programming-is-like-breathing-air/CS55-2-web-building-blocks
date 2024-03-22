@@ -14,3 +14,31 @@ collapsed2.addEventListener("click", () => {
   expanded2.classList.toggle("hidden");
   icon2.classList.toggle("rotate");
 });
+document.addEventListener('DOMContentLoaded', function() {
+  var cta = document.querySelector('.cta');
+  var modal = document.getElementById('popupModal');
+  var closePopup = document.getElementById('closePopup');
+  var confirmEnroll = document.getElementById('confirmEnroll');
+  var closeModal = document.querySelector('.close-btn');
+
+  cta.addEventListener('click', function() {
+    modal.style.display = "block";
+  });
+
+  closePopup.addEventListener('click', function() {
+    modal.style.display = "none";
+  });
+
+  confirmEnroll.addEventListener('click', function() {
+    window.open('https://www.sydney.edu.au/students/', '_blank');
+  });
+
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+  closeModal.addEventListener('click', function() {
+    modal.style.display = 'none';
+  });
+});

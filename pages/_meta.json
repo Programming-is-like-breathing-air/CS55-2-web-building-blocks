@@ -40,8 +40,8 @@
     "newchat": " New Chat",
     "OTP": "input OTP",
     "newcard":" New Card",
+    "newaccordion": "New Accordion",
 
-    
     "-- Pages": {
         "type": "separator",
         "title": "Pages"

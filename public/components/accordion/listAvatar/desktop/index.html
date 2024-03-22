@@ -30,13 +30,23 @@
       </div>
       <div class="expanded" id="expanded1">
         <div class="collapsed item">
-          <div class="avatar">
+          <div class="avatar" >
             <img
               src="../assets/albanese.jpg"
               alt="The Hon Anthony Albanese MP"
             />
           </div>
-          <div class="profile">
+          <!-- The Modal (hidden by default) -->
+<div id="modalAlbanese" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modalAlbanese')">&times;</span>
+    <img src="../assets/albanese.jpg" alt="The Hon Anthony Albanese MP" />
+    <h2>The Hon Anthony Albanese MP</h2>
+    <p>Prime Minister - Detailed bio here...</p>
+  </div>
+</div>
+          <div class="profile" onclick="showModal('modalAlbanese')">
             <p class="position">Prime Minister</p>
             <p class="name">The Hon Anthony Albanese MP</p>
           </div>
