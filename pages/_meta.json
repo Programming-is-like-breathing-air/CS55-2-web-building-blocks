@@ -39,6 +39,8 @@
     },
     "newchat": " New Chat",
     "OTP": "input OTP",
+    "newcard":" New Card",
+
     
     "-- Pages": {
         "type": "separator",
