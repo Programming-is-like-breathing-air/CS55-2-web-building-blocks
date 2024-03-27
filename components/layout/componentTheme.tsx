@@ -6,12 +6,9 @@ import { TABS_WPR_CLASS, TABS_CTNT_CLASS } from "./constants/strings";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 // Rewrite Tooltip
-import BasicTooltipPage from "../../public/components/tooltip/basicTooltip/desktop/page";
-import BottomTooltipComponent from "../../public/components/tooltip/bottomTooltip/desktop/page"
-import LeftTooltipComponent from "../../public/components/tooltip/leftTooltip/desktop/page"
-import TopTooltipComponent from "../../public/components/tooltip/topTooltip/desktop/page"
-import DisableTooltipButton from "../../public/components/tooltip/disabledTooltip/desktop/page"
-import AnimatedTooltipComponent from "../../public/components/tooltip/animatedTooltip/desktop/page"
+import NormalTagComponent from "../../public/components/tags/normal/desktop/page";
+import InnovativeTagComponent from "../../public/components/tags/innovative/desktop/page"
+
 
 
 
@@ -139,16 +136,9 @@ export default function Theme({
             />
           </div>
 
-          {/* Rewrite Tooltip */}
-          <div className={TABS_CTNT_CLASS}><BasicTooltipPage /></div>
-          <div className={TABS_CTNT_CLASS}><LeftTooltipComponent /></div>
-          <div className={TABS_CTNT_CLASS}><TopTooltipComponent /></div>
-          <div className={TABS_CTNT_CLASS}><BottomTooltipComponent /></div>
-          <div className={TABS_CTNT_CLASS}><DisableTooltipButton /></div>
-          <div className={TABS_CTNT_CLASS}><AnimatedTooltipComponent /></div>
-          
-          
-
+          {/* Rewrite Tags */}
+          <div className={TABS_CTNT_CLASS}><NormalTagComponent /></div>
+          <div className={TABS_CTNT_CLASS}><InnovativeTagComponent /></div>
 
 
         </TabsContent>
