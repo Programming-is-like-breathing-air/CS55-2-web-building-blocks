@@ -5,14 +5,6 @@ import { Separator } from "@/components/ui/separator";
 import { TABS_WPR_CLASS, TABS_CTNT_CLASS } from "./constants/strings";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-// Rewrite Tooltip
-import BasicTooltipPage from "../../public/components/tooltip/basicTooltip/desktop/page";
-import BottomTooltipComponent from "../../public/components/tooltip/bottomTooltip/desktop/page"
-import LeftTooltipComponent from "../../public/components/tooltip/leftTooltip/desktop/page"
-import TopTooltipComponent from "../../public/components/tooltip/topTooltip/desktop/page"
-import DisableTooltipButton from "../../public/components/tooltip/disabledTooltip/desktop/page"
-import AnimatedTooltipComponent from "../../public/components/tooltip/animatedTooltip/desktop/page"
-
 // Rewrite Toast
 import NormalToastComponent from "../../public/components/toast/normal/desktop/page";
 import TitleToastComponent from "../../public/components/toast/title/desktop/page";
@@ -143,14 +135,6 @@ export default function Theme({
               src={`${DESKTOP_PATH}index.html`}
             />
           </div>
-
-          {/* Rewrite Tooltip */}
-          <div className={TABS_CTNT_CLASS}><BasicTooltipPage /></div>
-          <div className={TABS_CTNT_CLASS}><LeftTooltipComponent /></div>
-          <div className={TABS_CTNT_CLASS}><TopTooltipComponent /></div>
-          <div className={TABS_CTNT_CLASS}><BottomTooltipComponent /></div>
-          <div className={TABS_CTNT_CLASS}><DisableTooltipButton /></div>
-          <div className={TABS_CTNT_CLASS}><AnimatedTooltipComponent /></div>
           
           {/* Rewrite Toast */}
           <div className={TABS_CTNT_CLASS}><NormalToastComponent /></div>
