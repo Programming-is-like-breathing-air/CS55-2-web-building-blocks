@@ -13,6 +13,13 @@ import TopTooltipComponent from "../../public/components/tooltip/topTooltip/desk
 import DisableTooltipButton from "../../public/components/tooltip/disabledTooltip/desktop/page"
 import AnimatedTooltipComponent from "../../public/components/tooltip/animatedTooltip/desktop/page"
 
+import BasicTooltipPageMobile from "../../public/components/tooltip/basicTooltip/mobile/page";
+import BottomTooltipComponentMobile from "../../public/components/tooltip/bottomTooltip/mobile/page"
+import LeftTooltipComponentMobile from "../../public/components/tooltip/leftTooltip/mobile/page"
+import TopTooltipComponentMobile from "../../public/components/tooltip/topTooltip/mobile/page"
+import DisableTooltipButtonMobile from "../../public/components/tooltip/disabledTooltip/mobile/page"
+import AnimatedTooltipComponentMobile from "../../public/components/tooltip/animatedTooltip/mobile/page"
+
 
 
 export default function Theme({
@@ -146,8 +153,8 @@ export default function Theme({
           <div className={TABS_CTNT_CLASS}><BottomTooltipComponent /></div>
           <div className={TABS_CTNT_CLASS}><DisableTooltipButton /></div>
           <div className={TABS_CTNT_CLASS}><AnimatedTooltipComponent /></div>
-          
-          
+
+
 
 
 
@@ -164,6 +171,18 @@ export default function Theme({
               src={`${MOBILE_PATH}index.html`}
             />
           </div>
+
+          {/* Rewrite Tooltip */}
+          <div className={TABS_CTNT_CLASS}><BasicTooltipPageMobile /></div>
+          <div className={TABS_CTNT_CLASS}><LeftTooltipComponentMobile /></div>
+          <div className={TABS_CTNT_CLASS}><TopTooltipComponentMobile /></div>
+          <div className={TABS_CTNT_CLASS}><BottomTooltipComponentMobile /></div>
+          <div className={TABS_CTNT_CLASS}><DisableTooltipButtonMobile /></div>
+          <div className={TABS_CTNT_CLASS}><AnimatedTooltipComponentMobile /></div>
+
+
+
+
         </TabsContent>
       </div>
       <div className="my-5">

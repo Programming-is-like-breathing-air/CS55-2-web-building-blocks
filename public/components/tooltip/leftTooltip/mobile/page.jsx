@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const LeftTooltipComponent = () => {
+const LeftTooltipComponentMobile = () => {
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
 
   const handleKeyDown = (event) => {
@@ -14,7 +14,7 @@ const LeftTooltipComponent = () => {
   return (
     <div 
       className="tooltip" 
-      tabIndex="0"
+      tabIndex="0" 
       onKeyDown={handleKeyDown}
       onMouseEnter={() => setIsTooltipVisible(true)}
       onMouseLeave={() => setIsTooltipVisible(false)}
@@ -48,8 +48,8 @@ const LeftTooltipComponent = () => {
           fontSize: '13px',
           position: 'absolute',
           zIndex: 1,
-          right: 'calc(100% + 10px)',
-          bottom: '50%', 
+          right: 'calc(100% + 10px)', 
+          bottom: '50%',
           transform: 'translateY(50%)',
         }}
         aria-hidden={!isTooltipVisible}
@@ -61,6 +61,6 @@ const LeftTooltipComponent = () => {
 };
 
 
-export default LeftTooltipComponent;
+export default LeftTooltipComponentMobile;
 
 
