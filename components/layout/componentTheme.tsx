@@ -13,6 +13,11 @@ import TopTooltipComponent from "../../public/components/tooltip/topTooltip/desk
 import DisableTooltipButton from "../../public/components/tooltip/disabledTooltip/desktop/page"
 import AnimatedTooltipComponent from "../../public/components/tooltip/animatedTooltip/desktop/page"
 
+// Rewrite Toast
+import NormalToastComponent from "../../public/components/toast/normal/desktop/page";
+import TitleToastComponent from "../../public/components/toast/title/desktop/page";
+import ActionToastComponent from "../../public/components/toast/action/desktop/page";
+
 
 
 export default function Theme({
@@ -147,6 +152,10 @@ export default function Theme({
           <div className={TABS_CTNT_CLASS}><DisableTooltipButton /></div>
           <div className={TABS_CTNT_CLASS}><AnimatedTooltipComponent /></div>
           
+          {/* Rewrite Toast */}
+          <div className={TABS_CTNT_CLASS}><NormalToastComponent /></div>
+          <div className={TABS_CTNT_CLASS}><TitleToastComponent /></div>
+          <div className={TABS_CTNT_CLASS}><ActionToastComponent /></div>
           
 
 
