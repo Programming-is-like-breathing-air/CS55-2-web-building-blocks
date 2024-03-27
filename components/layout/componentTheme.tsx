@@ -9,6 +9,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import NormalTagComponent from "../../public/components/tags/normal/desktop/page";
 import InnovativeTagComponent from "../../public/components/tags/innovative/desktop/page"
 
+import NormalTagComponentMobile from "../../public/components/tags/normal/mobile/page";
+import InnovativeTagComponentMobile from "../../public/components/tags/innovative/mobile/page"
+
 
 
 
@@ -154,6 +157,13 @@ export default function Theme({
               src={`${MOBILE_PATH}index.html`}
             />
           </div>
+
+          {/* Rewrite Tags */}
+          <div className={TABS_CTNT_CLASS}><NormalTagComponentMobile /></div>
+          <div className={TABS_CTNT_CLASS}><InnovativeTagComponentMobile /></div>
+
+
+
         </TabsContent>
       </div>
       <div className="my-5">
