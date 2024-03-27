@@ -4,6 +4,9 @@ import useIsMobile from "./helper/mobileDetect";
 import { Separator } from "@/components/ui/separator";
 import { TABS_WPR_CLASS, TABS_CTNT_CLASS } from "./constants/strings";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import DropdownMenuComponent from "../../public/components/dropdown/basic/desktop"
+
+
 
 export default function Theme({
   componentName,
@@ -72,7 +75,7 @@ export default function Theme({
 
   const fetchNextjsContent = async () => {
     setNextjsDesktop(await fetchContent(`${DESKTOP_PATH}index.jsx`)); // Adjust the path to the correct Next.js script or content path
-    setNextjsMobile(await fetchContent(`${MOBILE_PATH}index.jsx`)); 
+    setNextjsMobile(await fetchContent(`${MOBILE_PATH}index.jsx`));
   };
 
   const getDesktopIframeBodySize = () => {
@@ -122,12 +125,13 @@ export default function Theme({
           style={{ backgroundColor: backgroundDesktop }}
         >
           <div className={TABS_CTNT_CLASS}>
-            <iframe
+            {/* <iframe
               ref={desktopIframeRef}
               style={{ width: widthDesktop, height: heightDesktop }}
               src={`${DESKTOP_PATH}index.html`}
-            />
+            /> */}
           </div>
+          <DropdownMenuComponent />
         </TabsContent>
         <TabsContent
           value="mobile"
