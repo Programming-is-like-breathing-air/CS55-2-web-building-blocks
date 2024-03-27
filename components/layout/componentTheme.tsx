@@ -10,7 +10,9 @@ import NormalToastComponent from "../../public/components/toast/normal/desktop/p
 import TitleToastComponent from "../../public/components/toast/title/desktop/page";
 import ActionToastComponent from "../../public/components/toast/action/desktop/page";
 
-
+import NormalToastComponentMobile from "../../public/components/toast/normal/mobile/page";
+import TitleToastComponentMobile from "../../public/components/toast/title/mobile/page";
+import ActionToastComponentMobile from "../../public/components/toast/action/mobile/page";
 
 export default function Theme({
   componentName,
@@ -135,12 +137,12 @@ export default function Theme({
               src={`${DESKTOP_PATH}index.html`}
             />
           </div>
-          
+
           {/* Rewrite Toast */}
           <div className={TABS_CTNT_CLASS}><NormalToastComponent /></div>
           <div className={TABS_CTNT_CLASS}><TitleToastComponent /></div>
           <div className={TABS_CTNT_CLASS}><ActionToastComponent /></div>
-          
+
 
 
 
@@ -157,6 +159,14 @@ export default function Theme({
               src={`${MOBILE_PATH}index.html`}
             />
           </div>
+
+          {/* Rewrite Toast */}
+          <div className={TABS_CTNT_CLASS}><NormalToastComponentMobile /></div>
+          <div className={TABS_CTNT_CLASS}><TitleToastComponentMobile /></div>
+          <div className={TABS_CTNT_CLASS}><ActionToastComponentMobile /></div>
+
+
+
         </TabsContent>
       </div>
       <div className="my-5">
