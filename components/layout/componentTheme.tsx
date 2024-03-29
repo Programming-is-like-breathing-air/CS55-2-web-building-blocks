@@ -20,7 +20,7 @@ import TopTooltipComponentMobile from "../../public/components/tooltip/topToolti
 import DisableTooltipButtonMobile from "../../public/components/tooltip/disabledTooltip/mobile/page"
 import AnimatedTooltipComponentMobile from "../../public/components/tooltip/animatedTooltip/mobile/page"
 
-
+import TooltipDemo from "../../public/components/tooltip/test/react/page"
 
 export default function Theme({
   componentName,
@@ -147,12 +147,14 @@ export default function Theme({
           </div>
 
           {/* Rewrite Tooltip */}
-          <div className={TABS_CTNT_CLASS}><BasicTooltipPage /></div>
+          {/* <div className={TABS_CTNT_CLASS}><BasicTooltipPage /></div>
           <div className={TABS_CTNT_CLASS}><LeftTooltipComponent /></div>
           <div className={TABS_CTNT_CLASS}><TopTooltipComponent /></div>
           <div className={TABS_CTNT_CLASS}><BottomTooltipComponent /></div>
           <div className={TABS_CTNT_CLASS}><DisableTooltipButton /></div>
-          <div className={TABS_CTNT_CLASS}><AnimatedTooltipComponent /></div>
+          <div className={TABS_CTNT_CLASS}><AnimatedTooltipComponent /></div> */}
+          <div className={TABS_CTNT_CLASS}><TooltipDemo /></div>
+          
 
 
 
