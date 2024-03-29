@@ -5,16 +5,20 @@ import { Separator } from "@/components/ui/separator";
 import { TABS_WPR_CLASS, TABS_CTNT_CLASS } from "./constants/strings";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
+import AccordionList from "../../public/components/accordion/list/desktop/page";
+import AccordionButton from "../../public/components/accordion/button/desktop/page";
 export default function Theme({
   componentName,
   componentStyle,
   backgroundDesktop = "transparent",
   backgroundMobile = "transparent",
+  componentView,
 }: {
   componentName: string;
   componentStyle: string;
   backgroundDesktop?: string;
   backgroundMobile?: string;
+  componentView: string;
 }) {
   const isMobile = useIsMobile();
   const DESKTOP_PATH = `/components/${componentName}/${componentStyle}/desktop/`;
@@ -36,6 +40,20 @@ export default function Theme({
   const [jsMobile, setJsMobile] = React.useState<string | null>(null);
   const [nextjsDesktop, setNextjsDesktop] = React.useState<string | null>(null);
   const [nextjsMobile, setNextjsMobile] = React.useState<string | null>(null);
+
+  const componentDesktopMap = {
+    AWB: AccordionButton,
+    AWL: AccordionList,
+
+  };
+  const componentMobileMap = {
+    AWB: AccordionButton,
+    AWL: AccordionList,
+
+  };
+
+  const DesktopComponent = componentDesktopMap[componentView];
+  const MobileComponent = componentMobileMap[componentView];
 
   React.useEffect(() => {
     fetchHtmlContent();
@@ -71,8 +89,8 @@ export default function Theme({
   };
 
   const fetchNextjsContent = async () => {
-    setNextjsDesktop(await fetchContent(`${DESKTOP_PATH}index.jsx`)); // Adjust the path to the correct Next.js script or content path
-    setNextjsMobile(await fetchContent(`${MOBILE_PATH}index.jsx`)); 
+    setNextjsDesktop(await fetchContent(`${DESKTOP_PATH}page.jsx`)); // Adjust the path to the correct Next.js script or content path
+    setNextjsMobile(await fetchContent(`${MOBILE_PATH}page.jsx`));
   };
 
   const getDesktopIframeBodySize = () => {
@@ -102,6 +120,9 @@ export default function Theme({
   const fetchContent = async (path: string) =>
     await fetch(path).then((res) => (res.status === 200 ? res.text() : null));
 
+    
+    
+
   return (
     <Tabs
       defaultValue="desktop"
@@ -122,11 +143,7 @@ export default function Theme({
           style={{ backgroundColor: backgroundDesktop }}
         >
           <div className={TABS_CTNT_CLASS}>
-            <iframe
-              ref={desktopIframeRef}
-              style={{ width: widthDesktop, height: heightDesktop }}
-              src={`${DESKTOP_PATH}index.html`}
-            />
+            {DesktopComponent ? <DesktopComponent /> : <div>Component not found</div>}
           </div>
         </TabsContent>
         <TabsContent
@@ -135,11 +152,7 @@ export default function Theme({
           style={{ backgroundColor: backgroundMobile }}
         >
           <div className={TABS_CTNT_CLASS}>
-            <iframe
-              ref={mobileIframeRef}
-              style={{ width: "400px", height: heightMobile }}
-              src={`${MOBILE_PATH}index.html`}
-            />
+            {MobileComponent ? <MobileComponent /> : 'Loading mobile component...'}
           </div>
         </TabsContent>
       </div>

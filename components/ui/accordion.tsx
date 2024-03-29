@@ -1,6 +1,5 @@
 import React from "react";
 import Theme from "../layout/componentTheme";
-
 export const Accordion = () => {
   return (
     <Theme
@@ -8,6 +7,7 @@ export const Accordion = () => {
       componentStyle="normal"
       backgroundDesktop="#1d1d1d"
       backgroundMobile="#1d1d1d"
+      componentView=""
     />
   );
 };
@@ -19,6 +19,7 @@ export const AccordionWithButton = () => {
       componentStyle="button"
       backgroundDesktop="#1d1d1d"
       backgroundMobile="#1d1d1d"
+      componentView="AWB"
     />
   );
 };
@@ -30,6 +31,7 @@ export const AccordionWithButtonPicture = () => {
       componentStyle="picture"
       backgroundDesktop="#1d1d1d"
       backgroundMobile="#1d1d1d"
+      componentView=""
     />
   );
 };
@@ -41,6 +43,7 @@ export const AccordionMix = () => {
       componentStyle="mix"
       backgroundDesktop="#1d1d1d"
       backgroundMobile="#1d1d1d"
+      componentView=""
     />
   );
 };
@@ -52,6 +55,7 @@ export const AccordionWithList = () => {
       componentStyle="list"
       backgroundDesktop="#1d1d1d"
       backgroundMobile="#1d1d1d"
+      componentView="AWL"
     />
   );
 };
@@ -63,6 +67,7 @@ export const AccordionWithListAvatar = () => {
       componentStyle="listAvatar"
       backgroundDesktop="#1d1d1d"
       backgroundMobile="#1d1d1d"
+      componentView=""
     />
   );
 };

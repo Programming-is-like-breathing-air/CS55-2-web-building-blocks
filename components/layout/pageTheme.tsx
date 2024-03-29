@@ -21,7 +21,7 @@ export default function Theme({ pageName }: { pageName: string }) {
   const fetchHtml = async () => setHtml(await fetchCnt(`${PATH}index.html`));
   const fetchCss = async () => setCss(await fetchCnt(`${PATH}styles.css`));
   const fetchJs = async () => setJs(await fetchCnt(`${PATH}index.js`));
-  const fetchNextjs = async () => setNextjs(await fetchCnt(`${PATH}nextjs.js`)); // Define new data retrieval function
+  const fetchNextjs = async () => setNextjs(await fetchCnt(`${PATH}page.jsx`)); // Define new data retrieval function
 
   const fetchCnt = async (path: string) =>
     await fetch(path).then((res) => (res.status === 200 ? res.text() : null));

@@ -48,7 +48,7 @@ const CodeTabs = ({
               {/* Add Next.js trigger */}
               {nextjsDesktop && (
                 <TabsTrigger value="nextjs" className={CODE_TAB_CLASS}>
-                  Next.js
+                  React.js
                 </TabsTrigger>
               )}
             </TabsList>
