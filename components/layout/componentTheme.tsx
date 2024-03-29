@@ -20,12 +20,33 @@ export default function Theme({
   componentStyle,
   backgroundDesktop = "transparent",
   backgroundMobile = "transparent",
+  componentDesktopView,
+  componentMobileView,
 }: {
   componentName: string;
   componentStyle: string;
   backgroundDesktop?: string;
   backgroundMobile?: string;
+  componentDesktopView?: string;
+  componentMobileView?: string;
 }) {
+
+
+  // Add an map view on in the web page
+  const componentDesktopMap = {
+    NormalTagComponent: NormalTagComponent,
+    InnovativeTagComponent: InnovativeTagComponent,
+  }
+
+  const componentMobileMap = {
+    NormalTagComponentMobile: NormalTagComponentMobile,
+    InnovativeTagComponentMobile: InnovativeTagComponentMobile,
+  }
+
+  const DeskopComponent = componentDesktopMap[componentDesktopView];
+  const MobileComponent = componentMobileMap[componentMobileView];
+
+
   const isMobile = useIsMobile();
   const DESKTOP_PATH = `/components/${componentName}/${componentStyle}/desktop/`;
   const MOBILE_PATH = `/components/${componentName}/${componentStyle}/mobile/`;
@@ -132,16 +153,19 @@ export default function Theme({
           style={{ backgroundColor: backgroundDesktop }}
         >
           <div className={TABS_CTNT_CLASS}>
-            <iframe
+            {/* <iframe
               ref={desktopIframeRef}
               style={{ width: widthDesktop, height: heightDesktop }}
               src={`${DESKTOP_PATH}index.html`}
-            />
+            /> */}
+
+            {/* Demo .jsx file */}
+            {DeskopComponent ? <DeskopComponent /> : <div> Component Not Found </div>}
           </div>
 
-          {/* Rewrite Tags */}
+          {/* Rewrite Tags
           <div className={TABS_CTNT_CLASS}><NormalTagComponent /></div>
-          <div className={TABS_CTNT_CLASS}><InnovativeTagComponent /></div>
+          <div className={TABS_CTNT_CLASS}><InnovativeTagComponent /></div> */}
 
 
         </TabsContent>
@@ -151,16 +175,17 @@ export default function Theme({
           style={{ backgroundColor: backgroundMobile }}
         >
           <div className={TABS_CTNT_CLASS}>
-            <iframe
+            {/* <iframe
               ref={mobileIframeRef}
               style={{ width: "400px", height: heightMobile }}
               src={`${MOBILE_PATH}index.html`}
-            />
+            /> */}
+            {MobileComponent ? <MobileComponent /> : <div> Component Not Found </div>}
           </div>
 
-          {/* Rewrite Tags */}
+          {/* Rewrite Tags
           <div className={TABS_CTNT_CLASS}><NormalTagComponentMobile /></div>
-          <div className={TABS_CTNT_CLASS}><InnovativeTagComponentMobile /></div>
+          <div className={TABS_CTNT_CLASS}><InnovativeTagComponentMobile /></div> */}
 
 
 
