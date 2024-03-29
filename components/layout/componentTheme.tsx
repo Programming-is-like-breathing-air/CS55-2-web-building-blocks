@@ -4,7 +4,7 @@ import useIsMobile from "./helper/mobileDetect";
 import { Separator } from "@/components/ui/separator";
 import { TABS_WPR_CLASS, TABS_CTNT_CLASS } from "./constants/strings";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import DropdownMenuComponent from "../../public/components/dropdown/basic/desktop"
+import CheckboxComponent from "../../public/components/checkbox/normal/desktop/index"
 
 
 
@@ -131,7 +131,7 @@ export default function Theme({
               src={`${DESKTOP_PATH}index.html`}
             /> */}
           </div>
-          <DropdownMenuComponent />
+          <CheckboxComponent/>
         </TabsContent>
         <TabsContent
           value="mobile"
