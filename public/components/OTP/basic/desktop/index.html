@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Input Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="otp-input-container">
+        <input type="text" id="otp1" maxlength="1" onkeyup="moveFocus(1,2)" autofocus>
+        <input type="text" id="otp2" maxlength="1" onkeyup="moveFocus(2,3)">
+        <input type="text" id="otp3" maxlength="1" onkeyup="moveFocus(3,4)">
+        <input type="text" id="otp4" maxlength="1" onkeyup="moveFocus(4,5)">
+        <input type="text" id="otp5" maxlength="1" onkeyup="moveFocus(5,6)">
+        <input type="text" id="otp6" maxlength="1" onkeyup="moveFocus(6,0)">
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

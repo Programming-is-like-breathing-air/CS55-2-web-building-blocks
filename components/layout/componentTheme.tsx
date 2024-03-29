@@ -4,6 +4,9 @@ import useIsMobile from "./helper/mobileDetect";
 import { Separator } from "@/components/ui/separator";
 import { TABS_WPR_CLASS, TABS_CTNT_CLASS } from "./constants/strings";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import CardComponent from "../../public/components/card/normal/desktop"
+
+
 
 import DesktopAccordionList from "../../public/components/accordion/list/desktop/page";
 import DesktopAccordionButton from "../../public/components/accordion/button/desktop/page";
@@ -96,6 +99,7 @@ export default function Theme({
   const fetchNextjsContent = async () => {
     setNextjsDesktop(await fetchContent(`${DESKTOP_PATH}page.jsx`)); // Adjust the path to the correct Next.js script or content path
     setNextjsMobile(await fetchContent(`${MOBILE_PATH}page.jsx`));
+
   };
 
   const getDesktopIframeBodySize = () => {
@@ -149,7 +153,9 @@ export default function Theme({
         >
           <div className={TABS_CTNT_CLASS}>
             {DesktopComponent ? <DesktopComponent /> : <div>Component not found</div>}
+
           </div>
+          <CardComponent/>
         </TabsContent>
         <TabsContent
           value="mobile"

@@ -1,0 +1,36 @@
+html {
+    font-family: "Inter", sans-serif;
+    background-color:  rgb(249, 115, 22);
+  }
+  
+  body {
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  p {
+    color: #e8e8e8;
+    margin: 0;
+  }
+.otp-input-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.otp-input-container input {
+    font-size: 20px;
+    text-align: center;
+    width: 40px;
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+.otp-input-container input:focus {
+    border-color: #007bff;
+    outline: none;
+}
