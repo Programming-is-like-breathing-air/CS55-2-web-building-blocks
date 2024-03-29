@@ -13,6 +13,16 @@ import DesktopAccordionButton from "../../public/components/accordion/button/des
 import MobileAccordionWithButton from "../../public/components/accordion/button/mobile/page";
 import MobileAccordionList from "../../public/components/accordion/list/mobile/page";
 
+// Rewrite Tooltip
+import NormalTagComponent from "../../public/components/tags/normal/desktop/page";
+import DesktopInnovativeTagComponent from "../../public/components/tags/innovative/desktop/page"
+
+import NormalTagComponentMobile from "../../public/components/tags/normal/mobile/page";
+import InnovativeTagComponentMobile from "../../public/components/tags/innovative/mobile/page"
+
+
+
+
 export default function Theme({
   componentName,
   componentStyle,
@@ -27,7 +37,9 @@ export default function Theme({
   backgroundMobile?: string;
   componentDesktopView: string;
   componentMobileView: string;
+
 }) {
+
   const isMobile = useIsMobile();
   const DESKTOP_PATH = `/components/${componentName}/${componentStyle}/desktop/`;
   const MOBILE_PATH = `/components/${componentName}/${componentStyle}/mobile/`;
@@ -53,6 +65,7 @@ export default function Theme({
     DAWB: DesktopAccordionButton,
     DAWL: DesktopAccordionList,
     DCC:DesktopCardComponent,
+    DITC:DesktopInnovativeTagComponent,
 
   };
   const componentMobileMap = {
@@ -100,7 +113,6 @@ export default function Theme({
   const fetchNextjsContent = async () => {
     setNextjsDesktop(await fetchContent(`${DESKTOP_PATH}page.jsx`)); // Adjust the path to the correct Next.js script or content path
     setNextjsMobile(await fetchContent(`${MOBILE_PATH}page.jsx`));
-
   };
 
   const getDesktopIframeBodySize = () => {
@@ -153,9 +165,12 @@ export default function Theme({
           style={{ backgroundColor: backgroundDesktop }}
         >
           <div className={TABS_CTNT_CLASS}>
-            {DesktopComponent ? <DesktopComponent /> : <div>Component not found</div>}
 
+            {DesktopComponent ? <DesktopComponent /> : <div>Component not found</div>}
           </div>
+
+
+
         </TabsContent>
         <TabsContent
           value="mobile"
@@ -164,6 +179,7 @@ export default function Theme({
         >
           <div className={TABS_CTNT_CLASS}>
             {MobileComponent ? <MobileComponent /> : 'Loading mobile component...'}
+
           </div>
         </TabsContent>
       </div>
