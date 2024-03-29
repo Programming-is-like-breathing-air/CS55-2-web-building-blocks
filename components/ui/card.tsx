@@ -8,6 +8,7 @@ export const Card = () => {
       componentStyle="normal"
       backgroundDesktop="#1d1d1d"
       backgroundMobile="#1d1d1d"
+      componentDesktopView="DCC"
     />
   );
 };

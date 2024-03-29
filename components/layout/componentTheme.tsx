@@ -4,7 +4,7 @@ import useIsMobile from "./helper/mobileDetect";
 import { Separator } from "@/components/ui/separator";
 import { TABS_WPR_CLASS, TABS_CTNT_CLASS } from "./constants/strings";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import CardComponent from "../../public/components/card/normal/desktop"
+import DesktopCardComponent from "../../public/components/card/normal/desktop/page"
 
 
 
@@ -52,6 +52,7 @@ export default function Theme({
   const componentDesktopMap = {
     DAWB: DesktopAccordionButton,
     DAWL: DesktopAccordionList,
+    DCC:DesktopCardComponent,
 
   };
   const componentMobileMap = {
@@ -155,7 +156,6 @@ export default function Theme({
             {DesktopComponent ? <DesktopComponent /> : <div>Component not found</div>}
 
           </div>
-          <CardComponent/>
         </TabsContent>
         <TabsContent
           value="mobile"
