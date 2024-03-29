@@ -4,7 +4,7 @@ import useIsMobile from "./helper/mobileDetect";
 import { Separator } from "@/components/ui/separator";
 import { TABS_WPR_CLASS, TABS_CTNT_CLASS } from "./constants/strings";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import CheckboxComponent from "../../public/components/checkbox/normal/desktop/index"
+import CardComponent from "../../public/components/card/normal/desktop"
 
 
 
@@ -131,7 +131,7 @@ export default function Theme({
               src={`${DESKTOP_PATH}index.html`}
             /> */}
           </div>
-          <CheckboxComponent/>
+          <CardComponent/>
         </TabsContent>
         <TabsContent
           value="mobile"
