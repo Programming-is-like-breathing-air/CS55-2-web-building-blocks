@@ -5,20 +5,25 @@ import { Separator } from "@/components/ui/separator";
 import { TABS_WPR_CLASS, TABS_CTNT_CLASS } from "./constants/strings";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-import AccordionList from "../../public/components/accordion/list/desktop/page";
-import AccordionButton from "../../public/components/accordion/button/desktop/page";
+import DesktopAccordionList from "../../public/components/accordion/list/desktop/page";
+import DesktopAccordionButton from "../../public/components/accordion/button/desktop/page";
+import MobileAccordionWithButton from "../../public/components/accordion/button/mobile/page";
+import MobileAccordionList from "../../public/components/accordion/list/mobile/page";
+
 export default function Theme({
   componentName,
   componentStyle,
   backgroundDesktop = "transparent",
   backgroundMobile = "transparent",
-  componentView,
+  componentDesktopView,
+  componentMobileView,
 }: {
   componentName: string;
   componentStyle: string;
   backgroundDesktop?: string;
   backgroundMobile?: string;
-  componentView: string;
+  componentDesktopView: string;
+  componentMobileView: string;
 }) {
   const isMobile = useIsMobile();
   const DESKTOP_PATH = `/components/${componentName}/${componentStyle}/desktop/`;
@@ -42,18 +47,18 @@ export default function Theme({
   const [nextjsMobile, setNextjsMobile] = React.useState<string | null>(null);
 
   const componentDesktopMap = {
-    AWB: AccordionButton,
-    AWL: AccordionList,
+    DAWB: DesktopAccordionButton,
+    DAWL: DesktopAccordionList,
 
   };
   const componentMobileMap = {
-    AWB: AccordionButton,
-    AWL: AccordionList,
+    MAWB: MobileAccordionWithButton,
+    MAWL: MobileAccordionList,
 
   };
 
-  const DesktopComponent = componentDesktopMap[componentView];
-  const MobileComponent = componentMobileMap[componentView];
+  const DesktopComponent = componentDesktopMap[componentDesktopView];
+  const MobileComponent = componentMobileMap[componentMobileView];
 
   React.useEffect(() => {
     fetchHtmlContent();

@@ -1,51 +1,68 @@
-// SimpleForm.jsx
 import React, { useState } from 'react';
 
-const SimpleForm1 = () => {
-  const [formState, setFormState] = useState({
-    name: '',
-    email: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormState(prevState => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault(); // 阻止表单的默认提交行为
-    console.log('Form Submitted', formState);
-    // 这里可以添加进一步的处理逻辑，比如发送到服务器
-  };
+const styles = {
+  wrapper: {
+    maxWidth: '600px',
+    margin: 'auto',
+    fontFamily: `'Inter', sans-serif`,
+  },
+  collapsed: {
+    cursor: 'pointer',
+    padding: '20px',
+    borderBottom: '1px solid #ccc',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    backgroundColor: '#f9f9f9',
+  },
+  expanded: {
+    padding: '20px',
+    borderBottom: '1px solid #ccc',
+    backgroundColor: '#fff',
+  },
+  icon: {
+    transition: 'transform 0.2s ease-in-out',
+  },
+  cta: {
+    marginTop: '10px',
+    display: 'inline-block',
+    textDecoration: 'none',
+    color: '#007bff',
+  },
+};
+const MobileAccordionWithButton = () => {
+  const [isExpanded1, setIsExpanded1] = useState(false);
+  const [isExpanded2, setIsExpanded2] = useState(false);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formState.name}
-          onChange={handleChange}
-        />
+    <div style={styles.wrapper}>
+      <div style={styles.collapsed} onClick={() => setIsExpanded1(!isExpanded1)}>
+        <p>How do I enroll?</p>
+        <div style={styles.icon}>{/* SVG 图标 */}</div>
       </div>
-      <div>
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formState.email}
-          onChange={handleChange}
-        />
+      {isExpanded1 && (
+        <div style={styles.expanded}>
+         Once you're ready, enrol online by logging in to Sydney Student. Go to
+        "My studies" then "Enrolment" and you're set to go. There are several
+        sections to complete as part of your enrolment. You can log out and
+        return later if you need to.
+        <div class="cta">Enrol now &#8594;</div>
+        </div>
+      )}
+      <div style={styles.collapsed} onClick={() => setIsExpanded2(!isExpanded2)} >
+        <p>Your responsibilities and privacy</p>
+        <div style={styles.icon}>{/* SVG 图标 */}</div>
       </div>
-      <button type="submit">Submit</button>
-    </form>
+      {isExpanded2 && (
+        <div style={styles.expanded}>
+           Your enrolment comes with certain conditions so it's important to
+        understand them. You should also familiarise yourself with our privacy
+        policy regarding the personal information you supply during enrolment.
+        <div class="cta">Explore more &#8594;</div>
+        </div>
+      )}
+    </div>
   );
 };
 
-export default SimpleForm1;
+export default MobileAccordionWithButton;

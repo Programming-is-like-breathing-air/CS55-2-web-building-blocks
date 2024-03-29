@@ -92,7 +92,7 @@ const styles = {
   };
   
 
-const AccordionButton = () => {
+const DesktopAccordionButton = () => {
   const [isExpanded1, setIsExpanded1] = useState(false);
   const [isExpanded2, setIsExpanded2] = useState(false);
 
@@ -129,4 +129,4 @@ const AccordionButton = () => {
   );
 };
 
-export default AccordionButton;
+export default DesktopAccordionButton;

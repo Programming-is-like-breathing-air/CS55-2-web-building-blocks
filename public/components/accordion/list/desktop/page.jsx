@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
  
-const AccordionList = () => {
+const DesktopAccordionList = () => {
   const [isExpanded1, setIsExpanded1] = useState(false);
   const [isExpanded2, setIsExpanded2] = useState(false);
   const wrapper = {
@@ -70,4 +70,4 @@ const AccordionList = () => {
   );
 };
 
-export default AccordionList;
+export default DesktopAccordionList;
