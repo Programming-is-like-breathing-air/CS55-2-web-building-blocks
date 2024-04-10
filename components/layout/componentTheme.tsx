@@ -5,22 +5,10 @@ import { Separator } from "@/components/ui/separator";
 import { TABS_WPR_CLASS, TABS_CTNT_CLASS } from "./constants/strings";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-// Rewrite Tooltip
-import BasicTooltipPage from "../../public/components/tooltip/basicTooltip/desktop/page";
-import BottomTooltipComponent from "../../public/components/tooltip/bottomTooltip/desktop/page"
-import LeftTooltipComponent from "../../public/components/tooltip/leftTooltip/desktop/page"
-import TopTooltipComponent from "../../public/components/tooltip/topTooltip/desktop/page"
-import DisableTooltipButton from "../../public/components/tooltip/disabledTooltip/desktop/page"
-import AnimatedTooltipComponent from "../../public/components/tooltip/animatedTooltip/desktop/page"
 
-import BasicTooltipPageMobile from "../../public/components/tooltip/basicTooltip/mobile/page";
-import BottomTooltipComponentMobile from "../../public/components/tooltip/bottomTooltip/mobile/page"
-import LeftTooltipComponentMobile from "../../public/components/tooltip/leftTooltip/mobile/page"
-import TopTooltipComponentMobile from "../../public/components/tooltip/topTooltip/mobile/page"
-import DisableTooltipButtonMobile from "../../public/components/tooltip/disabledTooltip/mobile/page"
-import AnimatedTooltipComponentMobile from "../../public/components/tooltip/animatedTooltip/mobile/page"
-
-import TooltipDemo from "../../public/components/tooltip/test/react/page"
+import ToastWithNormal from "../../public/components/toast/normal/react/page"
+import ToastWithAction from "../../public/components/toast/action/react/page"
+import ToastWithTitle from "../../public/components/toast/title/react/page";
 
 export default function Theme({
   componentName,
@@ -36,6 +24,8 @@ export default function Theme({
   const isMobile = useIsMobile();
   const DESKTOP_PATH = `/components/${componentName}/${componentStyle}/desktop/`;
   const MOBILE_PATH = `/components/${componentName}/${componentStyle}/mobile/`;
+
+  const React_PATH = `/components/${componentName}/${componentStyle}/react/`;
 
   const desktopIframeRef = React.useRef(null);
   const mobileIframeRef = React.useRef(null);
@@ -88,8 +78,7 @@ export default function Theme({
   };
 
   const fetchNextjsContent = async () => {
-    setNextjsDesktop(await fetchContent(`${DESKTOP_PATH}page.jsx`)); // Adjust the path to the correct Next.js script or content path
-    setNextjsMobile(await fetchContent(`${MOBILE_PATH}page.jsx`));
+    setNextjsDesktop(await fetchContent(`${React_PATH}page.jsx`)); // Adjust the path to the correct Next.js script or content path
   };
 
   const getDesktopIframeBodySize = () => {
@@ -146,15 +135,9 @@ export default function Theme({
             />
           </div>
 
-          {/* Rewrite Tooltip */}
-          {/* <div className={TABS_CTNT_CLASS}><BasicTooltipPage /></div>
-          <div className={TABS_CTNT_CLASS}><LeftTooltipComponent /></div>
-          <div className={TABS_CTNT_CLASS}><TopTooltipComponent /></div>
-          <div className={TABS_CTNT_CLASS}><BottomTooltipComponent /></div>
-          <div className={TABS_CTNT_CLASS}><DisableTooltipButton /></div>
-          <div className={TABS_CTNT_CLASS}><AnimatedTooltipComponent /></div> */}
-          <div className={TABS_CTNT_CLASS}><TooltipDemo /></div>
-          
+          <div className={TABS_CTNT_CLASS}><ToastWithNormal /></div>
+          <div className={TABS_CTNT_CLASS}><ToastWithTitle /></div>
+          <div className={TABS_CTNT_CLASS}><ToastWithAction /></div>
 
 
 
@@ -173,17 +156,6 @@ export default function Theme({
               src={`${MOBILE_PATH}index.html`}
             />
           </div>
-
-          {/* Rewrite Tooltip */}
-          <div className={TABS_CTNT_CLASS}><BasicTooltipPageMobile /></div>
-          <div className={TABS_CTNT_CLASS}><LeftTooltipComponentMobile /></div>
-          <div className={TABS_CTNT_CLASS}><TopTooltipComponentMobile /></div>
-          <div className={TABS_CTNT_CLASS}><BottomTooltipComponentMobile /></div>
-          <div className={TABS_CTNT_CLASS}><DisableTooltipButtonMobile /></div>
-          <div className={TABS_CTNT_CLASS}><AnimatedTooltipComponentMobile /></div>
-
-
-
 
         </TabsContent>
       </div>
