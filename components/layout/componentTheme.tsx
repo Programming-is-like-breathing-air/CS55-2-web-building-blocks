@@ -5,14 +5,10 @@ import { Separator } from "@/components/ui/separator";
 import { TABS_WPR_CLASS, TABS_CTNT_CLASS } from "./constants/strings";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-// Rewrite Toast
-import NormalToastComponent from "../../public/components/toast/normal/desktop/page";
-import TitleToastComponent from "../../public/components/toast/title/desktop/page";
-import ActionToastComponent from "../../public/components/toast/action/desktop/page";
+import ToastWithNormal from "../../public/components/toast/normal/react/page"
+import ToastWithAction from "../../public/components/toast/action/react/page"
+import ToastWithTitle from "../../public/components/toast/title/react/page";
 
-import NormalToastComponentMobile from "../../public/components/toast/normal/mobile/page";
-import TitleToastComponentMobile from "../../public/components/toast/title/mobile/page";
-import ActionToastComponentMobile from "../../public/components/toast/action/mobile/page";
 
 export default function Theme({
   componentName,
@@ -28,6 +24,8 @@ export default function Theme({
   const isMobile = useIsMobile();
   const DESKTOP_PATH = `/components/${componentName}/${componentStyle}/desktop/`;
   const MOBILE_PATH = `/components/${componentName}/${componentStyle}/mobile/`;
+
+  const React_PATH = `/components/${componentName}/${componentStyle}/react/`;
 
   const desktopIframeRef = React.useRef(null);
   const mobileIframeRef = React.useRef(null);
@@ -80,8 +78,7 @@ export default function Theme({
   };
 
   const fetchNextjsContent = async () => {
-    setNextjsDesktop(await fetchContent(`${DESKTOP_PATH}page.jsx`)); // Adjust the path to the correct Next.js script or content path
-    setNextjsMobile(await fetchContent(`${MOBILE_PATH}page.jsx`));
+    setNextjsDesktop(await fetchContent(`${React_PATH}page.jsx`)); // Adjust the path to the correct Next.js script or content path
   };
 
   const getDesktopIframeBodySize = () => {
@@ -138,10 +135,10 @@ export default function Theme({
             />
           </div>
 
-          {/* Rewrite Toast */}
-          <div className={TABS_CTNT_CLASS}><NormalToastComponent /></div>
-          <div className={TABS_CTNT_CLASS}><TitleToastComponent /></div>
-          <div className={TABS_CTNT_CLASS}><ActionToastComponent /></div>
+          <div className={TABS_CTNT_CLASS}><ToastWithNormal /></div>
+          <div className={TABS_CTNT_CLASS}><ToastWithTitle /></div>
+          <div className={TABS_CTNT_CLASS}><ToastWithAction /></div>
+
 
 
 
@@ -159,13 +156,6 @@ export default function Theme({
               src={`${MOBILE_PATH}index.html`}
             />
           </div>
-
-          {/* Rewrite Toast */}
-          <div className={TABS_CTNT_CLASS}><NormalToastComponentMobile /></div>
-          <div className={TABS_CTNT_CLASS}><TitleToastComponentMobile /></div>
-          <div className={TABS_CTNT_CLASS}><ActionToastComponentMobile /></div>
-
-
 
         </TabsContent>
       </div>
