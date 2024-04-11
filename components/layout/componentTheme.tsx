@@ -24,6 +24,7 @@ import DropdownMenuCheckboxes from "../../public/components/dropdown/basic/react
 import DropdownMenuwithDividers from "../../public/components/dropdown/withDividers/react/page"
 import DropdownMenuwithHeader from "../../public/components/dropdown/withHeader/react/page"
 import DropdownMenuwithIcon from "../../public/components/dropdown/withIcons/react/page"
+import PaginationDemo from "../../public/components/misc/pagination/react/page"
 
 export default function Theme({
   componentName,
@@ -72,6 +73,7 @@ export default function Theme({
     DropdownMenuwithDividers:DropdownMenuwithDividers,
     DropdownMenuwithHeader:DropdownMenuwithHeader,
     DropdownMenuwithIcon:DropdownMenuwithIcon,
+    PaginationDemo:PaginationDemo,
   };
 
   const ReactComponent = componentReactMap[componentReactView];
