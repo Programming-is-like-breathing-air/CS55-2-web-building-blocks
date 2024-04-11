@@ -25,6 +25,9 @@ import DropdownMenuwithDividers from "../../public/components/dropdown/withDivid
 import DropdownMenuwithHeader from "../../public/components/dropdown/withHeader/react/page"
 import DropdownMenuwithIcon from "../../public/components/dropdown/withIcons/react/page"
 import PaginationDemo from "../../public/components/misc/pagination/react/page"
+import NavigationMenuDemo from "../../public/components/navigation/Dropdown/react/page"
+import SideNaviDemo from "../../public/components/navigation/sideNavi/react/page"
+import TopNavigationBar from "../../public/components/navigation/topNavi/react/page"
 
 export default function Theme({
   componentName,
@@ -74,6 +77,9 @@ export default function Theme({
     DropdownMenuwithHeader:DropdownMenuwithHeader,
     DropdownMenuwithIcon:DropdownMenuwithIcon,
     PaginationDemo:PaginationDemo,
+    NavigationMenuDemo:NavigationMenuDemo,
+    SideNaviDemo:SideNaviDemo,
+    TopNavigationBar:TopNavigationBar,
   };
 
   const ReactComponent = componentReactMap[componentReactView];
