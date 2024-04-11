@@ -8,6 +8,7 @@ export const TopNavi = () => {
       componentStyle="topNavi"
       backgroundDesktop="#FFF"
       backgroundMobile="#FFF"
+      componentReactView="TopNavigationBar"
     />
   );
 };
@@ -19,6 +20,7 @@ export const SideNavi = () => {
       componentStyle="sideNavi"
       backgroundDesktop="#fff"
       backgroundMobile="#fff"
+      componentReactView="SideNaviDemo"
     />
   );
 };
@@ -30,6 +32,7 @@ export const Dropdown = () => {
       componentStyle="dropdown"
       backgroundDesktop="#fff"
       backgroundMobile="#fff"
+      componentReactView="NavigationMenuDemo"
     />
   );
 };
