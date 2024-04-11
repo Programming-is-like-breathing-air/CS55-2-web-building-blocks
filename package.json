@@ -22,6 +22,11 @@
   },
   "homepage": "https://github.com/Web-Building-Blocks/blocks#readme",
   "dependencies": {
+<<<<<<< Updated upstream
+=======
+    "@radix-ui/react-accordion": "^1.1.2",
+    "@radix-ui/react-checkbox": "^1.0.4",
+>>>>>>> Stashed changes
     "@radix-ui/react-icons": "latest",
     "@radix-ui/react-label": "latest",
     "@radix-ui/react-separator": "latest",

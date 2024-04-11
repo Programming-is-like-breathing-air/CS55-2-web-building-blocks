@@ -5,16 +5,28 @@ import { Separator } from "@/components/ui/separator";
 import { TABS_WPR_CLASS, TABS_CTNT_CLASS } from "./constants/strings";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
+<<<<<<< Updated upstream
+=======
+
+import ToastWithNormal from "../../public/components/toast/normal/react/page"
+import ToastWithAction from "../../public/components/toast/action/react/page"
+import ToastWithTitle from "../../public/components/toast/title/react/page";
+
+import CheckboxDemo from "../../public/components/checkbox/normal/react/page";
+
+>>>>>>> Stashed changes
 export default function Theme({
   componentName,
   componentStyle,
   backgroundDesktop = "transparent",
   backgroundMobile = "transparent",
+  componentView,
 }: {
   componentName: string;
   componentStyle: string;
   backgroundDesktop?: string;
   backgroundMobile?: string;
+  componentView: string;
 }) {
   const isMobile = useIsMobile();
   const DESKTOP_PATH = `/components/${componentName}/${componentStyle}/desktop/`;
@@ -34,6 +46,15 @@ export default function Theme({
   const [htmlMobile, setHtmlMobile] = React.useState<string | null>(null);
   const [cssMobile, setCssMobile] = React.useState<string | null>(null);
   const [jsMobile, setJsMobile] = React.useState<string | null>(null);
+
+  const componentReactMap = {
+    CheckboxDemo:CheckboxDemo,
+    ToastWithNormal:ToastWithNormal,
+    ToastWithAction:ToastWithAction,
+    ToastWithTitle:ToastWithTitle,
+  }
+
+  const ReactComponent = componentReactMap[componentView];
 
   React.useEffect(() => {
     fetchHtmlContent();
@@ -114,12 +135,20 @@ export default function Theme({
           style={{ backgroundColor: backgroundDesktop }}
         >
           <div className={TABS_CTNT_CLASS}>
-            <iframe
+            {/* <iframe
               ref={desktopIframeRef}
               style={{ width: widthDesktop, height: heightDesktop }}
               src={`${DESKTOP_PATH}index.html`}
-            />
+            /> */}
           </div>
+<<<<<<< Updated upstream
+=======
+
+          <div className={TABS_CTNT_CLASS}>
+          {ReactComponent ? <ReactComponent/>: <div>Component not found</div>}  
+          </div>
+
+>>>>>>> Stashed changes
         </TabsContent>
         <TabsContent
           value="mobile"
