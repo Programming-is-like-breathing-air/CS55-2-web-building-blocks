@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react';//add ’lucide-react‘ use commad ‘npm install lucide-react’
 import {
   Pagination,
   PaginationContent,
@@ -7,29 +7,29 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "../../../../../styles/components/ui/pagination"
+} from "../../../../../styles/components/ui/pagination"//add PaginationDemo@shadcn UI use cmd “npx shadcn-ui@latest add pagination”
 
 export function PaginationDemo() {
-  const totalPages = 10; // 总页数
+  const totalPages = 10; // Total number of pages
   const [currentPage, setCurrentPage] = useState(1);
-  const maxPageNumbersToShow = 5; // 同时显示的最大页码数
+  const maxPageNumbersToShow = 5; // Maximum number of page numbers to display at once
 
-  // 处理页码点击
+  // Handle page click
   const handlePageChange = (event, page) => {
     event.preventDefault();
     setCurrentPage(page);
   };
 
-  // 生成页码链接，包括处理省略号逻辑
+  // Generate page links, including logic for ellipses
   const generatePageLinks = () => {
     let pages = [];
     let startPage, endPage;
     if (totalPages <= maxPageNumbersToShow) {
-      // 总页数小于等于要显示的页数，显示所有页码
+      // If total pages is less or equal to max pages to show, display all
       startPage = 1;
       endPage = totalPages;
     } else {
-      // 需要显示省略号
+      // Need to display ellipses
       if (currentPage <= 3) {
         startPage = 1;
         endPage = maxPageNumbersToShow;
@@ -52,7 +52,7 @@ export function PaginationDemo() {
       );
     }
 
-    // 如果开始页码大于1，添加省略号
+    // If starting page is greater than 1, add ellipsis at the beginning
     if (startPage > 1) {
       pages.unshift(
         <PaginationItem key="startEllipsis">
@@ -60,7 +60,7 @@ export function PaginationDemo() {
         </PaginationItem>
       );
     }
-    // 如果结束页码小于总页数，添加省略号
+    // If ending page is less than total pages, add ellipsis at the end
     if (endPage < totalPages) {
       pages.push(
         <PaginationItem key="endEllipsis">
@@ -72,18 +72,18 @@ export function PaginationDemo() {
     return pages;
   };
 
-  // 处理“下一页”点击
+  // Handle "Next" click
   const handleNext = (event) => {
     event.preventDefault();
     setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
   };
 
-  // 处理“上一页”点击
+  // Handle "Previous" click
   const handlePrevious = (event) => {
     event.preventDefault();
     setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
   };
-
+// From @shadcn UI
   return (
     <Pagination>
       <PaginationContent>
