@@ -9,7 +9,7 @@ import DesktopCardComponent from "../../public/components/card/normal/desktop/pa
 
 
 import DesktopAccordionList from "../../public/components/accordion/list/desktop/page";
-import DesktopAccordionButton from "../../public/components/accordion/button/desktop/page";
+import DesktopAccordionButton from "../../public/components/accordion/button/react/page";
 import MobileAccordionWithButton from "../../public/components/accordion/button/mobile/page";
 import MobileAccordionList from "../../public/components/accordion/list/mobile/page";
 
@@ -28,21 +28,20 @@ export default function Theme({
   componentStyle,
   backgroundDesktop = "transparent",
   backgroundMobile = "transparent",
-  componentDesktopView,
-  componentMobileView,
+  componentReactView,
 }: {
   componentName: string;
   componentStyle: string;
   backgroundDesktop?: string;
   backgroundMobile?: string;
-  componentDesktopView: string;
-  componentMobileView: string;
+  componentReactView: string;
 
 }) {
 
   const isMobile = useIsMobile();
   const DESKTOP_PATH = `/components/${componentName}/${componentStyle}/desktop/`;
   const MOBILE_PATH = `/components/${componentName}/${componentStyle}/mobile/`;
+  const REACT_PATH = `/components/${componentName}/${componentStyle}/react/`;
 
   const desktopIframeRef = React.useRef(null);
   const mobileIframeRef = React.useRef(null);
@@ -61,21 +60,16 @@ export default function Theme({
   const [nextjsDesktop, setNextjsDesktop] = React.useState<string | null>(null);
   const [nextjsMobile, setNextjsMobile] = React.useState<string | null>(null);
 
-  const componentDesktopMap = {
+  const componentReactMap = {
     DAWB: DesktopAccordionButton,
     DAWL: DesktopAccordionList,
     DCC:DesktopCardComponent,
     DITC:DesktopInnovativeTagComponent,
 
   };
-  const componentMobileMap = {
-    MAWB: MobileAccordionWithButton,
-    MAWL: MobileAccordionList,
 
-  };
-
-  const DesktopComponent = componentDesktopMap[componentDesktopView];
-  const MobileComponent = componentMobileMap[componentMobileView];
+  const ReactComponent = componentReactMap[componentReactView];
+  
 
   React.useEffect(() => {
     fetchHtmlContent();
@@ -111,8 +105,8 @@ export default function Theme({
   };
 
   const fetchNextjsContent = async () => {
-    setNextjsDesktop(await fetchContent(`${DESKTOP_PATH}page.jsx`)); // Adjust the path to the correct Next.js script or content path
-    setNextjsMobile(await fetchContent(`${MOBILE_PATH}page.jsx`));
+    setNextjsDesktop(await fetchContent(`${REACT_PATH}page.jsx`)); // Adjust the path to the correct Next.js script or content path
+    setNextjsMobile(await fetchContent(`${REACT_PATH}page.jsx`));
   };
 
   const getDesktopIframeBodySize = () => {
@@ -166,7 +160,7 @@ export default function Theme({
         >
           <div className={TABS_CTNT_CLASS}>
 
-            {DesktopComponent ? <DesktopComponent /> : <div>Component not found</div>}
+            {ReactComponent ? <ReactComponent /> : <div>Component not found</div>}
           </div>
 
 
@@ -178,7 +172,7 @@ export default function Theme({
           style={{ backgroundColor: backgroundMobile }}
         >
           <div className={TABS_CTNT_CLASS}>
-            {MobileComponent ? <MobileComponent /> : 'Loading mobile component...'}
+            {/* {MobileComponent ? <MobileComponent /> : 'Loading mobile component...'} */}
 
           </div>
         </TabsContent>

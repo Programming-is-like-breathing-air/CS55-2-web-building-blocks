@@ -7,7 +7,7 @@ export const Accordion = () => {
       componentStyle="normal"
       backgroundDesktop="#1d1d1d"
       backgroundMobile="#1d1d1d"
-      componentDesktopView=""
+      componentReactView=""
     />
   );
 };
@@ -19,8 +19,8 @@ export const AccordionWithButton = () => {
       componentStyle="button"
       backgroundDesktop="#1d1d1d"
       backgroundMobile="#1d1d1d"
-      componentDesktopView="DAWB"
-      componentMobileView="MAWB"
+      componentReactView="DAWB"
+      
     />
   );
 };
@@ -32,7 +32,7 @@ export const AccordionWithButtonPicture = () => {
       componentStyle="picture"
       backgroundDesktop="#1d1d1d"
       backgroundMobile="#1d1d1d"
-      componentDesktopView=""
+      componentReactView=""
     />
   );
 };
@@ -44,7 +44,7 @@ export const AccordionMix = () => {
       componentStyle="mix"
       backgroundDesktop="#1d1d1d"
       backgroundMobile="#1d1d1d"
-      componentDesktopView=""
+      componentReactView=""
     />
   );
 };
@@ -56,8 +56,8 @@ export const AccordionWithList = () => {
       componentStyle="list"
       backgroundDesktop="#1d1d1d"
       backgroundMobile="#1d1d1d"
-      componentDesktopView="DAWL"
-      componentMobileView="MAWL"
+      componentReactView="DAWL"
+      
     />
   );
 };
@@ -69,7 +69,7 @@ export const AccordionWithListAvatar = () => {
       componentStyle="listAvatar"
       backgroundDesktop="#1d1d1d"
       backgroundMobile="#1d1d1d"
-      componentDesktopView=""
+      componentReactView=""
     />
   );
 };
