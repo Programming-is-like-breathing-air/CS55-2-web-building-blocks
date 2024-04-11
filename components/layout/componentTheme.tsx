@@ -123,6 +123,7 @@ export default function Theme({
   const fetchNextjsContent = async () => {
     setNextjsDesktop(await fetchContent(`${REACT_PATH}page.jsx`)); // Adjust the path to the correct Next.js script or content path
     setNextjsMobile(await fetchContent(`${REACT_PATH}page.jsx`));
+
   };
 
   const getDesktopIframeBodySize = () => {
