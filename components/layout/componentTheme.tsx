@@ -7,7 +7,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import DesktopCardComponent from "../../public/components/card/normal/desktop/page"
 
 
-
 import DesktopAccordionList from "../../public/components/accordion/list/desktop/page";
 import DesktopAccordionButton from "../../public/components/accordion/button/react/page";
 import MobileAccordionWithButton from "../../public/components/accordion/button/mobile/page";
@@ -21,6 +20,10 @@ import NormalTagComponentMobile from "../../public/components/tags/normal/mobile
 import InnovativeTagComponentMobile from "../../public/components/tags/innovative/mobile/page"
 
 import CheckboxDemo from "../../public/components/checkbox/normal/react/page";
+import DropdownMenuCheckboxes from "../../public/components/dropdown/basic/react/page"
+import DropdownMenuwithDividers from "../../public/components/dropdown/withDividers/react/page"
+import DropdownMenuwithHeader from "../../public/components/dropdown/withHeader/react/page"
+import DropdownMenuwithIcon from "../../public/components/dropdown/withIcons/react/page"
 
 export default function Theme({
   componentName,
@@ -65,7 +68,10 @@ export default function Theme({
     DCC:DesktopCardComponent,
     DITC:DesktopInnovativeTagComponent,
     CheckboxDemo:CheckboxDemo,
-
+    DropdownMenuCheckboxes:DropdownMenuCheckboxes,
+    DropdownMenuwithDividers:DropdownMenuwithDividers,
+    DropdownMenuwithHeader:DropdownMenuwithHeader,
+    DropdownMenuwithIcon:DropdownMenuwithIcon,
   };
 
   const ReactComponent = componentReactMap[componentReactView];

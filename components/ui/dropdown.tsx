@@ -8,6 +8,7 @@ export const Dropdown = () => {
       componentStyle="basic"
       backgroundDesktop="white"
       backgroundMobile="white"
+      componentReactView="DropdownMenuCheckboxes"
     />
   );
 };
@@ -19,6 +20,7 @@ export const WithDividers = () => {
       componentStyle="withDividers"
       backgroundDesktop="white"
       backgroundMobile="white"
+      componentReactView="DropdownMenuwithDividers"
     />
   );
 };
@@ -30,6 +32,7 @@ export const WithIcons = () => {
       componentStyle="withIcons"
       backgroundDesktop="white"
       backgroundMobile="white"
+      componentReactView="DropdownMenuwithIcon"
     />
   );
 };
@@ -41,6 +44,7 @@ export const WithHeader = () => {
       componentStyle="withHeader"
       backgroundDesktop="white"
       backgroundMobile="white"
+      componentReactView="DropdownMenuwithHeader"
     />
   );
 };
