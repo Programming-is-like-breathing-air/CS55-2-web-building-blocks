@@ -6,11 +6,13 @@ import { TABS_WPR_CLASS, TABS_CTNT_CLASS } from "./constants/strings";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import DesktopCardComponent from "../../public/components/card/normal/desktop/page"
 
+import AccordionButton from "../../public/components/accordion/button/react/page";
+import AccordionDemo from "../../public/components/accordion/normal/react/page";
+import AccordionPictureButton from "../../public/components/accordion/picture/react/page";
+import AccordionMix from "../../public/components/accordion/mix/react/page";
+import AccordionList from "../../public/components/accordion/list/react/page";
+import AccordionListAvatar from "../../public/components/accordion/listAvatar/react/page";
 
-import DesktopAccordionList from "../../public/components/accordion/list/desktop/page";
-import DesktopAccordionButton from "../../public/components/accordion/button/react/page";
-import MobileAccordionWithButton from "../../public/components/accordion/button/mobile/page";
-import MobileAccordionList from "../../public/components/accordion/list/mobile/page";
 
 // Rewrite Tooltip
 import NormalTagComponent from "../../public/components/tags/normal/desktop/page";
@@ -64,8 +66,13 @@ export default function Theme({
   const [nextjsMobile, setNextjsMobile] = React.useState<string | null>(null);
 
   const componentReactMap = {
-    DAWB: DesktopAccordionButton,
-    DAWL: DesktopAccordionList,
+    ADemo: AccordionDemo,
+    AWB: AccordionButton,
+    AWPB:AccordionPictureButton,
+    AM:AccordionMix,
+    AL:AccordionList,
+    ALA:AccordionListAvatar,
+
     DCC:DesktopCardComponent,
     DITC:DesktopInnovativeTagComponent,
     CheckboxDemo:CheckboxDemo,

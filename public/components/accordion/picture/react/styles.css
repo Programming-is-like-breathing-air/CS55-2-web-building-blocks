@@ -1,0 +1,45 @@
+.accordion {
+    /* 边框、圆角和阴影等 */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  .accordion-item {
+    margin: 16px;
+  }
+  
+  .accordion-trigger {
+    /* 样式模仿标题栏 */
+    background-color: #eee;
+    padding: 16px;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .accordion-image {
+    /* 图片样式，如边框和圆角 */
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 16px;
+  }
+  
+  .accordion-content p {
+    /* 文本内容的样式 */
+    padding: 16px;
+    border-top: 1px solid #ccc;
+  }
+  
+  .accordion-button {
+    /* 按钮的样式 */
+    background-color: rgb(249, 115, 22);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 16px 0;
+    display: inline-block; /* 让按钮不占据全宽 */
+  }
+  
