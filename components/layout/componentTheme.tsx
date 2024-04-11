@@ -20,8 +20,7 @@ import DesktopInnovativeTagComponent from "../../public/components/tags/innovati
 import NormalTagComponentMobile from "../../public/components/tags/normal/mobile/page";
 import InnovativeTagComponentMobile from "../../public/components/tags/innovative/mobile/page"
 
-
-
+import CheckboxDemo from "../../public/components/checkbox/normal/react/page";
 
 export default function Theme({
   componentName,
@@ -65,11 +64,13 @@ export default function Theme({
     DAWL: DesktopAccordionList,
     DCC:DesktopCardComponent,
     DITC:DesktopInnovativeTagComponent,
+    CheckboxDemo:CheckboxDemo,
 
   };
 
   const ReactComponent = componentReactMap[componentReactView];
   
+
 
   React.useEffect(() => {
     fetchHtmlContent();
@@ -159,12 +160,8 @@ export default function Theme({
           style={{ backgroundColor: backgroundDesktop }}
         >
           <div className={TABS_CTNT_CLASS}>
-
             {ReactComponent ? <ReactComponent /> : <div>Component not found</div>}
           </div>
-
-
-
         </TabsContent>
         <TabsContent
           value="mobile"
