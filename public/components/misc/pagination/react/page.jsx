@@ -10,27 +10,66 @@ import {
 } from "../../../../../styles/components/ui/pagination"
 
 export function PaginationDemo() {
-  // 假设有10页内容，这个值可能来自于API或其他数据源
-  const totalPages = 10;
-  // 使用useState来管理当前页码
+  const totalPages = 10; // 总页数
   const [currentPage, setCurrentPage] = useState(1);
+  const maxPageNumbersToShow = 5; // 同时显示的最大页码数
 
-  // 生成页码链接
-  const pageLinks = [];
-  for (let i = 1; i <= totalPages; i++) {
-    pageLinks.push(
-      <PaginationItem key={i}>
-        <PaginationLink href="#" onClick={(e) => handlePageChange(e, i)} isActive={currentPage === i}>
-          {i}
-        </PaginationLink>
-      </PaginationItem>
-    );
-  }
-
-  // 处理页码变更
+  // 处理页码点击
   const handlePageChange = (event, page) => {
-    event.preventDefault(); // 防止页面跳转
+    event.preventDefault();
     setCurrentPage(page);
+  };
+
+  // 生成页码链接，包括处理省略号逻辑
+  const generatePageLinks = () => {
+    let pages = [];
+    let startPage, endPage;
+    if (totalPages <= maxPageNumbersToShow) {
+      // 总页数小于等于要显示的页数，显示所有页码
+      startPage = 1;
+      endPage = totalPages;
+    } else {
+      // 需要显示省略号
+      if (currentPage <= 3) {
+        startPage = 1;
+        endPage = maxPageNumbersToShow;
+      } else if (currentPage + 2 >= totalPages) {
+        startPage = totalPages - 4;
+        endPage = totalPages;
+      } else {
+        startPage = currentPage - 2;
+        endPage = currentPage + 2;
+      }
+    }
+
+    for (let page = startPage; page <= endPage; page++) {
+      pages.push(
+        <PaginationItem key={page}>
+          <PaginationLink href="#" onClick={(e) => handlePageChange(e, page)} isActive={currentPage === page}>
+            {page}
+          </PaginationLink>
+        </PaginationItem>
+      );
+    }
+
+    // 如果开始页码大于1，添加省略号
+    if (startPage > 1) {
+      pages.unshift(
+        <PaginationItem key="startEllipsis">
+          <PaginationEllipsis />
+        </PaginationItem>
+      );
+    }
+    // 如果结束页码小于总页数，添加省略号
+    if (endPage < totalPages) {
+      pages.push(
+        <PaginationItem key="endEllipsis">
+          <PaginationEllipsis />
+        </PaginationItem>
+      );
+    }
+
+    return pages;
   };
 
   // 处理“下一页”点击
@@ -51,10 +90,7 @@ export function PaginationDemo() {
         <PaginationItem>
           <PaginationPrevious href="#" onClick={handlePrevious} />
         </PaginationItem>
-        {pageLinks}
-        <PaginationItem>
-          <PaginationEllipsis />
-        </PaginationItem>
+        {generatePageLinks()}
         <PaginationItem>
           <PaginationNext href="#" onClick={handleNext} />
         </PaginationItem>
