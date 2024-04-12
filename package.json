@@ -36,6 +36,8 @@
     "@radix-ui/react-slider": "^1.1.2",
     "@radix-ui/react-slot": "latest",
     "@radix-ui/react-tabs": "latest",
+    "@radix-ui/react-toast": "^1.1.5",
+    "@radix-ui/react-tooltip": "^1.0.7",
     "class-variance-authority": "latest",
     "clsx": "latest",
     "lucide-react": "^0.367.0",

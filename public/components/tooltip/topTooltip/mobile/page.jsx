@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 
-const TopTooltipComponent = () => {
+const TopTooltipComponentMobile = () => {
     const [isTooltipVisible, setIsTooltipVisible] = useState(false);
 
-    // 内联样式定义
     const styles = {
         tooltipContainer: {
             position: 'relative',
@@ -58,4 +57,4 @@ const TopTooltipComponent = () => {
     );
 };
 
-export default TopTooltipComponent;
+export default TopTooltipComponentMobile;

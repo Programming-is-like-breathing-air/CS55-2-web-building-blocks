@@ -13,7 +13,6 @@ import AccordionMix from "../../public/components/accordion/mix/react/page";
 import AccordionList from "../../public/components/accordion/list/react/page";
 import AccordionListAvatar from "../../public/components/accordion/listAvatar/react/page";
 
-
 // Rewrite Tooltip
 import NormalTagComponent from "../../public/components/tags/normal/desktop/page";
 import DesktopInnovativeTagComponent from "../../public/components/tags/innovative/desktop/page"
@@ -32,6 +31,11 @@ import SideNaviDemo from "../../public/components/navigation/sideNavi/react/page
 import TopNavigationBar from "../../public/components/navigation/topNavi/react/page"
 import BasicSlider from "../../public/components/slide/basic/react/page"
 import TableDemo from "../../public/components/table/normal/react/page"
+
+import { BasicTooltip } from "../../public/components/tooltip/basicTooltip/react/page";
+import { LeftTooltip } from "../../public/components/tooltip/leftTooltip/react/page";
+import { TopTooltip } from "../../public/components/tooltip/topTooltip/react/page";
+import { BottomTooltip } from "../../public/components/tooltip/bottomTooltip/react/page";
 
 
 export default function Theme({
@@ -53,6 +57,8 @@ export default function Theme({
   const DESKTOP_PATH = `/components/${componentName}/${componentStyle}/desktop/`;
   const MOBILE_PATH = `/components/${componentName}/${componentStyle}/mobile/`;
   const REACT_PATH = `/components/${componentName}/${componentStyle}/react/`;
+
+  const React_PATH = `/components/${componentName}/${componentStyle}/react/`;
 
   const desktopIframeRef = React.useRef(null);
   const mobileIframeRef = React.useRef(null);
@@ -92,6 +98,10 @@ export default function Theme({
     TopNavigationBar:TopNavigationBar,
     BasicSlider:BasicSlider,
     TableDemo:TableDemo,
+    BasicTooltip:BasicTooltip,
+    LeftTooltip:LeftTooltip,
+    TopTooltip:TopTooltip,
+    BottomTooltip:BottomTooltip,
   };
 
   const ReactComponent = componentReactMap[componentReactView];
@@ -132,8 +142,10 @@ export default function Theme({
   };
 
   const fetchNextjsContent = async () => {
+
     setNextjsDesktop(await fetchContent(`${REACT_PATH}page.tsx`)); // Adjust the path to the correct Next.js script or content path
     setNextjsMobile(await fetchContent(`${REACT_PATH}page.tsx`));
+
 
   };
 
@@ -199,6 +211,7 @@ export default function Theme({
             {/* {MobileComponent ? <MobileComponent /> : 'Loading mobile component...'} */}
 
           </div>
+
         </TabsContent>
       </div>
       <div className="my-5">
