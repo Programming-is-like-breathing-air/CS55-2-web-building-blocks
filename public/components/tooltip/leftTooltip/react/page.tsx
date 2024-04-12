@@ -1,18 +1,25 @@
-"use client"
-
 import React, { useState } from 'react';
-import { Button } from "../../../../../styles/components/ui/button"
+import { Button } from "../../../../../styles/components/ui/button";
 import {
   Tooltip,
   TooltipProvider,
   TooltipTrigger,
   LeftTooltipContent,
-} from "../../../../../styles/components/ui/tooltip"
- 
+} from "../../../../../styles/components/ui/tooltip";
+
 export function LeftTooltip() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOpenChange = (open) => {
+    setIsOpen(open);
+    if (open) {
+      console.log("Left Tooltip is now visible");
+    }
+  };
+
   return (
     <TooltipProvider>
-      <Tooltip>
+      <Tooltip onOpenChange={handleOpenChange}>
         <TooltipTrigger asChild>
           <Button variant="outline">Hover</Button>
         </TooltipTrigger>
@@ -21,7 +28,7 @@ export function LeftTooltip() {
         </LeftTooltipContent>
       </Tooltip>
     </TooltipProvider>
-  )
+  );
 }
 
 export default LeftTooltip;
