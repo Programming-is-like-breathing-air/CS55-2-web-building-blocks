@@ -13,6 +13,7 @@ import AccordionMix from "../../public/components/accordion/mix/react/page";
 import AccordionList from "../../public/components/accordion/list/react/page";
 import AccordionListAvatar from "../../public/components/accordion/listAvatar/react/page";
 
+
 // Rewrite Tooltip
 import NormalTagComponent from "../../public/components/tags/normal/desktop/page";
 import DesktopInnovativeTagComponent from "../../public/components/tags/innovative/desktop/page"
@@ -40,7 +41,7 @@ import ToastWithAction from "../../public/components/toast/action/react/page"
 import ToastWithNormal from "../../public/components/toast/normal/react/page"
 import ToastWithTitle from "../../public/components/toast/title/react/page"
 
-
+import CalendarDemo from "../../public/components/calendar/normal/react/page"
 
 export default function Theme({
   componentName,
@@ -109,6 +110,7 @@ export default function Theme({
     ToastWithAction:ToastWithAction,
     ToastWithNormal:ToastWithNormal,
     ToastWithTitle:ToastWithTitle,
+    CalendarDemo:CalendarDemo,
   };
 
   const ReactComponent = componentReactMap[componentReactView];
@@ -205,9 +207,11 @@ export default function Theme({
           className={TABS_WPR_CLASS}
           style={{ backgroundColor: backgroundDesktop }}
         >
+         
           <div className={TABS_CTNT_CLASS}>
             {ReactComponent ? <ReactComponent /> : <div>Component not found</div>}
           </div>
+          
         </TabsContent>
         <TabsContent
           value="mobile"
@@ -216,9 +220,10 @@ export default function Theme({
         >
           <div className={TABS_CTNT_CLASS}>
             {/* {MobileComponent ? <MobileComponent /> : 'Loading mobile component...'} */}
-
+            
           </div>
-
+          
+          <CalendarDemo/>
         </TabsContent>
       </div>
       <div className="my-5">
