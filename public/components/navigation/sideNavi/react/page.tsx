@@ -7,25 +7,35 @@ import {
 } from "../../../../../styles/components/ui/navigation-menu";
 
 export function SideNaviDemo() {
+  // Directly render the top navigation bar without state management
   return (
-    <NavigationMenu style={{ width: '250px', height: '100vh', position: 'fixed', top: 0, right: 0, padding: '20px 10px', boxSizing: 'border-box' }}>
-      <NavigationMenuList style={{ listStyle: 'none', padding: 0 }}>
-        {/* Each NavigationMenuItem is now arranged horizontally */}
+    <NavigationMenu style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '8px 0' }}>
+      <NavigationMenuList style={{ display: 'flex', flexDirection: 'column', listStyle: 'none', padding: 0, margin: 0 }}>
+        {/* Each NavigationMenuItem is now arranged vertically */}
         <NavigationMenuItem>
-          <NavigationMenuLink style={{ display: 'block', padding: '10px 0', textDecoration: 'none', color: 'black' }} href="https://www.sydney.edu.au/">Home</NavigationMenuLink>
+          <NavigationMenuLink style={{ display: 'block', padding: '8px 16px', textDecoration: 'none', color: 'black', backgroundColor: 'transparent', transition: 'background-color 0.3s' }} href="https://www.sydney.edu.au/"
+           onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#FFE0D9'}
+           onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'transparent'}>
+            Home
+          </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink style={{ display: 'block', padding: '10px 0', textDecoration: 'none', color: 'black' }} href="https://www.sydney.edu.au/about-us.html">About Us</NavigationMenuLink>
+          <NavigationMenuLink style={{ display: 'block', padding: '8px 16px', textDecoration: 'none', color: 'black', backgroundColor: 'transparent', transition: 'background-color 0.3s' }} href="https://www.sydney.edu.au/about-us.html"
+           onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#FFE0D9'}
+           onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'transparent'}>
+            About Us
+          </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink style={{ display: 'block', padding: '10px 0', textDecoration: 'none', color: 'black' }} href="https://www.sydney.edu.au/contact-us.html">Contact</NavigationMenuLink>
+          <NavigationMenuLink style={{ display: 'block', padding: '8px 16px', textDecoration: 'none', color: 'black', backgroundColor: 'transparent', transition: 'background-color 0.3s' }} href="https://www.sydney.edu.au/contact-us.html"
+           onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#FFE0D9'}
+           onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'transparent'}>
+            Contact
+          </NavigationMenuLink>
         </NavigationMenuItem>
-        {/* add NavigationMenuItem rule */}
       </NavigationMenuList>
     </NavigationMenu>
   );
 }
-
-
 
 export default SideNaviDemo;

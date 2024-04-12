@@ -13,28 +13,26 @@ import {
 export function NavigationMenuDemo() {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Toggle the display state of the drop-down menu
+  // Toggle the display state of the drop-down menu on touch
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
-  // Stop event bubbling to prevent the menu from closing when the drop-down content is clicked
+  // Stop event bubbling to prevent the menu from closing when the drop-down content is touched
   const handleDropdownClick = (e) => {
     e.stopPropagation();
   };
-//Dropdown menus will be at least 200px wide, if the content requires more space the width will automatically increase to accommodate the content
+
   return (
-    <NavigationMenu onClick={toggleDropdown}>
+    <NavigationMenu onTouchStart={toggleDropdown}>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Menu</NavigationMenuTrigger>
+          <NavigationMenuTrigger>UNI</NavigationMenuTrigger>
           {isOpen && (
-            <NavigationMenuContent onClick={handleDropdownClick} style={{ minWidth: '200px', width: 'auto', padding: '8px 0' }}>
-    
-              {/*link */}
-              <NavigationMenuLink style={{ display: 'block', padding: '8px 0', textDecoration: 'none', color: 'black' }} href="https://www.sydney.edu.au/">University</NavigationMenuLink>
-              <NavigationMenuLink style={{ display: 'block', padding: '8px 0', textDecoration: 'none', color: 'black' }} href="https://www.sydney.edu.au/">of</NavigationMenuLink>
-              <NavigationMenuLink style={{ display: 'block', padding: '8px 0', textDecoration: 'none', color: 'black' }} href="https://www.sydney.edu.au/">Sydney</NavigationMenuLink>
+            <NavigationMenuContent onTouchStart={handleDropdownClick} style={{ minWidth: '200px', width: 'auto', padding: '8px 0' }}>
+              <NavigationMenuLink style={{ display: 'block', padding: '8px 0', textDecoration: 'none', color: 'black' }} href="https://www.sydney.edu.au/">Home</NavigationMenuLink>
+              <NavigationMenuLink style={{ display: 'block', padding: '8px 0', textDecoration: 'none', color: 'black' }} href="https://www.sydney.edu.au/about-us.html">About Us</NavigationMenuLink>
+              <NavigationMenuLink style={{ display: 'block', padding: '8px 0', textDecoration: 'none', color: 'black' }} href="https://www.sydney.edu.au/contact-us.html">Contact</NavigationMenuLink>
             </NavigationMenuContent>
           )}
         </NavigationMenuItem>
@@ -43,5 +41,4 @@ export function NavigationMenuDemo() {
   );
 }
 
-//link to tsx
-  export default NavigationMenuDemo;
+export default NavigationMenuDemo;
