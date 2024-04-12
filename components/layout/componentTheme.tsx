@@ -5,9 +5,11 @@ import { Separator } from "@/components/ui/separator";
 import { TABS_WPR_CLASS, TABS_CTNT_CLASS } from "./constants/strings";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-import ToastWithNormal from "../../public/components/toast/normal/react/page"
-import ToastWithAction from "../../public/components/toast/action/react/page"
-import ToastWithTitle from "../../public/components/toast/title/react/page";
+
+import { BasicTooltip } from "../../public/components/tooltip/basicTooltip/react/page";
+import { LeftTooltip } from "../../public/components/tooltip/leftTooltip/react/page";
+import { TopTooltip } from "../../public/components/tooltip/topTooltip/react/page";
+import { BottomTooltip } from "../../public/components/tooltip/bottomTooltip/react/page";
 
 
 export default function Theme({
@@ -78,7 +80,7 @@ export default function Theme({
   };
 
   const fetchNextjsContent = async () => {
-    setNextjsDesktop(await fetchContent(`${React_PATH}page.jsx`)); // Adjust the path to the correct Next.js script or content path
+    setNextjsDesktop(await fetchContent(`${React_PATH}page.tsx`)); // Adjust the path to the correct Next.js script or content path
   };
 
   const getDesktopIframeBodySize = () => {
@@ -135,9 +137,10 @@ export default function Theme({
             />
           </div>
 
-          <div className={TABS_CTNT_CLASS}><ToastWithNormal /></div>
-          <div className={TABS_CTNT_CLASS}><ToastWithTitle /></div>
-          <div className={TABS_CTNT_CLASS}><ToastWithAction /></div>
+          <div className={TABS_CTNT_CLASS}><BasicTooltip /></div>
+          <div className={TABS_CTNT_CLASS}><LeftTooltip /></div>
+          <div className={TABS_CTNT_CLASS}><TopTooltip /></div>
+          <div className={TABS_CTNT_CLASS}><BottomTooltip /></div>
 
 
 

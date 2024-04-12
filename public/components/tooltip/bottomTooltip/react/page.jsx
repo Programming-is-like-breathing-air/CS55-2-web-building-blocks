@@ -1,25 +1,27 @@
+"use client"
+
 import React, { useState } from 'react';
 import { Button } from "../../../../../styles/components/ui/button"
 import {
   Tooltip,
-  TooltipContent,
+  BottomTooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "../../../../../styles/components/ui/tooltip"
  
-export function TooltipDemo() {
+export function BottomTooltip() {
   return (
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
           <Button variant="outline">Hover</Button>
         </TooltipTrigger>
-        <TooltipContent>
+        <BottomTooltipContent>
           <p>Add to library</p>
-        </TooltipContent>
+        </BottomTooltipContent>
       </Tooltip>
     </TooltipProvider>
   )
 }
 
-export default TooltipDemo;
+export default BottomTooltip;
