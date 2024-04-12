@@ -8,7 +8,7 @@ import { ToastAction } from "../../../../../styles/components/ui/toast/toast"
 
 export function ToastWithAction() {
     const { toast } = useToast()
-    const buttonText = "Show Toast";
+    const buttonText = "Show Toast with action";
 
     return (
         <>
