@@ -39,7 +39,7 @@ import { BottomTooltip } from "../../public/components/tooltip/bottomTooltip/rea
 import ToastWithAction from "../../public/components/toast/action/react/page"
 import ToastWithNormal from "../../public/components/toast/normal/react/page"
 import ToastWithTitle from "../../public/components/toast/title/react/page"
-
+import BreadcrumbDemo from "../../public/components/breadcrumbs/normal/react/page"
 
 
 export default function Theme({
@@ -88,6 +88,7 @@ export default function Theme({
     AM:AccordionMix,
     AL:AccordionList,
     ALA:AccordionListAvatar,
+    BreadcrumbDemo:BreadcrumbDemo,
 
     DCC:DesktopCardComponent,
     DITC:DesktopInnovativeTagComponent,

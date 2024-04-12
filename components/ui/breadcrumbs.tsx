@@ -19,6 +19,7 @@ export const NoBorder = () => {
       componentStyle="noborder"
       backgroundDesktop="#fff"
       backgroundMobile="#fff"
+      componentReactView="BreadcrumbDemo"
     />
   );
 }
