@@ -36,6 +36,8 @@ import { BasicTooltip } from "../../public/components/tooltip/basicTooltip/react
 import { LeftTooltip } from "../../public/components/tooltip/leftTooltip/react/page";
 import { TopTooltip } from "../../public/components/tooltip/topTooltip/react/page";
 import { BottomTooltip } from "../../public/components/tooltip/bottomTooltip/react/page";
+import { DisableTooltip } from "../../public/components/tooltip/disabledTooltip/react/page";
+import { AnimatedTooltip } from "../../public/components/tooltip/animatedTooltip/react/page";
 import ToastWithAction from "../../public/components/toast/action/react/page"
 import ToastWithNormal from "../../public/components/toast/normal/react/page"
 import ToastWithTitle from "../../public/components/toast/title/react/page"
@@ -106,6 +108,8 @@ export default function Theme({
     LeftTooltip:LeftTooltip,
     TopTooltip:TopTooltip,
     BottomTooltip:BottomTooltip,
+    DisableTooltip:DisableTooltip,
+    AnimatedTooltip:AnimatedTooltip,
     ToastWithAction:ToastWithAction,
     ToastWithNormal:ToastWithNormal,
     ToastWithTitle:ToastWithTitle,

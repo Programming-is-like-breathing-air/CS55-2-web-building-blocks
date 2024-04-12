@@ -18,9 +18,9 @@ export function BottomTooltip() {
 }
 
 export function AnimatedTooltip() {
-  return <Theme componentName="tooltip" componentStyle="animatedTooltip" />;
+  return <Theme componentName="tooltip" componentStyle="animatedTooltip" componentReactView="AnimatedTooltip"/>;
 }
 
 export function DisabledTooltip() {
-  return <Theme componentName="tooltip" componentStyle="disabledTooltip" />;
+  return <Theme componentName="tooltip" componentStyle="disabledTooltip" componentReactView="DisableTooltip"/>;
 }
