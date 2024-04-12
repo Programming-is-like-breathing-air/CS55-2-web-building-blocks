@@ -30,6 +30,9 @@ import PaginationDemo from "../../public/components/misc/pagination/react/page"
 import NavigationMenuDemo from "../../public/components/navigation/Dropdown/react/page"
 import SideNaviDemo from "../../public/components/navigation/sideNavi/react/page"
 import TopNavigationBar from "../../public/components/navigation/topNavi/react/page"
+import BasicSlider from "../../public/components/slide/basic/react/page"
+import TableDemo from "../../public/components/table/normal/react/page"
+
 
 export default function Theme({
   componentName,
@@ -87,6 +90,8 @@ export default function Theme({
     NavigationMenuDemo:NavigationMenuDemo,
     SideNaviDemo:SideNaviDemo,
     TopNavigationBar:TopNavigationBar,
+    BasicSlider:BasicSlider,
+    TableDemo:TableDemo,
   };
 
   const ReactComponent = componentReactMap[componentReactView];

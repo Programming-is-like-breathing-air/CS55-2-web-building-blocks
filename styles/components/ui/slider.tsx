@@ -29,7 +29,7 @@ const Slider = React.forwardRef<
           "relative flex touch-none select-none items-center",
           className
         )}
-        style={{ width: '50%' }} // 设置滑块的宽度为父容器的50%
+        style={{ width: '500px' }} // 设置滑块的宽度为父容器的50%
         onValueChange={handleValueChange} // 设置值变化事件处理函数
         onMouseUp={handleDragEnd} // 设置鼠标松开事件处理函数
         onTouchEnd={handleDragEnd} // 设置触摸结束事件处理函数

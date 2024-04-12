@@ -8,6 +8,7 @@ export const Slide = () => {
       componentStyle="basic"
       backgroundDesktop="white"
       backgroundMobile="white"
+      componentReactView="BasicSlider"
     />
   );
 };

@@ -33,6 +33,7 @@
     "@radix-ui/react-label": "latest",
     "@radix-ui/react-navigation-menu": "^1.1.4",
     "@radix-ui/react-separator": "latest",
+    "@radix-ui/react-slider": "^1.1.2",
     "@radix-ui/react-slot": "latest",
     "@radix-ui/react-tabs": "latest",
     "class-variance-authority": "latest",
@@ -44,6 +45,7 @@
     "prism-react-renderer": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-slider": "^2.0.6",
     "tailwind-merge": "latest",
     "tailwindcss-animate": "latest"
   },
