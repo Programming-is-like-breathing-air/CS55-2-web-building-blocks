@@ -6,7 +6,7 @@ import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
 
 export function ToastWithTitle() {
   const { toast } = useToast();
-  const buttonText = "Show Toast";
+  const buttonText = "Show Toast with title";
 
   return (
     <>

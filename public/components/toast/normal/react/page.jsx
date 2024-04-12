@@ -6,7 +6,7 @@ import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
 
 export function ToastWithNormal() {
   const { toast } = useToast();
-  const buttonText = "Show Toast";
+  const buttonText = "Normal Show Toast";
 
   return (
     <>
