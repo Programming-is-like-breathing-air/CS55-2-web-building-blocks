@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from "../../../../../styles/components/ui/button";
 import {
   Tooltip,
-  TopTooltipContent,
+  RightTooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "../../../../../styles/components/ui/tooltip";
@@ -23,9 +23,9 @@ export function BasicTooltip() {
         <TooltipTrigger asChild>
           <Button variant="outline">Hover</Button>
         </TooltipTrigger>
-        <TopTooltipContent>
+        <RightTooltipContent>
           <p>Add to library</p>
-        </TopTooltipContent>
+        </RightTooltipContent>
       </Tooltip>
     </TooltipProvider>
   );
