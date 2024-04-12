@@ -6,11 +6,12 @@ import { TABS_WPR_CLASS, TABS_CTNT_CLASS } from "./constants/strings";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import DesktopCardComponent from "../../public/components/card/normal/desktop/page"
 
-
-import DesktopAccordionList from "../../public/components/accordion/list/desktop/page";
-import DesktopAccordionButton from "../../public/components/accordion/button/react/page";
-import MobileAccordionWithButton from "../../public/components/accordion/button/mobile/page";
-import MobileAccordionList from "../../public/components/accordion/list/mobile/page";
+import AccordionButton from "../../public/components/accordion/button/react/page";
+import AccordionDemo from "../../public/components/accordion/normal/react/page";
+import AccordionPictureButton from "../../public/components/accordion/picture/react/page";
+import AccordionMix from "../../public/components/accordion/mix/react/page";
+import AccordionList from "../../public/components/accordion/list/react/page";
+import AccordionListAvatar from "../../public/components/accordion/listAvatar/react/page";
 
 // Rewrite Tooltip
 import NormalTagComponent from "../../public/components/tags/normal/desktop/page";
@@ -24,6 +25,22 @@ import DropdownMenuCheckboxes from "../../public/components/dropdown/basic/react
 import DropdownMenuwithDividers from "../../public/components/dropdown/withDividers/react/page"
 import DropdownMenuwithHeader from "../../public/components/dropdown/withHeader/react/page"
 import DropdownMenuwithIcon from "../../public/components/dropdown/withIcons/react/page"
+import PaginationDemo from "../../public/components/misc/pagination/react/page"
+import NavigationMenuDemo from "../../public/components/navigation/Dropdown/react/page"
+import SideNaviDemo from "../../public/components/navigation/sideNavi/react/page"
+import TopNavigationBar from "../../public/components/navigation/topNavi/react/page"
+import BasicSlider from "../../public/components/slide/basic/react/page"
+import TableDemo from "../../public/components/table/normal/react/page"
+
+import { BasicTooltip } from "../../public/components/tooltip/basicTooltip/react/page";
+import { LeftTooltip } from "../../public/components/tooltip/leftTooltip/react/page";
+import { TopTooltip } from "../../public/components/tooltip/topTooltip/react/page";
+import { BottomTooltip } from "../../public/components/tooltip/bottomTooltip/react/page";
+import ToastWithAction from "../../public/components/toast/action/react/page"
+import ToastWithNormal from "../../public/components/toast/normal/react/page"
+import ToastWithTitle from "../../public/components/toast/title/react/page"
+
+
 
 export default function Theme({
   componentName,
@@ -45,6 +62,8 @@ export default function Theme({
   const MOBILE_PATH = `/components/${componentName}/${componentStyle}/mobile/`;
   const REACT_PATH = `/components/${componentName}/${componentStyle}/react/`;
 
+  const React_PATH = `/components/${componentName}/${componentStyle}/react/`;
+
   const desktopIframeRef = React.useRef(null);
   const mobileIframeRef = React.useRef(null);
   const [widthDesktop, setWidthDesktop] = React.useState<number>(500);
@@ -63,8 +82,13 @@ export default function Theme({
   const [nextjsMobile, setNextjsMobile] = React.useState<string | null>(null);
 
   const componentReactMap = {
-    DAWB: DesktopAccordionButton,
-    DAWL: DesktopAccordionList,
+    ADemo: AccordionDemo,
+    AWB: AccordionButton,
+    AWPB:AccordionPictureButton,
+    AM:AccordionMix,
+    AL:AccordionList,
+    ALA:AccordionListAvatar,
+
     DCC:DesktopCardComponent,
     DITC:DesktopInnovativeTagComponent,
     CheckboxDemo:CheckboxDemo,
@@ -72,6 +96,19 @@ export default function Theme({
     DropdownMenuwithDividers:DropdownMenuwithDividers,
     DropdownMenuwithHeader:DropdownMenuwithHeader,
     DropdownMenuwithIcon:DropdownMenuwithIcon,
+    PaginationDemo:PaginationDemo,
+    NavigationMenuDemo:NavigationMenuDemo,
+    SideNaviDemo:SideNaviDemo,
+    TopNavigationBar:TopNavigationBar,
+    BasicSlider:BasicSlider,
+    TableDemo:TableDemo,
+    BasicTooltip:BasicTooltip,
+    LeftTooltip:LeftTooltip,
+    TopTooltip:TopTooltip,
+    BottomTooltip:BottomTooltip,
+    ToastWithAction:ToastWithAction,
+    ToastWithNormal:ToastWithNormal,
+    ToastWithTitle:ToastWithTitle,
   };
 
   const ReactComponent = componentReactMap[componentReactView];
@@ -112,8 +149,11 @@ export default function Theme({
   };
 
   const fetchNextjsContent = async () => {
+
     setNextjsDesktop(await fetchContent(`${REACT_PATH}page.tsx`)); // Adjust the path to the correct Next.js script or content path
     setNextjsMobile(await fetchContent(`${REACT_PATH}page.tsx`));
+
+
   };
 
   const getDesktopIframeBodySize = () => {
@@ -178,6 +218,7 @@ export default function Theme({
             {/* {MobileComponent ? <MobileComponent /> : 'Loading mobile component...'} */}
 
           </div>
+
         </TabsContent>
       </div>
       <div className="my-5">
