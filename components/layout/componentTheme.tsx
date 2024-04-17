@@ -43,6 +43,7 @@ import ToastWithAction from "../../public/components/toast/action/react/page"
 import ToastWithNormal from "../../public/components/toast/normal/react/page"
 import ToastWithTitle from "../../public/components/toast/title/react/page"
 import BreadcrumbDemo from "../../public/components/breadcrumbs/normal/react/page"
+import BreadcrumbBasic from "../../public/components/breadcrumbs/noborder/react/page"
 
 import CalendarDemo from "../../public/components/calendar/normal/react/page"
 
@@ -92,6 +93,7 @@ export default function Theme({
     AM:AccordionMix,
     AL:AccordionList,
     ALA:AccordionListAvatar,
+    BreadcrumbBasic:BreadcrumbBasic,
     BreadcrumbDemo:BreadcrumbDemo,
 
     DCC:DesktopCardComponent,

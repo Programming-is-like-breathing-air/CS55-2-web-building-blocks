@@ -14,7 +14,7 @@ import {
     DropdownMenuTrigger,
   } from "@/components/ui/dropdown-menu"
   
-  export function BreadcrumbDemo() {
+  export function BreadcrumbBasic() {
     return (
       <Breadcrumb>
         <BreadcrumbList>
@@ -37,7 +37,7 @@ import {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbLink href="/docs/components">Components</BreadcrumbLink>
+            <BreadcrumbLink href="/breadcrumbs">Components</BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
@@ -47,4 +47,4 @@ import {
       </Breadcrumb>
     )
   }
-  export default BreadcrumbDemo;
+  export default BreadcrumbBasic;

@@ -13,10 +13,10 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
   } from "@/components/ui/dropdown-menu"
-  
+
   export function BreadcrumbDemo() {
     return (
-      <Breadcrumb>
+      <Breadcrumb style={{ backgroundColor: 'rgb(255, 255, 255)', color: 'white', padding: '10px', borderRadius: '5px', cursor: 'pointer' }}>
         <BreadcrumbList>
           <BreadcrumbItem>
             <BreadcrumbLink href="/">Home</BreadcrumbLink>
@@ -37,7 +37,7 @@ import {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbLink href="/docs/components">Components</BreadcrumbLink>
+            <BreadcrumbLink href="/breadcrumbs">Components</BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
