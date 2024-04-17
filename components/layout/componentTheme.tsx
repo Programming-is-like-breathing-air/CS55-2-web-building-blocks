@@ -43,7 +43,13 @@ import ToastWithAction from "../../public/components/toast/action/react/page"
 import ToastWithNormal from "../../public/components/toast/normal/react/page"
 import ToastWithTitle from "../../public/components/toast/title/react/page"
 import BreadcrumbDemo from "../../public/components/breadcrumbs/normal/react/page"
+
 import TabsDemo from "../../public/components/tabs/normal/react/page"
+import CardWithNormal from "public/components/card/normal/react/page"
+import CardWithPicture from "public/components/card/withPic/react/page";
+import CardWithPicVer from "public/components/card/verticalWithPic/react/page";
+import LargeHeaderCard from "public/components/card/header/react/page";
+import EnquirySubmittedCard from "public/components/card/action/react/page";
 
 import CalendarDemo from "../../public/components/calendar/normal/react/page"
 
@@ -119,6 +125,11 @@ export default function Theme({
     ToastWithTitle:ToastWithTitle,
     CalendarDemo:CalendarDemo,
     TabsDemo:TabsDemo,
+    CardWithNormal:CardWithNormal,
+    CardWithPicture:CardWithPicture,
+    CardWithPicVer:CardWithPicVer,
+    LargeHeaderCard:LargeHeaderCard,
+    EnquirySubmittedCard:EnquirySubmittedCard,
   };
 
   const ReactComponent = componentReactMap[componentReactView];

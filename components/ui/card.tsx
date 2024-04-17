@@ -6,9 +6,9 @@ export const Card = () => {
     <Theme
       componentName="card"
       componentStyle="normal"
-      backgroundDesktop="#1d1d1d"
+      // backgroundDesktop="#1d1d1d"
       backgroundMobile="#1d1d1d"
-      componentDesktopView="DCC"
+      componentReactView="CardWithNormal"
     />
   );
 };
@@ -18,8 +18,9 @@ export const CardWithPic = () => {
     <Theme
       componentName="card"
       componentStyle="withPic"
-      backgroundDesktop="#1d1d1d"
+      // backgroundDesktop="#1d1d1d"
       backgroundMobile="#1d1d1d"
+      componentReactView="CardWithPicture"
     />
   );
 };
@@ -29,8 +30,9 @@ export const VerticalCardWithPic = () => {
     <Theme
       componentName="card"
       componentStyle="verticalWithPic"
-      backgroundDesktop="#1d1d1d"
+      // backgroundDesktop="#1d1d1d"
       backgroundMobile="#1d1d1d"
+      componentReactView="CardWithPicVer"
     />
   );
 };
@@ -40,8 +42,9 @@ export const CardHeader = () => {
     <Theme
       componentName="card"
       componentStyle="header"
-      backgroundDesktop="#1d1d1d"
+      // backgroundDesktop="#1d1d1d"
       backgroundMobile="#1d1d1d"
+      componentReactView="LargeHeaderCard"
     />
   );
 };
@@ -51,8 +54,9 @@ export const CardAction = () => {
     <Theme
       componentName="card"
       componentStyle="action"
-      backgroundDesktop="#1d1d1d"
+      // backgroundDesktop="#1d1d1d"
       backgroundMobile="#1d1d1d"
+      componentReactView="EnquirySubmittedCard"
     />
   );
 };
