@@ -3,7 +3,7 @@ import Theme from "../layout/componentTheme";
 import { E } from "nextra/dist/types-c8e621b7";
 
 export function Calendar() {
-  return <Theme componentName="calendar" componentStyle="normal" />;
+  return <Theme componentName="calendar" componentStyle="normal" componentReactView="CalendarDemo"/>;
 }
 
 export function DateRangePickerCalendar() {

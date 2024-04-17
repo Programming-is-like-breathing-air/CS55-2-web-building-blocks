@@ -2,25 +2,25 @@ import React from "react";
 import Theme from "../layout/componentTheme";
 
 export function BasicTooltip() {
-  return <Theme componentName="tooltip" componentStyle="basicTooltip" />;
+  return <Theme componentName="tooltip" componentStyle="basicTooltip" componentReactView="BasicTooltip"/>;
 }
 
 export function LeftTooltip() {
-  return <Theme componentName="tooltip" componentStyle="leftTooltip" />;
+  return <Theme componentName="tooltip" componentStyle="leftTooltip" componentReactView="LeftTooltip"/>;
 }
 
 export function TopTooltip() {
-  return <Theme componentName="tooltip" componentStyle="topTooltip" />;
+  return <Theme componentName="tooltip" componentStyle="topTooltip" componentReactView="TopTooltip"/>;
 }
 
 export function BottomTooltip() {
-  return <Theme componentName="tooltip" componentStyle="bottomTooltip" />;
+  return <Theme componentName="tooltip" componentStyle="bottomTooltip" componentReactView="BottomTooltip"/>;
 }
 
 export function AnimatedTooltip() {
-  return <Theme componentName="tooltip" componentStyle="animatedTooltip" />;
+  return <Theme componentName="tooltip" componentStyle="animatedTooltip" componentReactView="AnimatedTooltip"/>;
 }
 
 export function DisabledTooltip() {
-  return <Theme componentName="tooltip" componentStyle="disabledTooltip" />;
+  return <Theme componentName="tooltip" componentStyle="disabledTooltip" componentReactView="DisableTooltip"/>;
 }
