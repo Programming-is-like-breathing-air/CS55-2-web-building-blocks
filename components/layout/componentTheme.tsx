@@ -43,6 +43,7 @@ import ToastWithAction from "../../public/components/toast/action/react/page"
 import ToastWithNormal from "../../public/components/toast/normal/react/page"
 import ToastWithTitle from "../../public/components/toast/title/react/page"
 import BreadcrumbDemo from "../../public/components/breadcrumbs/normal/react/page"
+import TabsDemo from "../../public/components/tabs/normal/react/page"
 
 import CalendarDemo from "../../public/components/calendar/normal/react/page"
 
@@ -117,6 +118,7 @@ export default function Theme({
     ToastWithNormal:ToastWithNormal,
     ToastWithTitle:ToastWithTitle,
     CalendarDemo:CalendarDemo,
+    TabsDemo:TabsDemo,
   };
 
   const ReactComponent = componentReactMap[componentReactView];
