@@ -8,6 +8,7 @@ export const Alert = () => {
       componentStyle="basic"
       backgroundDesktop="white"
       backgroundMobile="white"
+      componentReactView="AlertDemo"
     />
   );
 };
