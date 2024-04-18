@@ -42,8 +42,12 @@ import { AnimatedTooltip } from "../../public/components/tooltip/animatedTooltip
 import ToastWithAction from "../../public/components/toast/action/react/page"
 import ToastWithNormal from "../../public/components/toast/normal/react/page"
 import ToastWithTitle from "../../public/components/toast/title/react/page"
+
 import BreadcrumbDemo from "../../public/components/breadcrumbs/normal/react/page"
 import BreadcrumbBasic from "../../public/components/breadcrumbs/noborder/react/page"
+
+import RadioGroupForm from "../../public/components/radioGroup/completedRadioGroup/react/page"
+
 
 import AlertDemo from "../../public/components/alerts/basic/react/page"
 import AlertAction from "../../public/components/alerts/animation/react/page"
@@ -142,6 +146,8 @@ export default function Theme({
     CalendarDemo:CalendarDemo,
     NormalTags:NormalTags,
     InnovativeTags:InnovativeTags,
+    RadioGroupForm:RadioGroupForm
+
   };
 
   const ReactComponent = componentReactMap[componentReactView];
