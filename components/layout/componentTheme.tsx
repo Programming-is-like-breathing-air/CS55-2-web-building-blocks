@@ -1,6 +1,6 @@
 import React from "react";
 import CodeTabs from "./components/codeTabs";
-import ReactCodeTabs from"./components/reactCodeTabs";
+import ReactCodeTabs from "./components/reactCodeTabs";
 import useIsMobile from "./helper/mobileDetect";
 import { Separator } from "@/components/ui/separator";
 import { TABS_WPR_CLASS, TABS_CTNT_CLASS } from "./constants/strings";
@@ -102,48 +102,48 @@ export default function Theme({
   const componentReactMap = {
     ADemo: AccordionDemo,
     AWB: AccordionButton,
-    AWPB:AccordionPictureButton,
-    AM:AccordionMix,
-    AL:AccordionList,
-    ALA:AccordionListAvatar,
-    BreadcrumbDemo:BreadcrumbDemo,
+    AWPB: AccordionPictureButton,
+    AM: AccordionMix,
+    AL: AccordionList,
+    ALA: AccordionListAvatar,
+    BreadcrumbDemo: BreadcrumbDemo,
 
-    AlertDemo:AlertDemo,
-    AlertAction:AlertAction,
-    AlertWithDescription:AlertWithDescription,
-    AlertWithList:AlertWithList,
-    AlertWithBorder:AlertWithBorder,
-    AlertWithDismiss:AlertWithDismiss,
-    AlertWithLink:AlertWithLink,
-    AlertWithAction:AlertWithAction,
+    AlertDemo: AlertDemo,
+    AlertAction: AlertAction,
+    AlertWithDescription: AlertWithDescription,
+    AlertWithList: AlertWithList,
+    AlertWithBorder: AlertWithBorder,
+    AlertWithDismiss: AlertWithDismiss,
+    AlertWithLink: AlertWithLink,
+    AlertWithAction: AlertWithAction,
 
-    DCC:DesktopCardComponent,
-    DITC:DesktopInnovativeTagComponent,
-    CheckboxDemo:CheckboxDemo,
-    DropdownMenuCheckboxes:DropdownMenuCheckboxes,
-    DropdownMenuwithDividers:DropdownMenuwithDividers,
-    DropdownMenuwithHeader:DropdownMenuwithHeader,
-    DropdownMenuwithIcon:DropdownMenuwithIcon,
-    PaginationDemo:PaginationDemo,
-    NavigationMenuDemo:NavigationMenuDemo,
-    SideNaviDemo:SideNaviDemo,
-    TopNavigationBar:TopNavigationBar,
-    BasicSlider:BasicSlider,
-    TableDemo:TableDemo,
-    BasicTooltip:BasicTooltip,
-    LeftTooltip:LeftTooltip,
-    TopTooltip:TopTooltip,
-    BottomTooltip:BottomTooltip,
-    DisableTooltip:DisableTooltip,
-    AnimatedTooltip:AnimatedTooltip,
-    ToastWithAction:ToastWithAction,
-    ToastWithNormal:ToastWithNormal,
-    ToastWithTitle:ToastWithTitle,
-    CalendarDemo:CalendarDemo,
+    DCC: DesktopCardComponent,
+    DITC: DesktopInnovativeTagComponent,
+    CheckboxDemo: CheckboxDemo,
+    DropdownMenuCheckboxes: DropdownMenuCheckboxes,
+    DropdownMenuwithDividers: DropdownMenuwithDividers,
+    DropdownMenuwithHeader: DropdownMenuwithHeader,
+    DropdownMenuwithIcon: DropdownMenuwithIcon,
+    PaginationDemo: PaginationDemo,
+    NavigationMenuDemo: NavigationMenuDemo,
+    SideNaviDemo: SideNaviDemo,
+    TopNavigationBar: TopNavigationBar,
+    BasicSlider: BasicSlider,
+    TableDemo: TableDemo,
+    BasicTooltip: BasicTooltip,
+    LeftTooltip: LeftTooltip,
+    TopTooltip: TopTooltip,
+    BottomTooltip: BottomTooltip,
+    DisableTooltip: DisableTooltip,
+    AnimatedTooltip: AnimatedTooltip,
+    ToastWithAction: ToastWithAction,
+    ToastWithNormal: ToastWithNormal,
+    ToastWithTitle: ToastWithTitle,
+    CalendarDemo: CalendarDemo,
   };
 
   const ReactComponent = componentReactMap[componentReactView];
-  
+
 
 
   React.useEffect(() => {
@@ -216,7 +216,7 @@ export default function Theme({
 
   const ToggleSwitch = ({ isOn, handleToggle }) => {
     return (
-      <div style={{ display: 'flex', alignItems: 'center' ,justifyContent: 'flex-end'}}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
         <span style={{ marginRight: '10px', color: isOn ? 'grey' : 'black' }}>HTML</span>
         <div
           onClick={handleToggle}
@@ -247,7 +247,7 @@ export default function Theme({
       </div>
     );
   };
-    
+
 
   // return (
   //   <div>
@@ -278,11 +278,11 @@ export default function Theme({
   //         className={TABS_WPR_CLASS}
   //         style={{ backgroundColor: backgroundDesktop }}
   //       >
-         
+
   //         <div className={TABS_CTNT_CLASS}>
   //           {ReactComponent ? <ReactComponent /> : <div>Component not found</div>}
   //         </div>
-          
+
   //       </TabsContent>
   //       <TabsContent
   //         value="mobile"
@@ -291,9 +291,9 @@ export default function Theme({
   //       >
   //         <div className={TABS_CTNT_CLASS}>
   //           {/* {MobileComponent ? <MobileComponent /> : 'Loading mobile component...'} */}
-            
+
   //         </div>
-          
+
   //         <CalendarDemo/>
   //       </TabsContent>
   //     </div>
@@ -327,11 +327,11 @@ export default function Theme({
   //         className={TABS_WPR_CLASS}
   //         style={{ backgroundColor: backgroundDesktop }}
   //       >
-         
+
   //         <div className={TABS_CTNT_CLASS}>
   //           {ReactComponent ? <ReactComponent /> : <div>Component not found</div>}
   //         </div>
-          
+
   //       </TabsContent>
   //       </div>
   //       <div className="my-5">
@@ -360,75 +360,23 @@ export default function Theme({
         handleToggle={() => setIsReact(!isReact)}
       />
       {isReact ? (
-         <div>
-                 <Tabs
-             defaultValue="desktop"
-             onValueChange={(e) => refreshIframes()}
-             className="mt-5 w-full"
-           >
-             <div className="w-full rounded-md border">
-               <TabsContent
-                 value="desktop"
-                 className={TABS_WPR_CLASS}
-                 style={{ backgroundColor: backgroundDesktop }}
-               >
-                
-                 <div className={TABS_CTNT_CLASS}>
-                   {ReactComponent ? <ReactComponent /> : <div>Component not found</div>}
-                 </div>
-                 
-               </TabsContent>
-               </div>
-               <div className="my-5">
-               <p className="text-2xl font-semibold text-foreground mb-2">
-                 Code Usage
-               </p>
-               <Separator />
-             </div>
-             <ReactCodeTabs
-       
-               reactjs={nextjsDesktop} // Add new attributes
-                // Add new attributes
-             />
-       
-               </Tabs>
-               </div>
-      ) : (
-        <Tabs
+        <div>
+          <Tabs
             defaultValue="desktop"
             onValueChange={(e) => refreshIframes()}
             className="mt-5 w-full"
           >
             <div className="w-full rounded-md border">
-              <div className="h-16 flex items-center justify-center border-b">
-                <TabsList className="grid grid-cols-2 w-72 md:w-96">
-                  {isMobile && <TabsTrigger value="mobile">Mobile</TabsTrigger>}
-                  <TabsTrigger value="desktop">Desktop</TabsTrigger>
-                  {!isMobile && <TabsTrigger value="mobile">Mobile</TabsTrigger>}
-                </TabsList>
-              </div>
               <TabsContent
                 value="desktop"
                 className={TABS_WPR_CLASS}
                 style={{ backgroundColor: backgroundDesktop }}
               >
-               
+
                 <div className={TABS_CTNT_CLASS}>
                   {ReactComponent ? <ReactComponent /> : <div>Component not found</div>}
                 </div>
-                
-              </TabsContent>
-              <TabsContent
-                value="mobile"
-                className={TABS_WPR_CLASS}
-                style={{ backgroundColor: backgroundMobile }}
-              >
-                <div className={TABS_CTNT_CLASS}>
-                  {/* {MobileComponent ? <MobileComponent /> : 'Loading mobile component...'} */}
-                  
-                </div>
-                
-                <CalendarDemo/>
+
               </TabsContent>
             </div>
             <div className="my-5">
@@ -437,15 +385,70 @@ export default function Theme({
               </p>
               <Separator />
             </div>
-            <CodeTabs
-              htmlDesktop={htmlDesktop}
-              cssDesktop={cssDesktop}
-              jsDesktop={jsDesktop}
-              htmlMobile={htmlMobile}
-              cssMobile={cssMobile}
-              jsMobile={jsMobile}
+            <ReactCodeTabs
+              reactjs={nextjsDesktop} // Add new attributes
             />
+
           </Tabs>
+        </div>
+      ) : (
+        <Tabs
+          defaultValue="desktop"
+          onValueChange={(e) => refreshIframes()}
+          className="mt-5 w-full"
+        >
+          <div className="w-full rounded-md border">
+            <div className="h-16 flex items-center justify-center border-b">
+              <TabsList className="grid grid-cols-2 w-72 md:w-96">
+                {isMobile && <TabsTrigger value="mobile">Mobile</TabsTrigger>}
+                <TabsTrigger value="desktop">Desktop</TabsTrigger>
+                {!isMobile && <TabsTrigger value="mobile">Mobile</TabsTrigger>}
+              </TabsList>
+            </div>
+            <TabsContent
+              value="desktop"
+              className={TABS_WPR_CLASS}
+              style={{ backgroundColor: backgroundDesktop }}
+            >
+
+              <div className={TABS_CTNT_CLASS}>
+                <iframe
+                  ref={desktopIframeRef}
+                  style={{ width: widthDesktop, height: heightDesktop }}
+                  src={`${DESKTOP_PATH}index.html`}
+                />
+              </div>
+
+            </TabsContent>
+            <TabsContent
+              value="mobile"
+              className={TABS_WPR_CLASS}
+              style={{ backgroundColor: backgroundMobile }}
+            >
+              <div className={TABS_CTNT_CLASS}>
+                <iframe
+                  ref={mobileIframeRef}
+                  style={{ width: "400px", height: heightMobile }}
+                  src={`${MOBILE_PATH}index.html`}
+                />
+              </div>
+            </TabsContent>
+          </div>
+          <div className="my-5">
+            <p className="text-2xl font-semibold text-foreground mb-2">
+              Code Usage
+            </p>
+            <Separator />
+          </div>
+          <CodeTabs
+            htmlDesktop={htmlDesktop}
+            cssDesktop={cssDesktop}
+            jsDesktop={jsDesktop}
+            htmlMobile={htmlMobile}
+            cssMobile={cssMobile}
+            jsMobile={jsMobile}
+          />
+        </Tabs>
       )}
     </div>
   );
