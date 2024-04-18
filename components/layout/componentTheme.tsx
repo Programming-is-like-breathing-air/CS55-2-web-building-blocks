@@ -71,6 +71,9 @@ import NoticeModal from "../../public/components/modal/notice/react/page"
 import LoginModal from "../../public/components/modal/login/react/page";
 
 
+import BasicSearch from "../../public/components/search/basicSearch/react/page"
+
+
 export default function Theme({
   componentName,
   componentStyle,
@@ -161,7 +164,7 @@ export default function Theme({
     NoticeModal:NoticeModal,
     SignupModal:SignupModal,
     LoginModal:LoginModal,
-
+    BasicSearch:BasicSearch,
   };
 
   const ReactComponent = componentReactMap[componentReactView];
