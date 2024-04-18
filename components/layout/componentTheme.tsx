@@ -41,6 +41,7 @@ import { AnimatedTooltip } from "../../public/components/tooltip/animatedTooltip
 import ToastWithAction from "../../public/components/toast/action/react/page"
 import ToastWithNormal from "../../public/components/toast/normal/react/page"
 import ToastWithTitle from "../../public/components/toast/title/react/page"
+import RadioGroupForm from "../../public/components/radioGroup/completedRadioGroup/react/page"
 
 
 
@@ -113,6 +114,8 @@ export default function Theme({
     ToastWithAction:ToastWithAction,
     ToastWithNormal:ToastWithNormal,
     ToastWithTitle:ToastWithTitle,
+
+    RadioGroupForm:RadioGroupForm
   };
 
   const ReactComponent = componentReactMap[componentReactView];
