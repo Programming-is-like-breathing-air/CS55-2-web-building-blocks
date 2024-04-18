@@ -45,6 +45,9 @@ import ToastWithTitle from "../../public/components/toast/title/react/page"
 import BreadcrumbDemo from "../../public/components/breadcrumbs/normal/react/page"
 
 import CalendarDemo from "../../public/components/calendar/normal/react/page"
+import NormalTags from "../../public/components/tags/normal/react/page"
+import InnovativeTags from "../../public/components/tags/innovative/react/page"
+
 
 export default function Theme({
   componentName,
@@ -117,6 +120,8 @@ export default function Theme({
     ToastWithNormal:ToastWithNormal,
     ToastWithTitle:ToastWithTitle,
     CalendarDemo:CalendarDemo,
+    NormalTags:NormalTags,
+    InnovativeTags:InnovativeTags,
   };
 
   const ReactComponent = componentReactMap[componentReactView];
