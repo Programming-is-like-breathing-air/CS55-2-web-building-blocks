@@ -32,6 +32,7 @@ export const WithSlideAnimation = () => {
       componentStyle="withSlide"
       backgroundDesktop="white"
       backgroundMobile="white"
+      componentReactView="CarouselCircle"
     />
   );
 };
@@ -43,6 +44,7 @@ export const WithAuto = () => {
       componentStyle="withAuto"
       backgroundDesktop="white"
       backgroundMobile="white"
+      componentReactView="CarouselAuto"
     />
   );
 };
@@ -54,6 +56,7 @@ export const WithPreview = () => {
       componentStyle="withPreview"
       backgroundDesktop="white"
       backgroundMobile="white"
+      componentReactView="CarouselPreview"
     />
   );
 };

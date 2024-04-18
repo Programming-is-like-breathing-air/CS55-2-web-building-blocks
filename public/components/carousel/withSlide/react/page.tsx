@@ -25,9 +25,9 @@ const quotes = [
   }
 ];
 
-export function QuotesCarousel() {
+export function CarouselCircle() {
   return (
-    <Carousel className="w-full max-w-xs">
+    <Carousel className="w-full max-w-xs" >  
       <CarouselContent>
         {quotes.map((quote, index) => (
           <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
@@ -49,4 +49,5 @@ export function QuotesCarousel() {
     </Carousel>
   );
 }
-export default QuotesCarousel;
+
+export default CarouselCircle;

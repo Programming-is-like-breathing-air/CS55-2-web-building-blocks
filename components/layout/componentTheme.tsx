@@ -33,6 +33,9 @@ import SideNaviDemo from "../../public/components/navigation/sideNavi/react/page
 import TopNavigationBar from "../../public/components/navigation/topNavi/react/page"
 import BasicCarousel from "../../public/components/carousel/basic/react/page"
 import CarouselImage from "../../public/components/carousel/withImages/react/page"
+import CarouselAuto from "../../public/components/carousel/withAuto/react/page"
+import CarouselCircle from "../../public/components/carousel/withSlide/react/page"
+import CarouselPreview from "public/components/carousel/withPreview/react/page";
 import TableDemo from "../../public/components/table/normal/react/page"
 import BasicSlider from "../../public/components/slider/basic/react/page"
 
@@ -75,6 +78,7 @@ import LoginModal from "../../public/components/modal/login/react/page";
 
 
 import BasicSearch from "../../public/components/search/basicSearch/react/page"
+import { Car } from "lucide-react";
 
 
 export default function Theme({
@@ -144,6 +148,9 @@ export default function Theme({
     DITC:DesktopInnovativeTagComponent,
     BasicCarousel:BasicCarousel,
     CarouselImage:CarouselImage,
+    CarouselAuto:CarouselAuto,
+    CarouselCircle:CarouselCircle,
+    CarouselPreview:CarouselPreview,
     CheckboxDemo:CheckboxDemo,
     DropdownMenuCheckboxes:DropdownMenuCheckboxes,
     DropdownMenuwithDividers:DropdownMenuwithDividers,
