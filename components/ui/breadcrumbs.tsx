@@ -8,6 +8,7 @@ export const WithBorder = () => {
       componentStyle="normal"
       backgroundDesktop="#1d1d1d"
       backgroundMobile="#1d1d1d"
+      componentReactView="BreadcrumbDemo"
     />
   );
 }
@@ -19,7 +20,7 @@ export const NoBorder = () => {
       componentStyle="noborder"
       backgroundDesktop="#fff"
       backgroundMobile="#fff"
-      componentReactView="BreadcrumbDemo"
+      componentReactView="BreadcrumbBasic"
     />
   );
 }

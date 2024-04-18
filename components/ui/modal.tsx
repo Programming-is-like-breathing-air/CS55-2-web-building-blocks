@@ -8,6 +8,7 @@ export const Modal = () => {
       componentStyle="normal"
       backgroundDesktop="#1d1d1d"
       backgroundMobile="#1d1d1d"
+      componentReactView="NormalModal"
     />
   );
 };
@@ -19,6 +20,7 @@ export const ModalWithPic = () => {
       componentStyle="withPic"
       backgroundDesktop="#1d1d1d"
       backgroundMobile="#1d1d1d"
+      componentReactView="PictureModal"
     />
   );
 };
@@ -30,6 +32,7 @@ export const Confirm = () => {
       componentStyle="confirm"
       backgroundDesktop="#1d1d1d"
       backgroundMobile="#1d1d1d"
+      componentReactView="ConfirmModal"
     />
   );
 };
@@ -41,6 +44,7 @@ export const Notice = () => {
       componentStyle="notice"
       backgroundDesktop="#1d1d1d"
       backgroundMobile="#1d1d1d"
+      componentReactView="NoticeModal"
     />
   );
 };
@@ -52,6 +56,7 @@ export const Login = () => {
       componentStyle="login"
       backgroundDesktop="#1d1d1d"
       backgroundMobile="#1d1d1d"
+      componentReactView="LoginModal"
     />
   );
 };
@@ -63,6 +68,7 @@ export const Signup = () => {
       componentStyle="signup"
       backgroundDesktop="#1d1d1d"
       backgroundMobile="#1d1d1d"
+      componentReactView="SignupModal"
     />
   );
 };

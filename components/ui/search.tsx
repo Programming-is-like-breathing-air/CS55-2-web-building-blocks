@@ -2,7 +2,7 @@ import React from "react";
 import Theme from "../layout/componentTheme";
 
 export function BasicSearch() {
-  return <Theme componentName="search" componentStyle="basicSearch" />;
+  return <Theme componentName="search" componentStyle="basicSearch" componentReactView="BasicSearch"/>;
 }
 
 export function KeyboardShortcut() {
