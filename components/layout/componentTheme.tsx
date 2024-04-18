@@ -97,6 +97,8 @@ export default function Theme({
 
     DCC:DesktopCardComponent,
     DITC:DesktopInnovativeTagComponent,
+    BasicCarousel:BasicCarousel,
+    CarouselImage:CarouselImage,
     CheckboxDemo:CheckboxDemo,
     DropdownMenuCheckboxes:DropdownMenuCheckboxes,
     DropdownMenuwithDividers:DropdownMenuwithDividers,
