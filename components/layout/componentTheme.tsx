@@ -46,6 +46,14 @@ import BreadcrumbDemo from "../../public/components/breadcrumbs/normal/react/pag
 
 import CalendarDemo from "../../public/components/calendar/normal/react/page"
 
+import NormalModal from "../../public/components/modal/normal/react/page"
+import PictureModal from "../../public/components/modal/withPic/react/page"
+import ConfirmModal from "../../public/components/modal/confirm/react/page"
+import SignupModal from "../../public/components/modal/signup/react/page";
+import NoticeModal from "../../public/components/modal/notice/react/page"
+import LoginModal from "../../public/components/modal/login/react/page";
+
+
 export default function Theme({
   componentName,
   componentStyle,
@@ -117,6 +125,13 @@ export default function Theme({
     ToastWithNormal:ToastWithNormal,
     ToastWithTitle:ToastWithTitle,
     CalendarDemo:CalendarDemo,
+    NormalModal:NormalModal,
+    PictureModal:PictureModal,
+    ConfirmModal:ConfirmModal,
+    NoticeModal:NoticeModal,
+    SignupModal:SignupModal,
+    LoginModal:LoginModal,
+
   };
 
   const ReactComponent = componentReactMap[componentReactView];
