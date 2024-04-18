@@ -1,5 +1,6 @@
 import React from "react";
 import CodeTabs from "./components/codeTabs";
+import ReactCodeTabs from"./components/reactCodeTabs";
 import useIsMobile from "./helper/mobileDetect";
 import { Separator } from "@/components/ui/separator";
 import { TABS_WPR_CLASS, TABS_CTNT_CLASS } from "./constants/strings";
@@ -93,6 +94,9 @@ export default function Theme({
   const [jsMobile, setJsMobile] = React.useState<string | null>(null);
   const [nextjsDesktop, setNextjsDesktop] = React.useState<string | null>(null);
   const [nextjsMobile, setNextjsMobile] = React.useState<string | null>(null);
+  const [mainTab, setMainTab] = React.useState('html'); // HTML 或 React
+  const [subTab, setSubTab] = React.useState('desktop'); // Desktop 或 Mobile
+
 
   const componentReactMap = {
     ADemo: AccordionDemo,
@@ -213,6 +217,16 @@ export default function Theme({
     
 
   return (
+    <div>
+      <Tabs className="main-tabs">
+        <TabsList>
+          <TabsTrigger onClick={() => setMainTab('html')}>HTML</TabsTrigger>
+          <TabsTrigger onClick={() => setMainTab('react')}>React</TabsTrigger>
+        </TabsList>
+      </Tabs>
+
+      {mainTab === 'html' && (
+        // 只有当主选项卡为HTML时才显示子选项卡
     <Tabs
       defaultValue="desktop"
       onValueChange={(e) => refreshIframes()}
@@ -260,12 +274,48 @@ export default function Theme({
         htmlDesktop={htmlDesktop}
         cssDesktop={cssDesktop}
         jsDesktop={jsDesktop}
-        nextjsDesktop={nextjsDesktop} // Add new attributes
         htmlMobile={htmlMobile}
         cssMobile={cssMobile}
         jsMobile={jsMobile}
-        nextjsMobile={nextjsMobile} // Add new attributes
       />
     </Tabs>
+     )}
+      {mainTab === 'react' && (
+        // 当主选项卡为React时，显示React组件
+        <div>
+          <Tabs
+      defaultValue="desktop"
+      onValueChange={(e) => refreshIframes()}
+      className="mt-5 w-full"
+    >
+      <div className="w-full rounded-md border">
+        <TabsContent
+          value="desktop"
+          className={TABS_WPR_CLASS}
+          style={{ backgroundColor: backgroundDesktop }}
+        >
+         
+          <div className={TABS_CTNT_CLASS}>
+            {ReactComponent ? <ReactComponent /> : <div>Component not found</div>}
+          </div>
+          
+        </TabsContent>
+        </div>
+        <div className="my-5">
+        <p className="text-2xl font-semibold text-foreground mb-2">
+          Code Usage
+        </p>
+        <Separator />
+      </div>
+      <ReactCodeTabs
+
+        reactjs={nextjsDesktop} // Add new attributes
+         // Add new attributes
+      />
+
+        </Tabs>
+        </div>
+      )}
+    </div>
   );
 }

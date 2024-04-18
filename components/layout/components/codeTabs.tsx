@@ -8,20 +8,16 @@ const CodeTabs = ({
   htmlDesktop,
   cssDesktop,
   jsDesktop,
-  nextjsDesktop, // Added Next.js desktop version code
   htmlMobile,
   cssMobile,
   jsMobile,
-  nextjsMobile, // Added Next.js mobile version code
 }: {
   htmlDesktop: string | null;
   cssDesktop: string | null;
   jsDesktop: string | null;
-  nextjsDesktop: string | null; // New attribute type
   htmlMobile: string | null;
   cssMobile: string | null;
   jsMobile: string | null;
-  nextjsMobile: string | null; // New attribute type
 }) => {
   return (
     <>
@@ -45,12 +41,6 @@ const CodeTabs = ({
                   JavaScript
                 </TabsTrigger>
               )}
-              {/* Add React.js trigger */}
-              {nextjsDesktop && (
-                <TabsTrigger value="nextjs" className={CODE_TAB_CLASS}>
-                  React.js
-                </TabsTrigger>
-              )}
             </TabsList>
           </div>
           {/* Existing content area */}
@@ -70,11 +60,6 @@ const CodeTabs = ({
             </TabsContent>
           )}
           {/* Add  content area */}
-          {nextjsDesktop && (
-            <TabsContent value="nextjs">
-              <CodeBlock code={nextjsDesktop} language="javascript" />
-            </TabsContent>
-          )}
         </Tabs>
       </TabsContent>
       <TabsContent value="mobile" className={TABS_CTNT_CLASS}>
@@ -97,11 +82,6 @@ const CodeTabs = ({
                 </TabsTrigger>
               )}
               {/* Add React.js trigger */}
-              {nextjsDesktop && (
-                <TabsTrigger value="nextjs" className={CODE_TAB_CLASS}>
-                  React.js
-                </TabsTrigger>
-              )}
             </TabsList>
           </div>
           {htmlMobile && (
@@ -120,11 +100,6 @@ const CodeTabs = ({
             </TabsContent>
           )}
           {/* Add React.js content area */}
-          {nextjsDesktop && (
-            <TabsContent value="nextjs">
-              <CodeBlock code={nextjsDesktop} language="javascript" />
-            </TabsContent>
-          )}
         </Tabs>
       </TabsContent>
     </>
