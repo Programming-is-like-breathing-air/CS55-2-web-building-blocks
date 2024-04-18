@@ -46,6 +46,9 @@ import BreadcrumbDemo from "../../public/components/breadcrumbs/normal/react/pag
 
 import CalendarDemo from "../../public/components/calendar/normal/react/page"
 
+import BasicSearch from "../../public/components/search/basicSearch/react/page"
+
+
 export default function Theme({
   componentName,
   componentStyle,
@@ -117,6 +120,7 @@ export default function Theme({
     ToastWithNormal:ToastWithNormal,
     ToastWithTitle:ToastWithTitle,
     CalendarDemo:CalendarDemo,
+    BasicSearch:BasicSearch,
   };
 
   const ReactComponent = componentReactMap[componentReactView];
