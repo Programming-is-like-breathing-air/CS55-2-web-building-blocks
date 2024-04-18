@@ -25,6 +25,7 @@ import {
           <AccordionTrigger>Your responsibilities and privacy</AccordionTrigger>
           <AccordionContent>
           Your enrolment comes with certain conditions so it's important to understand them. You should also familiarise yourself with our privacy policy regarding the personal information you supply during enrolment.
+          <br></br>
           <button style={{ backgroundColor: 'rgb(249, 115, 22)', color: 'white', padding: '10px', borderRadius: '5px', cursor: 'pointer' }} onClick={windowClick('For more details, visit our website.')}>Learn More</button>
           </AccordionContent>
         </AccordionItem>

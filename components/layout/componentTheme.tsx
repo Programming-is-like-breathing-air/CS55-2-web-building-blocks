@@ -13,6 +13,7 @@ import AccordionMix from "../../public/components/accordion/mix/react/page";
 import AccordionList from "../../public/components/accordion/list/react/page";
 import AccordionListAvatar from "../../public/components/accordion/listAvatar/react/page";
 
+
 // Rewrite Tooltip
 import NormalTagComponent from "../../public/components/tags/normal/desktop/page";
 import DesktopInnovativeTagComponent from "../../public/components/tags/innovative/desktop/page"
@@ -38,12 +39,14 @@ import { BasicTooltip } from "../../public/components/tooltip/basicTooltip/react
 import { LeftTooltip } from "../../public/components/tooltip/leftTooltip/react/page";
 import { TopTooltip } from "../../public/components/tooltip/topTooltip/react/page";
 import { BottomTooltip } from "../../public/components/tooltip/bottomTooltip/react/page";
+import { DisableTooltip } from "../../public/components/tooltip/disabledTooltip/react/page";
+import { AnimatedTooltip } from "../../public/components/tooltip/animatedTooltip/react/page";
 import ToastWithAction from "../../public/components/toast/action/react/page"
 import ToastWithNormal from "../../public/components/toast/normal/react/page"
 import ToastWithTitle from "../../public/components/toast/title/react/page"
+import BreadcrumbDemo from "../../public/components/breadcrumbs/normal/react/page"
 
-
-
+import CalendarDemo from "../../public/components/calendar/normal/react/page"
 export default function Theme({
   componentName,
   componentStyle,
@@ -58,15 +61,16 @@ export default function Theme({
   componentReactView: string;
 
 }) {
+
   const isMobile = useIsMobile();
   const DESKTOP_PATH = `/components/${componentName}/${componentStyle}/desktop/`;
   const MOBILE_PATH = `/components/${componentName}/${componentStyle}/mobile/`;
   const REACT_PATH = `/components/${componentName}/${componentStyle}/react/`;
 
+  const React_PATH = `/components/${componentName}/${componentStyle}/react/`;
+
   const desktopIframeRef = React.useRef(null);
   const mobileIframeRef = React.useRef(null);
-  const [currentView, setCurrentView] = React.useState('html'); // store state
-
   const [widthDesktop, setWidthDesktop] = React.useState<number>(500);
   const [heightDesktop, setHeightDesktop] = React.useState<number>(250);
   const [heightMobile, setHeightMobile] = React.useState<number>(250);
@@ -89,12 +93,11 @@ export default function Theme({
     AM:AccordionMix,
     AL:AccordionList,
     ALA:AccordionListAvatar,
+    BreadcrumbDemo:BreadcrumbDemo,
 
     DCC:DesktopCardComponent,
     DITC:DesktopInnovativeTagComponent,
     CheckboxDemo:CheckboxDemo,
-    BasicCarousel:BasicCarousel,
-    CarouselImage:CarouselImage,
     DropdownMenuCheckboxes:DropdownMenuCheckboxes,
     DropdownMenuwithDividers:DropdownMenuwithDividers,
     DropdownMenuwithHeader:DropdownMenuwithHeader,
@@ -109,13 +112,18 @@ export default function Theme({
     LeftTooltip:LeftTooltip,
     TopTooltip:TopTooltip,
     BottomTooltip:BottomTooltip,
+    DisableTooltip:DisableTooltip,
+    AnimatedTooltip:AnimatedTooltip,
     ToastWithAction:ToastWithAction,
     ToastWithNormal:ToastWithNormal,
     ToastWithTitle:ToastWithTitle,
+    CalendarDemo:CalendarDemo,
   };
 
   const ReactComponent = componentReactMap[componentReactView];
   
+
+
   React.useEffect(() => {
     fetchHtmlContent();
     fetchCssContent();
@@ -131,16 +139,6 @@ export default function Theme({
     if (mobileIframeRef.current)
       mobileIframeRef.current.onload = getMobileIframeBodySize;
   }, [refresh]);
-
-
-  const desktopiframeSrc = currentView === 'reactjs'
-    ? `${REACT_PATH}page.tsx` // it may actually need to be adjusted! ! ! ! Front-end code page
-    // ? `../../public/components/accordion/button/desktop/React` 
-    : `${DESKTOP_PATH}index.html`; // Display HTML content by default
-
-  const mobileiframeSrc = currentView === 'reactjs'
-    ? `${MOBILE_PATH}React.jsx` 
-    : `${MOBILE_PATH}index.html`; 
 
   const refreshIframes = () => setRefresh((prev) => prev + 1);
 
@@ -194,27 +192,7 @@ export default function Theme({
   const fetchContent = async (path: string) =>
     await fetch(path).then((res) => (res.status === 200 ? res.text() : null));
 
-  // State is used to store dynamically loaded components
-  const [DynamicComponent, setDynamicComponent] = useState<React.ElementType | null>(null);
-
-  const loadComponent = async () => {
-    // set path
-    const React_PATH = `/components/${componentName}/${componentStyle}/react/`;
-    const dynamicPath = `${React_PATH}page.tsx`;
-    // const dynamicPath = `../../public/components/slide/basic/react/page`;
-    // print path
-    console.log("Trying to load component from:", dynamicPath);
     
-    // try import
-    try {
-        const component = await import(dynamicPath);
-        console.log("Component loaded successfully!");
-        setDynamicComponent(() => component.default);
-    } catch (error) {
-        // field print
-        console.error("Failed to load the component:", error);
-    }
-  }
     
 
   return (
@@ -236,20 +214,10 @@ export default function Theme({
           className={TABS_WPR_CLASS}
           style={{ backgroundColor: backgroundDesktop }}
         >
+         
           <div className={TABS_CTNT_CLASS}>
             {ReactComponent ? <ReactComponent /> : <div>Component not found</div>}
           </div>
-          <div className={TABS_CTNT_CLASS}>
-            <button onClick={loadComponent}>Load MyComponent</button>
-            {DynamicComponent && <DynamicComponent />}
-          </div>
-
-          <p>Current View: {currentView}</p>
-
-          {/* You can add buttons or other interactive elements to update currentView */}
-          <button onClick={() => setCurrentView('html')}>Change to html</button>
-          <button onClick={() => setCurrentView('reactjs')}>Change to React</button>
-
         </TabsContent>
         <TabsContent
           value="mobile"
@@ -258,9 +226,10 @@ export default function Theme({
         >
           <div className={TABS_CTNT_CLASS}>
             {/* {MobileComponent ? <MobileComponent /> : 'Loading mobile component...'} */}
-
+            
           </div>
-
+          
+          <CalendarDemo/>
         </TabsContent>
       </div>
       <div className="my-5">
