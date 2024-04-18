@@ -96,6 +96,7 @@ export default function Theme({
   const [nextjsMobile, setNextjsMobile] = React.useState<string | null>(null);
   const [mainTab, setMainTab] = React.useState('html'); // HTML 或 React
   const [subTab, setSubTab] = React.useState('desktop'); // Desktop 或 Mobile
+  const [isReact, setIsReact] = React.useState(false);
 
 
   const componentReactMap = {
@@ -213,108 +214,238 @@ export default function Theme({
   const fetchContent = async (path: string) =>
     await fetch(path).then((res) => (res.status === 200 ? res.text() : null));
 
+  const ToggleSwitch = ({ isOn, handleToggle }) => {
+    return (
+      <div style={{ display: 'flex', alignItems: 'center' ,justifyContent: 'flex-end'}}>
+        <span style={{ marginRight: '10px', color: isOn ? 'grey' : 'black' }}>HTML</span>
+        <div
+          onClick={handleToggle}
+          style={{
+            cursor: 'pointer',
+            background: isOn ? '#4CD964' : '#ccc',
+            borderRadius: '20px',
+            position: 'relative',
+            width: '50px',
+            height: '25px',
+            transition: 'background-color 0.2s',
+          }}
+        >
+          <div
+            style={{
+              background: 'white',
+              borderRadius: '50%',
+              position: 'absolute',
+              top: '2.5px',
+              left: isOn ? '25px' : '2.5px',
+              width: '20px',
+              height: '20px',
+              transition: 'left 0.2s',
+            }}
+          />
+        </div>
+        <span style={{ marginLeft: '10px', color: isOn ? 'black' : 'grey' }}>React</span>
+      </div>
+    );
+  };
     
-    
+
+  // return (
+  //   <div>
+  //     <Tabs className="main-tabs">
+  //       <TabsList>
+  //         <TabsTrigger onClick={() => setMainTab('html')}>HTML</TabsTrigger>
+  //         <TabsTrigger onClick={() => setMainTab('react')}>React</TabsTrigger>
+  //       </TabsList>
+  //     </Tabs>
+
+  //     {mainTab === 'html' && (
+  //       // 只有当主选项卡为HTML时才显示子选项卡
+  //   <Tabs
+  //     defaultValue="desktop"
+  //     onValueChange={(e) => refreshIframes()}
+  //     className="mt-5 w-full"
+  //   >
+  //     <div className="w-full rounded-md border">
+  //       <div className="h-16 flex items-center justify-center border-b">
+  //         <TabsList className="grid grid-cols-2 w-72 md:w-96">
+  //           {isMobile && <TabsTrigger value="mobile">Mobile</TabsTrigger>}
+  //           <TabsTrigger value="desktop">Desktop</TabsTrigger>
+  //           {!isMobile && <TabsTrigger value="mobile">Mobile</TabsTrigger>}
+  //         </TabsList>
+  //       </div>
+  //       <TabsContent
+  //         value="desktop"
+  //         className={TABS_WPR_CLASS}
+  //         style={{ backgroundColor: backgroundDesktop }}
+  //       >
+         
+  //         <div className={TABS_CTNT_CLASS}>
+  //           {ReactComponent ? <ReactComponent /> : <div>Component not found</div>}
+  //         </div>
+          
+  //       </TabsContent>
+  //       <TabsContent
+  //         value="mobile"
+  //         className={TABS_WPR_CLASS}
+  //         style={{ backgroundColor: backgroundMobile }}
+  //       >
+  //         <div className={TABS_CTNT_CLASS}>
+  //           {/* {MobileComponent ? <MobileComponent /> : 'Loading mobile component...'} */}
+            
+  //         </div>
+          
+  //         <CalendarDemo/>
+  //       </TabsContent>
+  //     </div>
+  //     <div className="my-5">
+  //       <p className="text-2xl font-semibold text-foreground mb-2">
+  //         Code Usage
+  //       </p>
+  //       <Separator />
+  //     </div>
+  //     <CodeTabs
+  //       htmlDesktop={htmlDesktop}
+  //       cssDesktop={cssDesktop}
+  //       jsDesktop={jsDesktop}
+  //       htmlMobile={htmlMobile}
+  //       cssMobile={cssMobile}
+  //       jsMobile={jsMobile}
+  //     />
+  //   </Tabs>
+  //    )}
+  //     {mainTab === 'react' && (
+  //       // 当主选项卡为React时，显示React组件
+  //       <div>
+  //         <Tabs
+  //     defaultValue="desktop"
+  //     onValueChange={(e) => refreshIframes()}
+  //     className="mt-5 w-full"
+  //   >
+  //     <div className="w-full rounded-md border">
+  //       <TabsContent
+  //         value="desktop"
+  //         className={TABS_WPR_CLASS}
+  //         style={{ backgroundColor: backgroundDesktop }}
+  //       >
+         
+  //         <div className={TABS_CTNT_CLASS}>
+  //           {ReactComponent ? <ReactComponent /> : <div>Component not found</div>}
+  //         </div>
+          
+  //       </TabsContent>
+  //       </div>
+  //       <div className="my-5">
+  //       <p className="text-2xl font-semibold text-foreground mb-2">
+  //         Code Usage
+  //       </p>
+  //       <Separator />
+  //     </div>
+  //     <ReactCodeTabs
+
+  //       reactjs={nextjsDesktop} // Add new attributes
+  //        // Add new attributes
+  //     />
+
+  //       </Tabs>
+  //       </div>
+  //     )}
+  //   </div>
+  // );
+
 
   return (
-    <div>
-      <Tabs className="main-tabs">
-        <TabsList>
-          <TabsTrigger onClick={() => setMainTab('html')}>HTML</TabsTrigger>
-          <TabsTrigger onClick={() => setMainTab('react')}>React</TabsTrigger>
-        </TabsList>
-      </Tabs>
-
-      {mainTab === 'html' && (
-        // 只有当主选项卡为HTML时才显示子选项卡
-    <Tabs
-      defaultValue="desktop"
-      onValueChange={(e) => refreshIframes()}
-      className="mt-5 w-full"
-    >
-      <div className="w-full rounded-md border">
-        <div className="h-16 flex items-center justify-center border-b">
-          <TabsList className="grid grid-cols-2 w-72 md:w-96">
-            {isMobile && <TabsTrigger value="mobile">Mobile</TabsTrigger>}
-            <TabsTrigger value="desktop">Desktop</TabsTrigger>
-            {!isMobile && <TabsTrigger value="mobile">Mobile</TabsTrigger>}
-          </TabsList>
-        </div>
-        <TabsContent
-          value="desktop"
-          className={TABS_WPR_CLASS}
-          style={{ backgroundColor: backgroundDesktop }}
-        >
-         
-          <div className={TABS_CTNT_CLASS}>
-            {ReactComponent ? <ReactComponent /> : <div>Component not found</div>}
-          </div>
-          
-        </TabsContent>
-        <TabsContent
-          value="mobile"
-          className={TABS_WPR_CLASS}
-          style={{ backgroundColor: backgroundMobile }}
-        >
-          <div className={TABS_CTNT_CLASS}>
-            {/* {MobileComponent ? <MobileComponent /> : 'Loading mobile component...'} */}
-            
-          </div>
-          
-          <CalendarDemo/>
-        </TabsContent>
-      </div>
-      <div className="my-5">
-        <p className="text-2xl font-semibold text-foreground mb-2">
-          Code Usage
-        </p>
-        <Separator />
-      </div>
-      <CodeTabs
-        htmlDesktop={htmlDesktop}
-        cssDesktop={cssDesktop}
-        jsDesktop={jsDesktop}
-        htmlMobile={htmlMobile}
-        cssMobile={cssMobile}
-        jsMobile={jsMobile}
+    <div style={{ padding: '20px' }}>
+      <ToggleSwitch
+        isOn={isReact}
+        handleToggle={() => setIsReact(!isReact)}
       />
-    </Tabs>
-     )}
-      {mainTab === 'react' && (
-        // 当主选项卡为React时，显示React组件
-        <div>
-          <Tabs
-      defaultValue="desktop"
-      onValueChange={(e) => refreshIframes()}
-      className="mt-5 w-full"
-    >
-      <div className="w-full rounded-md border">
-        <TabsContent
-          value="desktop"
-          className={TABS_WPR_CLASS}
-          style={{ backgroundColor: backgroundDesktop }}
-        >
-         
-          <div className={TABS_CTNT_CLASS}>
-            {ReactComponent ? <ReactComponent /> : <div>Component not found</div>}
-          </div>
-          
-        </TabsContent>
-        </div>
-        <div className="my-5">
-        <p className="text-2xl font-semibold text-foreground mb-2">
-          Code Usage
-        </p>
-        <Separator />
-      </div>
-      <ReactCodeTabs
-
-        reactjs={nextjsDesktop} // Add new attributes
-         // Add new attributes
-      />
-
-        </Tabs>
-        </div>
+      {isReact ? (
+         <div>
+                 <Tabs
+             defaultValue="desktop"
+             onValueChange={(e) => refreshIframes()}
+             className="mt-5 w-full"
+           >
+             <div className="w-full rounded-md border">
+               <TabsContent
+                 value="desktop"
+                 className={TABS_WPR_CLASS}
+                 style={{ backgroundColor: backgroundDesktop }}
+               >
+                
+                 <div className={TABS_CTNT_CLASS}>
+                   {ReactComponent ? <ReactComponent /> : <div>Component not found</div>}
+                 </div>
+                 
+               </TabsContent>
+               </div>
+               <div className="my-5">
+               <p className="text-2xl font-semibold text-foreground mb-2">
+                 Code Usage
+               </p>
+               <Separator />
+             </div>
+             <ReactCodeTabs
+       
+               reactjs={nextjsDesktop} // Add new attributes
+                // Add new attributes
+             />
+       
+               </Tabs>
+               </div>
+      ) : (
+        <Tabs
+            defaultValue="desktop"
+            onValueChange={(e) => refreshIframes()}
+            className="mt-5 w-full"
+          >
+            <div className="w-full rounded-md border">
+              <div className="h-16 flex items-center justify-center border-b">
+                <TabsList className="grid grid-cols-2 w-72 md:w-96">
+                  {isMobile && <TabsTrigger value="mobile">Mobile</TabsTrigger>}
+                  <TabsTrigger value="desktop">Desktop</TabsTrigger>
+                  {!isMobile && <TabsTrigger value="mobile">Mobile</TabsTrigger>}
+                </TabsList>
+              </div>
+              <TabsContent
+                value="desktop"
+                className={TABS_WPR_CLASS}
+                style={{ backgroundColor: backgroundDesktop }}
+              >
+               
+                <div className={TABS_CTNT_CLASS}>
+                  {ReactComponent ? <ReactComponent /> : <div>Component not found</div>}
+                </div>
+                
+              </TabsContent>
+              <TabsContent
+                value="mobile"
+                className={TABS_WPR_CLASS}
+                style={{ backgroundColor: backgroundMobile }}
+              >
+                <div className={TABS_CTNT_CLASS}>
+                  {/* {MobileComponent ? <MobileComponent /> : 'Loading mobile component...'} */}
+                  
+                </div>
+                
+                <CalendarDemo/>
+              </TabsContent>
+            </div>
+            <div className="my-5">
+              <p className="text-2xl font-semibold text-foreground mb-2">
+                Code Usage
+              </p>
+              <Separator />
+            </div>
+            <CodeTabs
+              htmlDesktop={htmlDesktop}
+              cssDesktop={cssDesktop}
+              jsDesktop={jsDesktop}
+              htmlMobile={htmlMobile}
+              cssMobile={cssMobile}
+              jsMobile={jsMobile}
+            />
+          </Tabs>
       )}
     </div>
   );
