@@ -13,6 +13,7 @@ const CodeTabs = ({
   cssMobile,
   jsMobile,
   nextjsMobile, // Added Next.js mobile version code
+  onShowReactJs, // 添加的新 prop，用于点击 React.js 时的回调函数
 }: {
   htmlDesktop: string | null;
   cssDesktop: string | null;
@@ -22,6 +23,7 @@ const CodeTabs = ({
   cssMobile: string | null;
   jsMobile: string | null;
   nextjsMobile: string | null; // New attribute type
+  onShowReactJs?: () => void; // 这个函数应该由父组件提供
 }) => {
   return (
     <>
@@ -98,7 +100,7 @@ const CodeTabs = ({
               )}
               {/* Add React.js trigger */}
               {nextjsDesktop && (
-                <TabsTrigger value="nextjs" className={CODE_TAB_CLASS}>
+                <TabsTrigger value="nextjs" className={CODE_TAB_CLASS} onClick={onShowReactJs}>
                   React.js
                 </TabsTrigger>
               )}

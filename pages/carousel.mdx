@@ -1,0 +1,86 @@
+import {
+    Carousel,
+    WithImages,
+    WithSlideAnimation,
+    WithAuto,
+    WithPreview,
+    WithKeyboard
+} from "../components/ui/carousel";
+
+# Carousel Component
+
+**Contributed by Chaoyang Li**
+
+Carousel component is used to display images or words by a switching or sliding window.
+
+## Basic Component
+The words can be display by click the switch button.
+
+In desktop, you can switch word by clicking the little circle on the bottom of the component or the button on the left and right side of the component.
+
+In mobile, you can switch word by clicking the left or right part of the component.
+<Carousel />
+
+## Variants
+
+### With images
+Carousel component is a perfect component to display multiple images. You can also add topic of the image inside the component.
+<WithImages />
+
+### With sarousel animation
+Carousel animation can be applied to sarousel component. It can make picture switching smoother.
+<WithSlideAnimation />
+
+### With autoplay
+Carousel component with Carousel animation can be play automatically.
+<WithAuto />
+
+### With preview
+You can also add preview of the images to the Carousel component, so that users can have an overall understanding of the images.
+<WithPreview />
+
+## Usability
+
+<details>
+    <summary>Make sarousel looks actionable</summary>
+    Make sure the button or switch circle of your sarousel obvious, otherwise the user may think it is just a image.
+</details>
+
+<details>
+    <summary>Don't switch images too fast</summary>
+    If you make your sarousel autoplay, make sure users have enough time to read the content before next switch. If you set the speed of autoplay too fast, like 1 second per switch, it can ruin users experience.
+</details>
+
+<details>
+    <summary>Add details of image if necessary</summary>
+    For some images of location or person, text details often help users understand the content of images.
+</details>
+
+<details>
+    <summary>Set the size of preview image appropriately</summary>
+    The size of the preview image should not be too large or too small.
+
+    A preview image that is too large will make the sarousel itself meaningless. (Why use sarousel instead of displaying the entire image?) A preview image that is too small will make it difficult for users to see the general content of the image, making the preview image itself meaningless.
+</details>
+
+<details>
+    <summary>Don’t put too many or too few images on the sarousel</summary>
+    Before you decide to use a sarousel to display something, you need to think about whether the sarousel is suitable.
+
+    If you put too many images into the sarousel (more than 10), users will need to click too many times to fully view them all. If you put too few pictures in the sarousel (less than 3 pictures), maybe you don’t need to use the sarousel, and a photo wall may be more suitable for you.
+</details>
+
+## Accessibility
+Carousel component support keyboard operation on Desktop.
+
+| Key         | Interaction                                                                                 |
+|-------------|---------------------------------------------------------------------------------------------|
+| Left Arrow  | Switch to next images. If the image is the last one, it will switch to the first image.     |
+| Right Arrow | Switch to previous images. If the image is the first one, it will switch to the last image. |
+
+<WithKeyboard />
+
+## Vision
+| Version | Editor      | Author      | Date       | Description     |
+|---------|-------------|-------------|------------|-----------------|
+| v1.0    | Chaoyang Li | Chaoyang Li | 14/10/2023 | Initial version |

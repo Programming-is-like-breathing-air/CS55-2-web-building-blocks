@@ -1,14 +1,14 @@
 import React from "react";
 import Theme from "../layout/componentTheme";
 
-export const Slide = () => {
+export const Carousel = () => {
   return (
     <Theme
-      componentName="slide"
+      componentName="carousel"
       componentStyle="basic"
       backgroundDesktop="white"
       backgroundMobile="white"
-      componentReactView="BasicSlider"
+      componentReactView="BasicCarousel"
     />
   );
 };
@@ -16,10 +16,11 @@ export const Slide = () => {
 export const WithImages = () => {
   return (
     <Theme
-      componentName="slide"
+      componentName="carousel"
       componentStyle="withImages"
       backgroundDesktop="white"
       backgroundMobile="white"
+      componentReactView="CarouselImage"
     />
   );
 };
@@ -27,7 +28,7 @@ export const WithImages = () => {
 export const WithSlideAnimation = () => {
   return (
     <Theme
-      componentName="slide"
+      componentName="carousel"
       componentStyle="withSlide"
       backgroundDesktop="white"
       backgroundMobile="white"
@@ -38,7 +39,7 @@ export const WithSlideAnimation = () => {
 export const WithAuto = () => {
   return (
     <Theme
-      componentName="slide"
+      componentName="carousel"
       componentStyle="withAuto"
       backgroundDesktop="white"
       backgroundMobile="white"
@@ -49,7 +50,7 @@ export const WithAuto = () => {
 export const WithPreview = () => {
   return (
     <Theme
-      componentName="slide"
+      componentName="carousel"
       componentStyle="withPreview"
       backgroundDesktop="white"
       backgroundMobile="white"
@@ -60,7 +61,7 @@ export const WithPreview = () => {
 export const WithKeyboard = () => {
   return (
     <Theme
-      componentName="slide"
+      componentName="carousel"
       componentStyle="withKeyboard"
       backgroundDesktop="white"
       backgroundMobile="white"

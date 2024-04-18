@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import CodeTabs from "./components/codeTabs";
 import useIsMobile from "./helper/mobileDetect";
 import { Separator } from "@/components/ui/separator";
@@ -29,8 +29,10 @@ import PaginationDemo from "../../public/components/misc/pagination/react/page"
 import NavigationMenuDemo from "../../public/components/navigation/Dropdown/react/page"
 import SideNaviDemo from "../../public/components/navigation/sideNavi/react/page"
 import TopNavigationBar from "../../public/components/navigation/topNavi/react/page"
-import BasicSlider from "../../public/components/slide/basic/react/page"
+import BasicCarousel from "../../public/components/carousel/basic/react/page"
+import CarouselImage from "../../public/components/carousel/withImages/react/page"
 import TableDemo from "../../public/components/table/normal/react/page"
+import BasicSlider from "../../public/components/slider/basic/react/page"
 
 import { BasicTooltip } from "../../public/components/tooltip/basicTooltip/react/page";
 import { LeftTooltip } from "../../public/components/tooltip/leftTooltip/react/page";
@@ -56,16 +58,15 @@ export default function Theme({
   componentReactView: string;
 
 }) {
-
   const isMobile = useIsMobile();
   const DESKTOP_PATH = `/components/${componentName}/${componentStyle}/desktop/`;
   const MOBILE_PATH = `/components/${componentName}/${componentStyle}/mobile/`;
   const REACT_PATH = `/components/${componentName}/${componentStyle}/react/`;
 
-  const React_PATH = `/components/${componentName}/${componentStyle}/react/`;
-
   const desktopIframeRef = React.useRef(null);
   const mobileIframeRef = React.useRef(null);
+  const [currentView, setCurrentView] = React.useState('html'); // store state
+
   const [widthDesktop, setWidthDesktop] = React.useState<number>(500);
   const [heightDesktop, setHeightDesktop] = React.useState<number>(250);
   const [heightMobile, setHeightMobile] = React.useState<number>(250);
@@ -92,6 +93,8 @@ export default function Theme({
     DCC:DesktopCardComponent,
     DITC:DesktopInnovativeTagComponent,
     CheckboxDemo:CheckboxDemo,
+    BasicCarousel:BasicCarousel,
+    CarouselImage:CarouselImage,
     DropdownMenuCheckboxes:DropdownMenuCheckboxes,
     DropdownMenuwithDividers:DropdownMenuwithDividers,
     DropdownMenuwithHeader:DropdownMenuwithHeader,
@@ -113,8 +116,6 @@ export default function Theme({
 
   const ReactComponent = componentReactMap[componentReactView];
   
-
-
   React.useEffect(() => {
     fetchHtmlContent();
     fetchCssContent();
@@ -130,6 +131,16 @@ export default function Theme({
     if (mobileIframeRef.current)
       mobileIframeRef.current.onload = getMobileIframeBodySize;
   }, [refresh]);
+
+
+  const desktopiframeSrc = currentView === 'reactjs'
+    ? `${REACT_PATH}page.tsx` // it may actually need to be adjusted! ! ! ! Front-end code page
+    // ? `../../public/components/accordion/button/desktop/React` 
+    : `${DESKTOP_PATH}index.html`; // Display HTML content by default
+
+  const mobileiframeSrc = currentView === 'reactjs'
+    ? `${MOBILE_PATH}React.jsx` 
+    : `${MOBILE_PATH}index.html`; 
 
   const refreshIframes = () => setRefresh((prev) => prev + 1);
 
@@ -183,7 +194,27 @@ export default function Theme({
   const fetchContent = async (path: string) =>
     await fetch(path).then((res) => (res.status === 200 ? res.text() : null));
 
+  // State is used to store dynamically loaded components
+  const [DynamicComponent, setDynamicComponent] = useState<React.ElementType | null>(null);
+
+  const loadComponent = async () => {
+    // set path
+    const React_PATH = `/components/${componentName}/${componentStyle}/react/`;
+    const dynamicPath = `${React_PATH}page.tsx`;
+    // const dynamicPath = `../../public/components/slide/basic/react/page`;
+    // print path
+    console.log("Trying to load component from:", dynamicPath);
     
+    // try import
+    try {
+        const component = await import(dynamicPath);
+        console.log("Component loaded successfully!");
+        setDynamicComponent(() => component.default);
+    } catch (error) {
+        // field print
+        console.error("Failed to load the component:", error);
+    }
+  }
     
 
   return (
@@ -208,6 +239,17 @@ export default function Theme({
           <div className={TABS_CTNT_CLASS}>
             {ReactComponent ? <ReactComponent /> : <div>Component not found</div>}
           </div>
+          <div className={TABS_CTNT_CLASS}>
+            <button onClick={loadComponent}>Load MyComponent</button>
+            {DynamicComponent && <DynamicComponent />}
+          </div>
+
+          <p>Current View: {currentView}</p>
+
+          {/* You can add buttons or other interactive elements to update currentView */}
+          <button onClick={() => setCurrentView('html')}>Change to html</button>
+          <button onClick={() => setCurrentView('reactjs')}>Change to React</button>
+
         </TabsContent>
         <TabsContent
           value="mobile"

@@ -40,6 +40,8 @@
     "@radix-ui/react-tooltip": "^1.0.7",
     "class-variance-authority": "latest",
     "clsx": "latest",
+    "embla-carousel": "^8.0.2",
+    "embla-carousel-react": "^8.0.2",
     "lucide-react": "^0.367.0",
     "next": "latest",
     "nextra": "latest",
