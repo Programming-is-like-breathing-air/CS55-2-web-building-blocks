@@ -1,5 +1,6 @@
 import React from "react";
 import CodeTabs from "./components/codeTabs";
+import ReactCodeTabs from "./components/reactCodeTabs";
 import useIsMobile from "./helper/mobileDetect";
 import { Separator } from "@/components/ui/separator";
 import { TABS_WPR_CLASS, TABS_CTNT_CLASS } from "./constants/strings";
@@ -112,6 +113,10 @@ export default function Theme({
   const [jsMobile, setJsMobile] = React.useState<string | null>(null);
   const [nextjsDesktop, setNextjsDesktop] = React.useState<string | null>(null);
   const [nextjsMobile, setNextjsMobile] = React.useState<string | null>(null);
+  const [mainTab, setMainTab] = React.useState('html'); // HTML 或 React
+  const [subTab, setSubTab] = React.useState('desktop'); // Desktop 或 Mobile
+  const [isReact, setIsReact] = React.useState(false);
+
 
   const componentReactMap = {
     ADemo: AccordionDemo,
@@ -123,14 +128,15 @@ export default function Theme({
     BreadcrumbBasic:BreadcrumbBasic,
     BreadcrumbDemo:BreadcrumbDemo,
 
-    AlertDemo:AlertDemo,
-    AlertAction:AlertAction,
-    AlertWithDescription:AlertWithDescription,
-    AlertWithList:AlertWithList,
-    AlertWithBorder:AlertWithBorder,
-    AlertWithDismiss:AlertWithDismiss,
-    AlertWithLink:AlertWithLink,
-    AlertWithAction:AlertWithAction,
+    AlertDemo: AlertDemo,
+    AlertAction: AlertAction,
+    AlertWithDescription: AlertWithDescription,
+    AlertWithList: AlertWithList,
+    AlertWithBorder: AlertWithBorder,
+    AlertWithDismiss: AlertWithDismiss,
+    AlertWithLink: AlertWithLink,
+    AlertWithAction: AlertWithAction,
+
 
     DCC:DesktopCardComponent,
     DITC:DesktopInnovativeTagComponent,
@@ -165,10 +171,11 @@ export default function Theme({
     SignupModal:SignupModal,
     LoginModal:LoginModal,
     BasicSearch:BasicSearch,
+
   };
 
   const ReactComponent = componentReactMap[componentReactView];
-  
+
 
 
   React.useEffect(() => {
@@ -239,63 +246,137 @@ export default function Theme({
   const fetchContent = async (path: string) =>
     await fetch(path).then((res) => (res.status === 200 ? res.text() : null));
 
-    
-    
+  const ToggleSwitch = ({ isOn, handleToggle }) => {
+    return (
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
+        <span style={{ marginRight: '10px', color: isOn ? 'grey' : 'black' }}>HTML</span>
+        <div
+          onClick={handleToggle}
+          style={{
+            cursor: 'pointer',
+            background: isOn ? '#4CD964' : '#ccc',
+            borderRadius: '20px',
+            position: 'relative',
+            width: '50px',
+            height: '25px',
+            transition: 'background-color 0.2s',
+          }}
+        >
+          <div
+            style={{
+              background: 'white',
+              borderRadius: '50%',
+              position: 'absolute',
+              top: '2.5px',
+              left: isOn ? '25px' : '2.5px',
+              width: '20px',
+              height: '20px',
+              transition: 'left 0.2s',
+            }}
+          />
+        </div>
+        <span style={{ marginLeft: '10px', color: isOn ? 'black' : 'grey' }}>React</span>
+      </div>
+    );
+  };
 
   return (
-    <Tabs
-      defaultValue="desktop"
-      onValueChange={(e) => refreshIframes()}
-      className="mt-5 w-full"
-    >
-      <div className="w-full rounded-md border">
-        <div className="h-16 flex items-center justify-center border-b">
-          <TabsList className="grid grid-cols-2 w-72 md:w-96">
-            {isMobile && <TabsTrigger value="mobile">Mobile</TabsTrigger>}
-            <TabsTrigger value="desktop">Desktop</TabsTrigger>
-            {!isMobile && <TabsTrigger value="mobile">Mobile</TabsTrigger>}
-          </TabsList>
-        </div>
-        <TabsContent
-          value="desktop"
-          className={TABS_WPR_CLASS}
-          style={{ backgroundColor: backgroundDesktop }}
-        >
-         
-          <div className={TABS_CTNT_CLASS}>
-            {ReactComponent ? <ReactComponent /> : <div>Component not found</div>}
-          </div>
-          
-        </TabsContent>
-        <TabsContent
-          value="mobile"
-          className={TABS_WPR_CLASS}
-          style={{ backgroundColor: backgroundMobile }}
-        >
-          <div className={TABS_CTNT_CLASS}>
-            {/* {MobileComponent ? <MobileComponent /> : 'Loading mobile component...'} */}
-            
-          </div>
-          
-          <CalendarDemo/>
-        </TabsContent>
-      </div>
-      <div className="my-5">
-        <p className="text-2xl font-semibold text-foreground mb-2">
-          Code Usage
-        </p>
-        <Separator />
-      </div>
-      <CodeTabs
-        htmlDesktop={htmlDesktop}
-        cssDesktop={cssDesktop}
-        jsDesktop={jsDesktop}
-        nextjsDesktop={nextjsDesktop} // Add new attributes
-        htmlMobile={htmlMobile}
-        cssMobile={cssMobile}
-        jsMobile={jsMobile}
-        nextjsMobile={nextjsMobile} // Add new attributes
+    <div style={{ padding: '20px' }}>
+      <ToggleSwitch
+        isOn={isReact}
+        handleToggle={() => setIsReact(!isReact)}
       />
-    </Tabs>
+      {isReact ? (
+        <div>
+          <Tabs
+            defaultValue="desktop"
+            onValueChange={(e) => refreshIframes()}
+            className="mt-5 w-full"
+          >
+            <div className="w-full rounded-md border">
+              <TabsContent
+                value="desktop"
+                className={TABS_WPR_CLASS}
+                style={{ backgroundColor: backgroundDesktop }}
+              >
+
+                <div className={TABS_CTNT_CLASS}>
+                  {ReactComponent ? <ReactComponent /> : <div>Component not found</div>}
+                </div>
+
+              </TabsContent>
+            </div>
+            <div className="my-5">
+              <p className="text-2xl font-semibold text-foreground mb-2">
+                Code Usage
+              </p>
+              <Separator />
+            </div>
+            <ReactCodeTabs
+              reactjs={nextjsDesktop} // Add new attributes
+            />
+
+          </Tabs>
+        </div>
+      ) : (
+        <Tabs
+          defaultValue="desktop"
+          onValueChange={(e) => refreshIframes()}
+          className="mt-5 w-full"
+        >
+          <div className="w-full rounded-md border">
+            <div className="h-16 flex items-center justify-center border-b">
+              <TabsList className="grid grid-cols-2 w-72 md:w-96">
+                {isMobile && <TabsTrigger value="mobile">Mobile</TabsTrigger>}
+                <TabsTrigger value="desktop">Desktop</TabsTrigger>
+                {!isMobile && <TabsTrigger value="mobile">Mobile</TabsTrigger>}
+              </TabsList>
+            </div>
+            <TabsContent
+              value="desktop"
+              className={TABS_WPR_CLASS}
+              style={{ backgroundColor: backgroundDesktop }}
+            >
+
+              <div className={TABS_CTNT_CLASS}>
+                <iframe
+                  ref={desktopIframeRef}
+                  style={{ width: widthDesktop, height: heightDesktop }}
+                  src={`${DESKTOP_PATH}index.html`}
+                />
+              </div>
+
+            </TabsContent>
+            <TabsContent
+              value="mobile"
+              className={TABS_WPR_CLASS}
+              style={{ backgroundColor: backgroundMobile }}
+            >
+              <div className={TABS_CTNT_CLASS}>
+                <iframe
+                  ref={mobileIframeRef}
+                  style={{ width: "400px", height: heightMobile }}
+                  src={`${MOBILE_PATH}index.html`}
+                />
+              </div>
+            </TabsContent>
+          </div>
+          <div className="my-5">
+            <p className="text-2xl font-semibold text-foreground mb-2">
+              Code Usage
+            </p>
+            <Separator />
+          </div>
+          <CodeTabs
+            htmlDesktop={htmlDesktop}
+            cssDesktop={cssDesktop}
+            jsDesktop={jsDesktop}
+            htmlMobile={htmlMobile}
+            cssMobile={cssMobile}
+            jsMobile={jsMobile}
+          />
+        </Tabs>
+      )}
+    </div>
   );
 }
