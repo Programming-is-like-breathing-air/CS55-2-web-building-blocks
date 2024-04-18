@@ -9,7 +9,7 @@ import {
   AlertTitle,
 } from "../../../../../styles/components/ui/alert"
 
-export function AlertDemo() {
+export function AlertAction() {
   return (
     <div style={{width: '500px'}}>
     <Alert>
@@ -39,4 +39,4 @@ export function AlertDemo() {
     </div>
   )
 }
-export default AlertDemo;
+export default AlertAction;

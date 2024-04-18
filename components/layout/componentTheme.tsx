@@ -45,6 +45,13 @@ import ToastWithTitle from "../../public/components/toast/title/react/page"
 import BreadcrumbDemo from "../../public/components/breadcrumbs/normal/react/page"
 
 import AlertDemo from "../../public/components/alerts/basic/react/page"
+import AlertAction from "../../public/components/alerts/animation/react/page"
+import AlertWithDescription from "../../public/components/alerts/withDescription/react/page"
+import AlertWithList from "../../public/components/alerts/withList/react/page"
+import AlertWithAction from "../../public/components/alerts/withAction/react/page"
+import AlertWithBorder from "../../public/components/alerts/withBorder/react/page"
+import AlertWithDismiss from "../../public/components/alerts/withDismiss/react/page"
+import AlertWithLink from "../../public/components/alerts/withLink/react/page"
 
 import CalendarDemo from "../../public/components/calendar/normal/react/page"
 
@@ -97,6 +104,13 @@ export default function Theme({
     BreadcrumbDemo:BreadcrumbDemo,
 
     AlertDemo:AlertDemo,
+    AlertAction:AlertAction,
+    AlertWithDescription:AlertWithDescription,
+    AlertWithList:AlertWithList,
+    AlertWithBorder:AlertWithBorder,
+    AlertWithDismiss:AlertWithDismiss,
+    AlertWithLink:AlertWithLink,
+    AlertWithAction:AlertWithAction,
 
     DCC:DesktopCardComponent,
     DITC:DesktopInnovativeTagComponent,

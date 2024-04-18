@@ -48,29 +48,40 @@ const variantAnimations = {
   }
 };
 
-
-
 const Alert = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof alertVariants> & { animations?: keyof typeof customAnimations }
->(({ className, variant = 'default', animations = 'none', ...props }, ref) => {
-  const animation = variantAnimations[animations];
+  React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof alertVariants>
+>(({ className, variant, ...props }, ref) => (
+  <div
+    ref={ref}
+    role="alert"
+    className={cn(alertVariants({ variant }), className)}
+    {...props}
+  />
+))
+Alert.displayName = "Alert"
 
-  return (
-    <motion.div
-      ref={ref}
-      role="alert"
-      initial={animation.initial}
-      animate={animation.animate}
-      transition={animation.transition}
-      className={cn(alertVariants({ variant }), className)}
-      {...props}
-    >
-      {props.children}
-    </motion.div>
-  );
-});
-Alert.displayName = "Alert";
+// const Alert = React.forwardRef<
+//   HTMLDivElement,
+//   React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof alertVariants> & { animations?: keyof typeof variantAnimations }
+// >(({ className, variant = 'default', animations = 'none', ...props }, ref) => {
+//   const animation = variantAnimations[animations];
+
+//   return (
+//     <motion.div
+//       ref={ref}
+//       role="alert"
+//       initial={animation.initial}
+//       animate={animation.animate}
+//       transition={animation.transition}
+//       className={cn(alertVariants({ variant }), className)}
+//       {...props}
+//     >
+//       {props.children}
+//     </motion.div>
+//   );
+// });
+// Alert.displayName = "Alert";
 
 
 const AlertTitle = React.forwardRef<

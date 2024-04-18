@@ -20,6 +20,7 @@ export const Animation = () => {
       componentStyle="animation"
       backgroundDesktop="white"
       backgroundMobile="white"
+      componentReactView="AlertAction"
     />
   );
 };
@@ -31,6 +32,7 @@ export const WithDescription = () => {
       componentStyle="withDescription"
       backgroundDesktop="white"
       backgroundMobile="white"
+      componentReactView="AlertWithDescription"
     />
   );
 };
@@ -42,6 +44,7 @@ export const WithList = () => {
       componentStyle="withlist"
       backgroundDesktop="white"
       backgroundMobile="white"
+      componentReactView="AlertWithList"
     />
   );
 };
@@ -53,6 +56,7 @@ export const WithBorder = () => {
       componentStyle="withBorder"
       backgroundDesktop="white"
       backgroundMobile="white"
+      componentReactView="AlertWithBorder"
     />
   );
 };
@@ -64,6 +68,7 @@ export const WithLink = () => {
       componentStyle="withLink"
       backgroundDesktop="white"
       backgroundMobile="white"
+      componentReactView="AlertWithLink"
     />
   );
 };
@@ -75,6 +80,7 @@ export const WithDismiss = () => {
       componentStyle="withDismiss"
       backgroundDesktop="white"
       backgroundMobile="white"
+      componentReactView="AlertWithDismiss"
     />
   );
 };
@@ -86,6 +92,7 @@ export const WithAction = () => {
       componentStyle="withAction"
       backgroundDesktop="white"
       backgroundMobile="white"
+      componentReactView="AlertWithAction"
     />
   );
 };
@@ -97,6 +104,7 @@ export const SoundAlert = () => {
       componentStyle="sound"
       backgroundDesktop="white"
       backgroundMobile="white"
+      componentReactView="Alert"
     />
   );
 };
