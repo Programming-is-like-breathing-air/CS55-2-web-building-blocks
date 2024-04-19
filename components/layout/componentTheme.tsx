@@ -58,6 +58,8 @@ import AlertWithAction from "../../public/components/alerts/withAction/react/pag
 import AlertWithBorder from "../../public/components/alerts/withBorder/react/page"
 import AlertWithDismiss from "../../public/components/alerts/withDismiss/react/page"
 import AlertWithLink from "../../public/components/alerts/withLink/react/page"
+import TreeViewDemo from "../../public/components/misc/tree/react/page"
+
 
 import TabsDemo from "../../public/components/tabs/normal/react/page"
 import CardWithNormal from "public/components/card/normal/react/page"
@@ -149,6 +151,7 @@ export default function Theme({
     AlertWithDismiss: AlertWithDismiss,
     AlertWithLink: AlertWithLink,
     AlertWithAction: AlertWithAction,
+    TreeViewDemo:TreeViewDemo,
 
 
     DCC:DesktopCardComponent,
