@@ -99,7 +99,21 @@ import NormalLink from "../../public/components/links/normal/react/page"
 import EnhancedLink from "../../public/components/links/enhanced/react/page"
 import ExpandLink from "../../public/components/links/expand/react/page"
 
-// import SimpleChat from "../../public/components/chat/normal/react/page"
+import DatePickerDemo from "../../public/components/calendar/dateInput/react/page"
+import dateTimeInput from "../../public/components/calendar/dateTimeInput/react/page"
+import MonthPickerDemo from "../../public/components/calendar/monthInput/react/page"
+import TimePickerDemo from "../../public/components/calendar/timeInput/react/page"
+import DatePickerWithRange from "../../public/components/calendar/range/react/page"
+import WeekPicker from "../../public/components/calendar/weekInput/react/page"
+import ButtonDemo from "../../public/components/button/normal/react/page"
+import ButtonDestructive from "../../public/components/button/active1/react/page"
+import ButtonLoading from "../../public/components/button/loading/react/page"
+import ButtonIcon from "../../public/components/button/icon/react/page"
+import ActiveButton from "../../public/components/button/active/react/page"
+import FocusButton from "../../public/components/button/focus/react/page"
+import HoverButton from "../../public/components/button/hover/react/page"
+import TriggerButton from "../../public/components/button/successful/react/page"
+
 
 
 export default function Theme({
@@ -194,6 +208,7 @@ export default function Theme({
     ToastWithNormal:ToastWithNormal,
     ToastWithTitle:ToastWithTitle,
     CalendarDemo:CalendarDemo,
+
     NormalTags:NormalTags,
     InnovativeTags:InnovativeTags,
     RadioGroupForm:RadioGroupForm,
@@ -219,8 +234,22 @@ export default function Theme({
     NormalLink:NormalLink,
     EnhancedLink:EnhancedLink,
     ExpandLink:ExpandLink,
-    // SimpleChat:SimpleChat,
 
+    DatePickerDemo:DatePickerDemo,
+    dateTimeInput:dateTimeInput,
+    MonthPickerDemo:MonthPickerDemo,
+    TimePickerDemo:TimePickerDemo,
+    DatePickerWithRange:DatePickerWithRange,
+    WeekPicker:WeekPicker,
+    ButtonDemo:ButtonDemo,
+    ButtonDestructive:ButtonDestructive,
+    ButtonLoading:ButtonLoading,
+    ButtonIcon:ButtonIcon,
+    ActiveButton:ActiveButton,
+    FocusButton:FocusButton,
+    HoverButton:HoverButton,
+    TriggerButton:TriggerButton,
+    
   };
 
   const ReactComponent = componentReactMap[componentReactView];
@@ -330,6 +359,7 @@ export default function Theme({
   };
 
   return (
+
     <div style={{ padding: '20px' }}>
       <ToggleSwitch
         isOn={isReact}

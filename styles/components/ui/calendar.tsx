@@ -1,7 +1,7 @@
 import * as React from "react"
 import { DayPicker } from "react-day-picker"
 import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
+import { buttonVariants } from "styles/components/ui/button"
 import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons"
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>
@@ -13,7 +13,7 @@ function Calendar({
   ...props
 }: CalendarProps) {
   return (
-    <div className="flex justify-center"> {/* 使用 Flexbox 居中 */}
+    <div className="flex justify-center"> 
       <DayPicker
         showOutsideDays={showOutsideDays}
         className={cn("p-3", className)}
@@ -69,4 +69,4 @@ function Calendar({
 
 Calendar.displayName = "Calendar"
 
-export { Calendar }
+export { Calendar };

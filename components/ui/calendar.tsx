@@ -7,25 +7,25 @@ export function Calendar() {
 }
 
 export function DateRangePickerCalendar() {
-  return <Theme componentName="calendar" componentStyle="range" />;
+  return <Theme componentName="calendar" componentStyle="range" componentReactView="DatePickerWithRange"/>;
 }
 
 export function DateInputCalendar() {
-  return <Theme componentName="calendar" componentStyle="dateInput" />;
+  return <Theme componentName="calendar" componentStyle="dateInput" componentReactView="DatePickerDemo"/>;
 }
 
 export function DateTimeInputCalendar() {
-  return <Theme componentName="calendar" componentStyle="dateTimeInput" />;
+  return <Theme componentName="calendar" componentStyle="dateTimeInput" componentReactView="dateTimeInput"/>;
 }
 
 export function MonthInputCalendar() {
-  return <Theme componentName="calendar" componentStyle="monthInput" />;
+  return <Theme componentName="calendar" componentStyle="monthInput" componentReactView="MonthPickerDemo"/>;
 }
 
 export function TimeInputCalendar() {
-  return <Theme componentName="calendar" componentStyle="timeInput" />;
+  return <Theme componentName="calendar" componentStyle="timeInput" componentReactView="TimePickerDemo"/>;
 }
 
 export function WeekInputCalendar() {
-  return <Theme componentName="calendar" componentStyle="weekInput" />;
+  return <Theme componentName="calendar" componentStyle="weekInput" componentReactView="WeekPicker"/>;
 }
