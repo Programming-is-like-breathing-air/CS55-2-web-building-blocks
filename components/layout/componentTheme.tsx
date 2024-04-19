@@ -99,6 +99,9 @@ import NormalLink from "../../public/components/links/normal/react/page"
 import EnhancedLink from "../../public/components/links/enhanced/react/page"
 import ExpandLink from "../../public/components/links/expand/react/page"
 
+import SuccessPanel from "../../public/components/panel/normal/react/page"
+import FailPanel from "../../public/components/panel/fail/react/page"
+
 // import SimpleChat from "../../public/components/chat/normal/react/page"
 
 
@@ -220,6 +223,9 @@ export default function Theme({
     EnhancedLink:EnhancedLink,
     ExpandLink:ExpandLink,
     // SimpleChat:SimpleChat,
+
+    SuccessPanel:SuccessPanel,
+    FailPanel:FailPanel,
 
   };
 

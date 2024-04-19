@@ -8,6 +8,7 @@ export const Panel_Fail = () => {
       componentStyle="fail"
       backgroundDesktop="#FFF"
       backgroundMobile="#FFF"
+      componentReactView="FailPanel"
     />
   );
 };
@@ -19,6 +20,7 @@ export const Panel = () => {
       componentStyle="normal"
       backgroundDesktop="#fff"
       backgroundMobile="#fff"
+      componentReactView="SuccessPanel"
     />
   );
 };
