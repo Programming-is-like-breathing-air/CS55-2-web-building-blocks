@@ -1,4 +1,4 @@
-import { RocketIcon } from "@radix-ui/react-icons"
+import { RocketIcon,CrossCircledIcon } from "@radix-ui/react-icons"
 import {
   Alert,
   AlertDescription,
@@ -16,8 +16,8 @@ import {
 export function AlertDemo() {
   return (
     <div style={{width: '500px'}}>
-    <Alert>
-      <RocketIcon className="h-4 w-4" />
+    <Alert variant="destructive">
+      <CrossCircledIcon className="h-4 w-4" />
       <AlertTitle>Heads up!</AlertTitle>
       <AlertDescription>
       <Table>

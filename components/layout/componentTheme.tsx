@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import CodeTabs from "./components/codeTabs";
 import ReactCodeTabs from "./components/reactCodeTabs";
 import useIsMobile from "./helper/mobileDetect";
@@ -31,8 +31,13 @@ import PaginationDemo from "../../public/components/misc/pagination/react/page"
 import NavigationMenuDemo from "../../public/components/navigation/Dropdown/react/page"
 import SideNaviDemo from "../../public/components/navigation/sideNavi/react/page"
 import TopNavigationBar from "../../public/components/navigation/topNavi/react/page"
-import BasicSlider from "../../public/components/slide/basic/react/page"
+import BasicCarousel from "../../public/components/carousel/basic/react/page"
+import CarouselImage from "../../public/components/carousel/withImages/react/page"
+import CarouselAuto from "../../public/components/carousel/withAuto/react/page"
+import CarouselCircle from "../../public/components/carousel/withSlide/react/page"
+import CarouselPreview from "public/components/carousel/withPreview/react/page";
 import TableDemo from "../../public/components/table/normal/react/page"
+import BasicSlider from "../../public/components/slider/basic/react/page"
 
 import { BasicTooltip } from "../../public/components/tooltip/basicTooltip/react/page";
 import { LeftTooltip } from "../../public/components/tooltip/leftTooltip/react/page";
@@ -58,6 +63,8 @@ import AlertWithAction from "../../public/components/alerts/withAction/react/pag
 import AlertWithBorder from "../../public/components/alerts/withBorder/react/page"
 import AlertWithDismiss from "../../public/components/alerts/withDismiss/react/page"
 import AlertWithLink from "../../public/components/alerts/withLink/react/page"
+import TreeViewDemo from "../../public/components/misc/tree/react/page"
+
 
 import TabsDemo from "../../public/components/tabs/normal/react/page"
 import CardWithNormal from "public/components/card/normal/react/page"
@@ -91,6 +98,27 @@ import LoginModal from "../../public/components/modal/login/react/page";
 
 
 import BasicSearch from "../../public/components/search/basicSearch/react/page"
+
+import { Car } from "lucide-react";
+import NormalLink from "../../public/components/links/normal/react/page"
+import EnhancedLink from "../../public/components/links/enhanced/react/page"
+import ExpandLink from "../../public/components/links/expand/react/page"
+
+import DatePickerDemo from "../../public/components/calendar/dateInput/react/page"
+import dateTimeInput from "../../public/components/calendar/dateTimeInput/react/page"
+import MonthPickerDemo from "../../public/components/calendar/monthInput/react/page"
+import TimePickerDemo from "../../public/components/calendar/timeInput/react/page"
+import DatePickerWithRange from "../../public/components/calendar/range/react/page"
+import WeekPicker from "../../public/components/calendar/weekInput/react/page"
+import ButtonDemo from "../../public/components/button/normal/react/page"
+import ButtonDestructive from "../../public/components/button/active1/react/page"
+import ButtonLoading from "../../public/components/button/loading/react/page"
+import ButtonIcon from "../../public/components/button/icon/react/page"
+import ActiveButton from "../../public/components/button/active/react/page"
+import FocusButton from "../../public/components/button/focus/react/page"
+import HoverButton from "../../public/components/button/hover/react/page"
+import TriggerButton from "../../public/components/button/successful/react/page"
+
 
 
 export default function Theme({
@@ -154,10 +182,16 @@ export default function Theme({
     AlertWithDismiss: AlertWithDismiss,
     AlertWithLink: AlertWithLink,
     AlertWithAction: AlertWithAction,
+    TreeViewDemo:TreeViewDemo,
 
 
     DCC:DesktopCardComponent,
     DITC:DesktopInnovativeTagComponent,
+    BasicCarousel:BasicCarousel,
+    CarouselImage:CarouselImage,
+    CarouselAuto:CarouselAuto,
+    CarouselCircle:CarouselCircle,
+    CarouselPreview:CarouselPreview,
     CheckboxDemo:CheckboxDemo,
     DropdownMenuCheckboxes:DropdownMenuCheckboxes,
     DropdownMenuwithDividers:DropdownMenuwithDividers,
@@ -179,6 +213,7 @@ export default function Theme({
     ToastWithNormal:ToastWithNormal,
     ToastWithTitle:ToastWithTitle,
     CalendarDemo:CalendarDemo,
+
     NormalTags:NormalTags,
     InnovativeTags:InnovativeTags,
     RadioGroupForm:RadioGroupForm,
@@ -206,6 +241,24 @@ export default function Theme({
     CheckoutForm:CheckoutForm,
     ResponsiveForm:ResponsiveForm,
     ContactUsForm:ContactUsForm,
+    NormalLink:NormalLink,
+    EnhancedLink:EnhancedLink,
+    ExpandLink:ExpandLink,
+
+    DatePickerDemo:DatePickerDemo,
+    dateTimeInput:dateTimeInput,
+    MonthPickerDemo:MonthPickerDemo,
+    TimePickerDemo:TimePickerDemo,
+    DatePickerWithRange:DatePickerWithRange,
+    WeekPicker:WeekPicker,
+    ButtonDemo:ButtonDemo,
+    ButtonDestructive:ButtonDestructive,
+    ButtonLoading:ButtonLoading,
+    ButtonIcon:ButtonIcon,
+    ActiveButton:ActiveButton,
+    FocusButton:FocusButton,
+    HoverButton:HoverButton,
+    TriggerButton:TriggerButton,
   };
 
   const ReactComponent = componentReactMap[componentReactView];
@@ -288,7 +341,7 @@ export default function Theme({
           onClick={handleToggle}
           style={{
             cursor: 'pointer',
-            background: isOn ? '#4CD964' : '#ccc',
+            background: isOn ? 'rgb(249, 115, 22)' : '#ccc',
             borderRadius: '20px',
             position: 'relative',
             width: '50px',
@@ -315,6 +368,7 @@ export default function Theme({
   };
 
   return (
+
     <div style={{ padding: '20px' }}>
       <ToggleSwitch
         isOn={isReact}

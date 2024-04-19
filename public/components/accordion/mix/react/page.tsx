@@ -20,6 +20,8 @@ import {
 
       const imageStyle = isZoomed ? { width: '100%', cursor: 'zoom-out' } : { width: '50%', cursor: 'zoom-in' }; 
     return (
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center',width: '600px', backgroundColor: 'rgb(255, 255, 255)'}} >
+        <div style={{ width: '500px', backgroundColor: 'rgb(255, 255, 255)'}} >
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
           <AccordionTrigger>How do I enrol?</AccordionTrigger>
@@ -57,6 +59,8 @@ import {
           </AccordionContent>
         </AccordionItem>
       </Accordion>
+      </div>
+      </div>
     )
   }
   export default AccordionMix;

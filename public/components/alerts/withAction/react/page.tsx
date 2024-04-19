@@ -13,10 +13,10 @@ import {
 export function AlertDemo() {
   return (
     <div style={{width: '500px'}}>
-    <Alert variant="destructive">
-      <CrossCircledIcon className="h-4 w-4" />
-      <AlertTitle>Error alert</AlertTitle>
-      <AlertDescription>Your order has been unsuccessfully ordered. Please try again.</AlertDescription>
+    <Alert variant="success">
+      <CheckCircledIcon className="h-4 w-4" />
+      <AlertTitle>Your order is on the way</AlertTitle>
+      <AlertDescription>Your order has been successfully ordered. You can check the delivery status.</AlertDescription>
       <Button variant="ghost">View Status</Button>
       <Button variant="ghost">Dismiss</Button>
 

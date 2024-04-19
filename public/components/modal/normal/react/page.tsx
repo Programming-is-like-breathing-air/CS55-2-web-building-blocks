@@ -15,7 +15,7 @@ export function NormalModal() {
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <Button variant="default">Open Model</Button>
+                <Button variant="outline">Open Model</Button>
             </DialogTrigger>
             <DialogContent style={{ backgroundColor: 'white' }} className="p-6 rounded-md">
                 <DialogHeader>

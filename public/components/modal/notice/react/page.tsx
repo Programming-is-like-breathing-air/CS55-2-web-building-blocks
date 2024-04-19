@@ -17,7 +17,7 @@ export function NoticeModal() {
 
         <Dialog>
             <DialogTrigger asChild>
-                <Button variant="default">Submit Application</Button>
+                <Button variant="outline">Submit Application</Button>
             </DialogTrigger>
             <DialogContent style={{ backgroundColor: 'white' }} className="p-6 rounded-md">
                 <DialogHeader>
