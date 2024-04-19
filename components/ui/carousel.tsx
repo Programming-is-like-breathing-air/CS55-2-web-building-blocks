@@ -60,14 +60,3 @@ export const WithPreview = () => {
     />
   );
 };
-
-export const WithKeyboard = () => {
-  return (
-    <Theme
-      componentName="carousel"
-      componentStyle="withKeyboard"
-      backgroundDesktop="white"
-      backgroundMobile="white"
-    />
-  );
-};

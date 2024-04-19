@@ -34,15 +34,6 @@
     "tooltip": "Tooltip",
     "treeview": "Tree View",
 
-    "-- New Components": {
-        "type": "separator",
-        "title": " New Components"
-    },
-    "newchat": " New Chat",
-    "OTP": "input OTP",
-    "newcard":" New Card",
-    "newaccordion": "New Accordion",
-
     "-- Pages": {
         "type": "separator",
         "title": "Pages"
