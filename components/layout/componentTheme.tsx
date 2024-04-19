@@ -279,7 +279,7 @@ export default function Theme({
           onClick={handleToggle}
           style={{
             cursor: 'pointer',
-            background: isOn ? '#4CD964' : '#ccc',
+            background: isOn ? 'rgb(249, 115, 22)' : '#ccc',
             borderRadius: '20px',
             position: 'relative',
             width: '50px',
