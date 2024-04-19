@@ -86,6 +86,9 @@ import LoginModal from "../../public/components/modal/login/react/page";
 
 
 import BasicSearch from "../../public/components/search/basicSearch/react/page"
+import SimpleChat from "../../public/components/chat/normal/react/page"
+
+
 
 
 export default function Theme({
@@ -196,6 +199,7 @@ export default function Theme({
     ImageUploadComponent:ImageUploadComponent,
     FileUploadLimitSize:FileUploadLimitSize,
     FileUploadPreview:FileUploadPreview,
+    SimpleChat:SimpleChat,
 
   };
 

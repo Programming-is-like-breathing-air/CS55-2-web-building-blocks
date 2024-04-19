@@ -32,7 +32,7 @@ export function SignupModal() {
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <Button variant="default">Sign Up</Button>
+                <Button variant="outline">Sign Up</Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-md">
                 <DialogHeader>
