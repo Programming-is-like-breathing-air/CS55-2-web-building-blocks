@@ -71,6 +71,11 @@ import FileUploadMutiple from "public/components/fileUpload/withMultiple/react/p
 import ImageUploadComponent from "public/components/fileUpload/withFormat/react/page";
 import FileUploadLimitSize from "public/components/fileUpload/withSize/react/page";
 import FileUploadPreview from "public/components/fileUpload/withPreview/react/page";
+import LoginForm from "public/components/form/loginForm/react/page";
+import SignUpForm from "public/components/form/signupForm/react/page";
+import CheckoutForm from "public/components/form/checkoutForm/react/page";
+import ResponsiveForm from "public/components/form/responsiveForm/react/page";
+import ContactUsForm from "public/components/form/contactusForm/react/page";
 
 import CalendarDemo from "../../public/components/calendar/normal/react/page"
 import NormalTags from "../../public/components/tags/normal/react/page"
@@ -196,7 +201,11 @@ export default function Theme({
     ImageUploadComponent:ImageUploadComponent,
     FileUploadLimitSize:FileUploadLimitSize,
     FileUploadPreview:FileUploadPreview,
-
+    LoginForm:LoginForm,
+    SignUpForm:SignUpForm,
+    CheckoutForm:CheckoutForm,
+    ResponsiveForm:ResponsiveForm,
+    ContactUsForm:ContactUsForm,
   };
 
   const ReactComponent = componentReactMap[componentReactView];
