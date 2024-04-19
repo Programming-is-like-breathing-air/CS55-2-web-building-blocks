@@ -12,6 +12,8 @@ import {
         alert(message);
       }; 
     return (
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center',width: '600px', backgroundColor: 'rgb(255, 255, 255)'}} >
+        <div style={{ width: '500px', backgroundColor: 'rgb(255, 255, 255)'}} >
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
           <AccordionTrigger>How do I enrol?</AccordionTrigger>
@@ -31,6 +33,8 @@ import {
         </AccordionItem>
         
       </Accordion>
+      </div>
+      </div>
     )
   }
   export default AccordionButton;

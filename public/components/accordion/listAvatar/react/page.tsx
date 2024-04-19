@@ -20,7 +20,8 @@ export function AccordionListAvatar() {
     window.open(url, "_blank");
   };
   return (
-
+<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center',width: '600px', backgroundColor: 'rgb(255, 255, 255)'}} >
+        <div style={{ width: '500px', backgroundColor: 'rgb(255, 255, 255)'}} >
     <Accordion type="single" collapsible className="w-full">
       <AccordionItem value="item-1">
         <AccordionTrigger>Albanese Ministry</AccordionTrigger>
@@ -139,7 +140,8 @@ export function AccordionListAvatar() {
         </AccordionContent>
       </AccordionItem>
     </Accordion>
-
+</div>
+</div>
   )
 }
 export default AccordionListAvatar;
