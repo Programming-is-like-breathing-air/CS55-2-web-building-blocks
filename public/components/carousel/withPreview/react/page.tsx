@@ -5,8 +5,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
+//   CarouselNext,
+//   CarouselPrevious,
 } from "../../../../../styles/components/ui/carousel";
 // Example image URLs - replace these with actual URLs of your images
 const images = [
@@ -16,7 +16,6 @@ const images = [
     "https://github.com/Programming-is-like-breathing-air/PG-Capstone-CS55-2---2024S1/blob/main/public/components/slide/withPreview/desktop/assets/SydneyTower.jpg?raw=true",
     "https://github.com/Programming-is-like-breathing-air/PG-Capstone-CS55-2---2024S1/blob/main/public/components/slide/withPreview/desktop/assets/USYD.jpeg?raw=true"
   
-    
 //   "https://github.com/Programming-is-like-breathing-air/PG-Capstone-CS55-2---2024S1/blob/main/public/components/carousel/withPreview/react/assets/BondiBeach.jpg?raw=true",
 //   "https://github.com/Programming-is-like-breathing-air/PG-Capstone-CS55-2---2024S1/blob/main/public/components/carousel/withPreview/react/assets/Chinatown.jpg?raw=true",
 //   "https://github.com/Programming-is-like-breathing-air/PG-Capstone-CS55-2---2024S1/blob/main/public/components/carousel/withPreview/react/assets/SydneyOperaHouse.png?raw=true",
@@ -26,18 +25,7 @@ const images = [
 
 export function CarouselPreview() {
   const [selectedIndex, setSelectedIndex] = useState(0); // State for the selected index
-
-  // Function to go to the next slide
-  const handleNext = () => {
-    setSelectedIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
-
-  // Function to go to the previous slide
-  const handlePrevious = () => {
-    setSelectedIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-  };
-
-  // Function to jump to a specific slide index
+//   Function to jump to a specific slide index
   const handleSelectIndex = (index) => {
     setSelectedIndex(index);
   };
@@ -58,8 +46,8 @@ export function CarouselPreview() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious onClick={handlePrevious} />
-        <CarouselNext onClick={handleNext} />
+        {/* <CarouselPrevious />
+        <CarouselNext/> */}
       </Carousel>
       <div className="thumbnail-container" style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
         {images.map((image, index) => (

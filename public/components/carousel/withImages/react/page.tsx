@@ -1,5 +1,5 @@
 import * as React from "react";
-
+import Autoplay from "embla-carousel-autoplay"
 import { Card, CardContent } from "../../../../../styles/components/ui/card";
 import {
   Carousel,
@@ -23,8 +23,16 @@ const images = [
 ];
 
 export function CarouselImage() {
+
+  const plugin = React.useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: true })
+  )
   return (
-    <Carousel className="w-full max-w-xs " >
+    <Carousel className="w-full max-w-xs " 
+    plugins={[plugin.current]}
+      onMouseEnter={plugin.current.stop}
+      onMouseLeave={plugin.current.reset}
+      >
       <CarouselContent>
         {images.map((image, index) => (
           <CarouselItem key={index} >
