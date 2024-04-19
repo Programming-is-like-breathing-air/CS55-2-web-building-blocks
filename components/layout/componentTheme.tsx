@@ -147,8 +147,6 @@ export default function Theme({
   const MOBILE_PATH = `/components/${componentName}/${componentStyle}/mobile/`;
   const REACT_PATH = `/components/${componentName}/${componentStyle}/react/`;
 
-  const React_PATH = `/components/${componentName}/${componentStyle}/react/`;
-
   const desktopIframeRef = React.useRef(null);
   const mobileIframeRef = React.useRef(null);
   const [widthDesktop, setWidthDesktop] = React.useState<number>(500);
