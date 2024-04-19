@@ -91,6 +91,8 @@ import NormalLink from "../../public/components/links/normal/react/page"
 import EnhancedLink from "../../public/components/links/enhanced/react/page"
 import ExpandLink from "../../public/components/links/expand/react/page"
 
+import BrowserMockup from "../../public/components/misc/browser/react/page"
+
 
 export default function Theme({
   componentName,
@@ -203,6 +205,7 @@ export default function Theme({
     NormalLink:NormalLink,
     EnhancedLink:EnhancedLink,
     ExpandLink:ExpandLink,
+    BrowserWindow:BrowserMockup,
 
   };
 
