@@ -1,17 +1,13 @@
+import * as React from 'react';
 import {
-    Slide,
-    WithImages,
-    WithSlideAnimation,
-    WithAuto,
-    WithPreview,
-    WithKeyboard
-} from "../components/ui/slide";
+    Slider,
+} from "../components/ui/slider";
 
 # Slide Component
 
-**Contributed by Chaoyang Li**
+**Contributed by Xinyu Chen**
 
-Slide component is used to display images or words by a switching or sliding window.
+Slider component is used to contral a bar.
 
 ## Basic Component
 The words can be display by click the switch button.
@@ -19,25 +15,10 @@ The words can be display by click the switch button.
 In desktop, you can switch word by clicking the little circle on the bottom of the component or the button on the left and right side of the component.
 
 In mobile, you can switch word by clicking the left or right part of the component.
-<Slide />
+<Slider />
 
 ## Variants
 
-### With images
-Slide component is a perfect component to display multiple images. You can also add topic of the image inside the component.
-<WithImages />
-
-### With slide animation
-Slide animation can be applied to slide component. It can make picture switching smoother.
-<WithSlideAnimation />
-
-### With autoplay
-Slide component with Slide animation can be play automatically.
-<WithAuto />
-
-### With preview
-You can also add preview of the images to the Slide component, so that users can have an overall understanding of the images.
-<WithPreview />
 
 ## Usability
 
@@ -78,9 +59,7 @@ Slide component support keyboard operation on Desktop.
 | Left Arrow  | Switch to next images. If the image is the last one, it will switch to the first image.     |
 | Right Arrow | Switch to previous images. If the image is the first one, it will switch to the last image. |
 
-<WithKeyboard />
-
 ## Vision
 | Version | Editor      | Author      | Date       | Description     |
 |---------|-------------|-------------|------------|-----------------|
-| v1.0    | Chaoyang Li | Chaoyang Li | 14/10/2023 | Initial version |
+| v1.0    | Xinyu Chen  | Xinyu Chen  | 18/04/2024 | Initial version |
