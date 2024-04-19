@@ -87,6 +87,10 @@ import LoginModal from "../../public/components/modal/login/react/page";
 
 import BasicSearch from "../../public/components/search/basicSearch/react/page"
 
+import NormalLink from "../../public/components/links/normal/react/page"
+import EnhancedLink from "../../public/components/links/enhanced/react/page"
+import ExpandLink from "../../public/components/links/expand/react/page"
+
 
 export default function Theme({
   componentName,
@@ -196,6 +200,9 @@ export default function Theme({
     ImageUploadComponent:ImageUploadComponent,
     FileUploadLimitSize:FileUploadLimitSize,
     FileUploadPreview:FileUploadPreview,
+    NormalLink:NormalLink,
+    EnhancedLink:EnhancedLink,
+    ExpandLink:ExpandLink,
 
   };
 
