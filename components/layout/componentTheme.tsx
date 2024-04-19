@@ -93,11 +93,13 @@ import LoginModal from "../../public/components/modal/login/react/page";
 
 
 import BasicSearch from "../../public/components/search/basicSearch/react/page"
-import { Car } from "lucide-react";
 
+import { Car } from "lucide-react";
 import NormalLink from "../../public/components/links/normal/react/page"
 import EnhancedLink from "../../public/components/links/enhanced/react/page"
 import ExpandLink from "../../public/components/links/expand/react/page"
+
+// import SimpleChat from "../../public/components/chat/normal/react/page"
 
 
 export default function Theme({
@@ -217,6 +219,7 @@ export default function Theme({
     NormalLink:NormalLink,
     EnhancedLink:EnhancedLink,
     ExpandLink:ExpandLink,
+    // SimpleChat:SimpleChat,
 
   };
 

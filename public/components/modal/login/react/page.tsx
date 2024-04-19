@@ -35,7 +35,7 @@ export function LoginModal() {
             <Toaster />
             <Dialog>
                 <DialogTrigger asChild>
-                    <Button variant="default">Login</Button>
+                    <Button variant="outline">Login</Button>
                 </DialogTrigger>
                 <DialogContent style={{ backgroundColor: 'white' }} className="p-6 rounded-md">
                     <DialogHeader className="mb-4">
