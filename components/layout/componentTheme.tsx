@@ -121,6 +121,10 @@ import FocusButton from "../../public/components/button/focus/react/page"
 import HoverButton from "../../public/components/button/hover/react/page"
 import TriggerButton from "../../public/components/button/successful/react/page"
 
+import SuccessPanel from "../../public/components/panel/normal/react/page"
+import FailPanel from "../../public/components/panel/fail/react/page"
+
+// import SimpleChat from "../../public/components/chat/normal/react/page"
 
 
 export default function Theme({
@@ -248,7 +252,6 @@ export default function Theme({
     ExpandLink:ExpandLink,
     BrowserWindow:BrowserMockup,
 
-
     DatePickerDemo:DatePickerDemo,
     dateTimeInput:dateTimeInput,
     MonthPickerDemo:MonthPickerDemo,
@@ -263,6 +266,9 @@ export default function Theme({
     FocusButton:FocusButton,
     HoverButton:HoverButton,
     TriggerButton:TriggerButton,
+    SuccessPanel:SuccessPanel,
+    FailPanel:FailPanel,
+
   };
 
   const ReactComponent = componentReactMap[componentReactView];
