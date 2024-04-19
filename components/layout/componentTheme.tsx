@@ -59,6 +59,19 @@ import AlertWithBorder from "../../public/components/alerts/withBorder/react/pag
 import AlertWithDismiss from "../../public/components/alerts/withDismiss/react/page"
 import AlertWithLink from "../../public/components/alerts/withLink/react/page"
 
+import TabsDemo from "../../public/components/tabs/normal/react/page"
+import CardWithNormal from "public/components/card/normal/react/page"
+import CardWithPicture from "public/components/card/withPic/react/page";
+import CardWithPicVer from "public/components/card/verticalWithPic/react/page";
+import LargeHeaderCard from "public/components/card/header/react/page";
+import EnquirySubmittedCard from "public/components/card/action/react/page";
+import FileUploadComponent from "public/components/fileUpload/basic/react/page";
+import FileUploadWithIcon from "public/components/fileUpload/withIcons/react/page";
+import FileUploadMutiple from "public/components/fileUpload/withMultiple/react/page";
+import ImageUploadComponent from "public/components/fileUpload/withFormat/react/page";
+import FileUploadLimitSize from "public/components/fileUpload/withSize/react/page";
+import FileUploadPreview from "public/components/fileUpload/withPreview/react/page";
+
 import CalendarDemo from "../../public/components/calendar/normal/react/page"
 import NormalTags from "../../public/components/tags/normal/react/page"
 import InnovativeTags from "../../public/components/tags/innovative/react/page"
@@ -171,6 +184,18 @@ export default function Theme({
     SignupModal:SignupModal,
     LoginModal:LoginModal,
     BasicSearch:BasicSearch,
+    TabsDemo:TabsDemo,
+    CardWithNormal:CardWithNormal,
+    CardWithPicture:CardWithPicture,
+    CardWithPicVer:CardWithPicVer,
+    LargeHeaderCard:LargeHeaderCard,
+    EnquirySubmittedCard:EnquirySubmittedCard,
+    FileUploadComponent:FileUploadComponent,
+    FileUploadWithIcon:FileUploadWithIcon,
+    FileUploadMutiple:FileUploadMutiple,
+    ImageUploadComponent:ImageUploadComponent,
+    FileUploadLimitSize:FileUploadLimitSize,
+    FileUploadPreview:FileUploadPreview,
 
   };
 

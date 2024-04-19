@@ -1,0 +1,32 @@
+import * as React from "react";
+
+import { Button } from "../../../../../styles/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../../../../../styles/components/ui/card";
+
+export function LargeHeaderCard() {
+  return (
+    <Card className="max-w-xl mx-auto bg-white rounded-lg shadow-sm overflow-hidden p-4">
+      <div>
+        <CardHeader className="text-2xl font-bold mb-2">
+          The University of Sydney is ranked 19th in the 2024 QS World University Rankings
+        </CardHeader>
+        <CardDescription className="text-sm mb-4">
+          The University of Sydney was founded on the principle of giving everyone the opportunity to realise their potential through education and still holds that belief just as strongly today.
+        </CardDescription>
+      </div>
+      <div className="text-right">
+        <Button className="mt-4 py-2 px-4">
+          Explore your study options →
+        </Button>
+      </div>
+    </Card>
+  )
+}
+
+export default LargeHeaderCard;
