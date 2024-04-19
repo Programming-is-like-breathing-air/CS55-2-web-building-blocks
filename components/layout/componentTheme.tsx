@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import CodeTabs from "./components/codeTabs";
 import ReactCodeTabs from "./components/reactCodeTabs";
 import useIsMobile from "./helper/mobileDetect";
@@ -31,8 +31,13 @@ import PaginationDemo from "../../public/components/misc/pagination/react/page"
 import NavigationMenuDemo from "../../public/components/navigation/Dropdown/react/page"
 import SideNaviDemo from "../../public/components/navigation/sideNavi/react/page"
 import TopNavigationBar from "../../public/components/navigation/topNavi/react/page"
-import BasicSlider from "../../public/components/slide/basic/react/page"
+import BasicCarousel from "../../public/components/carousel/basic/react/page"
+import CarouselImage from "../../public/components/carousel/withImages/react/page"
+import CarouselAuto from "../../public/components/carousel/withAuto/react/page"
+import CarouselCircle from "../../public/components/carousel/withSlide/react/page"
+import CarouselPreview from "public/components/carousel/withPreview/react/page";
 import TableDemo from "../../public/components/table/normal/react/page"
+import BasicSlider from "../../public/components/slider/basic/react/page"
 
 import { BasicTooltip } from "../../public/components/tooltip/basicTooltip/react/page";
 import { LeftTooltip } from "../../public/components/tooltip/leftTooltip/react/page";
@@ -86,6 +91,7 @@ import LoginModal from "../../public/components/modal/login/react/page";
 
 
 import BasicSearch from "../../public/components/search/basicSearch/react/page"
+import { Car } from "lucide-react";
 
 import NormalLink from "../../public/components/links/normal/react/page"
 import EnhancedLink from "../../public/components/links/enhanced/react/page"
@@ -157,6 +163,11 @@ export default function Theme({
 
     DCC:DesktopCardComponent,
     DITC:DesktopInnovativeTagComponent,
+    BasicCarousel:BasicCarousel,
+    CarouselImage:CarouselImage,
+    CarouselAuto:CarouselAuto,
+    CarouselCircle:CarouselCircle,
+    CarouselPreview:CarouselPreview,
     CheckboxDemo:CheckboxDemo,
     DropdownMenuCheckboxes:DropdownMenuCheckboxes,
     DropdownMenuwithDividers:DropdownMenuwithDividers,
