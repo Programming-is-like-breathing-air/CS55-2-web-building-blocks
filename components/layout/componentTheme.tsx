@@ -83,6 +83,7 @@ import SignUpForm from "public/components/form/signupForm/react/page";
 import CheckoutForm from "public/components/form/checkoutForm/react/page";
 import ResponsiveForm from "public/components/form/responsiveForm/react/page";
 import ContactUsForm from "public/components/form/contactusForm/react/page";
+import MultiStepForm from "public/components/form/multiStepForm/react/page";
 
 import CalendarDemo from "../../public/components/calendar/normal/react/page"
 import NormalTags from "../../public/components/tags/normal/react/page"
@@ -248,6 +249,7 @@ export default function Theme({
     EnhancedLink:EnhancedLink,
     ExpandLink:ExpandLink,
     BrowserWindow:BrowserMockup,
+    MultiStepForm:MultiStepForm,
 
     DatePickerDemo:DatePickerDemo,
     dateTimeInput:dateTimeInput,
