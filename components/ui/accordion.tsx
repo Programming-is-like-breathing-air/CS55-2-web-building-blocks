@@ -5,8 +5,7 @@ export const Accordion = () => {
     <Theme
       componentName="accordion"
       componentStyle="normal"
-      backgroundDesktop="#1d1d1d"
-      backgroundMobile="#1d1d1d"
+      backgroundDesktop=""
       componentReactView="ADemo"
     />
   );
@@ -17,8 +16,7 @@ export const AccordionWithButton = () => {
     <Theme
       componentName="accordion"
       componentStyle="button"   
-      backgroundDesktop="#1d1d1d"
-      backgroundMobile="#1d1d1d"
+      backgroundDesktop=""
       componentReactView="AWB"
       
     />
@@ -30,8 +28,7 @@ export const AccordionWithButtonPicture = () => {
     <Theme
       componentName="accordion"
       componentStyle="picture"
-      backgroundDesktop="#1d1d1d"
-      backgroundMobile="#1d1d1d"
+      backgroundDesktop=""
       componentReactView="AWPB"
     />
   );
@@ -42,8 +39,7 @@ export const AccordionMix = () => {
     <Theme
       componentName="accordion"
       componentStyle="mix"
-      backgroundDesktop="#1d1d1d"
-      backgroundMobile="#1d1d1d"
+      backgroundDesktop=""
       componentReactView="AM"
     />
   );
@@ -54,8 +50,7 @@ export const AccordionWithList = () => {
     <Theme
       componentName="accordion"
       componentStyle="list"
-      backgroundDesktop="#1d1d1d"
-      backgroundMobile="#1d1d1d"
+      backgroundDesktop=""
       componentReactView="AL"
       
     />
@@ -67,8 +62,7 @@ export const AccordionWithListAvatar = () => {
     <Theme
       componentName="accordion"
       componentStyle="listAvatar"
-      backgroundDesktop="#1d1d1d"
-      backgroundMobile="#1d1d1d"
+      backgroundDesktop=""
       componentReactView="ALA"
     />
   );
