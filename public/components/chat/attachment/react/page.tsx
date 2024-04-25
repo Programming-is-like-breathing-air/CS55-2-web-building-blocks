@@ -8,7 +8,6 @@ import { Upload, SendHorizontal } from "lucide-react";
 
 
 export function AttachmentChat() {
-
     const [messages, setMessages] = useState([
         { text: "Hi, how can I help you today?", type: "received" },
         { text: "Hey, I'm having trouble with my account.", type: "sent" },
@@ -36,12 +35,6 @@ export function AttachmentChat() {
         setNewMessage("");
     };
 
-    // Define the styles of text
-    const messageStyles = {
-        sent: { backgroundColor: 'black', color: 'white', borderRadius: '10px', padding: '12px', margin: '5px 0', wordBreak: 'break-word', maxWidth: '300px' },
-        received: { backgroundColor: 'lightgrey', color: 'black', borderRadius: '10px', padding: '12px', margin: '5px 0', wordBreak: 'break-word', maxWidth: '300px' }
-    };
-
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (event.target.files) {
             const files = Array.from(event.target.files);
@@ -50,6 +43,16 @@ export function AttachmentChat() {
         } else {
             setFileNames([]);
         }
+    };
+
+    const messageStyles = {
+        sent: { backgroundColor: 'black', color: 'white', borderRadius: '10px', padding: '12px', margin: '5px 0', wordBreak: 'break-word', maxWidth: '300px' },
+        received: { backgroundColor: 'lightgrey', color: 'black', borderRadius: '10px', padding: '12px', margin: '5px 0', wordBreak: 'break-word', maxWidth: '300px' }
+    };
+
+    // This function simulates a click on the file input element
+    const triggerFileInput = () => {
+        document.getElementById('file-upload4').click();
     };
 
     const fileNamesString = fileNames.join(", ") || "No files chosen";
@@ -79,9 +82,9 @@ export function AttachmentChat() {
                             multiple
                             onChange={handleFileChange}
                             style={{ display: 'none' }}
-                            id="file-upload"
+                            id="file-upload4"
                         />
-                        <Button variant="destructive" style={{ marginRight: '8px', padding: '4px 6px' }}>
+                        <Button variant="destructive" style={{ marginRight: '8px', padding: '4px 6px' }} onClick={triggerFileInput}>
                             <span className="flex items-center gap-2">
                                 <Upload className="file-upload-icon" />
                             </span>
@@ -95,7 +98,11 @@ export function AttachmentChat() {
                             onChange={(e) => setNewMessage(e.target.value)}
                         />
 
+<<<<<<< Updated upstream
                         <Button variant="destructive" disabled={!newMessage.trim()} style={{ marginRight: '8px', padding: '4px 6px' }} onClick={sendMessage}  >
+=======
+                        <Button variant="destructive" disabled={!newMessage.trim()} style={{ marginRight: '8px', padding: '4px 6px' }} onSubmit={sendMessage}>
+>>>>>>> Stashed changes
                             <span className="flex items-center gap-2">
                                 <SendHorizontal className="sent-icon" />
                             </span>
@@ -107,4 +114,6 @@ export function AttachmentChat() {
     );
 }
 
-export default AttachmentChat;
+
+
+    export default AttachmentChat;
