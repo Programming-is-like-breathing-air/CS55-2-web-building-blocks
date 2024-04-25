@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-// 创建样式化组件
+
 const StyledBrowserWindow = styled.div`
   font-family: "Inter", sans-serif;
   display: flex;
@@ -59,11 +59,11 @@ const BrowserContent = styled.iframe`
   border: none;
 `;
 
-// BrowserMockup 组件
+// BrowserMockup 
 const BrowserMockup = () => {
   const [url, setUrl] = useState('https://www.example.com');
 
-  // 处理输入变化的函数
+  
   const handleUrlChange = (event) => {
     setUrl(event.target.value);
   };
