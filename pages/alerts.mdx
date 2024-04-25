@@ -11,11 +11,48 @@ import {
 } from "../components/ui/alert";
 
 # Alerts Component
+**Contributed by Hexin Zheng**
 
-**Contributed by Chaoyang Li**
+## 1. Design:
 
-Alerts component displays a callout for user attention.
+The `Alert` component is a React component designed for displaying important messages, warnings, or notifications to users. It uses the `Alert` element from the Shadcn UI library, which supports multiple variants such as 'info', 'success', 'warning', and 'error'. These variants help in conveying different levels of urgency and types of messages, each with unique styling for background color, icon, and text formatting, consistent with the library's design system.
 
+## 2. How to behave:
+
+The `Alert` component is primarily a static display element meant to provide immediate feedback or crucial information to the user. It doesn't include interactive elements by default, focusing instead on delivering clear and concise messages. However, it can be dismissed if configured with a close button, allowing users to hide the alert when it is no longer needed. Or status button help user to check alert status.
+
+## 3. How to Use the Alert Component
+
+### 3.1. Installation:
+
+Ensure that your project includes all necessary dependencies for the `Alert` component. If they are not already installed, add them via npm with the following command:
+```
+npm install @radix-ui/react-icons lucide-react
+npx shadcn-ui@latest add alert
+```
+
+### 3.2. Usage:
+
+To integrate the `Alert` component into your React application, copy the provided React code snippet:
+```
+import { RocketIcon, InfoCircledIcon, CrossCircledIcon, CheckCircledIcon } from "@radix-ui/react-icons"; //Change the icon whatever you like
+import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+```
+
+### 3.3. Rendering the Component:
+
+Embed the `Alert` component within your JSX code where you want it to be displayed:
+```
+<Alert>
+  <RocketIcon className="h-4 w-4" />
+  <AlertTitle>Heads up!</AlertTitle>
+</Alert>
+```
+
+### 3.4. Customization:
+
+Customize the `Alert` component by modifying its style, event handlers, and functionality to match the design and requirements of your application. The following are some examples of variants of `Alert`.
 ## Basic Component
 
 ### Appearance
