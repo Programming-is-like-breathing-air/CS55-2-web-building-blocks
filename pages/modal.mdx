@@ -9,120 +9,80 @@ import {
 
 # Modal Component
 
-**Contributed by Richard Lee**
+**Contributed by Yuqing Wu**
 
-## Introduction
+A Modal overlaid on either the primary window or another dialog window, rendering the content underneath inert.
 
-The **Blocks** **`Modal`** component is a simple modal that can be used to display a message or a form. The component is fully customisable with the ability to change the title, body, and buttons. It is also responsive and has a mobile view.
+## Basic Modal Component
 
-The design philosophy of the **`Modal`** component is to be as simple as possible. It is not meant to be a full-featured modal component. Instead as previously mentioned, it is meant to be a simple modal component that can be used to display a message or a form and at the same time, be fully customisable.
+### Design:
+The `PictureModal` component is constructed using various custom UI components including Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, and DialogFooter to create a modal dialogue. It features an image of a university building and a text description outlining personal information rights under New South Wales and European Economic Area privacy laws. The content area of the dialogue box, DialogContent, is styled with a white background and rounded corners, making it visually appealing and easy to read, while the clear layout of the image and text ensures that the information is easily digestible for users. 
 
-The **`Modal`** component is designed for both mobile and desktop. It is responsive and will adjust to the screen size.
+### How to behave: 
+- Interaction Response:
+Users initiate the display of the dialog by clicking a button labeled "Open Model". The dialog includes two buttons at the bottom: "Accept" and "Cancel". Clicking the "Accept" button triggers a toast notification informing the user that they have "Already Accepted", while clicking the "Cancel" button closes the dialog.
 
-The **`Modal`** component has the following optional properties:
+- Feedback Mechanism:
+The Toaster component is used to display toast notifications, providing immediate feedback on user actions. The DialogClose component is associated with the "Cancel" button, allowing users to directly close the dialog by clicking the button, thereby enhancing the user experience.
 
-- **title** - the title of the modal
-- **body** - the body of the modal
-- **buttons** - an array of buttons to be displayed in the modal
-- **show** - a boolean value that determines whether the modal is shown
-- **hidden** - a boolean value that determines whether the modal is closed
+### How to use it: 
+- Installation 
+Ensure that your project includes all necessary dependencies for the `Radio Group` component. If they are not already installed, add them via npm with the following command: 
+``` 
+npm shadcn-ui@latest add radio-group
+```
+- Usuage
+To integrate the these component into your React application, include the necessary imports from the Shadcn UI library:
+```
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import { z } from "zod"
+import { Button } from "@/components/ui/button"
+import {
+    Form,
+    FormControl,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
+} from "@/components/ui/form"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { useToast } from "@/components/ui/toast/use-toast"
+import { Toaster } from "@/components/ui/toast/toaster";
 
-## Simple Modal
+```
 
-The **`Simple Modal`** component contains a title, body, and buttons. The title and body are optional. The buttons are an array of buttons to be displayed in the modal, and they are also optional. We designed this component so that it can be used to showcase the simple message and for the user to decide on their response to the message.
+- Customization:
+Developers can modify the content, style and picture within the toast call to suit various contexts. 
 
-You can configure the **`Simple Modal`** component by filling in the properties listed in the **`Introduction`** section.
-
-<Modal />
-
-## Simple Modal With Picture
-
-The **`Simple Modal With Picture`** component is a variation of the **`Simple Modal`** component. This means it was built on top of the **`Simple Modal`** component. The **`Simple Modal With Picture`** component also contains a title, body, and buttons. The title and body are optional. The buttons are an array of buttons to be displayed in the modal. And they are also optional.
-
-You can configure the **`Simple Modal With Picture`** component by filling in the properties listed in the **`Introduction`** section.
 
 <ModalWithPic />
 
-## Confirm Modal
+## Sign Up and Login Modal
 
-The **`Confirm`** component is a specialised modal designed for confirming actions. It provides a clear way for users to confirm or cancel an action before proceeding. The component inherits the basic modal structure and allows customisation of the confirmation message and button labels.
+### Design:
+The `LoginModal` component utilizes the useState hook to manage form mode (login or signup), email, password, and password confirmation inputs. It is built using custom UI components such as Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, Input, and Label to construct a modal dialog box. The trigger button of the dialog box changes its text based on the current form mode. Inside, the modal uses flexible Flexbox layout and structured spacing to organize form elements, ensuring a tidy and functional user interface. The Button component serves as both the form's submission button and the mode-switching link, with different style variants to visually distinguish its functions.
 
-In our example, we showcased the **`Confirm`** component when used to submit a student application, specifically, we notified the student that they cannot make any changes to their application once they have submitted it.
+### How to behave: 
+- Form Processing:
+The form submission is handled by the `handleSubmit` function, which prevents the default form submission behavior and executes login or signup operations based on the current form mode. During login, it displays the user's email, and during signup, it checks for password consistency. The `useToast` hook is utilized to display results of the operations, such as successful login, successful signup, or mismatched passwords errors.
 
-The **`Confirm`** component supports the following properties:
+- Mode Switching:
+Users can switch the form mode by clicking on text links, toggling between login and signup as needed. This adds flexibility to the component, allowing users to choose the appropriate action based on their needs.
 
-- **Title** - the title of the modal
-- **Message** - the confirmation message to be displayed
-- **Confirm Label** - the label text for the confirmation button
-- **Cancel Label** - the label text for the cancel button
+### How to use it: 
 
-<Confirm />
+- Integration Method:
+Integrate the LoginModal component into React applications that require user authentication. This could be used on a website's login page or any section where users need to log in or register to access additional resources. The modal dialog format provided by the component is suitable for performing authentication without interrupting the user's current activities.
 
-## Notice Modal
-
-The **`Notice`** component is a straightforward modal designed for displaying important notices or alerts to the user. It is a simple way to convey information that requires the user's attention.
-
-The **`Notice`** component inherits the basic modal structure and allows customisation of the notice content and button labels.
-
-In our example, we showcased the **`Notice`** component when used to notify the student that they have successfully submitted their application.
-
-The **`Notice`** component supports the following properties:
-
-- **Title** - the title of the modal
-- **Content** - the content or notice message to be displayed
-- **Okay Label** - the label for the OK button (in this case, we used the word "Close")
-
-<Notice />
-
-## Login Modal
-
-The **`Login`** component is a specialised modal designed for user authentication. It provides fields for the user to input their credentials and login to the system. The component inherits the basic modal structure and allows customisation of the login form and button labels.
-
-In our example, we have used the **`Login`** component to create a simple login form for the **`University of Sydney Student`** Login. The form has two fields, one for the **`UniKey`** and one for the **`Password`**. The form also has a button to handle the login action.
-
-The **`Login`** component supports the following properties:
-
-- **Title** - the title of the modal
-- **Username Label** - the label for the Username field (in this case, we used the word "UniKey")
-- **Password Label** - the label for the Password field
-- **Login Button** - a button to handle the login action
+- User Interaction:
+Users open the form by clicking the dialog's trigger button labeled “Login” or “Sign Up”. They fill in their email and password according to the prompts; in signup mode, they also need to fill in a confirmation password. Text links at the bottom of the form allow for flexible switching between login and signup modes.
 
 <Login />
 
-## Signup Modal
-
-The **`Signup`** component is a specialised modal designed for user registration or sign-up. It provides fields for the user to input their email details and sign up for the system. The component inherits the basic modal structure and allows customisation of the sign-up form and button labels.
-
-In our example, we have used the **`Signup`** component to create a simple sign-up form for the **`University of Sydney Student`** System. The form only have one field, which is the **`Student Email`**. The form also has a button to handle the sign-up action.
-
-The **`Signup`** component supports the following properties:
-
-- **Title** - the title of the modal
-- **Email Label** - the label for the Email field
-- **Signup Button** - a button to handle the sign-up action (in this case, we used the word "Continue")
-
-<Signup />
-
-## Usability
-
-The **`Modal`** component is designed to be responsive and will adjust to the screen size. This component is designed to be used in a variety of situations, and we have followed the official guidelines from W3 to design this component.
-
-The **`Modal`** component is a simple yet powerful component. Specifically, it is great for displaying a simple message or a form to the user. It is also fully customisable, which means the developer can change the title, body, and buttons to suit their needs.
-
-For example, when the developer wants to display a simple message to the user, they can use the **`Simple Modal`** component. When the developer wants to display a simple message with a picture to the user, they can use the **`Simple Modal With Picture`** component. So on and so forth.
-
-The font used in this component is `Inter`, which is a font designed for screens. It is a sans-serif font that is easy to read on screens. You can find the font in the `link` tag in the `head` tag of the `index.html` file.
-
-All images in the example include `alt` tags, which is a requirement for accessibility. The `alt` tag is used to describe the image to the users, and it is used by screen readers to describe the image to the users. We strongly recommend the `alt` tags not be deleted or modified when using this component code.
-
-Please include the following HTML code in the `head` tag of your `index.html` file to ensure the component is responsive, this is a requirement for accessibility and is recommended by W3:
-
-```html
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-```
 
 ## Version
 
-| Version | Editor      | Author      | Date       | Description     |
+| Version | Editor      | Reviewer     | Date       | Description     |
 | ------- | ----------- | ----------- | ---------- | --------------- |
-| v1.0    | Richard Lee | Richard Lee | 08/10/2023 | Initial version |
+| v1.0    | Yuqing Wu | Yutong Shi | 18 Apr 2023 | Initial version |
