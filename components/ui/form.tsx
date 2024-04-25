@@ -22,5 +22,5 @@ export function ContactusForm() {
 }
 
 export function MultiStepForm() {
-  return <Theme componentName="form" componentStyle="multiStepForm" />;
+  return <Theme componentName="form" componentStyle="multiStepForm" componentReactView="MultiStepForm" />;
 }
