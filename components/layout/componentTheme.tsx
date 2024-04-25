@@ -124,7 +124,8 @@ import TriggerButton from "../../public/components/button/successful/react/page"
 import SuccessPanel from "../../public/components/panel/normal/react/page"
 import FailPanel from "../../public/components/panel/fail/react/page"
 
-// import SimpleChat from "../../public/components/chat/normal/react/page"
+import NormalChat from "../../public/components/chat/normal/react/page"
+import AttachmentChat from "../../public/components/chat/attachment/react/page"
 
 
 export default function Theme({
@@ -267,6 +268,8 @@ export default function Theme({
     TriggerButton:TriggerButton,
     SuccessPanel:SuccessPanel,
     FailPanel:FailPanel,
+    NormalChat:NormalChat,
+    AttachmentChat:AttachmentChat,
 
   };
 
