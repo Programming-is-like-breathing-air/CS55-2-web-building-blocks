@@ -3,7 +3,7 @@ import ReactCodeTabs from "./components/reactCodeTabs";
 import { Separator } from "@/components/ui/separator";
 import { TABS_WPR_CLASS, TABS_CTNT_CLASS } from "./constants/strings";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import DesktopCardComponent from "../../public/components/card/normal/desktop/page"
+// import DesktopCardComponent from "../../public/components/card/normal/desktop/page"
 
 import AccordionButton from "../../public/components/accordion/button/react/page";
 import AccordionDemo from "../../public/components/accordion/normal/react/page";
@@ -15,7 +15,7 @@ import AccordionListAvatar from "../../public/components/accordion/listAvatar/re
 
 // Rewrite Tooltip
 
-import DesktopInnovativeTagComponent from "../../public/components/tags/innovative/desktop/page"
+// import DesktopInnovativeTagComponent from "../../public/components/tags/innovative/desktop/page"
 import CheckboxDemo from "../../public/components/checkbox/normal/react/page";
 import DropdownMenuCheckboxes from "../../public/components/dropdown/basic/react/page"
 import DropdownMenuwithDividers from "../../public/components/dropdown/withDividers/react/page"
@@ -38,7 +38,7 @@ import { LeftTooltip } from "../../public/components/tooltip/leftTooltip/react/p
 import { TopTooltip } from "../../public/components/tooltip/topTooltip/react/page";
 import { BottomTooltip } from "../../public/components/tooltip/bottomTooltip/react/page";
 import { DisableTooltip } from "../../public/components/tooltip/disabledTooltip/react/page";
-import { AnimatedTooltip } from "../../public/components/tooltip/animatedTooltip/react/page";
+// import { AnimatedTooltip } from "../../public/components/tooltip/animatedTooltip/react/page";
 import ToastWithAction from "../../public/components/toast/action/react/page"
 import ToastWithNormal from "../../public/components/toast/normal/react/page"
 import ToastWithTitle from "../../public/components/toast/title/react/page"
@@ -67,16 +67,16 @@ import CardWithPicVer from "public/components/card/verticalWithPic/react/page";
 import LargeHeaderCard from "public/components/card/header/react/page";
 import EnquirySubmittedCard from "public/components/card/action/react/page";
 import FileUploadComponent from "public/components/fileUpload/basic/react/page";
-import FileUploadWithIcon from "public/components/fileUpload/withIcons/react/page";
+// import FileUploadWithIcon from "public/components/fileUpload/withIcons/react/page";
 import FileUploadMutiple from "public/components/fileUpload/withMultiple/react/page";
 import ImageUploadComponent from "public/components/fileUpload/withFormat/react/page";
-import FileUploadLimitSize from "public/components/fileUpload/withSize/react/page";
+// import FileUploadLimitSize from "public/components/fileUpload/withSize/react/page";
 import FileUploadPreview from "public/components/fileUpload/withPreview/react/page";
 import LoginForm from "public/components/form/loginForm/react/page";
-import SignUpForm from "public/components/form/signupForm/react/page";
+// import SignUpForm from "public/components/form/signupForm/react/page";
 import CheckoutForm from "public/components/form/checkoutForm/react/page";
 import ResponsiveForm from "public/components/form/responsiveForm/react/page";
-import ContactUsForm from "public/components/form/contactusForm/react/page";
+// import ContactUsForm from "public/components/form/contactusForm/react/page";
 import MultiStepForm from "public/components/form/multiStepForm/react/page";
 
 import CalendarDemo from "../../public/components/calendar/normal/react/page"
@@ -94,7 +94,7 @@ import LoginModal from "../../public/components/modal/login/react/page";
 
 import BasicSearch from "../../public/components/search/basicSearch/react/page"
 
-import NormalLink from "../../public/components/links/normal/react/page"
+// import NormalLink from "../../public/components/links/normal/react/page"
 import EnhancedLink from "../../public/components/links/enhanced/react/page"
 import ExpandLink from "../../public/components/links/expand/react/page"
 
@@ -162,8 +162,8 @@ export default function Theme({
     TreeViewDemo:TreeViewDemo,
 
 
-    DCC:DesktopCardComponent,
-    DITC:DesktopInnovativeTagComponent,
+    // DCC:DesktopCardComponent,
+    // DITC:DesktopInnovativeTagComponent,
     BasicCarousel:BasicCarousel,
     CarouselImage:CarouselImage,
     CarouselAuto:CarouselAuto,
@@ -185,7 +185,7 @@ export default function Theme({
     TopTooltip:TopTooltip,
     BottomTooltip:BottomTooltip,
     DisableTooltip:DisableTooltip,
-    AnimatedTooltip:AnimatedTooltip,
+    // AnimatedTooltip:AnimatedTooltip,
     ToastWithAction:ToastWithAction,
     ToastWithNormal:ToastWithNormal,
     ToastWithTitle:ToastWithTitle,
@@ -208,17 +208,17 @@ export default function Theme({
     LargeHeaderCard:LargeHeaderCard,
     EnquirySubmittedCard:EnquirySubmittedCard,
     FileUploadComponent:FileUploadComponent,
-    FileUploadWithIcon:FileUploadWithIcon,
+    // FileUploadWithIcon:FileUploadWithIcon,
     FileUploadMutiple:FileUploadMutiple,
     ImageUploadComponent:ImageUploadComponent,
-    FileUploadLimitSize:FileUploadLimitSize,
+    // FileUploadLimitSize:FileUploadLimitSize,
     FileUploadPreview:FileUploadPreview,
     LoginForm:LoginForm,
-    SignUpForm:SignUpForm,
+    // SignUpForm:SignUpForm,
     CheckoutForm:CheckoutForm,
     ResponsiveForm:ResponsiveForm,
-    ContactUsForm:ContactUsForm,
-    NormalLink:NormalLink,
+    // ContactUsForm:ContactUsForm,
+    // NormalLink:NormalLink,
     EnhancedLink:EnhancedLink,
     ExpandLink:ExpandLink,
     BrowserWindow:BrowserMockup,
