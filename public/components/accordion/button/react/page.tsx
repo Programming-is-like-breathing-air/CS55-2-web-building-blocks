@@ -4,7 +4,14 @@ import {
     AccordionItem,
     AccordionTrigger,
   } from "../../../../../styles/components/ui/accordion"
+  
+import { Button } from "../../../../../styles/components/ui/button"
+import { useToast } from "../../../../../styles/components/ui/toast/use-toast"
+import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
+
   export function AccordionButton() {
+    const { toast } = useToast();
+    const buttonText = "Normal Show Toast";
     const handleClick = (url) => () => {
         window.open(url, "_blank");
       };
@@ -20,7 +27,13 @@ import {
           <AccordionContent>
           Once you're ready, enrol online by logging in to Sydney Student. Go to "My studies" then "Enrolment" and you're set to go. There are several sections to complete as part of your enrolment. You can log out and return later if you need to.
           <br></br>
-          <button style={{ backgroundColor: 'rgb(249, 115, 22)', color: 'white', padding: '10px', borderRadius: '5px', cursor: 'pointer' }} onClick={handleClick('https://www.sydney.edu.au/students/')}>Enrol now</button>
+          <Toaster />
+          <Button style={{ backgroundColor: 'rgb(249, 115, 22)', color: 'white', padding: '10px', borderRadius: '5px', cursor: 'pointer' }} 
+          variant="outline"
+          onClick={() => {console.log(buttonText, "has clicked");
+          toast({
+            description: "Button click.",
+          });}}>Enrol now</Button>
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">
@@ -28,7 +41,13 @@ import {
           <AccordionContent>
           Your enrolment comes with certain conditions so it's important to understand them. You should also familiarise yourself with our privacy policy regarding the personal information you supply during enrolment.
           <br></br>
-          <button style={{ backgroundColor: 'rgb(249, 115, 22)', color: 'white', padding: '10px', borderRadius: '5px', cursor: 'pointer' }} onClick={windowClick('For more details, visit our website.')}>Learn More</button>
+          <Toaster />
+          <Button style={{ backgroundColor: 'rgb(249, 115, 22)', color: 'white', padding: '10px', borderRadius: '5px', cursor: 'pointer' }} 
+          variant="outline"
+          onClick={() => {console.log(buttonText, "has clicked");
+          toast({
+            description: "Button click.",
+          });}}>Learn more</Button>
           </AccordionContent>
         </AccordionItem>
         
