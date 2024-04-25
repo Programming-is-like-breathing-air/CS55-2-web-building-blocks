@@ -49,12 +49,12 @@ export function RadioGroupForm() {
             <Toaster />
 
             <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="w-2/3 space-y-6">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="w-2/3 space-y-3">
                     <FormField
                         control={form.control}
                         name="type"
                         render={({ field }) => (
-                            <FormItem className="space-y-6">
+                            <FormItem className="space-y-0">
                                 <FormLabel >Notify me about...</FormLabel>
                                 <FormControl>
                                     <RadioGroup
@@ -62,7 +62,7 @@ export function RadioGroupForm() {
                                         defaultValue={field.value}
                                         className="flex flex-col space-y-1"
                                     >
-                                        <FormItem className="flex items-center space-x-3 space-y-0" style={{ marginTop: '10px'}}>
+                                        <FormItem className="flex items-center space-x-3 space-y-0" style={{ marginTop: '5px'}}>
                                             <FormControl style={{ marginRight: '2px'}}>
                                                 <RadioGroupItem value="all" />
                                             </FormControl>
@@ -78,7 +78,7 @@ export function RadioGroupForm() {
                                                 Direct messages and mentions
                                             </FormLabel>
                                         </FormItem>
-                                        <FormItem className="flex items-center space-x-3 space-y-3">
+                                        <FormItem className="flex items-center space-x-3 space-y-0">
                                             <FormControl style={{ marginRight: '2px'}}>
                                                 <RadioGroupItem value="none" />
                                             </FormControl>
