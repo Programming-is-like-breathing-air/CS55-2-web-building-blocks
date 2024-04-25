@@ -7,7 +7,7 @@ import { useToast } from "../../../../../styles/components/ui/toast/use-toast";
 import { Toaster } from "../../../../../styles/components/ui/toast/toaster"; 
 
 export function LoginModal() {
-    const [formMode, setFormMode] = useState("login");  // 控制是显示登录还是注册界面
+    const [formMode, setFormMode] = useState("login"); 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
