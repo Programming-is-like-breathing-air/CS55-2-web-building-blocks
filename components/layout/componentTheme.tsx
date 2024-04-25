@@ -77,6 +77,7 @@ import SignUpForm from "public/components/form/signupForm/react/page";
 import CheckoutForm from "public/components/form/checkoutForm/react/page";
 import ResponsiveForm from "public/components/form/responsiveForm/react/page";
 import ContactUsForm from "public/components/form/contactusForm/react/page";
+import MultiStepForm from "public/components/form/multiStepForm/react/page";
 
 import CalendarDemo from "../../public/components/calendar/normal/react/page"
 import NormalTags from "../../public/components/tags/normal/react/page"
@@ -93,7 +94,6 @@ import LoginModal from "../../public/components/modal/login/react/page";
 
 import BasicSearch from "../../public/components/search/basicSearch/react/page"
 
-import { Car } from "lucide-react";
 import NormalLink from "../../public/components/links/normal/react/page"
 import EnhancedLink from "../../public/components/links/enhanced/react/page"
 import ExpandLink from "../../public/components/links/expand/react/page"
@@ -118,7 +118,8 @@ import TriggerButton from "../../public/components/button/successful/react/page"
 import SuccessPanel from "../../public/components/panel/normal/react/page"
 import FailPanel from "../../public/components/panel/fail/react/page"
 
-// import SimpleChat from "../../public/components/chat/normal/react/page"
+import NormalChat from "../../public/components/chat/normal/react/page"
+import AttachmentChat from "../../public/components/chat/attachment/react/page"
 
 
 export default function Theme({
@@ -221,6 +222,7 @@ export default function Theme({
     EnhancedLink:EnhancedLink,
     ExpandLink:ExpandLink,
     BrowserWindow:BrowserMockup,
+    MultiStepForm:MultiStepForm,
 
     DatePickerDemo:DatePickerDemo,
     dateTimeInput:dateTimeInput,
@@ -238,6 +240,8 @@ export default function Theme({
     TriggerButton:TriggerButton,
     SuccessPanel:SuccessPanel,
     FailPanel:FailPanel,
+    NormalChat:NormalChat,
+    AttachmentChat:AttachmentChat,
 
   };
 

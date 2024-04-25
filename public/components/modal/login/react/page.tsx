@@ -1,61 +1,110 @@
-import { useState } from 'react';
-import { Button } from "../../../../../styles/components/ui/button"
-import {
-    Dialog,
-    DialogClose,
-    DialogFooter,
-    DialogDescription,
-    DialogContent,
-    DialogHeader,
-    DialogTitle,
-    DialogTrigger,
-} from "../../../../../styles/components/ui/dialog"
-import { Input } from "../../../../../styles/components/ui/input"
-import { Label } from "../../../../../styles/components/ui/label"
-import { useToast } from "../../../../../styles/components/ui/toast/use-toast"
-import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
+import React, { useState } from "react";
+import { Button } from "../../../../../styles/components/ui/button";
+import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "../../../../../styles/components/ui/dialog";
+import { Input } from "../../../../../styles/components/ui/input";
+import { Label } from "../../../../../styles/components/ui/label";
+import { useToast } from "../../../../../styles/components/ui/toast/use-toast"; 
+import { Toaster } from "../../../../../styles/components/ui/toast/toaster"; 
 
 export function LoginModal() {
-    const [Username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const { toast } = useToast();
+    const [formMode, setFormMode] = useState("login"); 
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+    const { toast } = useToast(); 
 
-    const handleLogin = () => {
-        toast({
-            description:
-                <div className="w-[340px] rounded-md bg-slate-950 p-4 text-black">
-                    Username is: {Username}
-                </div>
-        });
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (formMode === "login") {
+            toast({
+                title: "Login Attempt",
+                description: `Logged in with Email: ${email}`,
+            });
+        } else {
+            if (password !== confirmPassword) {
+                toast({
+                    title: "Error",
+                    description: "Passwords do not match.",
+                });
+                return;
+            }
+            toast({
+                title: "Signup Attempt",
+                description: `Signed up with Email: ${email}`,
+            });
+        }
     };
 
+    const switchToSignUp = () => {
+        setFormMode("signup");
+    };
+
+    const switchToSignIn = () => {
+        setFormMode("login");
+    };
 
     return (
         <>
             <Toaster />
             <Dialog>
                 <DialogTrigger asChild>
-                    <Button variant="outline">Login</Button>
+                    <Button variant="outline">{formMode === "login" ? "Login" : "Sign Up"}</Button>
                 </DialogTrigger>
-                <DialogContent style={{ backgroundColor: 'white' }} className="p-6 rounded-md">
-                    <DialogHeader className="mb-4">
-                        <DialogTitle className="text-xl font-bold">Login to Your Student Account</DialogTitle>
+                <DialogContent>
+                    <DialogHeader>
+                        <DialogTitle>{formMode === "signup" ? "Create Your Account" : "Login to Your Account"}</DialogTitle>
                     </DialogHeader>
-                    <div className="flex flex-col gap-4">
-                        <Label htmlFor="username">Username (UniKey)</Label>
-                        <Input id="username" placeholder="Your UniKey" value={Username} onChange={(e) => setUsername(e.target.value)} />
+                    <form onSubmit={handleSubmit} className="flex flex-col gap-4 p-4">
+                        <Label htmlFor="email">Email</Label>
+                        <Input
+                            id="email"
+                            type="email"
+                            placeholder="name@example.com"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
 
                         <Label htmlFor="password">Password</Label>
-                        <Input id="password" type="password" placeholder="Your Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                        <a href="#" className="text-sm text-orange-600 hover:text-orange-700">Forgot your password?</a>
-                    </div>
-                    <DialogFooter className="flex justify-center mt-6">
-                        <Button variant="destructive" onClick={handleLogin}>Login</Button>
-                    </DialogFooter>
+                        <Input
+                            id="password"
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+
+                        {formMode === "signup" && (
+                            <>
+                                <Label htmlFor="confirm-password">Confirm Password</Label>
+                                <Input
+                                    id="confirm-password"
+                                    type="password"
+                                    value={confirmPassword}
+                                    onChange={(e) => setConfirmPassword(e.target.value)}
+                                    required
+                                />
+                            </>
+                        )}
+
+                        <DialogFooter>
+                            <Button variant="destructive">{formMode === "signup" ? "Create Account" : "Login"}</Button>
+                        </DialogFooter>
+                    </form>
+
+                    {formMode === "login" ? (
+                        <p className="text-center">
+                            Don’t have an account? <Button asChild variant="link" onClick={switchToSignUp}><span>Sign Up</span></Button>
+                        </p>
+                    ) : (
+                        <p className="text-center">
+                            Already have an account? <Button asChild variant="link" onClick={switchToSignIn}><span>Login Here</span></Button>
+                        </p>
+                    )}
                 </DialogContent>
             </Dialog>
         </>
-    )
+    );
 }
 
 export default LoginModal;
