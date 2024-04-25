@@ -5,47 +5,65 @@ import {
 
 # Panel Component
 
-**Contributed by Yitong He**
+**Contributed by Yuqing Wu**
 
 The panel component is a visible container used on confirmation or results pages to highlight important content.([GOV.UK Design System](https://design-system.service.gov.uk/components/panel/))
 
-## Success Panel
-
+## Normal Panel
 <Panel />
+
+### Design
+The `SuccessPanel` component is a React component designed to display a confirmation message using a card layout. This component uses several styled components from a UI library, including `Card`, `CardHeader`, `CardTitle`, `CardContent`, and `CardDescription`. These components are structured to provide a clear and professional presentation of the completion status of an application or process, featuring a concise layout with focused content.
+
+### How to behave:
+This component is purely informational and does not include any interactive elements. The `Card` is styled with a fixed width and a white background, emphasizing its content. The `CardHeader` has a light gray background and contains the `CardTitle`, which is centrally aligned and highlighted with bold font styling to draw attention to the completion status.
+
+### How to use it:
+- Installation
+Ensure that your project includes all necessary dependencies for the Panel component. If they are not already installed, add them via npm with the following command:
+```
+npx shadcn-ui@latest add card
+```
+
+- Visual Presentation:
+The component is rendered as a standalone card which can be used in various contexts where a user needs to be informed about the successful completion of a task or process. The design is simple yet effective, utilizing spacing and typography to create a clear message hierarchy.
+- Content Structure:
+- Title and Header:
+The `CardTitle` within the `CardHeader` announces "Application Complete", serving as the primary message to the user. This header sets the tone and provides immediate recognition of the process outcome.
+- Reference Information:
+Below the header, in the `CardContent`, the `CardDescription` details "Your Reference Number: KDU3957KF". This is crucial for users needing to reference or follow up on their application.
+- Styling and Customization:
+- Card Styling:
+The card's dimensions and color scheme are predefined but can be easily adjusted to fit different visual contexts or branding requirements. The text alignment and padding are also styled to enhance readability and aesthetic appeal.
+
+The `SuccessPanel` component effectively communicates critical information succinctly and attractively, making it an essential tool for user interfaces where confirming completion and providing reference details are necessary. It enhances user experience by clearly and efficiently conveying success in user interactions or transactions.
+
+
 
 ## Fail Panel
 
 <Panel_Fail />
 
-## Usability
-<details>
-<summary>**When to use this component**</summary>
-- Use the panel component to display important information when a transaction has been completed.
-- In most cases, the panel component is used on confirmation pages, to tell the user they have successfully completed the transaction of failed with the transaction.  
-([GOV.UK Design System](https://design-system.service.gov.uk/components/panel/))
-</details>
-<details>
-<summary>**When not to use this component**</summary>
-Never use the panel component to highlight important information within body content.
-([GOV.UK Design System](https://design-system.service.gov.uk/components/panel/))
-</details>
-<details>
-<summary>**Keep the panel text brief**</summary>
-The panel text is only meant for a high-level explanation of what has happened. Short words and phrases can highlighted information is easy to read at different screen sizes. For example, 'Application complete'.  
+### Design
+The FailPanel component is a React component tailored to convey error or failure messages concerning user interactions or processes.
 
-If you need to give detailed information, or more context, use the description text under the heading text.  
-([GOV.UK Design System](https://design-system.service.gov.uk/components/panel/))
-</details>
+### How to behave:
+The FailPanel is static and serves a purely informational purpose. It does not contain interactive elements that affect functionality but does include a "Back" button to guide users on possible next steps. The panel’s content, centered both vertically and horizontally, is straightforward, aiming to communicate the failure clearly and succinctly.
 
-## Accessibility
-<details>
-<summary>**Writing appropriate markup for panel**</summary>
-If the panel doesn't contain an accurate WAI-ARIA role or property, the screen reader software won't recognize the purpose of the message — and neither will the user.  
-Thus, a ARIA role is needed for the accessibility of panel. `role="alert"`should be used in this case for important information that needs to be presented to the user immediately. 
-([Bureau of Internet Accessibility](https://www.boia.org/blog/are-your-websites-status-messages-accessible))
-</details>
+### How to use it:
+- Installation
+Ensure that your project includes all necessary dependencies for the Panel component. If they are not already installed, you can add them using npm with the following command:
+```
+npx shadcn-ui@latest add card
+```
+- Error Information and Action:
+Below the title, the `CardContent` provides a brief directive, "Please try again", offering a simple next step for the user. Additionally, a `Button` labeled "Back" is provided to facilitate user navigation, potentially leading them to retry the operation or return to a safe state.
+- Customization:
+Card Styling:
+The card's dimensions are set to 350px width, maintaining a compact and focused appearance. The red background color can be customized as needed to fit different branding requirements or to match different severity levels of errors. Typography and button styling are aligned with the overall design to ensure coherence and maintain user attention on the corrective actions.
 
 ## Version
-| Version | Editor | Author | Date | Description |
-| ---- | ---- | ---- | ---- | ---- |
-| v1.0 | Yitong He(Vivian) | Yitong He(Vivian) | 2023.9.19 | Initial version |
+
+| Version | Editor      | Author      | Date       | Description     |
+| ------- | ----------- | ----------- | ---------- | --------------- |
+|  v1.0   | Xinyu CHen  | Yuqing Wu   | 15 Apr 2024| Initial version |
