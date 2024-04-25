@@ -62,7 +62,7 @@ function MultiStepForm() {
     };
 
     return (
-        <Card className="mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+        <Card className="mx-auto bg-white rounded-lg shadow-md overflow-hidden" style={{ width: '400px' }}>
             <CardHeader>
                 <CardTitle>Multi-Step Form</CardTitle>
             </CardHeader>
