@@ -60,7 +60,7 @@ export function NormalChat() {
                             </span>
                         </div>
                     ))}
-                    <form onSubmit={sendMessage} className="flex mt-2">
+                    <form className="flex mt-2">
                         <Input
                             type="text"
                             placeholder="Type your message..."
@@ -68,7 +68,7 @@ export function NormalChat() {
                             value={newMessage}
                             onChange={(e) => setNewMessage(e.target.value)}
                         />
-                        <Button variant="destructive" disabled={!newMessage.trim()} style={{ marginRight: '8px', padding: '4px 6px' }}>
+                        <Button variant="destructive" disabled={!newMessage.trim()} style={{ marginRight: '8px', padding: '4px 6px' }} onSubmit={sendMessage} >
                             <span className="flex items-center gap-2">
                                 <SendHorizontal className="sent-icon" />
                             </span>

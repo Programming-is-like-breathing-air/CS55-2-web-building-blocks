@@ -16,6 +16,7 @@ export function AttachmentChat() {
         { text: "I can't log in.", type: "sent" },
     ]);
     const [newMessage, setNewMessage] = useState("");
+    const [fileNames, setFileNames] = useState<string[]>([]);
     const { toast } = useToast();
 
     const handleSent = () => {
@@ -41,6 +42,18 @@ export function AttachmentChat() {
         received: { backgroundColor: 'lightgrey', color: 'black', borderRadius: '10px', padding: '12px', margin: '5px 0', wordBreak: 'break-word', maxWidth: '300px' }
     };
 
+    const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        if (event.target.files) {
+            const files = Array.from(event.target.files);
+            const fileNames = files.map(file => file.name);
+            setFileNames(fileNames);
+        } else {
+            setFileNames([]);
+        }
+    };
+
+    const fileNamesString = fileNames.join(", ") || "No files chosen";
+
     return (
         <>
             <Toaster />
@@ -60,13 +73,20 @@ export function AttachmentChat() {
                             </span>
                         </div>
                     ))}
-                    <form onSubmit={sendMessage} className="flex mt-2">
-                        {/* <Button variant="destructive" style={{ marginRight: '8px' }}>File</Button>  */}
+                    <form className="flex mt-2">
+                        <input
+                            type="file"
+                            multiple
+                            onChange={handleFileChange}
+                            style={{ display: 'none' }}
+                            id="file-upload"
+                        />
                         <Button variant="destructive" style={{ marginRight: '8px', padding: '4px 6px' }}>
                             <span className="flex items-center gap-2">
                                 <Upload className="file-upload-icon" />
                             </span>
                         </Button>
+
                         <Input
                             type="text"
                             placeholder="Type your message..."
@@ -74,12 +94,12 @@ export function AttachmentChat() {
                             value={newMessage}
                             onChange={(e) => setNewMessage(e.target.value)}
                         />
-                        <Button variant="destructive" disabled={!newMessage.trim()} style={{ marginRight: '8px', padding: '4px 6px' }}>
+
+                        <Button variant="destructive" disabled={!newMessage.trim()} style={{ marginRight: '8px', padding: '4px 6px' }} onSubmit={sendMessage}  >
                             <span className="flex items-center gap-2">
                                 <SendHorizontal className="sent-icon" />
                             </span>
                         </Button>
-
                     </form>
                 </CardContent>
             </Card>
