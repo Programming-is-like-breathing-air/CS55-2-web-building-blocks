@@ -17,7 +17,7 @@ export function CardWithNormal() {
       </CardHeader>
       <CardContent className="p-4">
         <CardDescription className="text-sm mb-4">
-          Submit a partnership enquiry, you can also make a donation by contacting the University revenue team.
+          Submit a partnership enquiry or make a donation by contacting<br /> the University revenue team.
         </CardDescription>
         <Button className="w-full py-2 px-4 ">
           Explore more →

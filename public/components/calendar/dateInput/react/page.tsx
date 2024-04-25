@@ -1,20 +1,34 @@
-"use client"
-
-import * as React from "react"
-import { format } from "date-fns"
-import { Calendar as CalendarIcon } from "lucide-react"
-
-import { cn } from "@/lib/utils"
-import { Button } from "../../../../../styles/components/ui/button"
-import { Calendar } from "../../../../../styles/components/ui/calendar"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "../../../../../styles/components/ui/popover"
+import * as React from "react";
+import { format } from "date-fns";
+import { Calendar as CalendarIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Button } from "../../../../../styles/components/ui/button";
+import { Calendar } from "../../../../../styles/components/ui/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "../../../../../styles/components/ui/popover";
+import { useToast } from "../../../../../styles/components/ui/toast/use-toast";
+import { ToastAction } from "../../../../../styles/components/ui/toast/toast";
 
 export function DatePickerDemo() {
-  const [date, setDate] = React.useState<Date>()
+  const [date, setDate] = React.useState<Date>();
+  const { toast } = useToast();
+
+  const handleDateSelect = (selectedDate: Date | undefined) => {
+    setDate(selectedDate);
+    if (selectedDate) {
+      // Trigger toast when a date is selected
+      toast({
+        description: `You selected: ${format(selectedDate, "PPP")}`,
+        action: (
+          <ToastAction altText="Goto schedule to undo">Undo</ToastAction>
+        ),
+      });
+
+      // Display additional toast with the selected date
+      toast({
+        description: `Selected Date: ${format(selectedDate, "PPPP")}`,
+      });
+    }
+  };
 
   return (
     <Popover>
@@ -34,11 +48,12 @@ export function DatePickerDemo() {
         <Calendar
           mode="single"
           selected={date}
-          onSelect={setDate}
+          onSelect={handleDateSelect}
           initialFocus
         />
       </PopoverContent>
     </Popover>
-  )
+  );
 }
+
 export default DatePickerDemo;

@@ -1,9 +1,8 @@
-import * as React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button } from "../../../../../styles/components/ui/button"; 
 
-const HoverButton: React.FC = () => {
-  const [isHovered, setIsHovered] = useState<boolean>(false); 
+export function HoverButton() {
+  const [isHovered, setIsHovered] = useState(false); 
 
   return (
     <Button
@@ -16,6 +15,6 @@ const HoverButton: React.FC = () => {
       Hover 
     </Button>
   );
-};
+}
 
 export default HoverButton;

@@ -1,42 +1,74 @@
-import * as React from "react"
-import { startOfYear, addMonths } from "date-fns"
+import * as React from "react";
+import { startOfYear, addMonths } from "date-fns";
 
 export interface MonthPickerProps {
-  value: Date | undefined
-  onChange: (value: Date) => void
+  value: Date | undefined;
+  onChange: (value: Date) => void;
+  yearRange?: number[]; // Specify the range of years to display
 }
 
-const MonthPicker: React.FC<MonthPickerProps> = ({ value, onChange }) => {
-  const [selectedMonth, setSelectedMonth] = React.useState<Date | undefined>(
-    value || startOfYear(new Date())
-  )
+const MonthPicker: React.FC<MonthPickerProps> = ({
+  value,
+  onChange,
+  yearRange,
+}) => {
+  const [selectedMonth, setSelectedMonth] = React.useState<number>(
+    value ? value.getMonth() : new Date().getMonth()
+  );
+  const [selectedYear, setSelectedYear] = React.useState<number>(
+    value ? value.getFullYear() : new Date().getFullYear()
+  );
 
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedValue = new Date(event.target.value)
-    setSelectedMonth(selectedValue)
-    onChange(selectedValue)
-  }
+  const handleChangeMonth = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedMonth(parseInt(event.target.value));
+    onChange(new Date(selectedYear, parseInt(event.target.value)));
+  };
+
+  const handleChangeYear = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedYear(parseInt(event.target.value));
+    onChange(new Date(parseInt(event.target.value), selectedMonth));
+  };
 
   const renderMonthOptions = () => {
-    const options = []
-    for (let i = 0; i < 12; i++) {
-      const monthDate = addMonths(startOfYear(new Date()), i)
-      const monthLabel = monthDate.toLocaleString('en-US', { month: 'long' }) 
-      const year = monthDate.getFullYear()
+    const options = [];
+    for (let month = 0; month < 12; month++) {
+      const monthDate = addMonths(startOfYear(new Date(selectedYear)), month);
+      const monthLabel = monthDate.toLocaleString("en-US", { month: "long" });
       options.push(
-        <option key={i} value={monthDate.toISOString()}>
-          {`${monthLabel} ${year}`}
+        <option key={month} value={month}>
+          {monthLabel}
         </option>
-      )
+      );
     }
-    return options
-  }
+    return options;
+  };
+
+  const renderYearOptions = () => {
+    const options = [];
+    const currentYear = new Date().getFullYear();
+    const startYear = yearRange && yearRange[0] ? yearRange[0] : currentYear - 5;
+    const endYear = yearRange && yearRange[1] ? yearRange[1] : currentYear + 5;
+
+    for (let year = startYear; year <= endYear; year++) {
+      options.push(
+        <option key={year} value={year}>
+          {year}
+        </option>
+      );
+    }
+    return options;
+  };
 
   return (
-    <select value={selectedMonth?.toISOString()} onChange={handleChange}>
-      {renderMonthOptions()}
-    </select>
-  )
-}
+    <div>
+      <select value={selectedMonth} onChange={handleChangeMonth}>
+        {renderMonthOptions()}
+      </select>
+      <select value={selectedYear} onChange={handleChangeYear}>
+        {renderYearOptions()}
+      </select>
+    </div>
+  );
+};
 
-export default MonthPicker
+export default MonthPicker;

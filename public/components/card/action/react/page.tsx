@@ -25,7 +25,7 @@ export function EnquirySubmittedCard() {
       <CardTitle className="text-lg font-semibold my-2 mt-4">Enquiry Submitted</CardTitle>
       <CardContent className="mb-4 mt-4">
         <p className="text-sm">
-          Thank you for your enquiry. We will get back to you as soon as we can.
+          Thank you for your enquiry. We will get back to<br />  you as soon as we can.
         </p>
       </CardContent>
       <Button className="py-2 px-4 mt-2">

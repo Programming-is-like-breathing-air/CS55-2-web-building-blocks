@@ -5,14 +5,25 @@ import { Clock as ClockIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "../../../../../styles/components/ui/button"
 import TimePicker from "../../../../../styles/components/ui/timepicker" 
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "../../../../../styles/components/ui/popover"
+import { Popover, PopoverContent, PopoverTrigger } from "../../../../../styles/components/ui/popover"
+import { useToast } from "../../../../../styles/components/ui/toast/use-toast"
+import { ToastAction } from "../../../../../styles/components/ui/toast/toast"
 
 export function TimePickerDemo() {
   const [time, setTime] = React.useState<Date>()
+  const { toast } = useToast();
+
+  const handleTimeChange = (selectedTime: Date | undefined) => {
+    setTime(selectedTime);
+    if (selectedTime) {
+      toast({
+        description: `Selected Time: ${format(selectedTime, "p")}`,
+        action: (
+          <ToastAction altText="Undo">Undo</ToastAction>
+        ),
+      });
+    }
+  };
 
   return (
     <Popover>
@@ -31,7 +42,7 @@ export function TimePickerDemo() {
       <PopoverContent className="w-auto p-0">
         <TimePicker
           value={time}
-          onChange={setTime}
+          onChange={handleTimeChange}
         />
       </PopoverContent>
     </Popover>

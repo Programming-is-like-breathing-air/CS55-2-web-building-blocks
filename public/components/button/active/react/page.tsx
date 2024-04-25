@@ -1,9 +1,8 @@
-import * as React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button } from "../../../../../styles/components/ui/button"; 
 
-const ActiveButton: React.FC = () => {
-  const [isActive, setIsActive] = useState<boolean>(false); 
+export function ActiveButton() {
+  const [isActive, setIsActive] = useState(false); 
 
   return (
     <Button
@@ -13,6 +12,6 @@ const ActiveButton: React.FC = () => {
       Active 
     </Button>
   );
-};
+}
 
 export default ActiveButton;

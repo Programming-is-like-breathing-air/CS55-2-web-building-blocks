@@ -1,26 +1,32 @@
-import * as React from "react";
-import { useState } from "react";
-import { Button } from "../../../../../styles/components/ui/button"; 
+import React, { useState } from "react";
+import { Button } from "../../../../../styles/components/ui/button";
+import { useToast } from "../../../../../styles/components/ui/toast/use-toast";
 
-interface FocusButtonProps {
-  variant: "default" ; 
-  size: "default" ; 
-}
+const FocusButton = () => {
+  const [isFocused, setIsFocused] = useState(false);
+  const { toast } = useToast();
 
-const FocusButton: React.FC<FocusButtonProps> = ({
-  variant = "default",
-  size = "default",
-}) => {
-  const [isFocused, setIsFocused] = useState<boolean>(false); 
+  const handleFocus = () => {
+    setIsFocused(true);
+  };
+
+  const handleBlur = () => {
+    setIsFocused(false);
+  };
+
+  const handleClick = () => {
+    toast({
+      description: "Button clicked!",
+    });
+  };
 
   return (
     <Button
-      variant={variant}
-      size={size}
-      onClick={() => setIsFocused(true)} 
-      onBlur={() => setIsFocused(false)} 
+      onFocus={handleFocus}
+      onBlur={handleBlur}
+      onClick={handleClick}
       style={{
-        boxShadow: isFocused ? "0 0 0 2px #000" : "none", 
+        boxShadow: isFocused ? "0 0 0 2px #000" : "none",
       }}
     >
       Focus 
