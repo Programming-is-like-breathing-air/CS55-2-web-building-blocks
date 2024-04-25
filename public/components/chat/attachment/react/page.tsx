@@ -95,7 +95,7 @@ export function AttachmentChat() {
                             onChange={(e) => setNewMessage(e.target.value)}
                         />
 
-                        <Button variant="destructive" disabled={!newMessage.trim()} style={{ marginRight: '8px', padding: '4px 6px' }} onSubmit={sendMessage}  >
+                        <Button variant="destructive" disabled={!newMessage.trim()} style={{ marginRight: '8px', padding: '4px 6px' }} onClick={sendMessage}  >
                             <span className="flex items-center gap-2">
                                 <SendHorizontal className="sent-icon" />
                             </span>
