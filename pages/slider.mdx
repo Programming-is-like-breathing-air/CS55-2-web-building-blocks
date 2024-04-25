@@ -7,58 +7,88 @@ import {
 
 **Contributed by Xinyu Chen**
 
-Slider component is used to contral a bar.
 
 ## Basic Component
-The words can be display by click the switch button.
+### Design:
+The BasicSlider component is designed to offer a user-friendly and efficient interface for selecting a numerical value within a defined range.
+### How to behave:
+- Initialization: The slider initializes with a default value set, which in this case is 2. This provides users with a starting point, indicating the slider's usage context.
+- User Interaction: Users can click and drag the slider handle to select a value between 1 and 10. As the handle moves, the selected value updates immediately, giving real-time feedback.
+- Step Increment: The slider increments by 1 step as the handle is moved, ensuring precise adjustments and easy quantification of the value change.
+- Responsive: The slider's width adjusts to 60% of its container, making it adaptable to different screen sizes and orientations, maintaining usability and appearance.
+### How to use it:
+- Installation: Ensure your project has the necessary UI components library installed that includes the `Slider` component. If it is not already installed, you might need to first set up your project to include these UI elements.
+```
+import * as React from "react"
+import * as SliderPrimitive from "@radix-ui/react-slider"
 
-In desktop, you can switch word by clicking the little circle on the bottom of the component or the button on the left and right side of the component.
+import { cn } from "@/lib/utils"
 
-In mobile, you can switch word by clicking the left or right part of the component.
-<Slider />
+const Slider = React.forwardRef<
+  React.ElementRef<typeof SliderPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>
+>(({ className, ...props }, ref) => {
+  // 添加一个状态来跟踪滑块的值
+  const [value, setValue] = React.useState(props.defaultValue || [0]);
 
-## Variants
+  // 处理滑块值变化的事件
+  const handleValueChange = (value) => {
+    console.log("Current Slider Value:", value[0]); // 输出当前的滑块数值到控制台
+    setValue(value); // 更新状态
+  };
+
+  // 处理滑块拖动结束的事件
+  const handleDragEnd = () => {
+    console.log("Final Slider Value:", value[0]); // 当拖动结束时，输出最终的滑块数值到控制台
+  };
+
+  return (
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <SliderPrimitive.Root
+        ref={ref}
+        className={cn(
+          "relative flex touch-none select-none items-center",
+          className
+        )}
+        style={{ width: '500px' }} // 设置滑块的宽度为父容器的50%
+        onValueChange={handleValueChange} // 设置值变化事件处理函数
+        onMouseUp={handleDragEnd} // 设置鼠标松开事件处理函数
+        onTouchEnd={handleDragEnd} // 设置触摸结束事件处理函数
+        {...props}
+      >
+        <SliderPrimitive.Track className="relative h-1.5 w-full grow overflow-hidden rounded-full bg-gray-300">
+          <SliderPrimitive.Range className="absolute h-full bg-primary" />
+        </SliderPrimitive.Track>
+        <SliderPrimitive.Thumb className="block h-4 w-4 rounded-full border border-primary/50 bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" />
+      </SliderPrimitive.Root>
+    </div>
+  );
+})
+Slider.displayName = SliderPrimitive.Root.displayName
+
+export { Slider }
+```
 
 
-## Usability
+- Component Setup: To use the BasicSlider in your React application, you will need to include the necessary imports and setup:
+```
+import React from "react";
+import { Slider } from "@/components/ui/slider";  // Adjust the import path as necessary
+```
 
-<details>
-    <summary>Make slide looks actionable</summary>
-    Make sure the button or switch circle of your slide obvious, otherwise the user may think it is just a image.
-</details>
+- Usage:
+Here's how you can incorporate the BasicSlider into your application's component structure:
 
-<details>
-    <summary>Don't switch images too fast</summary>
-    If you make your slide autoplay, make sure users have enough time to read the content before next switch. If you set the speed of autoplay too fast, like 1 second per switch, it can ruin users experience.
-</details>
-
-<details>
-    <summary>Add details of image if necessary</summary>
-    For some images of location or person, text details often help users understand the content of images.
-</details>
-
-<details>
-    <summary>Set the size of preview image appropriately</summary>
-    The size of the preview image should not be too large or too small.
-
-    A preview image that is too large will make the slide itself meaningless. (Why use slide instead of displaying the entire image?) A preview image that is too small will make it difficult for users to see the general content of the image, making the preview image itself meaningless.
-</details>
-
-<details>
-    <summary>Don’t put too many or too few images on the slide</summary>
-    Before you decide to use a slide to display something, you need to think about whether the slide is suitable.
-
-    If you put too many images into the slide (more than 10), users will need to click too many times to fully view them all. If you put too few pictures in the slide (less than 3 pictures), maybe you don’t need to use the slide, and a photo wall may be more suitable for you.
-</details>
-
-## Accessibility
-Slide component support keyboard operation on Desktop.
-
-| Key         | Interaction                                                                                 |
-|-------------|---------------------------------------------------------------------------------------------|
-| Left Arrow  | Switch to next images. If the image is the last one, it will switch to the first image.     |
-| Right Arrow | Switch to previous images. If the image is the first one, it will switch to the last image. |
-
+- Customization: Customize the slider by passing additional props or modifying its CSS class to match your application’s design requirements. The className prop can be used to add custom styles:
+```
+defaultValue={[2]}
+max={10}
+step={1}
+```
+```
+// You can define additional styles using the `cn` utility function or direct className strings
+const customStyles = cn("w-[60%]", "custom-slider-class");
+```
 ## Vision
 | Version | Editor      | Author      | Date       | Description     |
 |---------|-------------|-------------|------------|-----------------|

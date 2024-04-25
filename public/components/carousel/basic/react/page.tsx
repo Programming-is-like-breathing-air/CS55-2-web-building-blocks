@@ -30,7 +30,7 @@ export function QuotesCarousel() {
     <Carousel className="w-full max-w-xs">
       <CarouselContent>
         {quotes.map((quote, index) => (
-          <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+          <CarouselItem key={index}>
             <div className="p-1">
               <Card>
                 <CardContent className="flex items-center justify-center p-6">
