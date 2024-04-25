@@ -6,56 +6,62 @@ import { useToast } from "../../../../../styles/components/ui/toast/use-toast";
 import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
 import { Upload, SendHorizontal } from "lucide-react";
 
-
 export function AttachmentChat() {
-    const [messages, setMessages] = useState([
+
+    interface IMessage {
+        text: React.ReactNode;
+        type: string;
+        fileUrl?: string;
+        isImage?: boolean;
+    }
+    
+    const [messages, setMessages] = useState<IMessage[]>([
         { text: "Hi, how can I help you today?", type: "received" },
         { text: "Hey, I'm having trouble with my account.", type: "sent" },
         { text: "What seems to be the problem?", type: "received" },
         { text: "I can't log in.", type: "sent" },
     ]);
     const [newMessage, setNewMessage] = useState("");
-    const [fileNames, setFileNames] = useState<string[]>([]);
     const { toast } = useToast();
 
-    const handleSent = () => {
+    const handleSent = (message: string) => {
         toast({
-            description:
+            description: 
                 <div className="w-[340px] rounded-md bg-slate-950 p-4 text-black">
-                    The Message is: {newMessage}
+                    Message sent: {message}
                 </div>
         });
     };
 
-    const sendMessage = (e) => {
-        e.preventDefault();
-        if (!newMessage.trim()) return;
-        setMessages([...messages, { text: newMessage, type: "sent" }]);
-        handleSent();
-        setNewMessage("");
+    const sendFiles = (files: File[]) => {
+        const fileMessages = files.map(file => {
+            const fileUrl = URL.createObjectURL(file);
+            const isImage = file.type.startsWith('image/');
+            const textContent = isImage ? (
+                <img src={fileUrl} alt={`Thumbnail of ${file.name}`} style={{ maxWidth: '100px', maxHeight: '100px' }} />
+            ) : (
+                <span style={{ textDecoration: 'underline', color: 'white' }}>{file.name}</span> 
+            );
+            return {
+                text: textContent,
+                type: "sent",
+                fileUrl,
+                isImage
+            };
+        });
+        setMessages(prevMessages => [...prevMessages, ...fileMessages]);
+        handleSent(`Sent files: ${files.map(file => file.name).join(', ')}`);
     };
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        if (event.target.files) {
-            const files = Array.from(event.target.files);
-            const fileNames = files.map(file => file.name);
-            setFileNames(fileNames);
-        } else {
-            setFileNames([]);
-        }
+        const files = event.target.files ? Array.from(event.target.files) : [];
+        sendFiles(files);
     };
 
     const messageStyles = {
         sent: { backgroundColor: 'black', color: 'white', borderRadius: '10px', padding: '12px', margin: '5px 0', wordBreak: 'break-word', maxWidth: '300px' },
         received: { backgroundColor: 'lightgrey', color: 'black', borderRadius: '10px', padding: '12px', margin: '5px 0', wordBreak: 'break-word', maxWidth: '300px' }
     };
-
-    // This function simulates a click on the file input element
-    const triggerFileInput = () => {
-        document.getElementById('file-upload4').click();
-    };
-
-    const fileNamesString = fileNames.join(", ") || "No files chosen";
 
     return (
         <>
@@ -72,7 +78,13 @@ export function AttachmentChat() {
                     {messages.map((message, index) => (
                         <div key={index} className={`flex ${message.type === "sent" ? "justify-end" : "justify-start"}`}>
                             <span style={messageStyles[message.type]}>
-                                {message.text}
+                                {message.fileUrl ? (
+                                    <a href={message.fileUrl} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', color: 'blue' }}>
+                                        {message.text}
+                                    </a>
+                                ) : (
+                                    message.text
+                                )}
                             </span>
                         </div>
                     ))}
@@ -82,9 +94,9 @@ export function AttachmentChat() {
                             multiple
                             onChange={handleFileChange}
                             style={{ display: 'none' }}
-                            id="file-upload4"
+                            id="file-upload"
                         />
-                        <Button variant="destructive" style={{ marginRight: '8px', padding: '4px 6px' }} onClick={triggerFileInput}>
+                        <Button variant="destructive" style={{ marginRight: '8px', padding: '4px 6px' }} onClick={() => document.getElementById('file-upload').click()}>
                             <span className="flex items-center gap-2">
                                 <Upload className="file-upload-icon" />
                             </span>
@@ -98,7 +110,13 @@ export function AttachmentChat() {
                             onChange={(e) => setNewMessage(e.target.value)}
                         />
 
-                        <Button variant="destructive" disabled={!newMessage.trim()} style={{ marginRight: '8px', padding: '4px 6px' }} onClick={sendMessage}  >
+                        <Button variant="destructive" disabled={!newMessage.trim()} style={{ marginRight: '8px', padding: '4px 6px' }} onClick={() => {
+                            if (newMessage.trim()) {
+                                setMessages([...messages, { text: newMessage, type: "sent" }]);
+                                handleSent(newMessage);
+                                setNewMessage("");
+                            }
+                        }}>
                             <span className="flex items-center gap-2">
                                 <SendHorizontal className="sent-icon" />
                             </span>
