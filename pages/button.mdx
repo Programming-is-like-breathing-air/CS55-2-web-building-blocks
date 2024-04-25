@@ -12,106 +12,180 @@ import {
 
 # Button Component
 
-**Contributed by Ke Louis Liu**
-
-This is the index page for the Advanced folder!
+**Contributed by Yutong Shi**
 
 ## Basic Component
+### Design:
+The **BasicButton** component is a React functional component that showcases a button with toast functionality. It utilizes the **Button** component from a UI library to render the button. When clicked, the button triggers a toast notification via the **useToast** hook, displaying a message ("Button clicked!") and an action button ("Undo").
 
+### How to behave:
+ - User Interaction:
+Clicking the button triggers the **onClick** event, which in turn calls the **toast** function to display a toast notification.
+
+### How to use it:
+- Installation: Ensure that your project includes all necessary dependencies for the Button component and toast functionality. If they are not already installed, add them via npm with the following commands:
+```
+npx shadcn-ui@latest add button
+npx shadcn-ui@latest add toast
+```
+- Usage: Import the Button, useToast, Toaster, and ToastAction into your React application.
+```
+import { Button } from "../../../../../styles/components/ui/button"
+import { useToast } from "../../../../../styles/components/ui/toast/use-toast"
+import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
+import { ToastAction } from "../../../../../styles/components/ui/toast/toast";
+```
+- Button Functionality:
+     - Clicking the button provides visual feedback through a toast notification.
+- Feedback Mechanisms:
+     - Toast Notification: Upon clicking the button, a brief toast notification appears with the message "Button clicked!" and an "Undo" action button.
+- Customization Considerations:
+     - Toast Styling: Developers can customize toast appearance and behavior, including duration, position, and styling.
+     - Button Styling: The button's appearance can be customized using the **variant** prop, with "outline" indicating an outline-style button.
 <Button />
 
-## Definition and Usage
-
-The `<button>` tag defines a clickable button.
-
-Inside a `<button>` element you can put text (and tags like `<i>`, `<b>`, `<strong>`, `<br>`, `<img>`, etc.). That is not possible with a button created with the `<input>` element!
-
-Tip: Always specify the `type` attribute for a `<button>` element, to tell browsers what type of button it is.
-
-Tip: You can easily style buttons with CSS! Look at the examples below or visit our CSS Buttons tutorial.
 
 ## Variants
 
-### New Button
+## New Button
+### Design:
+The NewButton component in React showcases a button with destructive behavior, triggering a toast notification upon click. It utilizes the Button component from a UI library along with the useToast hook, Toaster, and ToastAction components for displaying notifications.
 
+### How to behave:
+- User Interaction:
+     - Clicking the button triggers the **onClick** event handler.
+     - Inside the event handler, the **toast** function from the **useToast** hook is called to display a toast notification.
+
+### How to use it:
+- Button Functionality:
+     - Clicking the button provides visual feedback through a toast notification.
+   - Feedback Mechanisms:
+     - Toast Notification: Upon clicking the button, a brief toast notification appears with the message "Button clicked!" and an "Undo" action button.
+   - Customization Considerations:
+     - Toast Styling: Developers can customize the appearance and behavior of the toast notification, including duration, position, and styling.
+     - Button Styling: The button's appearance can be customized using the **variant** prop, with "destructive" indicating a button with a destructive action style.
 <NewButton />
 
-### Trigger Button
+## Trigger Button
+### Design:
 
+   The **TriggerButton** component is a React functional component designed to showcase a button with toggle functionality. It imports the **Button** component from a UI library and utilizes the **useState** hook to manage the state of the button's clicked status. When clicked, the button toggles between displaying "Clicked" and "Click Me" text.
+
+### How to behave:
+
+   - User Interaction:
+     - Clicking the button toggles its clicked state between true and false.
+     - The button's text changes dynamically based on its clicked state, displaying "Clicked" when clicked and "Click Me" otherwise.
+
+### How to use it:
+
+   - Button Functionality: Clicking the button changes its appearance and text to indicate its current state.
+   - Customization Considerations:
+     - Button Text: Developers can customize the text displayed on the button to suit the application's requirements or user preferences.
 <SuccessfulButton />
 
-### Loading Button
+## Loading Button
+### Design:
 
+   The **ButtonLoading** component is a React functional component designed to showcase a button with a loading spinner. It imports the **Loader2** component from the "lucide-react" library and the **Button** component from a UI library. The button is rendered in a disabled state with a loading spinner and a text message indicating that the user needs to wait.
+
+### How to behave:
+
+   - User Interaction:
+     - The button is rendered in a disabled state, preventing user interaction while indicating that an action is in progress.
+     - The loading spinner inside the button provides visual feedback to the user that something is happening in the background.
+
+### How to use it:
+
+   - Button Functionality: The button serves as a visual indicator to inform users that an action is currently being processed.
+   - Customization Considerations:
+     - Loader Styling: Developers can customize the appearance.
+     - Button Text: The text message displayed alongside the loading spinner can be customized to provide more specific information about the action being processed.
 <LoadingButton />
 
-### Hover Button
+## Hover Button
 
+### Design:
+
+   The **HoverButton** component is a React functional component designed to showcase a button with hover effect functionality. It imports the **Button** component from a UI library and utilizes the **useState** hook to manage the state of the button's hover status. When hovered over, the button's background color changes to indicate the hover effect.
+
+### How to behave:
+
+   - User Interaction:
+     - Moving the mouse pointer over the button triggers the **onMouseEnter** event, setting the **isHovered** state to true.
+     - Moving the mouse pointer away from the button triggers the **onMouseLeave** event, setting the **isHovered** state to false.
+     - The button's background color changes dynamically based on its hover status, providing visual feedback to the user.
+
+### How to use it:
+
+   - Button Functionality: Hovering over the button changes its background color to indicate the hover effect.
+   - Customization Considerations:
+     - Hover Effect: Developers can customize the hover effect by adjusting the button's background color.
 <HoverButton />
 
-### Focus Button
+## Focus Button
+### Design:
 
+   The **FocusButton** component is a React functional component designed to showcase a button with focus effect functionality. It imports the **Button** component from a UI library and utilizes the **useState** hook to manage the state of the button's focus status. Additionally, it utilizes the **useToast** hook to display a toast notification when the button is clicked. When focused, the button's box shadow changes to indicate the focus effect.
+
+### How to behave:
+
+   - User Interaction:
+     - Focusing on the button triggers the **onFocus** event, setting the **isFocused** state to true.
+     - Blurring from the button triggers the **onBlur** event, setting the **isFocused** state to false.
+     - Clicking the button triggers the **onClick** event, displaying a toast notification with the message "Button clicked!".
+     - The button's box shadow changes dynamically based on its focus status, providing visual feedback to the user.
+
+### How to use it:
+
+   - Button Functionality: Focusing on the button changes its box shadow to indicate the focus effect. Clicking the button triggers a toast notification with a descriptive message.
+   - Customization Considerations:
+     - Focus Effect: Developers can customize the focus effect by adjusting the button's box shadow.
 <FocusButton />
 
-### Active Button
+## Active Button
+### Design:
 
+   The **ActiveButton** component is a React functional component designed to showcase a button with active state functionality. It imports the **Button** component from a UI library and utilizes the **useState** hook to manage the state of the button's active status. When clicked, the button toggles between active and inactive states, changing its background color to indicate the active state.
+
+### How to behave:
+
+   - User Interaction:
+     - Clicking the button toggles its active state between true and false.
+     - The button's background color changes dynamically based on its active status, providing visual feedback to the user.
+
+### How to use it:
+
+   - Button Functionality: Clicking the button toggles its active state, changing its background color to indicate the active state.
+   - Customization Considerations:
+     - Active State Styling: Developers can customize the appearance of the button in its active state by adjusting its background color.
 <ActiveButton />
 
-### Icon Button
+## Icon Button
+### Design:
 
+   The **ButtonIcon** component is a React functional component designed to showcase a button with an icon. It imports the **ChevronRight** icon from the "lucide-react" library and the **Button** component from a UI library. Additionally, it utilizes the **useToast** hook and associated **Toaster** and **ToastAction** components for displaying toast notifications. The button is rendered with an outline variant, a small size, and an icon (ChevronRight) to provide visual feedback to the user.
+
+### How to behave:
+
+   - User Interaction:
+     - Clicking the button triggers the **onClick** event handler.
+     - Inside the event handler, the **toast** function from the **useToast** hook is called to display a toast notification.
+     - The toast notification includes a description ("Button clicked!") and an action button ("Undo").
+
+### How to use it:
+
+   - Button Functionality: Clicking the button provides visual feedback through a toast notification.
+   - Feedback Mechanisms:
+     - Toast Notification: Upon clicking the button, a brief toast notification appears with the message "Button clicked!" and an "Undo" action button.
+   - Customization Considerations:
+     - Button Icon: Developers can customize the icon displayed on the button by importing different icons or using custom SVGs.
+     - Toast Styling: Developers can customize the appearance and behavior of the toast notification, including duration, position, and styling.
+     - Button Styling: The button's appearance can be customized using the **variant** and **size** props to fit different design requirements.
 <IconButton />
 
-## Usability
-
-### Use icons only when necessary
-
-Icons can be used in buttons when additional clarity is required and the icon is highly relevant to the action. Icons should not be used for decoration.
-
-### Don't override color
-
-Do not use custom colors for buttons. The colors of different button variations have been designed to be consistent and accessible.
-
-### When to use static black and static white
-
-To ensure maximum contrast with the background, use static black for light backgrounds and images, and use static white for dark backgrounds and images. Avoid placing static components on top of busy images with a lot of variance in contrast.
-
-### Don't use the pending state for long progress
-
-The pending state should be reserved for indeterminate actions that are expected to take 5 seconds or less. For determinate or longer actions, use a progress bar or progress circle outside of the button.
-
-### Use a button group to show additional actions
-
-Instead of a single split button (now a deprecated component), use a button group to show any additional actions related to the most critical action.
-
-### Display a popover when featuring subsequent options
-
-In some instances, it's possible to have a call to action button display a popover (or tray) to feature subsequent options. These options should extend and parallel the action of the button. Do not include arbitrary or unrelated options.
-
-## Accessibility
-
-The native `<button>` element is already optimized for screen readers and other assistive technologies, making it more user-friendly for individuals with disabilities.
-
-### Focus Management
-
-Buttons can receive keyboard focus, meaning users can navigate to the button using the Tab key and activate it using the Enter or Space key.
-
-## Attributes
-
-| Attribute        | Value                                                                      | Description                                                                                     |
-| ---------------- | -------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `autofocus`      | autofocus                                                                  | Specifies that a button should automatically get focus when the page loads                      |
-| `disabled`       | disabled                                                                   | Specifies that a button should be disabled                                                      |
-| `form`           | form_id                                                                    | Specifies which form the button belongs to                                                      |
-| `formaction`     | URL                                                                        | Specifies where to send the form-data when a form is submitted. Only for type="submit"          |
-| `formenctype`    | application/x-www-form-urlencoded <br/>multipart/form-data <br/>text/plain | Specifies how form-data should be encoded before sending it to a server. Only for type="submit" |
-| `formmethod`     | get <br/>post                                                              | Specifies how to send the form-data (which HTTP method to use). Only for type="submit"          |
-| `formnovalidate` | formnovalidate                                                             | Specifies that the form-data should not be validated on submission. Only for type="submit"      |
-| `formtarget`     | \_blank <br/>\_self <br/>\_parent <br/>\_top <br/>framename                | Specifies where to display the response after submitting the form. Only for type="submit"       |
-| `name`           | name                                                                       | Specifies a name for the button                                                                 |
-| `type`           | button <br/>reset <br/>submit                                              | Specifies the type of button                                                                    |
-| `value`          | text                                                                       | Specifies an initial value for the button                                                       |
-
 ## Version
+| Version | Editor      | Reviewer      | Date       | Description     |
+|---------|-------------|-------------|------------|-----------------|
+| v1.0    | Yutong Shi | Yutong Shi | 25 Apr 2024 | Initial version |
 
-| Version | Editor | Author | Date       | Description     |
-| ------- | ------ | ------ | ---------- | --------------- |
-| v1.0    | Ke Liu | Ke Liu | Oct 5 2023 | Initial version |

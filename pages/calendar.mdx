@@ -10,95 +10,217 @@ import {
 
 # Calendar Component
 
-**Contributed by Ke Louis Liu**
+**Contributed by Yutong Shi**
 
 ## Basic Component
+### Design:
 
+   The **CalendarDemo** component is a React functional component designed to showcase a calendar component with toast functionality. It imports the **Calendar** component from a UI library and the **useToast** hook along with associated **Toaster** and **ToastAction** components for displaying toast notifications. The calendar allows users to select a single date, and upon selection, a toast notification is triggered to display the selected date.
+
+### How to behave:
+
+   - User Interaction:
+     - Selecting a date in the calendar triggers the **onSelect** event handler.
+     - The selected date is stored in the component's state and displayed on the calendar.
+     - A toast notification is triggered, displaying the selected date's information.
+   - Toast Notification:
+     - The toast notification includes the selected date's information and an "Undo" action button.
+
+### How to use it:
+
+   - Installation: Ensure that your project includes all necessary dependencies for the Calendar component and toast functionality. If they are not already installed, add them via npm with the following commands:
+    ```
+    npx shadcn-ui@latest add calendar
+    npx shadcn-ui@latest add toast
+    npm install react-day-picker date-fns
+    ```
+   - Usage: Import the Calendar , useToast, Toaster, Button and ToastAction into your React application.
+    ```
+    import * as React from "react";
+    import { Calendar } from "../../../../../styles/components/ui/calendar";
+    import { useToast } from "../../../../../styles/components/ui/toast/use-toast";
+    import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
+    import { Button } from "../../../../../styles/components/ui/button";
+    import { ToastAction } from "../../../../../styles/components/ui/toast/toast";
+    ```
+   - Calendar Functionality:
+     - Selecting a date in the calendar triggers a toast notification with the selected date's information.
+   - Customization Considerations:
+     - Calendar Mode: Developers can customize the calendar's mode (e.g., single, multiple) according to their application's requirements.
+     - Toast Styling: Developers can customize the appearance and behavior of the toast notification, including duration, position, and styling.
+     - Button Styling: The action button within the toast notification can be customized using the **ToastAction** component.
 <Calendar />
-
-This is the index page for the Advanced folder!
-
-## Definition and Usage
-
-The calendar feature supports providing community event information in a calendar format either to all site visitors or only signed in site visitors (community members), while only authorized members may add events.
 
 ## Variants
 
-### Date Input Calendar
+## Date Input Calendar
+### Design:
 
+   The **DatePickerDemo** component is a React functional component designed to showcase a date picker component with popover and toast functionality. It imports various components from UI libraries such as **Button**, **Calendar**, **Popover**, and **ToastAction** for creating a date picker interface. The component allows users to select a single date from a calendar and displays toast notifications upon date selection.
+
+### How to behave:
+
+   - User Interaction:
+     - Clicking the button triggers the popover, revealing the calendar component for date selection.
+     - Selecting a date in the calendar triggers the **onSelect** event handler.
+     - The selected date is stored in the component's state and displayed in the button text.
+     - Toast notifications are triggered upon date selection, displaying the selected date's information.
+
+### How to use it:
+
+   - Installation:
+     Ensure that your project includes all necessary dependencies for the DatePickerDemo component and toast functionality. If they are not already installed, add them via npm with the following commands:
+     ```
+     npx shadcn-ui@latest add button
+     npx shadcn-ui@latest add popover
+     ```
+    - Usage: Import the Calendar , useToast, Toaster, Button and ToastAction into your React application.
+    ```
+    import * as React from "react";
+    import { Calendar } from "../../../../../styles/components/ui/calendar";
+    import { useToast } from "../../../../../styles/components/ui/toast/use-toast";
+    import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
+    import { Button } from "../../../../../styles/components/ui/button";
+    import { ToastAction } from "../../../../../styles/components/ui/toast/toast";
+    ```
+   - Date Picker Functionality:
+     - Clicking the button opens a popover containing a calendar for date selection.
+     - Selecting a date in the calendar triggers toast notifications with the selected date's information.
+   - Customization Considerations:
+     - Button Styling: Developers can customize the appearance and behavior of the button, including its variant, size, and text alignment.
+     - Calendar Styling: Developers can customize the appearance and behavior of the calendar component, including its mode (e.g., single, multiple) and initial focus.
+     - Popover Styling: Developers can customize the appearance and behavior of the popover component, including its positioning and content layout.
+     - Toast Styling: Developers can customize the appearance and behavior of the toast notifications, including their duration, position, and content.
 <DateInputCalendar />
 
-### Date Time Input Calendar
+## Date Time Input Calendar
+### Design:
 
+   The **DateTimeInput** component is a React functional component designed to showcase a combined date and time input using a popover. It imports various components from UI libraries such as **Button**, **Calendar**, **TimePicker**, **Popover**, and **ToastAction** for creating the date and time input interface. The component allows users to select both a date and a time and displays toast notifications upon selection.
+
+### How to behave:
+
+   - User Interaction:
+     - Clicking the button triggers the popover, revealing the combined date and time input interface.
+     - Selecting a date or time in their respective components triggers the **onSelect** or **onChange** event handlers.
+     - The selected date and time are stored in the component's state and displayed in the button text.
+     - Toast notifications are triggered upon date and time selection, displaying the selected date and time information.
+
+### How to use it:
+
+   - Date and Time Input Functionality:
+     - Clicking the button opens a popover containing a combined date and time input interface.
+     - Selecting a date or time in their respective components triggers toast notifications with the selected date and time information.
+   - Customization Considerations:
+     - Button Styling: Developers can customize the appearance and behavior of the button, including its variant, size, and text alignment.
+     - Calendar and TimePicker Styling: Developers can customize the appearance and behavior of the calendar and time picker components according to their application's requirements.
+     - Popover Styling: Developers can customize the appearance and behavior of the popover component, including its positioning and content layout.
+     - Toast Styling: Developers can customize the appearance and behavior of the toast notifications, including their duration, position, and content.
 <DateTimeInputCalendar />
 
-### Month Input Calendar
+## Month Input Calendar
+### Design:
 
+   The **MonthPickerDemo** component is a React functional component designed to showcase a month picker component with popover and toast functionality. It imports various components from UI libraries such as **Button**, **MonthPicker**, **Popover**, and **ToastAction** for creating the month picker interface. The component allows users to select a month and displays toast notifications upon selection.
+
+### How to behave:
+
+   - User Interaction:
+     - Clicking the button triggers the popover, revealing the month picker component.
+     - Selecting a month in the month picker triggers the **onChange** event handler.
+     - The selected month is stored in the component's state and displayed in the button text.
+     - Toast notifications are triggered upon month selection, displaying the selected month's information.
+
+### How to use it:
+
+   - Month Picker Functionality:
+     - Clicking the button opens a popover containing the month picker component.
+     - Selecting a month in the month picker triggers toast notifications with the selected month's information.
+   - Customization Considerations:
+     - Button Styling: Developers can customize the appearance and behavior of the button, including its variant, size, and text alignment.
+     - MonthPicker Styling: Developers can customize the appearance and behavior of the month picker component according to their application's requirements.
+     - Popover Styling: Developers can customize the appearance and behavior of the popover component, including its positioning and content layout.
+     - Toast Styling: Developers can customize the appearance and behavior of the toast notifications, including their duration, position, and content.
 <MonthInputCalendar />
 
-### Time Input Calendar
+## Time Input Calendar
+### Design:
 
+   The **TimePickerDemo** component is a React functional component designed to showcase a time picker component with popover and toast functionality. It imports various components from UI libraries such as **Button**, **TimePicker**, **Popover**, and **ToastAction** for creating the time picker interface. The component allows users to select a time and displays toast notifications upon selection.
+
+### How to behave:
+
+   - User Interaction:
+     - Clicking the button triggers the popover, revealing the time picker component.
+     - Selecting a time in the time picker triggers the **onChange** event handler.
+     - The selected time is stored in the component's state and displayed in the button text.
+     - Toast notifications are triggered upon time selection, displaying the selected time information.
+
+### How to use it:
+
+   - Time Picker Functionality:
+     - Clicking the button opens a popover containing the time picker component.
+     - Selecting a time in the time picker triggers toast notifications with the selected time information.
+   - Customization Considerations:
+     - Button Styling: Developers can customize the appearance and behavior of the button, including its variant, size, and text alignment.
+     - TimePicker Styling: Developers can customize the appearance and behavior of the time picker component according to their application's requirements.
+     - Popover Styling: Developers can customize the appearance and behavior of the popover component, including its positioning and content layout.
+     - Toast Styling: Developers can customize the appearance and behavior of the toast notifications, including their duration, position, and content.
 <TimeInputCalendar />
 
-### Week Input Calendar
+## Week Input Calendar
+### Design:
 
+   The **WeekPicker** component is a React functional component designed to provide a week picker interface with popover and toast functionality. It imports various components from UI libraries such as **Button**, **Popover**, and **ToastAction** for creating the week picker interface. Users can select a week and year, and toast notifications are displayed upon selection.
+
+### How to behave:
+
+   - User Interaction:
+     - Clicking the button triggers the popover, revealing the week picker interface.
+     - Selecting a year or week triggers the respective **onChange** event handler.
+     - The selected year and week are stored in the component's state and displayed in the button text.
+     - Toast notifications are triggered upon week selection, displaying the selected week and year information.
+
+### How to use it:
+
+   - Week Picker Functionality:
+     - Clicking the button opens a popover containing the week picker interface.
+     - Users can select a year and week from the dropdown menus.
+     - Toast notifications are triggered upon week selection, providing feedback on the selected week and year.
+   - Customization Considerations:
+     - Button Styling: Developers can customize the appearance and behavior of the button, including its variant, size, and text alignment.
+     - Popover Styling: Developers can customize the appearance and behavior of the popover component, including its positioning and content layout.
+     - Toast Styling: Developers can customize the appearance and behavior of the toast notifications, including their duration, position, and content.
 <WeekInputCalendar />
 
-### Date Range Picker Calendar
+## Date Range Picker Calendar
 
 <DateRangePickerCalendar />
+### Design:
 
-## Usability
+   The **DatePickerWithRange** component is a React functional component designed to provide a date picker interface with range selection capability, popover, and toast functionality. It imports various components from UI libraries such as **Button**, **Popover**, and **ToastAction** for creating the date picker interface. Users can select a date range, and toast notifications are displayed upon selection.
 
-### Intuitive Navigation
+### How to behave:
 
-Users should be able to easily navigate between months and years.
+   - User Interaction:
+     - Clicking the button triggers the popover, revealing the date picker interface with a range selection mode.
+     - Selecting a date range triggers the **onSelect** event handler.
+     - The selected date range is stored in the component's state and displayed in the button text.
+     - Toast notifications are triggered upon date range selection, displaying the selected date range information.
 
-### Clear Date Selection
+### How to use it:
 
-Clicking or tapping on a date should provide immediate visual feedback.
-
-### Highlight Today's Date
-
-Today's date should be highlighted or differentiated from other dates.
-
-### Visual Indicators
-
-Important dates, events, or appointments should have distinct visual indicators.
-
-### Responsive Design
-
-The calendar should be usable across different devices – from desktops to tablets to smartphones.
-
-### Tooltip on Hover
-
-Displaying additional information about a date or event when a user hovers can provide clarity.
-
-### Drag and Drop Functionality
-
-For advanced implementations, allowing users to drag and drop events can enhance the user experience.
-
-### Consistent UI
-
-Ensure that the user interface remains consistent in terms of colors, fonts, and interactions.
-
-## Accessibility
-
-### Keyboard Navigation
-
-Users should be able to navigate through dates and functions using just the keyboard.
-
-### Screen Reader Support
-
-Important elements, like dates and events, should be readable by screen readers.
-
-### High Contrast Mode
-
-Offer a high contrast mode for users with visual impairments.
-Avoid Reliance on Color Alone: Important information should not be conveyed by color alone. Use text or symbols alongside color.
+   - Date Picker Functionality:
+     - Clicking the button opens a popover containing the date picker interface with range selection capability.
+     - Users can select a date range by clicking on the start and end dates.
+     - Toast notifications are triggered upon date range selection, providing feedback on the selected date range.
+   - Customization Considerations:
+     - Button Styling: Developers can customize the appearance and behavior of the button, including its variant, size, and text alignment.
+     - Popover Styling: Developers can customize the appearance and behavior of the popover component, including its positioning and content layout.
+     - Toast Styling: Developers can customize the appearance and behavior of the toast notifications, including their duration, position, and content.
 
 ## Version
 
-| Version | Editor | Author | Date       | Description     |
-| ------- | ------ | ------ | ---------- | --------------- |
-| v1.0    | Ke Liu | Ke Liu | Oct 5 2023 | Initial version |
+| Version | Editor      | Reviewer      | Date       | Description     |
+|---------|-------------|-------------|------------|-----------------|
+| v1.0    | Yutong Shi | Yutong Shi | 25 Apr 2024 | Initial version |
