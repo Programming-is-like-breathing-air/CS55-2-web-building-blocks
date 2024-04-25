@@ -96,17 +96,15 @@ You can add more Accordion collapsible sections by adding more Accordion compone
 
 ## Accordion with Button
 
-The **`Accordion with Button`** component is built on top of the Simple Accordion component. It adds a button (cta) to the title area.
 
-You can configure the cta button to navigate to a different page or to open a modal. Please follow the code example below to see how to configure the cta button.
-
+The **`AccordionButton`** component that incorporates a customized accordion control with clickable buttons. The component uses imports from a project's UI component library, specifically **``accordion``** and **``button``** components, as well as toast notification functionality.
 <AccordionWithButton />
 
 ## Accordion with Button and Picture
 
-The **`Accordion with Button and Picture`** component is built on top of the Accordion with Button component, which itself is built on top of the **`Simple Accordion component`**. It adds a picture to the title area as well as the button (cta).
+The **`Accordion component with buttons and images`** builds upon the Button Accordion component, which in turn is based on the Simple Accordion component. It incorporates `<img>` and `<Button>` tags into `<AccordionContent>`.
 
-This component is useful for showing a list of items that have a picture and a button (cta) to navigate to a different page or to open a modal. With a picture, it is easier to identify the item as well as bering able to display more information about the item.
+This component is designed to display a list of items, each accompanied by an image and a button, facilitating navigation to different pages or the opening of modals. With images included, it becomes easier to identify items and present more information about them.
 
 <AccordionWithButtonPicture />
 
@@ -114,7 +112,7 @@ This component is useful for showing a list of items that have a picture and a b
 
 The **`Accordion`** component family is designed to be flexible and customisable. It is designed to be used in a variety of different ways.
 
-You can configure the Accordion component to have a different title, content, cta button, and picture by mixing and matching. Please follow the code example and demo below to see how to configure the Accordion component.
+You can configure the Accordion component to have a different title, content, button, and picture by mixing and matching. Please follow the code example and demo below to see how to configure the Accordion component.
 
 <AccordionMix />
 
@@ -136,22 +134,38 @@ You can easily add more items to the list by adding more list items. Please foll
 
 ## Usability
 
-The **`Accordion`** component is designed to be responsive and will adjust to the screen size. This component is designed to be used in a variety of situations, and we have followed the official guidelines from W3 to design this component.
+<details>
+    <summary>Ease of Integration</summary>
+    The Accordion component should be easy to import and use within any Next.js page or component. Ensure the import paths are clear and the dependencies (like Shadcn for styling) are properly documented.
+    </details>
 
-On top of the design guidelines from W3, we have also adopted the concept of `Mix and Match` to make this component more flexible and customisable. This component is designed to be used in a variety of different ways. As the examples shown above, you can mix and match the different components to create new custom components.
+<details>
+    <summary>Customizability</summary>
+    Explain all available props that can be passed to the Accordion, AccordionItem, and Button components, such as collapsible, defaultIndex, or custom event handlers like onClick for buttons.
+    </details>
 
-The font used in this component is `Inter`, which is a font designed for screens. It is a sans-serif font that is easy to read on screens. You can find the font in the `link` tag in the `head` tag of the `index.html` file.
+<details>
+    <summary>Performance and Accessibility</summary>
+   Ensure the component complies with accessibility standards, such as ARIA roles and properties. Describe how these are implemented within the component and how users can maintain or enhance accessibility through proper usage.
+   </details>
 
-All images in the example include `alt` tags, which is a requirement for accessibility. The `alt` tag is used to describe the image to the users, and it is used by screen readers to describe the image to the users. We strongly recommend the `alt` tags not be deleted or modified when using this component code.
+<details>
+    <summary>Interactive Elements</summary>
+    Explain how to use toasts or other notification systems to provide feedback when actions are taken (e.g., after a button is clicked).
+</details>
 
-Please include the following HTML code in the `head` tag of your `index.html` file to ensure the component is responsive, this is a requirement for accessibility and is recommended by W3:
+<details>
+    <summary>Responsive Design</summary>
+    Provide examples of using Shadcn's capabilities to apply responsive styles, ensuring that the component remains functional and visually appealing across all devices.
+    </details>
 
-```html
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-```
+<details>
+    <summary>Real-World Examples</summary>
+    Illustrate several practical scenarios where the Accordion can be effectively used, such as FAQs, product descriptions, or resource listings, each with accompanying images and action buttons.
+    </details>
 
 ## Version
 
 | Version | Editor      | Author      | Date       | Description     |
 | ------- | ----------- | ----------- | ---------- | --------------- |
-| v1.0    | Hexin Zheng | Hexin Zheng | 25/04/2024 | Initial version |
+| v1.0    | Hexin Zheng | Hexin Zheng | 25 Apr 2024 | Initial version |
