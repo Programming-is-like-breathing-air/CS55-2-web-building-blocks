@@ -1,7 +1,6 @@
 import {
     FileUpload,
     WithIcons,
-    WithMultiple,
     WithFormat,
     WithSize,
     WithPreview,
@@ -14,69 +13,106 @@ import {
 File upload component allow users to choose local files and upload them to server.
 
 ## Basic Component
-The input tag with 'file' type can be used to create a file upload.
+
+### Design:
+This component provides a file upload interface allowing users to select and upload files. It consists of a button labeled "Choose File" that triggers the file selection dialog when clicked. After selecting a file, the name of the chosen file is displayed next to the button. Additionally, a "Upload File" button appears below the selected file name, allowing users to initiate the upload process.
+
+### How to behave:
+- File Selection: Clicking on the "Choose File" button opens the file selection dialog, allowing users to select a file from their device. After selecting a file, its name is displayed next to the button.
+- File Upload: Once a file is selected, the "Upload File" button becomes visible, allowing users to upload the selected file. Clicking on the "Upload File" button triggers the upload process, which typically involves sending the file data to a server for processing.
+
+### How to use it:
+- Installation:
+Ensure that you have the necessary dependencies installed in your project. If not, install them using npm:
+```
+npx shadcn-ui@latest add button
+```
+- Usage:
+      - Import the `FileUploadComponent` and `Button` components into your React application.
+      - Copy the code for the ` FileUploadComponent ` component and import it into your React application where you want to use it.
+```
+import { Button } from "../../../../../styles/components/ui/button";
+```
+- Rendering the Component:
+    - Place the `FileUploadComponent` within your JSX to render it on the desired page or component.
+- Customization:
+    - Customize the appearance and behavior of the file upload component as needed.
+    - Adjust the button variant, size, and other styles to match your application's design and requirements.
+    - **Example Usage**:
+      	- Integrate the `FileUploadComponent` into your application where users need to upload files.
+      	- Use the button to trigger the file selection dialog and display the selected file name.
+      	- Implement functionality to handle file uploads when users select a file and click the "Upload File" button.
+
 <FileUpload />
 
-## Variants
-
-### With icons
-You can change the default style and add an icon to the file upload by using label tag.
-<WithIcons />
-
-### With multiple file
-If you want user uploading multiple file, the multiple attribute can be used.
-<WithMultiple />
-
 ### With limitation
-You can limit the format of the uploading file by using the accept attribute of input tag.
+#### Design:
+This component provides a file upload interface allowing users to select and upload files. It consists of a button labeled "Choose File" that triggers the file selection dialog when clicked. After selecting a file, the name of the chosen file is displayed next to the button. Additionally, a "Upload File" button appears below the selected file name, allowing users to initiate the upload process.
+
+#### How to behave:
+- File Selection: Clicking on the "Choose File" button opens the file selection dialog, allowing users to select a file from their device. After selecting a file, its name is displayed next to the button.
+- File Upload: Once a file is selected, the "Upload File" button becomes visible, allowing users to upload the selected file. Clicking on the "Upload File" button triggers the upload process, which typically involves sending the file data to a server for processing.
+
+#### How to use it:
+- Installation:
+Ensure that you have the necessary dependencies installed in your project. If not, install them using npm:
+```
+npx shadcn-ui@latest add button
+npx shadcn-ui@latest add toast
+```
+- Usage:
+    - Copy the code for the ` ImageUploadComponent ` component and import it into your React application where you want to use it.
+```
+import { Button } from "../../../../../styles/components/ui/button"; 
+import { toast } from "../../../../../styles/components/ui/use-toast"; 
+```
+- Rendering the Component:
+    - Place the `ImageUploadComponent` within your JSX to render it on the desired page or component.
+- Customization:
+    - Customize the appearance and behavior of the image upload component as needed.
+      - Adjust the button variant, size, and other styles to match your application's design and requirements.
+      - **Example Usage**:
+      	- Integrate the `ImageUploadComponent` into your application where users need to upload images.
+      	- Use the button to trigger the file selection dialog and display the selected image file name.
+      	- Implement functionality to handle file uploads and validate that selected files are images. Use the `useToast` function to display error messages if necessary.
 <WithFormat />
 
-You can also limit the size of the loading file.
-<WithSize />
-
 ### With preview
-Preview only supports image uploading, users can preview their uploaded images before submitting.
+#### Design:
+This component facilitates file upload with a preview feature, allowing users to select and preview images before uploading them. It consists of an input element for file selection, a button labeled "Choose File" to trigger the file selection dialog, and an image preview section to display the selected image.
+
+#### How to behave:
+- File Selection: Clicking on the "Choose File" button opens the file selection dialog, enabling users to select an image file from their device. The selected image file's name is displayed next to the button.
+- Image Preview: After selecting an image file, its preview is displayed below the file selection control. The preview allows users to see a visual representation of the selected image before uploading it.
+
+#### How to use it:
+- Installation:
+Ensure that you have the necessary dependencies installed in your project. If not, install them using npm:
+```
+npx shadcn-ui@latest add button
+```
+- Usage:
+      - Import the `FileUploadPreview` component and the `Button` component into your React application.
+      - Copy the code for the `FileUploadPreview ` component and import it into your React application where you want to use it.
+```
+import { Button } from "../../../../../styles/components/ui/button";
+```
+- Rendering the Component:
+    - Place the `FileUploadComponent` within your JSX to render it on the desired page or component.
+- Customization:
+    - Customize the appearance and behavior of the file upload preview component as needed.
+      - Adjust the button variant, size, and other styles to match your application's design and requirements.
+      - **Example Usage**:
+         - Integrate the `FileUploadPreview` component into your application where users need to upload images with a preview.
+      	- Use the button to trigger the file selection dialog and display the selected file name.
+      	- Display a preview of the selected image file if available.
+
 <WithPreview />
 
-## Usability
 
-<details>
-    <summary>Always show the limitation to the users</summary>
-    If you set any limitation to the uploading file, Using help text to emphasize those limitation.
-</details>
-
-<details>
-    <summary>Add preview if you can</summary>
-    It is very help for user to let them seeing what they uploaded. The preview of the uploaded file can effectively reduce the upload of incorrect files.
-</details>
-
-<details>
-    <summary>Don't set restrictions too strict</summary>
-    Not every users have basic knowledge of the IT world, too strict restrictions can wearing down users' patience. For example, if you set the maximum size of the image are 0.5MB, it is very hard for user to find such small image with the help of compression tool. If the users doesn't know how to use an image compression tool, or doesn't even know the existence of this kind of tool, they probably will never complete the upload.
-</details>
-
-## Accessibility
-The input tag supports keyboard operation.
-
-| Key                            | Interaction                                                                          |
-|--------------------------------|--------------------------------------------------------------------------------------|
-| Space                          | Selects the input and open the file choosing window.                                 |
-| Up, Down, Left and Right Arrow | Moves focus to files in the file choosing window.                                    |
-| Enter                          | Chooses the file that you selected in the file choosing window and close the window. |
-| Esc                            | Closes the file choosing window.                                                     |
-
-The accessibility of this component can also be improved by other component, like Alert. You can add warning sound with Alert, once user doesn't match the requirement of the file.
-
-## Attributes
-In addition to the common attributes shared by all input elements, inputs with type file also support the following attributes.
-
-| Attribute | Description                                                                                                                                                                                      | Value              |
-|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------|
-| accept    | The accept attribute value is a string that defines the file types the file input should accept.                                                                                                 | String             |
-| capture   | The capture attribute value is a string that specifies which camera to use for capture of image or video data, if the accept attribute indicates that the input should be of one of those types. | user / environment |
-| multiple  | When the multiple Boolean attribute is specified, the file input allows the user to select more than one file.                                                                                   | Boolean            |
-
-## Vision
-| Version | Editor      | Author      | Date       | Description     |
+## Version
+| Version | Editor      | Reviewer      | Date       | Description     |
 |---------|-------------|-------------|------------|-----------------|
-| v1.0    | Chaoyang Li | Chaoyang Li | 28/09/2023 | Initial version |
+| v1.0    | Nuojin Zhang | Nuojin Zhang | 09 Apr 2024 | React version |
+| v2.0    | Nuojin Zhang | Nuojin Zhang | 25 Apr 2024 | Documentation |
+| v3.0    | Yuqing Wu | Yuqing Wu | 25 Apr 2024 | Peer review |
