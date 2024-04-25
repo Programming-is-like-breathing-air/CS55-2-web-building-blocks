@@ -1,5 +1,4 @@
 import React from "react";
-import CodeTabs from "./components/codeTabs";
 import { Separator } from "@/components/ui/separator";
 import { Tabs } from "@/components/ui/tabs";
 
@@ -42,16 +41,6 @@ export default function Theme({ pageName }: { pageName: string }) {
         </p>
         <Separator />
       </div>
-      <CodeTabs
-        htmlDesktop={html}
-        cssDesktop={css}
-        jsDesktop={js}
-        nextjsDesktop={nextjs} // Add Next.js code as a new attribute
-        htmlMobile={html}
-        cssMobile={css}
-        jsMobile={js}
-        nextjsMobile={nextjs}
-      />
     </Tabs>
   );
 }
