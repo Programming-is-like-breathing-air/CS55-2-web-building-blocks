@@ -6,14 +6,25 @@ import { cn } from "@/lib/utils"
 import { Button } from "../../../../../styles/components/ui/button"
 import { Calendar } from "../../../../../styles/components/ui/calendar"
 import TimePicker from "../../../../../styles/components/ui/timepicker" 
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "../../../../../styles/components/ui/popover"
+import { Popover, PopoverContent, PopoverTrigger } from "../../../../../styles/components/ui/popover"
+import { useToast } from "../../../../../styles/components/ui/toast/use-toast"
+import { ToastAction } from "../../../../../styles/components/ui/toast/toast"
 
 export function DateTimeInput() {
   const [dateTime, setDateTime] = React.useState<Date>()
+  const { toast } = useToast();
+
+  const handleDateTimeChange = (newDateTime: Date | undefined) => {
+    setDateTime(newDateTime);
+    if (newDateTime) {
+      toast({
+        description: `Selected Date and Time: ${format(newDateTime, "PPP")} ${format(newDateTime, "p")}`,
+        action: (
+          <ToastAction altText="Undo">Undo</ToastAction>
+        ),
+      });
+    }
+  };
 
   return (
     <Popover>
@@ -44,12 +55,12 @@ export function DateTimeInput() {
           <Calendar
             mode="single"
             selected={dateTime}
-            onSelect={(date) => setDateTime(date)}
+            onSelect={(date) => handleDateTimeChange(date)}
             initialFocus
           />
           <TimePicker
             value={dateTime}
-            onChange={(time) => setDateTime(time)}
+            onChange={(time) => handleDateTimeChange(time)}
           />
         </div>
       </PopoverContent>

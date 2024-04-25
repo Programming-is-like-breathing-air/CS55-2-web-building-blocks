@@ -1,23 +1,29 @@
 import * as React from "react"
-import { format, startOfYear } from "date-fns"
+import { format } from "date-fns"
 import { Calendar as CalendarIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "../../../../../styles/components/ui/button"
-
 import MonthPicker from "../../../../../styles/components/ui/monthpicker"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "../../../../../styles/components/ui/popover"
+import { Popover, PopoverContent, PopoverTrigger } from "../../../../../styles/components/ui/popover"
+import { useToast } from "../../../../../styles/components/ui/toast/use-toast"
+import { ToastAction } from "../../../../../styles/components/ui/toast/toast"
 
 export function MonthPickerDemo() {
   const [selectedMonth, setSelectedMonth] = React.useState<Date | undefined>()
   const formattedMonth = selectedMonth ? format(selectedMonth, "MMMM yyyy") : ""
+  const { toast } = useToast();
 
   const handleMonthChange = (newMonth: Date) => {
-    setSelectedMonth(newMonth)
+    setSelectedMonth(newMonth);
+    if (newMonth) {
+      toast({
+        description: `Selected Month: ${format(newMonth, "MMMM yyyy")}`,
+        action: (
+          <ToastAction altText="Undo">Undo</ToastAction>
+        ),
+      });
+    }
   }
 
   return (

@@ -9,6 +9,8 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "../../../../../styles/components/ui/popover";
+import { useToast } from "../../../../../styles/components/ui/toast/use-toast";
+import { ToastAction } from "../../../../../styles/components/ui/toast/toast";
 
 function getWeeksInYear(year) {
   return getISOWeeksInYear(new Date(year, 11, 31));
@@ -20,6 +22,7 @@ export function WeekPicker({
   const currentYear = new Date().getFullYear();
   const [selectedYear, setSelectedYear] = React.useState(currentYear);
   const [selectedWeek, setSelectedWeek] = React.useState(1);
+  const { toast } = useToast();
 
   const handleYearChange = (event) => {
     const year = parseInt(event.target.value);
@@ -29,6 +32,9 @@ export function WeekPicker({
   const handleWeekChange = (event) => {
     const week = parseInt(event.target.value);
     setSelectedWeek(week);
+    toast({
+      description: `Selected Week: Week ${week}, ${selectedYear}`,
+    });
   };
 
   const weeksInYear = getWeeksInYear(selectedYear);
@@ -45,7 +51,11 @@ export function WeekPicker({
             )}
           >
             <CalendarIcon className="mr-2 h-4 w-4" />
-            <span>{selectedYear && `Pick a week`}</span>
+            <span>
+              {selectedYear
+                ? `Week ${selectedWeek}, ${selectedYear}`
+                : "Pick a week"}
+            </span>
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-auto p-0" align="start">
