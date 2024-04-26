@@ -3,16 +3,11 @@ import { TreeView } from "../components/ui/treeview";
 # Tree View Component
 
 **Contributed by Hexin Zheng**
+## 1. Design:
+The `TreeView` component is a React component crafted for displaying hierarchical structures within an application. It builds upon the concept of a tree diagram, with collapsible nodes representing parent-child relationships, making it suitable for presenting layered information like file systems, organizational structures, or nested lists. The component is implemented using the `TreeNode` element, which can be expanded to show its children, thus providing a structured and interactive layout for users to navigate complex hierarchies easily.
 
-This is the index page for the Advanced folder!
-
-## Definition and Usage
-
-**TreeView:**
-
--   **Definition:** A TreeView is a hierarchical list or tree structure that allows users to view, navigate, and select items from nested lists or categories.
--   **Usage:** Commonly used in file explorers, settings menus, and organizational charts. It provides a visual representation of hierarchical data, allowing users to expand or collapse branches to view or hide sub-items.
-
+## 2. How to behave:
+The `TreeView` component functions as an interactive tool allowing users to explore layers of content. The nodes within the tree can be expanded or collapsed by the users, enabling them to reveal or hide information as needed. The component's state is managed through React's useState hook, allowing for dynamic and responsive interaction. The visual representation of each node's status (open or closed) is conveyed through intuitive indicators, such as "▼" for expanded nodes and "▶︎" for those that are currently collapsed. This design ensures a smooth user experience as individuals delve into the depth of the tree's structure.
 ## Basic Component
 
 <TreeView />
