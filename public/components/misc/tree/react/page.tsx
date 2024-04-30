@@ -1,53 +1,23 @@
-import React, { useState, FunctionComponent } from 'react';
+import * as React from 'react';
+import { SimpleTreeView } from '@mui/x-tree-view/SimpleTreeView';
+import { TreeItem } from '@mui/x-tree-view/TreeItem';
 
-interface TreeNodeProps {
-  label: string;
-  children?: React.ReactNode;
-}
-
-const TreeNode: FunctionComponent<TreeNodeProps> = ({ label, children }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => setIsOpen(!isOpen);
-
-  // Inline styles are for demonstration. It's better to use CSS classes in a real app.
-  const nodeStyle = {
-    cursor: 'pointer',
-    userSelect: 'none',
-  };
-
-  const childrenStyle = {
-    marginLeft: '20px',
-    paddingLeft: '5px',
-    borderLeft: '1px solid lightgray',
-    display: isOpen ? 'block' : 'none',
-  };
-
+export function TreeViewDemo () {
   return (
-    <div className="tree-item">
-      <span  className="toggle" onClick={toggle}>
-        {children ? (isOpen ? '▼' : '▶︎') : ''}{' '}
-      </span>
-      {label}
-      <div style={childrenStyle} className="tree-children">
-        {children}
-      </div>
-    </div>
-  );
-};
-
-const TreeViewDemo: FunctionComponent = () => {
-  return (
-    <div className="tree-view" aria-label="tree-view">
-      <TreeNode label="Root">
-        <TreeNode label="Child 1">
-          {/* These nodes are not given an initial open state, they will remain closed */}
-          <TreeNode label="Grandchild 1.1" />
-          <TreeNode label="Grandchild 1.2" />
-        </TreeNode>
-        <TreeNode label="Child 2" />
-        <TreeNode label="Child 3" />
-      </TreeNode>
-    </div>
+    <SimpleTreeView
+  aria-label="file system navigator"
+  sx={{ height: 200, flexGrow: 1, maxWidth: 400, overflowY: 'auto' }}
+>
+  <TreeItem itemId="1" label="Applications">
+    <TreeItem itemId="2" label="Calendar" />
+  </TreeItem>
+  <TreeItem itemId="5" label="Documents">
+    <TreeItem itemId="10" label="OSS" />
+    <TreeItem itemId="6" label="MUI">
+      <TreeItem itemId="8" label="index.js" />
+    </TreeItem>
+  </TreeItem>
+</SimpleTreeView>
   );
 };
 
