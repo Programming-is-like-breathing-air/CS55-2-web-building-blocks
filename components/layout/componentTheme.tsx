@@ -70,6 +70,11 @@ import FileUploadComponent from "public/components/fileUpload/basic/react/page";
 // import FileUploadWithIcon from "public/components/fileUpload/withIcons/react/page";
 // import FileUploadMutiple from "public/components/fileUpload/withMultiple/react/page";
 import ImageUploadComponent from "public/components/fileUpload/withFormat/react/page";
+import GalleryDefault from "public/components/gallery/default/react/page";
+import GalleryMasonryGrid from "public/components/gallery/masonryGridGalery/react/page";
+import GalleryWithCarousel from "public/components/gallery/withCarousel/react/page";
+import GalleryWithPreView from "public/components/gallery/withPreView/react/page";
+import GalleryWithTab from "public/components/gallery/withTab/react/page";
 // import FileUploadLimitSize from "public/components/fileUpload/withSize/react/page";
 import FileUploadPreview from "public/components/fileUpload/withPreview/react/page";
 import LoginForm from "public/components/form/loginForm/react/page";
@@ -120,6 +125,7 @@ import FailPanel from "../../public/components/panel/fail/react/page"
 
 import NormalChat from "../../public/components/chat/normal/react/page"
 import AttachmentChat from "../../public/components/chat/attachment/react/page"
+import {MasonryGridGalery} from "@/src/ui/gallery";
 
 
 export default function Theme({
@@ -193,6 +199,11 @@ export default function Theme({
 
     NormalTags:NormalTags,
     InnovativeTags:InnovativeTags,
+    GalleryDefault:GalleryDefault,
+    GalleryMasonryGrid:GalleryMasonryGrid,
+    GalleryWithCarousel:GalleryWithCarousel,
+    GalleryWithPreView:GalleryWithPreView,
+    GalleryWithTab:GalleryWithTab,
     RadioGroupForm:RadioGroupForm,
     NormalModal:NormalModal,
     PictureModal:PictureModal,
