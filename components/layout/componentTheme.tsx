@@ -24,6 +24,7 @@ import DropdownMenuwithIcon from "../../public/components/dropdown/withIcons/rea
 import PaginationDemo from "../../public/components/misc/pagination/react/page"
 import NavigationMenuDemo from "../../public/components/navigation/Dropdown/react/page"
 import SideNaviDemo from "../../public/components/navigation/sideNavi/react/page"
+import StepsBasic from "../../public/components/steps/basic/react/page"
 import TopNavigationBar from "../../public/components/navigation/topNavi/react/page"
 import BasicCarousel from "../../public/components/carousel/basic/react/page"
 import CarouselImage from "../../public/components/carousel/withImages/react/page"
@@ -125,7 +126,6 @@ import FailPanel from "../../public/components/panel/fail/react/page"
 
 import NormalChat from "../../public/components/chat/normal/react/page"
 import AttachmentChat from "../../public/components/chat/attachment/react/page"
-import {MasonryGridGalery} from "@/src/ui/gallery";
 
 
 export default function Theme({
@@ -183,6 +183,7 @@ export default function Theme({
     PaginationDemo:PaginationDemo,
     NavigationMenuDemo:NavigationMenuDemo,
     SideNaviDemo:SideNaviDemo,
+    StepsBasic:StepsBasic,
     TopNavigationBar:TopNavigationBar,
     BasicSlider:BasicSlider,
     TableDemo:TableDemo,
