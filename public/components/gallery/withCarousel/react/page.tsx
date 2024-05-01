@@ -1,4 +1,3 @@
-// import { Carousel } from "../../../../../styles/components/ui/carousel";
 import {
     Carousel,
     CarouselContent,
@@ -37,8 +36,7 @@ export function GalleryWithCarousel() {
     ];
 
     return (
-
-    <Carousel className="w-full max-w-xs "
+    <Carousel className="h-auto w-full max-w-2xl "
               plugins={[plugin.current]}
               onMouseEnter={plugin.current.stop}
               onMouseLeave={plugin.current.reset}

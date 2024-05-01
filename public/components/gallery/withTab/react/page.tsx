@@ -1,11 +1,5 @@
-import {
-    Tabs,
-    TabsHeader,
-    TabsBody,
-    Tab,
-    TabPanel,
-} from "@material-tailwind/react";
-
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "../../../../../styles/components/ui/tabs"
+import {useState} from "react";
 export function GalleryWithTab() {
     const data = [
         {
@@ -160,35 +154,51 @@ export function GalleryWithTab() {
         },
     ];
 
+    const [activeTab, setActiveTab] = useState(data[0].value);
+
     return (
-        <Tabs value="html">
-            <TabsHeader>
-                {data.map(({ label, value }) => (
-                    <Tab key={value} value={value}>
-                        {label}
-                    </Tab>
-                ))}
-            </TabsHeader>
-            <TabsBody className="grid grid-cols-1 gap-4 ">
-                {data.map(({ value, images }) => (
-                    <TabPanel
-                        className="grid grid-cols-2 gap-4 md:grid-cols-3"
-                        key={value}
-                        value={value}
-                    >
-                        {images?.map(({ imageLink }, index) => (
-                            <div key={index}>
-                                <img
-                                    className="h-40 w-full max-w-full rounded-lg object-cover object-center"
-                                    src={imageLink}
-                                    alt="image-photo"
-                                />
-                            </div>
+        <>
+            <style>
+                {`
+                .grid-layout {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 20px;
+                }
+                .grid-item {
+                    height: 250px; // 设置固定高度
+                }
+                .grid-item img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 8px;
+                }
+                `}
+            </style>
+            <div className="tabs-container">
+                <Tabs value={activeTab} onValueChange={setActiveTab}>
+                    <TabsList>
+                        {data.map(({ label, value }) => (
+                            <TabsTrigger key={value} value={value}>
+                                {label}
+                            </TabsTrigger>
                         ))}
-                    </TabPanel>
-                ))}
-            </TabsBody>
-        </Tabs>
+                    </TabsList>
+                    {data.map(({ value, images }) => (
+                        <TabsContent key={value} value={value}>
+                            <div className="grid-layout">
+                                {images.map(({ imageLink }, index) => (
+                                    <div key={index} className="grid-item">
+                                        <img src={imageLink} alt={`Gallery image ${index}`} />
+                                    </div>
+                                ))}
+                            </div>
+                        </TabsContent>
+                    ))}
+                </Tabs>
+            </div>
+        </>
     );
 }
 export default GalleryWithTab;

@@ -2,48 +2,54 @@ import React from "react";
 export function GalleryWithPreView() {
     const data = [
         {
-            imgelink:
-                "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+            imagelink:
+                "https://github.com/Programming-is-like-breathing-air/PG-Capstone-CS55-2---2024S1/blob/main/public/components/slide/withPreview/desktop/assets/BondiBeach.jpg?raw=true",
         },
         {
-            imgelink:
-                "https://images.unsplash.com/photo-1432462770865-65b70566d673?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+            imagelink:
+                "https://github.com/Programming-is-like-breathing-air/PG-Capstone-CS55-2---2024S1/blob/main/public/components/slide/withPreview/desktop/assets/Chinatown.jpg?raw=true",
         },
         {
-            imgelink:
-                "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
+            imagelink:
+                "https://github.com/Programming-is-like-breathing-air/PG-Capstone-CS55-2---2024S1/blob/main/public/components/slide/withPreview/desktop/assets/SydneyOperaHouse.png?raw=true",
         },
         {
-            imgelink:
-                "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80",
+            imagelink:
+                "https://github.com/Programming-is-like-breathing-air/PG-Capstone-CS55-2---2024S1/blob/main/public/components/slide/withPreview/desktop/assets/SydneyTower.jpg?raw=true",
         },
         {
-            imgelink:
-                "https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80",
+            imagelink:
+                "https://github.com/Programming-is-like-breathing-air/PG-Capstone-CS55-2---2024S1/blob/main/public/components/slide/withPreview/desktop/assets/USYD.jpeg?raw=true",
         },
     ];
 
-    const [active, setActive] = React.useState(
-        "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-    );
+    const [active, setActive] = React.useState(data[0].imagelink);
+    const thumbnailCount = data.length; // or a fixed number like 5
+    const gridTemplateColumns = `repeat(${thumbnailCount}, minmax(0, 1fr))`;
 
     return (
-        <div className="grid gap-4">
+        <div>
             <div>
                 <img
-                    className="h-auto w-full max-w-full rounded-lg object-cover object-center md:h-[480px]"
+                    className="h-auto w-full rounded-lg object-cover object-center md:h-[480px]"
                     src={active}
-                    alt=""
+                    alt="Selected"
                 />
             </div>
-            <div className="grid grid-cols-5 gap-4">
-                {data.map(({ imgelink }, index) => (
-                    <div key={index}>
+            <div
+                className="grid gap-4 mt-4"
+                style={{ gridTemplateColumns }}
+            >
+                {data.map(({ imagelink }, index) => (
+                    <div
+                        key={index}
+                        className="cursor-pointer rounded-lg overflow-hidden"
+                        onClick={() => setActive(imagelink)}
+                    >
                         <img
-                            onClick={() => setActive(imgelink)}
-                            src={imgelink}
-                            className="h-20 max-w-full cursor-pointer rounded-lg object-cover object-center"
-                            alt="gallery-image"
+                            src={imagelink}
+                            className="w-full h-full object-cover"
+                            alt={`Thumbnail ${index}`}
                         />
                     </div>
                 ))}

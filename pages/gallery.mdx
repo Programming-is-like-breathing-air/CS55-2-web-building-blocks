@@ -16,64 +16,161 @@ import {
 ## Basic Gallery Component
 
 ### Design:
-
+The Basic Gallery Component is designed to present a collection of images in a visually appealing grid layout. This component dynamically displays images in three columns regardless of the screen size, providing a consistent and clean user interface. The component employs a modern design with simple, clean lines, ensuring that the images are the focal point. Each image in the grid is designed with a slight border-radius, softening the edges and giving a subtle styled appearance.
 ### How to behave:
--
+- Responsiveness: The gallery automatically adjusts the number of columns based on the screen size while maintaining the grid layout. This ensures that the gallery looks good on both desktops and mobile devices.
+- Image Scaling: Images within the gallery are set to cover their respective cells fully, resizing themselves appropriately while maintaining their aspect ratio without cropping the important parts.
+- Error Handling: If an image fails to load, the component will gracefully handle the error, ensuring that the layout remains unaffected. Optionally, a placeholder image or error icon could be shown (not implemented in the current code).
+- Interactivity: Each image can potentially act as a link or trigger a modal on click, allowing for further interaction such as viewing the image in a larger format or displaying additional details (this functionality would need to be implemented as required).
 
 ### How to use it:
 - Installation:
+```tsx
+import GalleryDefault from 'path_to_GalleryDefault';
+```
+- Props Customization:
+Currently, the component uses a fixed dataset. To use dynamic data, modify the component to accept data as a prop:
+```tsx
+export function GalleryDefault({ data }) {
+    return (
+        <div className="gallery">
+            {data.map(({ imagelink }, index) => (
+                <div key={index} className="gallery-item">
+                    <img src={imagelink} alt={`Gallery image ${index}`} />
+                </div>
+            ))}
+        </div>
+    );
+}
+```
+- Pass the data prop from the parent component:
+```tsx
+const imageData = [
+  { imagelink: 'url_to_image1.jpg' },
+  { imagelink: 'url_to_image2.jpg' },
+  // more images
+];
 
+function App() {
+  return (
+    <div>
+      <GalleryDefault data={imageData} />
+    </div>
+  );
+}
+
+```
 
 <GalleryDefault/>
 
 
-## Masonry Grid Gallery
+[//]: # (## Masonry Grid Gallery)
 
-### Design:
+[//]: # ()
+[//]: # (### Design:)
 
-### How to behave:
--
+[//]: # ()
+[//]: # (### How to behave:)
 
-### How to use it:
-- Installation:
+[//]: # (-)
 
+[//]: # ()
+[//]: # (### How to use it:)
 
-<GalleryMasonryGrid/>
+[//]: # (- Installation:)
+
+[//]: # ()
+[//]: # ()
+[//]: # (<GalleryMasonryGrid/>)
 
 ## Gallery WithCarousel
 
 ### Design:
-
+The `GalleryWithCarousel` component is designed to showcase images in a dynamic, user-friendly carousel format.
 ### How to behave:
--
+- Automatic Play: The carousel automatically cycles through the images every 4 seconds, ensuring that all images receive equal display time without user interaction.
+- Interaction Sensitivity: The autoplay functionality pauses when the user hovers over the carousel, allowing users to interact with images without feeling rushed. This behavior resumes once the mouse is no longer over the carousel.
+- Navigation Controls: Users can manually navigate through the carousel using previous and next buttons, providing control over the image viewing experience.
 
 ### How to use it:
 - Installation:
-
+```tsx
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "../../../../../styles/components/ui/carousel";
+import {Card, CardContent} from "@/components/ui/card";
+import * as React from "react";
+import Autoplay from "embla-carousel-autoplay";
+```
+- Customization Options:
+- Autoplay Configuration
+```
+Autoplay({ delay: 3000, stopOnInteraction: false })
+```
+- Styling
+The CSS classes of the component (e.g., `className="h-auto w-full max-w-2xl"`) can be modified as needed to fit your design requirements.
 
 <GalleryWithCarousel/>
 
 ## Gallery With PreView
 
 ### Design:
-
+The GalleryWithPreView component is elegantly designed to showcase a selection of images with a main display area and a thumbnail preview row beneath it.
 ### How to behave:
--
+- Image Selection: Clicking on any thumbnail updates the main display with the selected image, providing a seamless interaction for users to explore different images.
+- Responsive Layout: The thumbnail row adjusts its column count based on the number of images, ensuring that the layout remains visually balanced on different screens.
+- Hover and Click: The cursor changes to a pointer on hover, indicating that the thumbnails are interactive. Clicking on a thumbnail triggers the image swap in the main display area.
 
 ### How to use it:
-- Installation:
-
+- Images Data (images):
+You can pass a dynamic array of image objects to the component, each containing an `imagelink`. This allows the gallery to display images from any source you specify.:
+```tsx
+const imageData = [
+  { imagelink: 'https://example.com/image1.jpg' },
+  { imagelink: 'https://example.com/image2.jpg' },
+  // Add more images as needed
+];
+```
+- Thumbnail Display (`gridTemplateColumns`)
+Adjust the CSS grid layout to change how thumbnails are displayed based on the number of images. This is set dynamically using the length of the image data but can be customized to fit different layouts or responsive designs.
+```
+const thumbnailCount = imageData.length;
+const gridTemplateColumns = `repeat(${thumbnailCount}, minmax(0, 1fr))`;
+```
+- style
+can be change
+```
+className="h-auto w-full rounded-lg object-cover object-center md:h-[480px]"
+className="grid gap-4 mt-4"
+className="cursor-pointer rounded-lg overflow-hidden"
+className="w-full h-full object-cover"
+```
 
 <GalleryWithPreView/>
 
 ## Gallery With Tab
 
 ### Design:
-
+The GalleryWithTab component integrates a tabbed interface with a dynamic image gallery, providing an organized and interactive way to display categorized images.
 ### How to behave:
--
+- Tab Selection: Users can switch between different categories by clicking on the respective tabs. This interaction is intuitive, allowing for a seamless transition between different sets of images.
+- Responsive Grid Layout: Images within each tab are presented in a three-column grid layout that adjusts to the screen size, ensuring a consistent and aesthetically pleasing appearance across devices.
 
 ### How to use it:
 - Installation:
+```
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "../../../../../styles/components/ui/tabs"
+import {useState} from "react";
+```
+- Active Tab State:
+The `activeTab` state determines which tab's content is currently displayed. This state can be initially set to any of the `value` fields from your `data` array depending on which tab you want to be active by default.
+
+- Styling and Layout:
+The CSS for the grid layout and image styling within each tab can be customized. For instance, the number of columns, the size of the images, and other CSS properties can be adjusted to better fit the design requirements of your application.
+Additional CSS for transitions or animations when switching tabs can enhance visual feedback and user experience.
 
 <GalleryWithTab/>
