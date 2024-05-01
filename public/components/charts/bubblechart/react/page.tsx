@@ -59,13 +59,13 @@ const options = {
     },
     title: {
       display: true,
-      text: 'Chart.js Bubble Chart'
+      text: 'Bubble Chart'
     }
   }
 };
 
-const BubbleChart: React.FC = () => {
+const ChartBubbleChart: React.FC = () => {
   return <Bubble data={data} options={options} />;
 }
 
-export default BubbleChart;
+export default ChartBubbleChart;

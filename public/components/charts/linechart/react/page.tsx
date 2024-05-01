@@ -28,7 +28,7 @@ const utils: Utils = {
   transparentize: (color, opacity) => `rgba(${color.match(/\d+/g)?.join(', ')}, ${opacity})`
 };
 
-const LineChart = () => {
+const ChartLineChart = () => {
   const labels = utils.months({ count: 7 });
   const data = {
     labels: labels,
@@ -36,7 +36,7 @@ const LineChart = () => {
       {
         label: 'Dataset 1',
         data: utils.numbers(NUMBER_CFG),
-        borderColor: "#455a64",
+        borderColor: '#212121',
         tension: 0.4,
         borderWidth: 5,
       },
@@ -58,7 +58,7 @@ const LineChart = () => {
       },
       title: {
         display: true,
-        text: 'Chart.js Line Chart'
+        text: 'Line Chart'
       }
     }
   };
@@ -66,4 +66,4 @@ const LineChart = () => {
   return <Line data={data} options={options} />;
 };
 
-export default LineChart;
+export default ChartLineChart;

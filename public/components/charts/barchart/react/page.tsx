@@ -36,12 +36,12 @@ const options = {
     },
     title: {
       display: true,
-      text: 'Chart.js Floating Bar Chart',
+      text: 'Floating Bar Chart',
     },
   },
 };
 
-const BarChart: React.FC = () => {
+const ChartBarChart: React.FC = () => {
   const labels = Utils.months({ count: 7 });
   const data = {
     labels: labels,
@@ -49,8 +49,8 @@ const BarChart: React.FC = () => {
       {
         label: 'Dataset 1',
         data: labels.map(() => [Utils.rand(-100, 100), Utils.rand(-100, 100)]),
-        backgroundColor: '#263238',
-        hoverBackgroundColor: '#546e7a'  // Darker shade for hover
+        backgroundColor: '#212121',
+        hoverBackgroundColor: '#616161'  // Darker shade for hover
       },
       {
         label: 'Dataset 2',
@@ -65,4 +65,4 @@ const BarChart: React.FC = () => {
   return <Bar options={options} data={data} />;
 };
 
-export default BarChart;
+export default ChartBarChart;

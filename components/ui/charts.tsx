@@ -1,46 +1,46 @@
 import React from "react";
 import Theme from "../layout/componentTheme";
 
-export const Barchart = () => {
+export const ChartBarchart = () => {
     return (
       <Theme
         componentName="charts"
         componentStyle="barchart"
         backgroundDesktop="white"
-        componentReactView="Barchart"
+        componentReactView="ChartBarchart"
       />
     );
   };
 
-  export const LineChart = () => {
+  export const ChartLineChart = () => {
     return (
       <Theme
         componentName="charts"
         componentStyle="linechart"
         backgroundDesktop="white"
-        componentReactView="LineChart"
+        componentReactView="ChartLineChart"
       />
     );
   };
   
-  export const PieChart = () => {
+  export const ChartPieChart = () => {
     return (
       <Theme
         componentName="charts"
         componentStyle="piechart"
         backgroundDesktop="white"
-        componentReactView="PieChart"
+        componentReactView="ChartPieChart"
       />
     );
   };
 
-  export const BubbleChart = () => {
+  export const ChartBubbleChart = () => {
     return (
       <Theme
         componentName="charts"
         componentStyle="bubblechart"
         backgroundDesktop="white"
-        componentReactView="BubbleChart"
+        componentReactView="ChartBubbleChart"
       />
     );
   };

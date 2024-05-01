@@ -35,7 +35,7 @@ const data: ChartData<'pie', number[], string> = {
 };
 
 // Component for the Pie Chart
-const PieChart: React.FC = () => {
+const ChartPieChart: React.FC = () => {
   const options = {
     responsive: true,
     plugins: {
@@ -44,7 +44,7 @@ const PieChart: React.FC = () => {
       },
       title: {
         display: true,
-        text: 'Chart.js Pie Chart'
+        text: 'Pie Chart'
       }
     }
   };
@@ -56,4 +56,4 @@ const PieChart: React.FC = () => {
   );
 };
 
-export default PieChart;
+export default ChartPieChart;

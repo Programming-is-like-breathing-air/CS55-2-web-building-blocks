@@ -122,10 +122,10 @@ import NormalChat from "../../public/components/chat/normal/react/page"
 import AttachmentChat from "../../public/components/chat/attachment/react/page"
 
 import AcquisitionsChart from "../../public/components/charts/react/page"
-import Barchart from "../../public/components/charts/barchart/react/page"
-import LineChart from"../../public/components/charts/linechart/react/page"
-import PieChart from "../../public/components/charts/piechart/react/page"
-import BubbleChart from "../../public/components/charts/bubblechart/react/page"
+import ChartBarchart from "../../public/components/charts/barchart/react/page"
+import ChartLineChart from"../../public/components/charts/linechart/react/page"
+import ChartPieChart from "../../public/components/charts/piechart/react/page"
+import ChartBubbleChart from "../../public/components/charts/bubblechart/react/page"
 export default function Theme({
   componentName,
   componentStyle,
@@ -248,10 +248,10 @@ export default function Theme({
     AttachmentChat:AttachmentChat,
 
     AcquisitionsChart:AcquisitionsChart,
-    Barchart:Barchart,
-    LineChart:LineChart,
-    PieChart:PieChart,
-    BubbleChart:BubbleChart,
+    ChartBarchart:ChartBarchart,
+    ChartLineChart:ChartLineChart,
+    ChartPieChart:ChartPieChart,
+    ChartBubbleChart:ChartBubbleChart,
 
   };
 
