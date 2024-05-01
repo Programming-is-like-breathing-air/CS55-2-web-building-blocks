@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactCodeTabs from "./components/reactCodeTabs";
-import { Separator } from "@/components/ui/separator";
-import { TABS_WPR_CLASS, TABS_CTNT_CLASS } from "./constants/strings";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {Separator} from "@/components/ui/separator";
+import {TABS_CTNT_CLASS, TABS_WPR_CLASS} from "./constants/strings";
+import {Tabs, TabsContent} from "@/components/ui/tabs";
 // import DesktopCardComponent from "../../public/components/card/normal/desktop/page"
-
 import AccordionButton from "../../public/components/accordion/button/react/page";
 import AccordionDemo from "../../public/components/accordion/normal/react/page";
 import AccordionPictureButton from "../../public/components/accordion/picture/react/page";
@@ -14,7 +13,6 @@ import AccordionListAvatar from "../../public/components/accordion/listAvatar/re
 
 
 // Rewrite Tooltip
-
 // import DesktopInnovativeTagComponent from "../../public/components/tags/innovative/desktop/page"
 import CheckboxDemo from "../../public/components/checkbox/normal/react/page";
 import DropdownMenuCheckboxes from "../../public/components/dropdown/basic/react/page"
@@ -25,6 +23,9 @@ import PaginationDemo from "../../public/components/misc/pagination/react/page"
 import NavigationMenuDemo from "../../public/components/navigation/Dropdown/react/page"
 import SideNaviDemo from "../../public/components/navigation/sideNavi/react/page"
 import StepsBasic from "../../public/components/steps/basic/react/page"
+import StepsWithContent from "../../public/components/steps/withContent/react/page";
+import StepsWithDots from "../../public/components/steps/withDots/react/page";
+import StepsWithIcon from "../../public/components/steps/withIcon/react/page";
 import TopNavigationBar from "../../public/components/navigation/topNavi/react/page"
 import BasicCarousel from "../../public/components/carousel/basic/react/page"
 import CarouselImage from "../../public/components/carousel/withImages/react/page"
@@ -34,11 +35,11 @@ import CarouselPreview from "public/components/carousel/withPreview/react/page";
 import TableDemo from "../../public/components/table/normal/react/page"
 import BasicSlider from "../../public/components/slider/basic/react/page"
 
-import { BasicTooltip } from "../../public/components/tooltip/basicTooltip/react/page";
-import { LeftTooltip } from "../../public/components/tooltip/leftTooltip/react/page";
-import { TopTooltip } from "../../public/components/tooltip/topTooltip/react/page";
-import { BottomTooltip } from "../../public/components/tooltip/bottomTooltip/react/page";
-import { DisableTooltip } from "../../public/components/tooltip/disabledTooltip/react/page";
+import {BasicTooltip} from "../../public/components/tooltip/basicTooltip/react/page";
+import {LeftTooltip} from "../../public/components/tooltip/leftTooltip/react/page";
+import {TopTooltip} from "../../public/components/tooltip/topTooltip/react/page";
+import {BottomTooltip} from "../../public/components/tooltip/bottomTooltip/react/page";
+import {DisableTooltip} from "../../public/components/tooltip/disabledTooltip/react/page";
 // import { AnimatedTooltip } from "../../public/components/tooltip/animatedTooltip/react/page";
 import ToastWithAction from "../../public/components/toast/action/react/page"
 import ToastWithNormal from "../../public/components/toast/normal/react/page"
@@ -184,6 +185,9 @@ export default function Theme({
     NavigationMenuDemo:NavigationMenuDemo,
     SideNaviDemo:SideNaviDemo,
     StepsBasic:StepsBasic,
+    StepsWithContent:StepsWithContent,
+    StepsWithDots:StepsWithDots,
+    StepsWithIcon:StepsWithIcon,
     TopNavigationBar:TopNavigationBar,
     BasicSlider:BasicSlider,
     TableDemo:TableDemo,

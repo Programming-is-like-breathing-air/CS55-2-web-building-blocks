@@ -1,21 +1,36 @@
-import React from "react";
+import React from 'react';
 
 interface StepProps {
-    label: string;
-    isActive: boolean;
-    isCompleted: boolean;
+    isActive?: boolean;
+    isCompleted?: boolean;
     onClick: () => void;
+    className?: string; // Optional className for steps with children
+    children?: React.ReactNode; // Optional children to allow for icons or numbers
 }
 
-const Step: React.FC<StepProps> = ({ label, isActive, isCompleted, onClick }) => (
-    <div className={`flex flex-col items-center ${isActive || isCompleted ? 'text-black' : 'text-gray-400'}`} onClick={onClick}>
-        {/* Added mt-4 and mb-4 for top and bottom margin */}
-        <div className={`w-10 h-10 flex items-center justify-center rounded-full border-2 ${isActive || isCompleted ? 'bg-gray-900 text-white' : 'bg-white border-gray-400'} mt-4 mb-4`}>
-            {label}
+const Step: React.FC<StepProps> = ({ isActive, isCompleted, onClick, className, children }) => {
+    // Determine style for active, completed, and default states
+    const activeStyle = 'bg-black text-white';
+    const completedStyle = 'bg-gray-900 text-white';
+    const defaultStyle = 'bg-white border-gray-400';
+
+    // Default sizes for dot and icon representations
+    const defaultDotSize = 'h-4 w-4'; // Small dot size when no children
+    const defaultIconSize = 'w-10 h-10'; // Default icon size when children are present
+
+    // Choose style based on whether the step is active, completed, or neither
+    const stepStyle = `flex items-center justify-center rounded-full cursor-pointer border-2 ${
+        isActive ? activeStyle : isCompleted ? completedStyle : defaultStyle
+    }`;
+
+    return (
+        <div className={`flex items-center justify-center ${!children && 'flex-col'} mt-2 mb-2`} onClick={onClick}>
+            <div className={`${stepStyle} ${children ? className || defaultIconSize : defaultDotSize}`}>
+                {children}
+            </div>
         </div>
-        {/* Optional: If you want the lines to also have some vertical space from the steps, you can add margins to the line as well */}
-    </div>
-);
+    );
+};
 
 interface StepperProps {
     activeStep: number;
@@ -34,20 +49,17 @@ const Stepper: React.FC<StepperProps> = ({ activeStep, children, isLastStep, isF
     }, [activeStep, totalSteps, isLastStep, isFirstStep]);
 
     return (
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center py-4">
             {steps.map((step, index) => (
                 <React.Fragment key={index}>
-                    {/* Step component */}
                     {React.cloneElement(step as React.ReactElement, {
-                        label: (index + 1).toString(),
                         isActive: index === activeStep,
                         isCompleted: index < activeStep,
-                        onClick: () => { (step as React.ReactElement).props.onClick(); },
                     })}
-                    {/* Line between steps */}
                     {index < totalSteps - 1 && (
-                        // Optional: Add margin to the line if needed
-                        <div className={`flex-auto border-t-2 transition duration-500 ease-in-out ${index < activeStep ? 'border-black' : 'border-gray-300'}`}></div>
+                        <div className={`flex-auto border-t-2 transition duration-500 ease-in-out ${
+                            index < activeStep ? 'border-black' : 'border-gray-300'
+                        } mx-2`} />
                     )}
                 </React.Fragment>
             ))}
