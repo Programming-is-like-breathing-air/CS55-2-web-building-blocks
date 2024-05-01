@@ -1,0 +1,117 @@
+import * as React from 'react';
+import {
+  InputWithMention,
+  InputWithNumber,
+  InputWithPhoneNumber
+} from '../components/ui/input';
+
+# Input Component
+
+**Contributed by Yuqing Wu**
+
+Displays a form input field or a component that looks like an input field.
+
+## Input With Mention
+
+### Design
+The `InputMention` component is a functional React component that utilizes the `useState` hook for state management and the `Mentions` component from the `antd` UI library to provide a user input field with dynamic mention capabilities. Styled to occupy 50% of its container's width, this adjustability allows it to fit seamlessly within various layouts. It employs a `MOCK_DATA` object which maps strings to prefixes '@' and '#', enabling quick retrieval and display of relevant options as users type, enhancing interactivity and efficiency in data entry.
+
+### How to behave
+The `InputMention` component uses a state variable `prefix` to dynamically load mention options—email domains or version numbers—based on user interaction, which updates the prefix and triggers the display of relevant suggestions through the `onSearch` function.
+
+### How to use it
+- Installation 
+Ensure that your project includes all necessary dependencies for the Search component. If they are not already installed, add them via npm with the following command: 
+``` 
+import { Mentions } from "antd";
+``` 
+- User Interaction:
+Users interact with the Mentions input by typing text. When they type @ or #, the component offers a dropdown with relevant suggestions (gmail.com, icloud.com, qq.com for @ and 1.0, 2.0, 3.0 for #).
+``` 
+const MOCK_DATA = {
+  '@': ['gmail.com', 'icloud.com', 'qq.com'],
+  '#': ['1.0', '2.0', '3.0'],
+};
+``` 
+
+- Application Context:
+This component can be used in contexts where users need to quickly insert certain types of data (like email domains or version numbers) into text fields. For example, in an email client for quickly appending domain names, or in a project management tool for referencing version numbers.
+
+- Integration:
+To integrate this component into a larger application, place the InputMention in a form or dialogue where user input is needed. Ensure that the surrounding UI accommodates the dynamic width and the interactive nature of the component.
+
+<InputWithMention />
+
+## Input With Mention
+
+### Design
+The `InputPhoneNumber` component is a functional React component designed to facilitate phone number input, featuring both a dropdown menu for selecting country codes and an input field. It leverages components from a UI library, including Button, DropdownMenu, DropdownMenuCheckboxItem, and Input, to construct its user interface. The dropdown menu is styled with a fixed width of 56 units, while the input field is set to occupy 50% of its container's width through inline styling, providing a visually balanced and user-friendly input experience.
+
+### How to behave
+The `InputPhoneNumber` component employs React's useState hook to manage the `selectedCountry` state, which dynamically tracks the chosen country code. Users can select a country from the dropdown menu, triggering the `handleCountrySelect` function to update the `selectedCountry` state accordingly. Additionally, the input field enables users to input phone numbers and is visually configured to occupy 50% of its container's width, ensuring a responsive and intuitive input interaction experience.
+
+### How to use it
+- Installation 
+Ensure that your project includes all necessary dependencies for the Search component. If they are not already installed, add them via npm with the following command: 
+``` 
+import * as React from "react";
+import { Button } from "../../../../../styles/components/ui/button";
+import {
+    DropdownMenu,
+    DropdownMenuCheckboxItem,
+    DropdownMenuContent,
+    DropdownMenuTrigger,
+} from "../../../../../styles/components/ui/dropdown-menu";
+import { Input } from "../../../../../styles/components/ui/input"
+``` 
+- User Interaction:
+Users can interact with the dropdown menu by clicking on the button displaying the selected country code. They can then select a different country from the dropdown list.
+``` 
+<DropdownMenuContent className="w-56">
+    <DropdownMenuCheckboxItem
+        checked={selectedCountry === "US"}
+        onCheckedChange={() => handleCountrySelect("+1")}
+    >
+        United States (+1)
+    </DropdownMenuCheckboxItem>
+
+    <DropdownMenuCheckboxItem
+        checked={selectedCountry === "UK"}
+        onCheckedChange={() => handleCountrySelect("+44")}
+    >
+        United Kingdom (+44)
+    </DropdownMenuCheckboxItem>
+
+    <DropdownMenuCheckboxItem
+        checked={selectedCountry === "AUS"}
+        onCheckedChange={() => handleCountrySelect("+61")}
+    >
+        Australia (+61)
+    </DropdownMenuCheckboxItem>
+
+    <DropdownMenuCheckboxItem
+        checked={selectedCountry === "CHN"}
+        onCheckedChange={() => handleCountrySelect("+86")}
+    >
+        China (+86)
+    </DropdownMenuCheckboxItem>
+
+</DropdownMenuContent>
+``` 
+Users can input phone numbers in the input field, which is accompanied by a placeholder text "123-456-7890".
+``` 
+<Input type="number" placeholder="123-456-7890" style={{ width: '50%' }} />
+``` 
+
+- Integration:
+The InputPhoneNumber component can be integrated into a larger application wherever phone number input functionality is required. It provides a user-friendly interface for selecting country codes and entering phone numbers, enhancing the overall user experience. To enhance the extensibility of this component and support special scenarios such as currency input, where only numbers are allowed, you can introduce additional props to customize the dropdown menu's content and position. By allowing users to define the content and position of the dropdown menu, the component becomes more versatile and adaptable to various input requirements.
+
+
+<InputWithPhoneNumber />
+
+
+## Version
+
+| Version | Editor          | Author          | Date       | Description |
+| ------- | --------------- | --------------- | ---------- | ----------- |
+| v1.0    |    Yuqing Wu    | Yuqing Wu       | 01 May 2024| version 1   |

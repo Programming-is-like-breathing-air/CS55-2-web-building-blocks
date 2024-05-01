@@ -121,6 +121,11 @@ import FailPanel from "../../public/components/panel/fail/react/page"
 import NormalChat from "../../public/components/chat/normal/react/page"
 import AttachmentChat from "../../public/components/chat/attachment/react/page"
 
+import InputMention from "../../public/components/input/withMention/react/page"
+import InputNumber from "../../public/components/input/withNumber/react/page"
+import InputPhoneNumber from "../../public/components/input/withPhoneNumber/react/page"
+
+
 
 export default function Theme({
   componentName,
@@ -242,6 +247,9 @@ export default function Theme({
     FailPanel:FailPanel,
     NormalChat:NormalChat,
     AttachmentChat:AttachmentChat,
+    InputMention:InputMention,
+    InputNumber:InputNumber,
+    InputPhoneNumber:InputPhoneNumber
 
   };
 
