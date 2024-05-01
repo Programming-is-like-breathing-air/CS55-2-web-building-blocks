@@ -1,17 +1,6 @@
 import React from "react";
 import Theme from "../layout/componentTheme";
 
-export const AcquisitionsChart = () => {
-  return (
-    <Theme
-      componentName="charts"
-      componentStyle="react"
-      backgroundDesktop="white"
-      componentReactView="AcquisitionsChart"
-    />
-  );
-};
-
 export const Barchart = () => {
     return (
       <Theme
@@ -44,3 +33,15 @@ export const Barchart = () => {
       />
     );
   };
+
+  export const BubbleChart = () => {
+    return (
+      <Theme
+        componentName="charts"
+        componentStyle="bubblechart"
+        backgroundDesktop="white"
+        componentReactView="BubbleChart"
+      />
+    );
+  };
+  

@@ -125,6 +125,7 @@ import AcquisitionsChart from "../../public/components/charts/react/page"
 import Barchart from "../../public/components/charts/barchart/react/page"
 import LineChart from"../../public/components/charts/linechart/react/page"
 import PieChart from "../../public/components/charts/piechart/react/page"
+import BubbleChart from "../../public/components/charts/bubblechart/react/page"
 export default function Theme({
   componentName,
   componentStyle,
@@ -250,6 +251,7 @@ export default function Theme({
     Barchart:Barchart,
     LineChart:LineChart,
     PieChart:PieChart,
+    BubbleChart:BubbleChart,
 
   };
 
