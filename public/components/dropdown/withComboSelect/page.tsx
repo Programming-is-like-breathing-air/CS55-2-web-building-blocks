@@ -35,7 +35,7 @@ export function DropdownMenuSelect() {
                   <span onClick={(event) => removeOption(option, event)} style={{ marginLeft: '5px', cursor: 'pointer', color: 'red' }}>
                   </span>
                 </span>
-              )) : "Please select"}
+              )) : "Please select  "}
             </div>
             <span style={{ marginLeft: 'auto' }}>▼</span>
           </Button>
