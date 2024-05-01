@@ -121,6 +121,8 @@ import FailPanel from "../../public/components/panel/fail/react/page"
 import NormalChat from "../../public/components/chat/normal/react/page"
 import AttachmentChat from "../../public/components/chat/attachment/react/page"
 
+import AcquisitionsChart from "../../public/components/charts/react/page"
+import Barchart from "../../public/components/charts/barchart/react/page"
 
 export default function Theme({
   componentName,
@@ -242,6 +244,9 @@ export default function Theme({
     FailPanel:FailPanel,
     NormalChat:NormalChat,
     AttachmentChat:AttachmentChat,
+
+    AcquisitionsChart:AcquisitionsChart,
+    Barchart:Barchart,
 
   };
 
