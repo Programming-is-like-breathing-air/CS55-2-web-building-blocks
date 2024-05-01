@@ -2,13 +2,13 @@ import React from "react";
 import Theme from "../layout/componentTheme";
 
 export function InputWithMention() {
-  return <Theme componentName="input" componentStyle="InputMention" componentReactView="InputMention"/>;
+  return <Theme componentName="input" componentStyle="withMention" componentReactView="InputMention"/>;
 }
 
 export function InputWithNumber() {
-  return <Theme componentName="input" componentStyle="InputNumber" componentReactView="InputNumber" />;
+  return <Theme componentName="input" componentStyle="withNumber" componentReactView="InputNumber" />;
 }
 
 export function InputWithPhoneNumber() {
-    return <Theme componentName="input" componentStyle="InputPhoneNumber" componentReactView="InputPhoneNumber" />;
+    return <Theme componentName="input" componentStyle="withPhoneNumber" componentReactView="InputPhoneNumber" />;
   }
