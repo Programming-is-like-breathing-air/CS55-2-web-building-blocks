@@ -120,6 +120,7 @@ import FailPanel from "../../public/components/panel/fail/react/page"
 
 import NormalChat from "../../public/components/chat/normal/react/page"
 import AttachmentChat from "../../public/components/chat/attachment/react/page"
+import ButtonPopover from "../../public/components/button/popover/page"
 
 
 export default function Theme({
@@ -160,6 +161,7 @@ export default function Theme({
     AlertWithLink: AlertWithLink,
     AlertWithAction: AlertWithAction,
     TreeViewDemo:TreeViewDemo,
+    ButtonPopover:ButtonPopover,
 
 
     // DCC:DesktopCardComponent,
