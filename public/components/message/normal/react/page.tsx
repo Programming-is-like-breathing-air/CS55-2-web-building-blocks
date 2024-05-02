@@ -10,6 +10,7 @@ export function MessageNormal() {
 
     return (
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', backgroundColor: 'rgb(255, 255, 255)'}}>
+          <Toaster />
           <Button onClick={() => {
             console.log(buttonText, "has clicked");
             toast({
