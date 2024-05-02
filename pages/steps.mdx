@@ -1,0 +1,194 @@
+import {
+    StepsBasic,
+    StepsWithContent,
+    StepsWithDots,
+    StepsWithIcon,
+}from "../components/ui/steps";
+
+
+# Steps Component
+
+**Contributed by Xinyu Chen**
+
+The Table component is designed to display structured data in a tabular format, ideal for comparison, organization, and presentation of details in a clear and concise manner.
+
+## Basic Steps Component
+
+<StepsBasic/>
+
+## With Icon
+
+### Design:
+
+### How to behave:
+
+-
+### How to use it:
+
+<StepsWithIcon/>
+
+## With Dots
+
+### Design:
+
+### How to behave:
+
+-
+### How to use it:
+
+<StepsWithDots/>
+
+## With Content
+
+### Design:
+
+### How to behave:
+
+-
+### How to use it:
+
+<StepsWithContent/>
+
+
+```
+import React from 'react';
+
+interface StepProps {
+    isActive?: boolean;
+    isCompleted?: boolean;
+    onClick: () => void;
+    className?: string;
+    title: string;
+    subtitle: string;
+    children?: React.ReactNode;
+}
+
+const Step: React.FC<StepProps> = ({ isActive, isCompleted, onClick, className, title, subtitle, children }) => {
+    // Style classes for active, completed, and default steps
+    const stepColor = isActive || isCompleted ? 'bg-black text-white' : 'bg-white text-black';
+    const stepBorder = isActive || isCompleted ? 'border-gray-500' : 'border-gray-300';
+
+    // Dynamic text color based on active state
+    const textColor = isActive ? 'text-wite' : 'text-gray-400';
+
+    return (
+        <div className={`flex flex-col items-center justify-center cursor-pointer mt-2 mb-2`} onClick={onClick}>
+            <div className={`${className || 'w-10 h-10'} flex items-center justify-center rounded-full ${stepColor} ${stepBorder} border-2`}>
+                {children}
+            </div>
+            <div className={`text-center mt-2 ${textColor}`}>
+                <div className="text-sm font-semibold">{title}</div>
+                <div className="text-xs">{subtitle}</div>
+            </div>
+        </div>
+    );
+};
+
+interface StepperProps {
+    activeStep: number;
+    children: React.ReactElement[];
+    isLastStep: (isLast: boolean) => void;
+    isFirstStep: (isFirst: boolean) => void;
+}
+
+const Stepper: React.FC<StepperProps> = ({ activeStep, children, isLastStep, isFirstStep }) => {
+    const steps = React.Children.toArray(children);
+    const totalSteps = steps.length;
+
+    React.useEffect(() => {
+        isLastStep(activeStep === totalSteps - 1);
+        isFirstStep(activeStep === 0);
+    }, [activeStep, totalSteps, isLastStep, isFirstStep]);
+
+    return (
+        <div className="flex items-center justify-center py-4 relative">
+            {steps.map((step, index) => (
+                <React.Fragment key={index}>
+                    {React.cloneElement(step as React.ReactElement, {
+                        isActive: index === activeStep,
+                        isCompleted: index < activeStep,
+                    })}
+                    {index < totalSteps - 1 && (
+                        <div className={`flex-auto border-t-2 ${index < activeStep ? 'border-black' : 'border-gray-300'} transition duration-500 ease-in-out mx-2`} />
+                    )}
+                </React.Fragment>
+            ))}
+        </div>
+    );
+};
+
+export { Stepper, Step };
+
+```
+```
+import React from "react";
+import { Stepper, Step } from "../../../../../styles/components/ui/stepper";
+import { Button } from "../../../../../styles/components/ui/button";
+
+import {
+    CogIcon,
+    UserIcon,
+    BuildingLibraryIcon,
+} from "@heroicons/react/24/outline";
+
+export function StepperWithContent() {
+    const [activeStep, setActiveStep] = React.useState(0);
+    const [isLastStep, setIsLastStep] = React.useState(false);
+    const [isFirstStep, setIsFirstStep] = React.useState(false);
+
+
+    const handleNext = () => !isLastStep && setActiveStep((cur) => cur + 1);
+    const handlePrev = () => !isFirstStep && setActiveStep((cur) => cur - 1);
+
+    return (
+        <div className="w-full px-24 py-4">
+            <Stepper
+                activeStep={activeStep}
+                isLastStep={(value) => setIsLastStep(value)}
+                isFirstStep={(value) => setIsFirstStep(value)}
+            >
+                <Step
+                    onClick={() => setActiveStep(0)}
+                    title="Step 1"
+                    subtitle="Details about your account."
+                    isActive={activeStep === 0}
+                    isCompleted={activeStep > 0}
+                    className="h-5 w-5"
+                >
+                    <UserIcon className="h-5 w-5 text-black" aria-hidden="true" />
+                </Step>
+                <Step
+                    onClick={() => setActiveStep(1)}
+                    title="Step 2"
+                    subtitle="Details about your preferences."
+                    isActive={activeStep === 1}
+                    isCompleted={activeStep > 1}
+                    className="h-5 w-5"
+                >
+                    <CogIcon className="h-5 w-5 text-black" aria-hidden="true" />
+                </Step>
+                <Step
+                    onClick={() => setActiveStep(2)}
+                    title="Step 3"
+                    subtitle="Details about your location."
+                    isActive={activeStep === 2}
+                    isCompleted={activeStep > 2}
+                    className="h-5 w-5"
+                >
+                    <BuildingLibraryIcon className="h-5 w-5 text-black" aria-hidden="true" />
+                </Step>
+            </Stepper>
+            <div className="mt-32 flex justify-between">
+                <Button onClick={handlePrev} disabled={isFirstStep}>
+                    Prev
+                </Button>
+                <Button onClick={handleNext} disabled={isLastStep}>
+                    Next
+                </Button>
+            </div>
+        </div>
+    );
+}
+
+export default StepperWithContent;
+```
