@@ -32,6 +32,7 @@
     "toast": "Toast",
     "tooltip": "Tooltip",
     "treeview": "Tree View",
+    "tour":"Tour",
 
     "-- Pages": {
         "type": "separator",
