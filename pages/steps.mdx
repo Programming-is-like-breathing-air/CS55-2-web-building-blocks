@@ -10,175 +10,54 @@ import {
 
 **Contributed by Xinyu Chen**
 
-The Table component is designed to display structured data in a tabular format, ideal for comparison, organization, and presentation of details in a clear and concise manner.
-
 ## Basic Steps Component
-
-<StepsBasic/>
-
-## With Icon
-
 ### Design:
 
-### How to behave:
+The Steps component provides a visual navigation system for multi-step processes. It includes:
 
--
-### How to use it:
+- **Stepper Container**: Visually indicates the progress through steps.
+- **Step**: Each step can be styled based on its state (active, completed, or default).
+- **Buttons**: "Prev" and "Next" buttons are provided for navigation.
 
-<StepsWithIcon/>
+### How it Behaves:
 
-## With Dots
+- **Step Interactions**: Clicking on a step sets it as the active step.
+- **Navigation**: Users can navigate forward or backward through steps.
+- **Dynamic Step Status**: Steps change style based on their state.
 
-### Design:
-
-### How to behave:
-
--
-### How to use it:
-
-<StepsWithDots/>
-
-## With Content
-
-### Design:
-
-### How to behave:
-
--
-### How to use it:
-
-<StepsWithContent/>
-
-
-```
-import React from 'react';
-
-interface StepProps {
-    isActive?: boolean;
-    isCompleted?: boolean;
-    onClick: () => void;
-    className?: string;
-    title: string;
-    subtitle: string;
-    children?: React.ReactNode;
-}
-
-const Step: React.FC<StepProps> = ({ isActive, isCompleted, onClick, className, title, subtitle, children }) => {
-    // Style classes for active, completed, and default steps
-    const stepColor = isActive || isCompleted ? 'bg-black text-white' : 'bg-white text-black';
-    const stepBorder = isActive || isCompleted ? 'border-gray-500' : 'border-gray-300';
-
-    // Dynamic text color based on active state
-    const textColor = isActive ? 'text-wite' : 'text-gray-400';
-
-    return (
-        <div className={`flex flex-col items-center justify-center cursor-pointer mt-2 mb-2`} onClick={onClick}>
-            <div className={`${className || 'w-10 h-10'} flex items-center justify-center rounded-full ${stepColor} ${stepBorder} border-2`}>
-                {children}
-            </div>
-            <div className={`text-center mt-2 ${textColor}`}>
-                <div className="text-sm font-semibold">{title}</div>
-                <div className="text-xs">{subtitle}</div>
-            </div>
-        </div>
-    );
-};
-
-interface StepperProps {
-    activeStep: number;
-    children: React.ReactElement[];
-    isLastStep: (isLast: boolean) => void;
-    isFirstStep: (isFirst: boolean) => void;
-}
-
-const Stepper: React.FC<StepperProps> = ({ activeStep, children, isLastStep, isFirstStep }) => {
-    const steps = React.Children.toArray(children);
-    const totalSteps = steps.length;
-
-    React.useEffect(() => {
-        isLastStep(activeStep === totalSteps - 1);
-        isFirstStep(activeStep === 0);
-    }, [activeStep, totalSteps, isLastStep, isFirstStep]);
-
-    return (
-        <div className="flex items-center justify-center py-4 relative">
-            {steps.map((step, index) => (
-                <React.Fragment key={index}>
-                    {React.cloneElement(step as React.ReactElement, {
-                        isActive: index === activeStep,
-                        isCompleted: index < activeStep,
-                    })}
-                    {index < totalSteps - 1 && (
-                        <div className={`flex-auto border-t-2 ${index < activeStep ? 'border-black' : 'border-gray-300'} transition duration-500 ease-in-out mx-2`} />
-                    )}
-                </React.Fragment>
-            ))}
-        </div>
-    );
-};
-
-export { Stepper, Step };
-
-```
-```
+### How to Use It:
+1. **Import Necessary Components**:
+```jsx
 import React from "react";
 import { Stepper, Step } from "../../../../../styles/components/ui/stepper";
 import { Button } from "../../../../../styles/components/ui/button";
-
-import {
-    CogIcon,
-    UserIcon,
-    BuildingLibraryIcon,
-} from "@heroicons/react/24/outline";
-
-export function StepperWithContent() {
-    const [activeStep, setActiveStep] = React.useState(0);
-    const [isLastStep, setIsLastStep] = React.useState(false);
-    const [isFirstStep, setIsFirstStep] = React.useState(false);
-
-
-    const handleNext = () => !isLastStep && setActiveStep((cur) => cur + 1);
-    const handlePrev = () => !isFirstStep && setActiveStep((cur) => cur - 1);
-
+```
+2. **Setup State Management**:
+```tsx
+const [activeStep, setActiveStep] = React.useState(0);
+const [isLastStep, setIsLastStep] = React.useState(false);
+const [isFirstStep, setIsFirstStep] = React.useState(false);
+```
+3. **Handler Functions**:
+```tsx
+const handleNext = () => !isLastStep && setActiveStep((cur) => cur + 1);
+const handlePrev = () => !isFirstStep && setActiveStep((cur) => cur - 1);
+```
+4. **Render the Component**:
+```tsx
+export function StepsBasic() {
     return (
-        <div className="w-full px-24 py-4">
+        <div className="w-full py-4 px-8">
             <Stepper
                 activeStep={activeStep}
                 isLastStep={(value) => setIsLastStep(value)}
                 isFirstStep={(value) => setIsFirstStep(value)}
             >
-                <Step
-                    onClick={() => setActiveStep(0)}
-                    title="Step 1"
-                    subtitle="Details about your account."
-                    isActive={activeStep === 0}
-                    isCompleted={activeStep > 0}
-                    className="h-5 w-5"
-                >
-                    <UserIcon className="h-5 w-5 text-black" aria-hidden="true" />
-                </Step>
-                <Step
-                    onClick={() => setActiveStep(1)}
-                    title="Step 2"
-                    subtitle="Details about your preferences."
-                    isActive={activeStep === 1}
-                    isCompleted={activeStep > 1}
-                    className="h-5 w-5"
-                >
-                    <CogIcon className="h-5 w-5 text-black" aria-hidden="true" />
-                </Step>
-                <Step
-                    onClick={() => setActiveStep(2)}
-                    title="Step 3"
-                    subtitle="Details about your location."
-                    isActive={activeStep === 2}
-                    isCompleted={activeStep > 2}
-                    className="h-5 w-5"
-                >
-                    <BuildingLibraryIcon className="h-5 w-5 text-black" aria-hidden="true" />
-                </Step>
+                <Step onClick={() => setActiveStep(0)}>1</Step>
+                <Step onClick={() => setActiveStep(1)}>2</Step>
+                <Step onClick={() => setActiveStep(2)}>3</Step>
             </Stepper>
-            <div className="mt-32 flex justify-between">
+            <div className="mt-16 flex justify-between">
                 <Button onClick={handlePrev} disabled={isFirstStep}>
                     Prev
                 </Button>
@@ -189,6 +68,113 @@ export function StepperWithContent() {
         </div>
     );
 }
-
-export default StepperWithContent;
 ```
+
+<StepsBasic/>
+
+## With Icon
+
+### Design:
+
+The "Steps with Icon" component enhances the visual representation of each step by incorporating icons. This design provides a more intuitive navigation experience by associating each step with a specific icon.
+
+### How it Behaves:
+
+- **Icon Integration**: Each step is represented by an icon, making it visually distinct and easy to identify.
+- **Interactive Icons**: Users can click on the icons directly to navigate between steps.
+
+### How to Use It:
+
+To use the "Steps with Icon" component, follow these steps:
+
+1. **Import Necessary Components and Icons**:
+```jsx
+import React from "react";
+import { Stepper, Step } from "../../../../../styles/components/ui/stepper";
+import { Button } from "../../../../../styles/components/ui/button";
+import { HomeIcon, CogIcon, UserIcon } from "@heroicons/react/24/outline";
+```
+2. **Setup State Management**:
+```tsx
+const [activeStep, setActiveStep] = React.useState(0);
+const [isLastStep, setIsLastStep] = React.useState(false);
+const [isFirstStep, setIsFirstStep] = React.useState(false);
+```
+3. **Handler Functions**:
+```tsx
+const handleNext = () => !isLastStep && setActiveStep((cur) => cur + 1);
+const handlePrev = () => !isFirstStep && setActiveStep((cur) => cur - 1);
+```
+4. **Render the Component with Icons**:
+```tsx
+export function StepsWithIcon() {
+    return (
+        <div className="w-full py-4 px-8">
+            <Stepper
+                activeStep={activeStep}
+                isLastStep={(value) => setIsLastStep(value)}
+                isFirstStep={(value) => setIsFirstStep(value)}
+            >
+                <Step onClick={() => setActiveStep(0)}>
+                    <HomeIcon className="h-5 w-5" />
+                </Step>
+                <Step onClick={() => setActiveStep(1)}>
+                    <UserIcon className="h-5 w-5" />
+                </Step>
+                <Step onClick={() => setActiveStep(2)}>
+                    <CogIcon className="h-5 w-5" />
+                </Step>
+            </Stepper>
+            <div className="mt-16 flex justify-between">
+                <Button onClick={handlePrev} disabled={isFirstStep}>
+                    Prev
+                </Button>
+                <Button onClick={handleNext} disabled={isLastStep}>
+                    Next
+                </Button>
+            </div>
+        </div>
+    );
+}
+```
+
+<StepsWithIcon/>
+
+### Design:
+
+The "Steps with Dots" component uses minimalistic dot indicators to represent each step in a process. This design is sleek and visually subtle, making it suitable for clean and modern interfaces where overt icons or text might be distracting.
+
+### How it Behaves:
+
+- **Dot Indicators**: Small dots act as indicators for each step, changing appearance based on their state (active, completed, or default).
+- **Clickable Dots**: Each dot is interactive, allowing users to click directly on a dot to navigate to that step.
+
+### How to use it:
+The `Step` component automatically renders as a dot unless children (like icons or text) are explicitly provided. This flexibility allows you to use the same component in various configurations throughout your application.
+
+<StepsWithDots/>
+
+### Design:
+
+The "Steps with Content" component enhances the steps by adding titles, subtitles, and icons for each step. This design offers a more informative and engaging experience, ideal for processes where understanding the context of each step is crucial.
+
+### How it Behaves:
+
+- **Rich Content Display**: Each step includes a title, a subtitle with a description, and an associated icon.
+- **Interactive Content**: Users can click on any part of the step to navigate to that step, making each step highly interactive.
+
+### How to use it:
+You can add text descriptions by adding `title` and `subtitle` directly to the `step` tag.
+```tsx
+<Step
+onClick={() => setActiveStep(2)}
+title="Step 3"
+subtitle="This is the description of step 3"
+isActive={activeStep === 2}
+isCompleted={activeStep > 2}
+>
+<BuildingLibraryIcon className="h-5 w-5" />
+</Step>
+```
+
+<StepsWithContent/>
