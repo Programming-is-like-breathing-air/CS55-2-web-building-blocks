@@ -127,6 +127,7 @@ import FailPanel from "../../public/components/panel/fail/react/page"
 
 import NormalChat from "../../public/components/chat/normal/react/page"
 import AttachmentChat from "../../public/components/chat/attachment/react/page"
+import DropdownMenuwithSelect from "../../public/components/dropdown/withComboSelect/page"
 import ButtonPopover from "../../public/components/button/popover/page"
 
 import TimelinePage from "../../public/components/Timeline/normal/react/page"
@@ -267,6 +268,7 @@ export default function Theme({
     FailPanel:FailPanel,
     NormalChat:NormalChat,
     AttachmentChat:AttachmentChat,
+    DropdownMenuwithSelect:DropdownMenuwithSelect,
     TimelinePage:TimelinePage,
     Timelineloading:Timelineloading,
 
