@@ -129,6 +129,7 @@ import FailPanel from "../../public/components/panel/fail/react/page"
 
 import NormalChat from "../../public/components/chat/normal/react/page"
 import AttachmentChat from "../../public/components/chat/attachment/react/page"
+
 import DropdownMenuwithSelect from "../../public/components/dropdown/withComboSelect/page"
 import ButtonPopover from "../../public/components/button/popover/page"
 
@@ -157,6 +158,13 @@ import MessageWarning from "../../public/components/message/warning/react/page"
 import MessageDuration from "../../public/components/message/duration/react/page"
 import MessageLoading from "../../public/components/message/loading/react/page"
 import MessageSequential from "../../public/components/message/sequential/react/page"
+
+import AvatarDemo from "../../public/components/avatar/normal/react/page"
+import Statisticnormal from "../../public/components/statistic/normal/react/page"
+import IncardStatistic  from "public/components/statistic/Incard/react/page";
+import CountdownStatistic from "public/components/statistic/Countdown/react/page"
+import Watermarknormal from "public/components/watermark/normal/react/page"
+
 
 export default function Theme({
   componentName,
@@ -277,6 +285,7 @@ export default function Theme({
     BrowserWindow: BrowserMockup,
     MultiStepForm: MultiStepForm,
 
+
     DatePickerDemo: DatePickerDemo,
     dateTimeInput: dateTimeInput,
     MonthPickerDemo: MonthPickerDemo,
@@ -295,6 +304,31 @@ export default function Theme({
     FailPanel: FailPanel,
     NormalChat: NormalChat,
     AttachmentChat: AttachmentChat,
+
+    DatePickerDemo:DatePickerDemo,
+    dateTimeInput:dateTimeInput,
+    MonthPickerDemo:MonthPickerDemo,
+    TimePickerDemo:TimePickerDemo,
+    DatePickerWithRange:DatePickerWithRange,
+    WeekPicker:WeekPicker,
+    ButtonDemo:ButtonDemo,
+    ButtonDestructive:ButtonDestructive,
+    ButtonLoading:ButtonLoading,
+    ButtonIcon:ButtonIcon,
+    ActiveButton:ActiveButton,
+    FocusButton:FocusButton,
+    HoverButton:HoverButton,
+    TriggerButton:TriggerButton,
+    SuccessPanel:SuccessPanel,
+    FailPanel:FailPanel,
+    NormalChat:NormalChat,
+    AttachmentChat:AttachmentChat,
+    AvatarDemo:AvatarDemo,
+    Statisticnormal:Statisticnormal,
+    IncardStatistic:IncardStatistic,
+    CountdownStatistic:CountdownStatistic,
+    Watermarknormal:Watermarknormal,
+
 
     ChartBarchart: ChartBarchart,
     ChartLineChart: ChartLineChart,

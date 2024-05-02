@@ -7,6 +7,7 @@
     },
     "accordion": "Accordion",
     "alerts": "Alerts",
+    "avatar": "Avatar",
     "breadcrumbs": "Breadcrumbs",
     "browserwindow": "Browser Window",
     "button": "Button",
@@ -38,6 +39,7 @@
     "search": "Search",
     "slider": "Slider",
     "steps": "Steps",
+    "statistic": "Statistic",
     "table": "Table",
     "tabs": "Tabs",
     "tags": "Tags",
@@ -46,6 +48,7 @@
     "tooltip": "Tooltip",
     "treeview": "Tree View",
     "tour":"Tour",
+    "watermark": "Watermark",
 
 
     "-- Pages": {
