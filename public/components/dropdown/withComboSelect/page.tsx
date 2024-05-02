@@ -9,8 +9,9 @@ import {
 } from "../../../../styles/components/ui/dropdown-menu";
 
 export function DropdownMenuSelect() {
-  const [selectedOptions, setSelectedOptions] = React.useState(["s28", "t29"]);
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [selectedOptions, setSelectedOptions] = React.useState([]);
+  const [searchTerm, setSearchTerm] = React.useState("");
+  const [open, setOpen] = React.useState(false);
 
   const toggleOption = (option) => {
     setSelectedOptions((prev) =>
@@ -18,42 +19,101 @@ export function DropdownMenuSelect() {
     );
   };
 
-  const removeOption = (option, event) => {
-    event.stopPropagation(); // Prevent dropdown from toggling when removing an item
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value.toLowerCase());
+  };
+
+  const handleTriggerClick = () => {
+    setOpen((prev) => !prev);
+  };
+
+  const removeOption = (option) => {
     setSelectedOptions((prev) => prev.filter((item) => item !== option));
   };
 
+  const options = ["Account Settings", "Support", "License", "Signout"];
+  const filteredOptions = options.filter((option) =>
+    option.toLowerCase().includes(searchTerm)
+  );
+
+  const tagStyle = {
+    marginRight: "8px",
+    marginBottom: "8px",
+    backgroundColor: "#f0f0f0",
+    borderRadius: "12px",
+    padding: "4px 8px",
+    display: "flex",
+    alignItems: "center",
+    cursor: "default"
+  };
+
+  const tagCloseButton = {
+    background: "none",
+    border: "none",
+    color: "#666",
+    cursor: "pointer",
+    marginLeft: "8px"
+  };
+
+  const inputStyle = {
+    padding: "8px",
+    margin: "8px",
+    width: "calc(100% - 16px)",
+    border: "1px solid #ccc"
+  };
+
+  const dropdownItemStyle = {
+    padding: "8px",
+    width: "100%",
+    cursor: "pointer"
+  };
+
   return (
-    <div>
-      <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
-        <DropdownMenuTrigger asChild>
-          <Button variant="outline" onClick={() => setIsOpen(!isOpen)} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px', alignItems: 'center' }}>
-              {selectedOptions.length > 0 ? selectedOptions.map((option) => (
-                <span key={option} style={{ padding: '3px 5px', display: 'flex', alignItems: 'center', background: '#E0E0E0', borderRadius: '4px' }}>
-                  {option}
-                  <span onClick={(event) => removeOption(option, event)} style={{ marginLeft: '5px', cursor: 'pointer', color: 'red' }}>
-                  </span>
-                </span>
-              )) : "Please select  "}
-            </div>
-            <span style={{ marginLeft: 'auto' }}>▼</span>
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent style={{ maxHeight: '200px', overflowY: 'auto' }}>
-          <DropdownMenuSeparator />
-          {['a10', 'b11', 'c12', 'd13', 'e14', 'f15', 'g16', 'h17', 's28', 't29', 'u30', 'v31', 'w32', 'x33', 'y34', 'z35'].map((option) => (
-            <DropdownMenuCheckboxItem
-              key={option}
-              checked={selectedOptions.includes(option)}
-              onCheckedChange={() => toggleOption(option)}
-            >
-              {option}
-            </DropdownMenuCheckboxItem>
-          ))}
-        </DropdownMenuContent>
-      </DropdownMenu>
-    </div>
+    <DropdownMenu open={open} onOpenChange={setOpen}>
+      <DropdownMenuTrigger asChild>
+        <div onClick={handleTriggerClick} style={{ border: '1px solid #ccc', padding: '2px', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
+            {selectedOptions.map((option) => (
+              <div key={option} style={tagStyle}>
+                {option}
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation(); // Prevent dropdown from toggling
+                    removeOption(option);
+                  }}
+                  style={tagCloseButton}
+                >
+                  ×
+                </button>
+              </div>
+            ))}
+          </div>
+          <span>▼</span>
+        </div>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="w-56">
+        <input
+          type="text"
+          placeholder="Search..."
+          value={searchTerm}
+          onChange={handleSearchChange}
+          style={inputStyle}
+          onFocus={(e) => e.target.style.borderColor = '#007bff'}
+          onBlur={(e) => e.target.style.borderColor = '#ccc'}
+        />
+        <DropdownMenuSeparator />
+        {filteredOptions.map((option) => (
+          <DropdownMenuCheckboxItem
+            key={option}
+            checked={selectedOptions.includes(option)}
+            onCheckedChange={() => toggleOption(option)}
+            style={dropdownItemStyle}
+          >
+            {option}
+          </DropdownMenuCheckboxItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }
 
