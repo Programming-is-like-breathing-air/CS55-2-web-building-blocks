@@ -9,23 +9,28 @@ const Watermark = ({ content, children, count }) => {
 
   const watermarkStyle: CSSProperties = { 
     position: 'absolute',
-    fontSize: '34px',
+    fontSize: '28px',
     opacity: '0.1',
     pointerEvents: 'none',
+    transform: 'rotate(-30deg)', // Rotate the watermark
   };
 
   const step = 100; 
   const columnWidth = 200; // Width of each column
+  const columns = 3; // Number of columns
 
   const watermarkElements = [];
   for (let i = 0; i < count; i++) {
+    const column = Math.floor(i / columns); // Calculate the column index
+    const row = i % columns; // Calculate the row index
+
     watermarkElements.push(
       <div
         key={i}
         style={{
           ...watermarkStyle,
-          top: `${i * step}px`,
-          left: `${i * columnWidth}px`, // Adjust left position
+          top: `${row * step}px`,
+          left: `${column * columnWidth}px`, // Adjust left position
         }}
       >
         {content}
