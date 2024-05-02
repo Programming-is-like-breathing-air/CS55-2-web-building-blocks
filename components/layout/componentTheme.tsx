@@ -146,9 +146,18 @@ import BasicComment from "../../public/components/comment/basic/react/page"
 
 import AcquisitionsChart from "../../public/components/charts/react/page"
 import ChartBarchart from "../../public/components/charts/barchart/react/page"
-import ChartLineChart from"../../public/components/charts/linechart/react/page"
+import ChartLineChart from "../../public/components/charts/linechart/react/page"
 import ChartPieChart from "../../public/components/charts/piechart/react/page"
 import ChartBubbleChart from "../../public/components/charts/bubblechart/react/page"
+
+import MessageNormal from "../../public/components/message/normal/react/page"
+import MessageSuccess from "../../public/components/message/success/react/page"
+import MessageError from "../../public/components/message/error/react/page"
+import MessageWarning from "../../public/components/message/warning/react/page"
+import MessageDuration from "../../public/components/message/duration/react/page"
+import MessageLoading from "../../public/components/message/loading/react/page"
+import MessageSequential from "../../public/components/message/sequential/react/page"
+
 export default function Theme({
   componentName,
   componentStyle,
@@ -171,12 +180,12 @@ export default function Theme({
   const componentReactMap = {
     ADemo: AccordionDemo,
     AWB: AccordionButton,
-    AWPB:AccordionPictureButton,
-    AM:AccordionMix,
-    AL:AccordionList,
-    ALA:AccordionListAvatar,
-    BreadcrumbBasic:BreadcrumbBasic,
-    BreadcrumbDemo:BreadcrumbDemo,
+    AWPB: AccordionPictureButton,
+    AM: AccordionMix,
+    AL: AccordionList,
+    ALA: AccordionListAvatar,
+    BreadcrumbBasic: BreadcrumbBasic,
+    BreadcrumbDemo: BreadcrumbDemo,
 
     AlertDemo: AlertDemo,
     AlertAction: AlertAction,
@@ -186,12 +195,15 @@ export default function Theme({
     AlertWithDismiss: AlertWithDismiss,
     AlertWithLink: AlertWithLink,
     AlertWithAction: AlertWithAction,
+
     TreeViewDemo:TreeViewDemo,
     ButtonPopover:ButtonPopover,
 
 
+
     // DCC:DesktopCardComponent,
     // DITC:DesktopInnovativeTagComponent,
+
     BasicCarousel:BasicCarousel,
     CarouselImage:CarouselImage,
     CarouselAuto:CarouselAuto,
@@ -217,11 +229,12 @@ export default function Theme({
     TopTooltip:TopTooltip,
     BottomTooltip:BottomTooltip,
     DisableTooltip:DisableTooltip,
+
     // AnimatedTooltip:AnimatedTooltip,
-    ToastWithAction:ToastWithAction,
-    ToastWithNormal:ToastWithNormal,
-    ToastWithTitle:ToastWithTitle,
-    CalendarDemo:CalendarDemo,
+    ToastWithAction: ToastWithAction,
+    ToastWithNormal: ToastWithNormal,
+    ToastWithTitle: ToastWithTitle,
+    CalendarDemo: CalendarDemo,
 
     NormalTags:NormalTags,
     InnovativeTags:InnovativeTags,
@@ -247,50 +260,57 @@ export default function Theme({
     LargeHeaderCard:LargeHeaderCard,
     EnquirySubmittedCard:EnquirySubmittedCard,
     FileUploadComponent:FileUploadComponent,
+
     // FileUploadWithIcon:FileUploadWithIcon,
     // FileUploadMutiple:FileUploadMutiple,
-    ImageUploadComponent:ImageUploadComponent,
+    ImageUploadComponent: ImageUploadComponent,
     // FileUploadLimitSize:FileUploadLimitSize,
-    FileUploadPreview:FileUploadPreview,
-    LoginForm:LoginForm,
+    FileUploadPreview: FileUploadPreview,
+    LoginForm: LoginForm,
     // SignUpForm:SignUpForm,
-    CheckoutForm:CheckoutForm,
-    ResponsiveForm:ResponsiveForm,
+    CheckoutForm: CheckoutForm,
+    ResponsiveForm: ResponsiveForm,
     // ContactUsForm:ContactUsForm,
     // NormalLink:NormalLink,
-    EnhancedLink:EnhancedLink,
-    ExpandLink:ExpandLink,
-    BrowserWindow:BrowserMockup,
-    MultiStepForm:MultiStepForm,
+    EnhancedLink: EnhancedLink,
+    ExpandLink: ExpandLink,
+    BrowserWindow: BrowserMockup,
+    MultiStepForm: MultiStepForm,
 
-    DatePickerDemo:DatePickerDemo,
-    dateTimeInput:dateTimeInput,
-    MonthPickerDemo:MonthPickerDemo,
-    TimePickerDemo:TimePickerDemo,
-    DatePickerWithRange:DatePickerWithRange,
-    WeekPicker:WeekPicker,
-    ButtonDemo:ButtonDemo,
-    ButtonDestructive:ButtonDestructive,
-    ButtonLoading:ButtonLoading,
-    ButtonIcon:ButtonIcon,
-    ActiveButton:ActiveButton,
-    FocusButton:FocusButton,
-    HoverButton:HoverButton,
-    TriggerButton:TriggerButton,
-    SuccessPanel:SuccessPanel,
-    FailPanel:FailPanel,
-    NormalChat:NormalChat,
-    AttachmentChat:AttachmentChat,
+    DatePickerDemo: DatePickerDemo,
+    dateTimeInput: dateTimeInput,
+    MonthPickerDemo: MonthPickerDemo,
+    TimePickerDemo: TimePickerDemo,
+    DatePickerWithRange: DatePickerWithRange,
+    WeekPicker: WeekPicker,
+    ButtonDemo: ButtonDemo,
+    ButtonDestructive: ButtonDestructive,
+    ButtonLoading: ButtonLoading,
+    ButtonIcon: ButtonIcon,
+    ActiveButton: ActiveButton,
+    FocusButton: FocusButton,
+    HoverButton: HoverButton,
+    TriggerButton: TriggerButton,
+    SuccessPanel: SuccessPanel,
+    FailPanel: FailPanel,
+    NormalChat: NormalChat,
+    AttachmentChat: AttachmentChat,
+
+    ChartBarchart: ChartBarchart,
+    ChartLineChart: ChartLineChart,
+    ChartPieChart: ChartPieChart,
+    ChartBubbleChart: ChartBubbleChart,
+    MessageNormal: MessageNormal,
+    MessageSuccess: MessageSuccess,
+    MessageError :MessageError,
+    MessageWarning :MessageWarning,
+    MessageDuration :MessageDuration,
+    MessageLoading : MessageLoading,
+    MessageSequential :MessageSequential,
 
     DropdownMenuwithSelect:DropdownMenuwithSelect,
     TimelinePage:TimelinePage,
     Timelineloading:Timelineloading,
-
-    AcquisitionsChart:AcquisitionsChart,
-    ChartBarchart:ChartBarchart,
-    ChartLineChart:ChartLineChart,
-    ChartPieChart:ChartPieChart,
-    ChartBubbleChart:ChartBubbleChart,
 
     InputMention:InputMention,
     InputNumber:InputNumber,
@@ -324,37 +344,37 @@ export default function Theme({
 
   return (
 
-        <div>
-          <Tabs
-            defaultValue="desktop"
-            onValueChange={(e) => refreshIframes()}
-            className="mt-5 w-full"
+    <div>
+      <Tabs
+        defaultValue="desktop"
+        onValueChange={(e) => refreshIframes()}
+        className="mt-5 w-full"
+      >
+        <div className="w-full rounded-md border">
+          <TabsContent
+            value="desktop"
+            className={TABS_WPR_CLASS}
+            style={{ backgroundColor: backgroundDesktop }}
           >
-            <div className="w-full rounded-md border">
-              <TabsContent
-                value="desktop"
-                className={TABS_WPR_CLASS}
-                style={{ backgroundColor: backgroundDesktop }}
-              >
 
-                <div className={TABS_CTNT_CLASS}>
-                  {ReactComponent ? <ReactComponent /> : <div>Component not found</div>}
-                </div>
-
-              </TabsContent>
+            <div className={TABS_CTNT_CLASS}>
+              {ReactComponent ? <ReactComponent /> : <div>Component not found</div>}
             </div>
-            <div className="my-5">
-              <p className="text-2xl font-semibold text-foreground mb-2">
-                Code Usage
-              </p>
-              <Separator />
-            </div>
-            <ReactCodeTabs
-              reactjs={nextjsDesktop} // Add new attributes
-            />
 
-          </Tabs>
+          </TabsContent>
         </div>
-     
+        <div className="my-5">
+          <p className="text-2xl font-semibold text-foreground mb-2">
+            Code Usage
+          </p>
+          <Separator />
+        </div>
+        <ReactCodeTabs
+          reactjs={nextjsDesktop} // Add new attributes
+        />
+
+      </Tabs>
+    </div>
+
   );
 }
