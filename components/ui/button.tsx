@@ -25,7 +25,7 @@ export function FocusButton() {
   return <Theme componentName="button" componentStyle="focus" componentReactView="FocusButton"/>;
 }
 export function ButtonPopover() {
-  return <Theme componentName="button" componentStyle="focus" componentReactView="ButtonPopover"/>;
+  return <Theme componentName="button" componentStyle="popover" componentReactView="ButtonPopover"/>;
 }
 
 export function ActiveButton() {
