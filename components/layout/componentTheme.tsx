@@ -132,7 +132,7 @@ import ButtonPopover from "../../public/components/button/popover/page"
 
 
 import TimelinePage from "../../public/components/Timeline/normal/react/page"
-import Timelineloading from "../../public/components/Timeline/withloading/page"
+import Timelineloading from "../../public/components/Timeline/withloading/react/page"
 
 import InputMention from "../../public/components/input/withMention/react/page"
 import InputNumber from "../../public/components/input/withNumber/react/page"
