@@ -130,8 +130,15 @@ import AttachmentChat from "../../public/components/chat/attachment/react/page"
 import DropdownMenuwithSelect from "../../public/components/dropdown/withComboSelect/page"
 import ButtonPopover from "../../public/components/button/popover/page"
 
+
 import TimelinePage from "../../public/components/Timeline/normal/react/page"
 import Timelineloading from "../../public/components/Timeline/withloading/page"
+
+import InputMention from "../../public/components/input/withMention/react/page"
+import InputNumber from "../../public/components/input/withNumber/react/page"
+import InputPhoneNumber from "../../public/components/input/withPhoneNumber/react/page"
+
+
 
 import AcquisitionsChart from "../../public/components/charts/react/page"
 import ChartBarchart from "../../public/components/charts/barchart/react/page"
@@ -268,6 +275,7 @@ export default function Theme({
     FailPanel:FailPanel,
     NormalChat:NormalChat,
     AttachmentChat:AttachmentChat,
+
     DropdownMenuwithSelect:DropdownMenuwithSelect,
     TimelinePage:TimelinePage,
     Timelineloading:Timelineloading,
@@ -277,6 +285,11 @@ export default function Theme({
     ChartLineChart:ChartLineChart,
     ChartPieChart:ChartPieChart,
     ChartBubbleChart:ChartBubbleChart,
+
+    InputMention:InputMention,
+    InputNumber:InputNumber,
+    InputPhoneNumber:InputPhoneNumber
+
 
   };
 

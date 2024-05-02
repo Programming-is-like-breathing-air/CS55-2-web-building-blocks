@@ -19,7 +19,11 @@
     "dropdown": "Dropdown",
     "fileUpload": "File Upload",
     "form": "Form",
+
     "gallery": "Image Gallery",
+
+    "input": "Input",
+
     "links": "Links",
     "modal": "Modal",
     "navigation": "Navigation",
