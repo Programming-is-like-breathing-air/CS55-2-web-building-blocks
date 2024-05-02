@@ -124,6 +124,7 @@ import AttachmentChat from "../../public/components/chat/attachment/react/page"
 import InputMention from "../../public/components/input/withMention/react/page"
 import InputNumber from "../../public/components/input/withNumber/react/page"
 import InputPhoneNumber from "../../public/components/input/withPhoneNumber/react/page"
+import BasicComment from "../../public/components/comment/basic/react/page"
 
 
 
@@ -249,7 +250,8 @@ export default function Theme({
     AttachmentChat:AttachmentChat,
     InputMention:InputMention,
     InputNumber:InputNumber,
-    InputPhoneNumber:InputPhoneNumber
+    InputPhoneNumber:InputPhoneNumber,
+    BasicComment:BasicComment,
 
   };
 
