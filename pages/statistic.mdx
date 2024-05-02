@@ -1,0 +1,87 @@
+import {
+   Statistic,
+   IncardStatistic,
+   CountdownStatistic
+} from "../components/ui/statistic";
+
+# Statistic Component
+
+**Contributed by Yutong Shi**
+
+## Basic Component
+### Design:
+The **StatisticNormal** component is designed to display statistical information in a visually appealing and informative manner. It utilizes the **Statistic** component from the UI library to present various statistics, including active users and account balance. The component also includes a loading state indicator for asynchronous data fetching and a button for user interaction.
+### How to behave:
+     - **Statistic Display**:
+     - The component showcases two instances of the **Statistic** component, each presenting a different statistic with corresponding values.
+     - The first set of statistics includes "Active Users" and "Account Balance (CNY)" with numerical values.
+     - The second set of statistics displays "Active Users" with a loading indicator, indicating that data is being fetched asynchronously.
+   - **User Interaction**:
+     - Users can interact with the "Recharge" button, although its functionality is not explicitly defined within the component. Developers can customize its behavior according to application requirements.
+
+### How to use it:
+
+   - **Statistic Integration**:
+     - Developers can integrate the **StatisticNormal** component into their React applications to visualize statistical data effectively.
+     - Customize the component by adjusting the statistical titles, values, and precision as needed to reflect the relevant information for the application.
+     - Ensure proper styling and layout adjustments to align with the overall design aesthetics and user experience goals of the application.
+     - Utilize the loading state indicator when fetching data asynchronously to provide users with feedback on the ongoing process.
+
+<Statistic />
+## Variants
+
+## IncardStatistic
+### Design:
+ The **IncardStatistic** component is designed to display statistical information within cards, providing a visually appealing presentation of data. It utilizes the **Card** and **Statistic** components from the UI library to create a layout with statistics indicating the active and idle states. The component includes arrows to represent changes in statistics, with green indicating an increase and red indicating a decrease.
+
+### How to behave:
+   - **Card Layout**:
+     - The component renders two instances of the **Card** component, each containing statistical information.
+     - One card represents the "Active" state, while the other represents the "Idle" state.
+   - **Statistic Presentation**:
+     - Each card displays a statistic value with corresponding arrows to indicate changes.
+     - Green arrows with positive values signify an increase, while red arrows with negative values denote a decrease.
+   - **Value Precision**:
+     - The precision of the statistical values is set to two decimal places to provide accurate representations of percentages.
+   - **Styling and Layout**:
+     - The layout of the component ensures proper spacing and alignment for an organized presentation of information.
+
+### How to use it:
+   - **Integration**:
+     - Developers can integrate the **IncardStatistic** component into their React applications to showcase statistical data within cards.
+     - Customize the component by adjusting the statistical values, colors, and arrows to reflect the relevant information for the application.
+     - Ensure proper styling and layout adjustments to align with the overall design aesthetics and user experience goals of the application.
+     - Test the component within your application to verify its functionality and appearance under various conditions.
+
+<IncardStatistic />
+## CountdownStatistic
+### Design:
+
+  The **CountdownStatistic** component is designed to display countdown timers indicating the remaining time until a specified target date. It utilizes the **Countdown** and **Scountdown** components from the UI library to create countdown timers at different levels of granularity, including days.
+
+### How to behave:
+
+   - **Countdown Timers**:
+     - The component renders two countdown timers: one at the day level and the other providing a more detailed countdown.
+     - Each countdown timer updates dynamically to reflect the remaining time until the specified target date.
+   - **Granularity**:
+     - The "Day Level" countdown timer displays the remaining days until the target date, providing a high-level overview of the time remaining.
+     - The "Countdown" timer offers a more detailed countdown, including hours, minutes, and seconds, for a more precise indication of the remaining time.
+   - **Styling and Layout**:
+     - The component's layout ensures proper spacing and alignment to present the countdown timers clearly and prominently.
+     - Each countdown timer is accompanied by a title indicating its level of granularity for easy identification.
+
+### How to use it:
+
+     - **Integration**:
+     - Developers can integrate the **CountdownStatistic** component into their React applications to display countdown timers for various purposes, such as event countdowns, product launches, or deadlines.
+     - Customize the component by adjusting the target date and any additional styling or layout preferences to suit the application's requirements.
+     - Ensure that the target date is set to the desired deadline or event date to accurately reflect the remaining time until that point.
+     - Test the component within your application to verify its functionality and appearance under various conditions, such as different screen sizes and target dates.
+<CountdownStatistic />
+
+
+## Version
+| Version | Editor      | Reviewer      | Date       | Description     |
+|---------|-------------|-------------|------------|-----------------|
+| v1.0    | Yutong Shi | Yutong Shi | 2 May 2024 | Initial version |

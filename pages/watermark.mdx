@@ -1,0 +1,29 @@
+import {
+    Watermark
+} from "../components/ui/watermark";
+
+# Watermark Component
+
+**Contributed by Yutong Shi**
+
+## Basic Component
+### Design:
+The **WatermarkNormal** component is designed to apply a custom watermark to the content displayed within it. It utilizes the **Watermark** component from the UI library to overlay a watermark text or logo on top of the content.
+
+### How to behave:
+    - **Watermark Overlay**:
+     - The component overlays the specified watermark content (text or logo) on top of the content provided within it.
+     - The watermark appears translucent, allowing the underlying content to remain visible while still indicating the presence of the watermark.
+   - **Customization**:
+     - Developers can customize the watermark content to display any desired text or logo, such as a company name, logo, or disclaimer.
+     - The component provides flexibility in terms of watermark placement, allowing developers to position it appropriately within the content area.
+   - **Styling**:
+     - The component's styling ensures that the watermark is visually distinct from the underlying content, making it easily identifiable.
+     - Developers can further customize the watermark's appearance, such as its font, size, color, and opacity, to suit the application's design requirements.
+### How to use it:
+   - **Integration**:
+     - To use the **WatermarkNormal** component, developers simply wrap the content they wish to watermark with the **Watermark** component and specify the desired watermark content.
+     - Customize the watermark content by providing the desired text or logo as the `content` prop of the **Watermark** component.
+     - Optionally, adjust the watermark's appearance by applying additional styling to the **Watermark** component or its children.
+     - Test the component within your application to ensure that the watermark appears as intended and does not obstruct the underlying content.
+<Watermark />

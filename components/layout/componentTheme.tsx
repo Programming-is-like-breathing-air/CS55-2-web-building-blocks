@@ -121,6 +121,10 @@ import FailPanel from "../../public/components/panel/fail/react/page"
 import NormalChat from "../../public/components/chat/normal/react/page"
 import AttachmentChat from "../../public/components/chat/attachment/react/page"
 import AvatarDemo from "../../public/components/avatar/normal/react/page"
+import Statisticnormal from "../../public/components/statistic/normal/react/page"
+import IncardStatistic  from "public/components/statistic/Incard/react/page";
+import CountdownStatistic from "public/components/statistic/Countdown/react/page"
+import Watermarknormal from "public/components/watermark/normal/react/page"
 
 export default function Theme({
   componentName,
@@ -242,7 +246,11 @@ export default function Theme({
     FailPanel:FailPanel,
     NormalChat:NormalChat,
     AttachmentChat:AttachmentChat,
-    AvatarDemo:AvatarDemo
+    AvatarDemo:AvatarDemo,
+    Statisticnormal:Statisticnormal,
+    IncardStatistic:IncardStatistic,
+    CountdownStatistic:CountdownStatistic,
+    Watermarknormal:Watermarknormal,
 
   };
 

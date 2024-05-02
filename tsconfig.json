@@ -21,6 +21,6 @@
       "@/src/*": ["./components/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "public/components/tooltip/basicTooltip/react/page.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "public/components/tooltip/basicTooltip/react/page.tsx", "public/components/statistic/normal/react/page.tsx"],
   "exclude": ["node_modules"]
 }
