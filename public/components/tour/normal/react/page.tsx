@@ -1,4 +1,3 @@
-// TourComponent.jsx
 import { useState, useRef } from "react";
 import { Card, CardContent, CardHeader, CardFooter, CardTitle } from "../../../../../styles/components/ui/card";
 import { Button } from "../../../../../styles/components/ui/button";
