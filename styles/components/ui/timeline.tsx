@@ -22,7 +22,7 @@ const timelineStyles = cva(['flex', 'flex-col', 'items-start', 'relative', 'pl-6
     variants: {}
 });
 
-const itemStyles = cva(['text-sm', 'flex', 'items-center', 'gap-2', 'relative', 'pt-4'], {});
+const itemStyles = cva(['text-sm', 'flex', 'items-center', 'gap-2', 'relative', 'pt-4']);
 
 const dotStyles = cva(['w-4', 'h-4', 'rounded-full', 'border-2', 'border-gray-400', 'relative'], {
     variants: {
