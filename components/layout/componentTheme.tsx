@@ -66,6 +66,8 @@ import TabsDemo from "../../public/components/tabs/normal/react/page"
 import CardWithNormal from "public/components/card/normal/react/page"
 import CardWithPicture from "public/components/card/withPic/react/page";
 import CardWithPicVer from "public/components/card/verticalWithPic/react/page";
+import CardWithDrawer from "public/components/card/withDrawer/page";
+import DynamicCardComponent from "public/components/card/DynamicCard/page";
 import LargeHeaderCard from "public/components/card/header/react/page";
 import EnquirySubmittedCard from "public/components/card/action/react/page";
 import FileUploadComponent from "public/components/fileUpload/basic/react/page";
@@ -130,6 +132,7 @@ import AttachmentChat from "../../public/components/chat/attachment/react/page"
 import DropdownMenuwithSelect from "../../public/components/dropdown/withComboSelect/page"
 import ButtonPopover from "../../public/components/button/popover/page"
 
+import TourComponent from "../../public/components/tour/normal/react/page"
 
 import TimelinePage from "../../public/components/Timeline/normal/react/page"
 import Timelineloading from "../../public/components/Timeline/withloading/react/page"
@@ -239,6 +242,8 @@ export default function Theme({
     CardWithNormal:CardWithNormal,
     CardWithPicture:CardWithPicture,
     CardWithPicVer:CardWithPicVer,
+    CardWithDrawer:CardWithDrawer,
+    DynamicCardComponent:DynamicCardComponent,
     LargeHeaderCard:LargeHeaderCard,
     EnquirySubmittedCard:EnquirySubmittedCard,
     FileUploadComponent:FileUploadComponent,
@@ -293,6 +298,7 @@ export default function Theme({
     BasicComment:BasicComment,
 
 
+    TourComponent:TourComponent,
   };
 
   const ReactComponent = componentReactMap[componentReactView];

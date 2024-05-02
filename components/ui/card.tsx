@@ -7,7 +7,7 @@ export const Card = () => {
       componentName="card"
       componentStyle="normal"
       // backgroundDesktop="#1d1d1d"
-      backgroundMobile="#1d1d1d"
+      // backgroundMobile="#1d1d1d"
       componentReactView="CardWithNormal"
     />
   );
@@ -19,7 +19,7 @@ export const CardWithPic = () => {
       componentName="card"
       componentStyle="withPic"
       // backgroundDesktop="#1d1d1d"
-      backgroundMobile="#1d1d1d"
+      // backgroundMobile="#1d1d1d"
       componentReactView="CardWithPicture"
     />
   );
@@ -31,7 +31,7 @@ export const VerticalCardWithPic = () => {
       componentName="card"
       componentStyle="verticalWithPic"
       // backgroundDesktop="#1d1d1d"
-      backgroundMobile="#1d1d1d"
+      // backgroundMobile="#1d1d1d"
       componentReactView="CardWithPicVer"
     />
   );
@@ -43,7 +43,7 @@ export const CardHeader = () => {
       componentName="card"
       componentStyle="header"
       // backgroundDesktop="#1d1d1d"
-      backgroundMobile="#1d1d1d"
+      // backgroundMobile="#1d1d1d"
       componentReactView="LargeHeaderCard"
     />
   );
@@ -55,8 +55,32 @@ export const CardAction = () => {
       componentName="card"
       componentStyle="action"
       // backgroundDesktop="#1d1d1d"
-      backgroundMobile="#1d1d1d"
+      // backgroundMobile="#1d1d1d"
       componentReactView="EnquirySubmittedCard"
+    />
+  );
+};
+
+export const CardWithDrawer = () => {
+  return (
+    <Theme
+      componentName="card"
+      componentStyle="drawer"
+      // backgroundDesktop="#1d1d1d"
+      // backgroundMobile="#1d1d1d"
+      componentReactView="CardWithDrawer"
+    />
+  );
+};
+
+export const DynamicCard = () => {
+  return (
+    <Theme
+      componentName="card"
+      componentStyle="drawer"
+      // backgroundDesktop="#1d1d1d"
+      // backgroundMobile="#1d1d1d"
+      componentReactView="DynamicCardComponent"
     />
   );
 };
