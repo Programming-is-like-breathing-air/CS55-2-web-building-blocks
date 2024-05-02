@@ -1,0 +1,67 @@
+import {
+  Comment
+} from "../components/ui/comment";
+
+# Comment Component
+
+**Contributed by Yuqing Wu
+
+## Basic Comment
+### Design
+
+The `BasicComment` component showcases a modular and visually coherent design using React's functional component architecture with hooks for state management. It organizes user information, comments, and social interaction options (likes, comments, shares) within structured Cards, which are further divided into header and content sections for clarity. Each card features a user's avatar and name at the top, enhancing personalization and user engagement, followed by the comment text and interactive buttons at the bottom. The design utilizes minimal but effective styling cues, such as grey text for descriptions and differentiated text styling to clearly separate various information types, ensuring a clean and user-friendly interface.
+
+### How to behave
+- Interactive Elements:
+The component includes interactive buttons for likes, comments, and shares. Clicking these buttons updates the respective counts, except for the comments button, which toggles a textarea for input.
+The textarea for entering comments is dynamically displayed only for the active comment box, based on user interaction.
+
+- State Management:
+Uses useState to manage various states like the list of messages, the visibility of the textarea, and the text within the textarea.
+The incrementStat function manages like and share interactions, while the postComment function handles comment submissions, including UI updates and toast notifications for feedback.
+
+- Feedback Mechanisms:
+Implements a toast notification system to provide immediate feedback when a comment is posted, enhancing the user experience by confirming actions visually.
+
+### How to use it
+- Install Necessary Packages
+```
+npm shadcn-ui@latest add card
+npm shadcn-ui@latest add button
+npm shadcn-ui@latest add toast
+npm shadcn-ui@latest add avatar
+npm shadcn-ui@latest add label
+npm shadcn-ui@latest add textarea
+```
+- Component Imports
+Make sure all components and hooks used in NormalChat are properly imported from their respective libraries or files. Here’s a checklist and example import lines you might need:
+```
+import React, { useState } from 'react';
+import { Card, CardContent, CardHeader } from "../../../../../styles/components/ui/card";
+import { Button } from "../../../../../styles/components/ui/button";
+import { useToast } from "../../../../../styles/components/ui/toast/use-toast";
+import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
+import { Avatar, AvatarImage } from '../../../../../styles/components/ui/avatar';
+import { Label } from '../../../../../styles/components/ui/label';
+import { Textarea } from "../../../../../styles/components/ui/textarea"
+```
+- Extensibility
+The component is designed for easy modification and extensibility. For example, additional features like editing or deleting comments, or more sophisticated user authentication for interactions, could be implemented by extending the current functionality.
+```
+{
+    user: "USYD Student 1",
+    avatarUrl: "https://api.dicebear.com/7.x/miniavs/svg?seed=1",
+    description: "I am the student of USYD and majoring in Master of Computer Science.",
+    content: "Education for all, leadership for good. Progressive thinking, breaking with convention, challenging the status quo and improving the world around us is in our DNA.",
+    likes: 156,
+    comments: 156,
+    shares: 2
+}
+```
+<Comment />
+
+## Version
+| Version | Editor | Reviewer | Date | Description |
+| ---- | ---- | ---- | ---- | ---- |
+| v1.0 | Yuqing Wu | Yuqing Wu | 29 Apr 2024 | Framework|
+| v2.0 | Yuqing Wu | Yuqing Wu | 01 May 2024 | Add function and interaction|

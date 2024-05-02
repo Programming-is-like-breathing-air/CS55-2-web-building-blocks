@@ -137,6 +137,7 @@ import Timelineloading from "../../public/components/Timeline/withloading/page"
 import InputMention from "../../public/components/input/withMention/react/page"
 import InputNumber from "../../public/components/input/withNumber/react/page"
 import InputPhoneNumber from "../../public/components/input/withPhoneNumber/react/page"
+import BasicComment from "../../public/components/comment/basic/react/page"
 
 
 
@@ -288,7 +289,8 @@ export default function Theme({
 
     InputMention:InputMention,
     InputNumber:InputNumber,
-    InputPhoneNumber:InputPhoneNumber
+    InputPhoneNumber:InputPhoneNumber,
+    BasicComment:BasicComment,
 
 
   };
