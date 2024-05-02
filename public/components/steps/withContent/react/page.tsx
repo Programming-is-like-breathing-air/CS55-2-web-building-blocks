@@ -13,63 +13,43 @@ export function StepperWithContent() {
     const [isLastStep, setIsLastStep] = React.useState(false);
     const [isFirstStep, setIsFirstStep] = React.useState(false);
 
+
     const handleNext = () => !isLastStep && setActiveStep((cur) => cur + 1);
     const handlePrev = () => !isFirstStep && setActiveStep((cur) => cur - 1);
 
     return (
-        <div className="w-full px-24 py-4">
+        <div className="w-full px-48 py-4">
             <Stepper
                 activeStep={activeStep}
                 isLastStep={(value) => setIsLastStep(value)}
                 isFirstStep={(value) => setIsFirstStep(value)}
             >
-                <Step onClick={() => setActiveStep(0)}>
+                <Step
+                    onClick={() => setActiveStep(0)}
+                    title="Step 1"
+                    subtitle={"1. this is description of step 1"}
+                    isActive={activeStep === 0}
+                    isCompleted={activeStep > 0}
+                >
                     <UserIcon className="h-5 w-5" />
-                    <div className="absolute -bottom-[4.5rem] w-max text-center">
-                        <h1
-                            color={activeStep === 0 ? "blue-gray" : "gray"}
-                        >
-                            Step 1
-                        </h1>
-                        <p
-                            color={activeStep === 0 ? "blue-gray" : "gray"}
-                            className="font-normal"
-                        >
-                            Details about yout account.
-                        </p>
-                    </div>
                 </Step>
-                <Step onClick={() => setActiveStep(1)}>
+                <Step
+                    onClick={() => setActiveStep(1)}
+                    title="Step 2"
+                    subtitle={"2. this is description of step 2"}
+                    isActive={activeStep === 1}
+                    isCompleted={activeStep > 1}
+                >
                     <CogIcon className="h-5 w-5" />
-                    <div className="absolute -bottom-[4.5rem] w-max text-center">
-                        <h1
-                            color={activeStep === 1 ? "blue-gray" : "gray"}
-                        >
-                            Step 2
-                        </h1>
-                        <p
-                            color={activeStep === 1 ? "blue-gray" : "gray"}
-                            className="font-normal"
-                        >
-                            Details about yout account.
-                        </p>
-                    </div>
                 </Step>
-                <Step onClick={() => setActiveStep(2)}>
-                    <BuildingLibraryIcon className="h-5 w-5" />
-                    <div className="absolute -bottom-[4.5rem] w-max text-center">
-                        <h1
-                            color={activeStep === 2 ? "blue-gray" : "gray"}
-                        >
-                            Step 3
-                        </h1>
-                        <p
-                            color={activeStep === 2 ? "blue-gray" : "gray"}
-                            className="font-normal"
-                        >
-                            Details about yout account.
-                        </p>
-                    </div>
+                <Step
+                    onClick={() => setActiveStep(2)}
+                    title="Step 3"
+                    subtitle={"3. this is description of step 3"}
+                    isActive={activeStep === 2}
+                    isCompleted={activeStep > 2}
+                >
+                    <BuildingLibraryIcon className="h-5 w-5k"  />
                 </Step>
             </Stepper>
             <div className="mt-32 flex justify-between">
@@ -83,4 +63,5 @@ export function StepperWithContent() {
         </div>
     );
 }
+
 export default StepperWithContent;
