@@ -4,37 +4,27 @@ import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
 import { RocketIcon, InfoCircledIcon,CrossCircledIcon,CheckCircledIcon } from "@radix-ui/react-icons"
 import { ExclamationTriangleIcon } from "@radix-ui/react-icons"
 
-import {
-  Alert,
-  AlertDescription,
-  AlertTitle,
-} from "../../../../../styles/components/ui/alert"
 
 export function MessageWarning() {
     const { toast } = useToast();
     const buttonText = "Normal Show Toast";
-    const handleClick = (url) => () => {
-        window.open(url, "_blank");
-      };
-      const windowClick = (message) => () => {
-        alert(message);
-      }; 
-    return (
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center',width: '600px', backgroundColor: 'rgb(255, 255, 255)'}} >
-        <div style={{ width: '500px', backgroundColor: 'rgb(255, 255, 255)'}} >
 
-          <Toaster />
-          <Button  variant="outline" onClick={() => {console.log(buttonText, "has clicked");
-          toast({
-            description: (
-                <Alert>
-                  <RocketIcon className="h-4 w-4" />
-                  <AlertTitle>Heads up!</AlertTitle>
-                </Alert>
+    return (
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', backgroundColor: 'rgb(255, 255, 255)'}}>
+          <Button onClick={() => {
+            console.log(buttonText, "has clicked");
+            toast({
+              description: (
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <ExclamationTriangleIcon style={{ color: '#FF8000', marginRight: '10px' }} />
+                  <span>Hello, Ant Design!</span>
+                </div>
               ),
-          });}}>Display normal message</Button>
-      </div>
-      </div>
+              // Ensure the toast container allows for content sizing
+              style: { width: 'auto', maxWidth: '100%' },
+            });
+          }}>Display warning message</Button>
+        </div>
     )
   }
   export default MessageWarning;

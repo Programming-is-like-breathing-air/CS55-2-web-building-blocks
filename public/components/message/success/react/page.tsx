@@ -28,7 +28,7 @@ export function MessageSuccess() {
               // Ensure the toast container allows for content sizing
               style: { width: 'auto', maxWidth: '100%' },
             });
-          }}>Display normal message</Button>
+          }}>Display success message</Button>
         </div>
     )
   }
