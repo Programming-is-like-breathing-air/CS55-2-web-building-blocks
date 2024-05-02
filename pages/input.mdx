@@ -14,26 +14,46 @@ Displays a form input field or a component that looks like an input field.
 ## Input With Mention
 
 ### Design
-The `InputMention` component is a functional React component that utilizes the `useState` hook for state management and the `Mentions` component from the `antd` UI library to provide a user input field with dynamic mention capabilities. Styled to occupy 50% of its container's width, this adjustability allows it to fit seamlessly within various layouts. It employs a `MOCK_DATA` object which maps strings to prefixes '@' and '#', enabling quick retrieval and display of relevant options as users type, enhancing interactivity and efficiency in data entry.
+The `InputMention` React component efficiently combines user interaction elements and styled components to offer a dynamic typing and dropdown selection experience. It includes an `Input` component for text entry and a series of `DropdownMenu` components to manage dropdown displays and choices, utilizing React's `useState` for state management and `useRef` for input focus control. Styled to ensure visual consistency and equipped with instructional placeholder text, this component is designed to enhance usability and accessibility within user interfaces.
 
 ### How to behave
-The `InputMention` component uses a state variable `prefix` to dynamically load mention options—email domains or version numbers—based on user interaction, which updates the prefix and triggers the display of relevant suggestions through the `onSearch` function.
+The `InputMention` component employs a dynamic dropdown activation strategy using React's `useEffect` hook to monitor input changes and manage dropdown visibility and suggestions based on specific trigger characters (`@` for emails and `#` for versions). The component ensures a clutter-free UI by hiding the dropdown when triggers are not present. User interactions are smoothly handled through the `handleInputChange` function, which maintains input responsiveness, and the `handleSelect` function, which efficiently inserts selected suggestions and retains focus on the input for uninterrupted data entry, thus optimizing user experience and minimizing input errors.
 
 ### How to use it
 - Installation 
 Ensure that your project includes all necessary dependencies for the Search component. If they are not already installed, add them via npm with the following command: 
 ``` 
-import { Mentions } from "antd";
+npm shadcn-ui@latest add input 
+npm shadcn-ui@latest add dropdown-menu
 ``` 
-- User Interaction:
-Users interact with the Mentions input by typing text. When they type @ or #, the component offers a dropdown with relevant suggestions (gmail.com, icloud.com, qq.com for @ and 1.0, 2.0, 3.0 for #).
-``` 
-const MOCK_DATA = {
-  '@': ['gmail.com', 'icloud.com', 'qq.com'],
-  '#': ['1.0', '2.0', '3.0'],
-};
-``` 
-
+- Component Imports
+Make sure all components and hooks used in NormalChat are properly imported from their respective libraries or files. Here's a checklist and example import lines you might need:
+```
+import React, { useState, useEffect, useRef } from 'react';
+import { Input } from "../../../../../styles/components/ui/input";
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+} from "../../../../../styles/components/ui/dropdown-menu";
+```
+- Customization:
+Developers can easily customize the suggestion lists or style the dropdown menu to fit different themes or requirements by modifying the suggestions array. This component can be expanded to include more triggers or different kinds of input aids by adjusting the useEffect logic.
+```
+  useEffect(() => {
+    const triggerChar = inputValue[inputValue.length - 1];
+    if (triggerChar === '@') {
+      setSuggestions(["qq.com", "icloud.com", "gmail.com"]);
+      setShowDropdown(true);
+    } else if (triggerChar === '#') {
+      setSuggestions(["1.0", "2.0", "3.0"]);
+      setShowDropdown(true);
+    } else if (!inputValue.includes('@') && !inputValue.includes('#')) {
+      setShowDropdown(false);
+    }
+  }, [inputValue]);
+```
 - Application Context:
 This component can be used in contexts where users need to quickly insert certain types of data (like email domains or version numbers) into text fields. For example, in an email client for quickly appending domain names, or in a project management tool for referencing version numbers.
 
