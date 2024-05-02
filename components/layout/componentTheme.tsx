@@ -121,6 +121,9 @@ import FailPanel from "../../public/components/panel/fail/react/page"
 import NormalChat from "../../public/components/chat/normal/react/page"
 import AttachmentChat from "../../public/components/chat/attachment/react/page"
 
+import TimelinePage from "../../public/components/Timeline/normal/react/page"
+import Timelineloading from "../../public/components/Timeline/withloading/page"
+
 
 export default function Theme({
   componentName,
@@ -242,6 +245,8 @@ export default function Theme({
     FailPanel:FailPanel,
     NormalChat:NormalChat,
     AttachmentChat:AttachmentChat,
+    TimelinePage:TimelinePage,
+    Timelineloading:Timelineloading,
 
   };
 
