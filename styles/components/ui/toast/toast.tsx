@@ -41,16 +41,38 @@ const toastVariants = cva(
 )
 
 
+// const Toast = React.forwardRef<
+//   React.ElementRef<typeof ToastPrimitives.Root>,
+//   React.ComponentPropsWithoutRef<typeof ToastPrimitives.Root> &
+//     VariantProps<typeof toastVariants> & { position?: 'bottom-right' | 'top-right' }
+// >(({ className, variant, position = 'bottom-right', ...props }, ref) => {
+//   // 根据位置添加适当的CSS类
+//   const positionClasses = position === 'bottom-right' ? 
+//     " bottom-0 right-0 z-[100]": "fixed top-0 z-[100]" ;
+
+//   const baseClasses = "flex max-h-screen w-full flex-col-reverse p-4 sm:flex-col md:max-w-[420px]";
+
+
+//   return (
+//     <ToastPrimitives.Root
+//       ref={ref}
+//       className={cn(toastVariants({ variant }), positionClasses,className)}
+//       {...props}
+//     />
+//   )
+// });
+// Toast.displayName = ToastPrimitives.Root.displayName
+
 const Toast = React.forwardRef<
   React.ElementRef<typeof ToastPrimitives.Root>,
   React.ComponentPropsWithoutRef<typeof ToastPrimitives.Root> &
-    VariantProps<typeof toastVariants> & { position?: 'bottom-right' | 'top-right' }
->(({ className, variant, position = 'bottom-right', ...props }, ref) => {
+    VariantProps<typeof toastVariants> & { position?: 'top-right' | 'bottom-right' }
+>(({ className, variant, position = 'top-right', ...props }, ref) => {
   // 根据位置添加适当的CSS类
-  const positionClasses = position === 'bottom-right' ? 
-    " bottom-0 right-0 z-[100]": "fixed top-0 z-[100]" ;
+  const positionClasses = position === 'top-right' ? 
+  "fixed top-0 z-[100]" : " bottom-0 right-0 z-[100]";
 
-  const baseClasses = "flex max-h-screen w-full flex-col-reverse p-4 sm:flex-col md:max-w-[420px]";
+  // const baseClasses = "flex max-h-screen w-full flex-col-reverse p-4 sm:flex-col md:max-w-[420px]";
 
 
   return (
