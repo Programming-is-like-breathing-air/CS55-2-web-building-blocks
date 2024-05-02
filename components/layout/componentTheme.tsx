@@ -122,7 +122,7 @@ import FailPanel from "../../public/components/panel/fail/react/page"
 
 import NormalChat from "../../public/components/chat/normal/react/page"
 import AttachmentChat from "../../public/components/chat/attachment/react/page"
-import TourComponent from "../../public/components/tour/react/page"
+import TourComponent from "../../public/components/tour/normal/react/page"
 
 export default function Theme({
   componentName,
