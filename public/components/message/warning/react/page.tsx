@@ -1,7 +1,6 @@
 import { Button } from "../../../../../styles/components/ui/button"
 import { useToast } from "../../../../../styles/components/ui/toast/use-toast"
 import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
-import { RocketIcon, InfoCircledIcon,CrossCircledIcon,CheckCircledIcon } from "@radix-ui/react-icons"
 import { ExclamationTriangleIcon } from "@radix-ui/react-icons"
 
 
@@ -18,7 +17,7 @@ export function MessageWarning() {
               description: (
                 <div style={{ display: 'flex', alignItems: 'center' }}>
                   <ExclamationTriangleIcon style={{ color: '#FF8000', marginRight: '10px' }} />
-                  <span>Hello, Ant Design!</span>
+                  <span>This is a warning message!</span>
                 </div>
               ),
               // Ensure the toast container allows for content sizing

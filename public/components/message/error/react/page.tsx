@@ -1,14 +1,7 @@
 import { Button } from "../../../../../styles/components/ui/button"
 import { useToast } from "../../../../../styles/components/ui/toast/use-toast"
 import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
-import { RocketIcon, InfoCircledIcon,CrossCircledIcon,CheckCircledIcon } from "@radix-ui/react-icons"
-import { ExclamationTriangleIcon } from "@radix-ui/react-icons"
-
-import {
-  Alert,
-  AlertDescription,
-  AlertTitle,
-} from "../../../../../styles/components/ui/alert"
+import { CrossCircledIcon } from "@radix-ui/react-icons"
 
 export function MessageError() {
     const { toast } = useToast();
@@ -23,7 +16,7 @@ export function MessageError() {
               description: (
                 <div style={{ display: 'flex', alignItems: 'center' }}>
                   <CrossCircledIcon style={{ color: '#FF0B0B', marginRight: '10px' }} />
-                  <span>Hello, Ant Design!</span>
+                  <span>This is a error message!</span>
                 </div>
               ),
               // Ensure the toast container allows for content sizing
