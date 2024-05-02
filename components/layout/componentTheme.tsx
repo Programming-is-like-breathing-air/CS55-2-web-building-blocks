@@ -127,6 +127,19 @@ import FailPanel from "../../public/components/panel/fail/react/page"
 
 import NormalChat from "../../public/components/chat/normal/react/page"
 import AttachmentChat from "../../public/components/chat/attachment/react/page"
+import DropdownMenuwithSelect from "../../public/components/dropdown/withComboSelect/page"
+import ButtonPopover from "../../public/components/button/popover/page"
+
+
+import TimelinePage from "../../public/components/Timeline/normal/react/page"
+import Timelineloading from "../../public/components/Timeline/withloading/react/page"
+
+import InputMention from "../../public/components/input/withMention/react/page"
+import InputNumber from "../../public/components/input/withNumber/react/page"
+import InputPhoneNumber from "../../public/components/input/withPhoneNumber/react/page"
+import BasicComment from "../../public/components/comment/basic/react/page"
+
+
 
 import AcquisitionsChart from "../../public/components/charts/react/page"
 import ChartBarchart from "../../public/components/charts/barchart/react/page"
@@ -171,6 +184,7 @@ export default function Theme({
     AlertWithLink: AlertWithLink,
     AlertWithAction: AlertWithAction,
     TreeViewDemo:TreeViewDemo,
+    ButtonPopover:ButtonPopover,
 
 
     // DCC:DesktopCardComponent,
@@ -263,11 +277,21 @@ export default function Theme({
     NormalChat:NormalChat,
     AttachmentChat:AttachmentChat,
 
+    DropdownMenuwithSelect:DropdownMenuwithSelect,
+    TimelinePage:TimelinePage,
+    Timelineloading:Timelineloading,
+
     AcquisitionsChart:AcquisitionsChart,
     ChartBarchart:ChartBarchart,
     ChartLineChart:ChartLineChart,
     ChartPieChart:ChartPieChart,
     ChartBubbleChart:ChartBubbleChart,
+
+    InputMention:InputMention,
+    InputNumber:InputNumber,
+    InputPhoneNumber:InputPhoneNumber,
+    BasicComment:BasicComment,
+
 
   };
 
