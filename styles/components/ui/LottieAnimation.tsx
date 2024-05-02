@@ -6,14 +6,14 @@ const LottieAnimation = ({ animationPath }) => {
 
   useEffect(() => {
     const anim = lottie.loadAnimation({
-      container: animationContainer.current, // 绑定动画容器
+      container: animationContainer.current,
       renderer: 'svg',
       loop: true,
       autoplay: true,
-      path: animationPath // 动画资源路径
+      path: animationPath 
     });
 
-    return () => anim.destroy(); // 清理动画
+    return () => anim.destroy(); 
   }, [animationPath]);
 
   return <div ref={animationContainer} />;
