@@ -2,11 +2,11 @@ import { Card, CardContent, CardHeader, CardFooter, CardTitle, CardDescription }
 import { useState } from "react";
 
 function DynamicCardComponent() {
-  const [hovered, setHovered] = useState(null);
+  const [hovered, setHovered] = useState<string | null>(null);
 
   const data = [
-    { name: "analytics", value: "12,403", change: "+15% /wk", color: "bg-teal-500" },
-    { name: "emails", value: "112,403", change: "+15% /wk", color: "bg-red-500" },
+    { name: "analytics", value: "12,403", change: "+15% /wk", color: "#38b2ac", barWidth: '50px' }, // Shorter bar for analytics
+    { name: "emails", value: "112,403", change: "+15% /wk", color: "#f56565", barWidth: '80px' }, // Longer bar for emails
   ];
 
   const footerContent = {
@@ -15,7 +15,7 @@ function DynamicCardComponent() {
   };
 
   return (
-    <Card className="max-w-10xl p-4">
+    <Card className="w-full p-4"> {/* Full width */}
       <CardHeader className="flex justify-between">
         <CardTitle>Events Triggered</CardTitle>
         <span className="text-sm font-medium">Production</span>
@@ -24,14 +24,21 @@ function DynamicCardComponent() {
         {data.map((item) => (
           <div
             key={item.name}
-            className="flex justify-between items-center py-3 px-4 border rounded-lg cursor-pointer mb-2"
+            className="flex py-3 px-4 border rounded-lg cursor-pointer mb-2"
             onMouseEnter={() => setHovered(item.name)}
             onMouseLeave={() => setHovered(null)}
           >
-            <span className="flex-1">{item.name}</span>
-            <span className="flex-1 text-right pl-8">{item.value}</span> 
-            <span className="flex-1 text-right pl-8">{item.change}</span> 
-            <div className={`w-20 h-2 rounded ${item.color}`}></div> 
+            <div className="flex flex-1 items-center space-x-2"> {/* Name and Value closer together */}
+              <span>{item.name}</span>
+              <span>{item.value}</span>
+            </div>
+            <div className="flex flex-1 items-center justify-end space-x-2"> {/* Change and Color aligned */}
+              <span>{item.change}</span>
+              <div
+                style={{ backgroundColor: item.color, width: item.barWidth }} // Adjusted bar width
+                className="h-2 rounded"
+              ></div>
+            </div>
           </div>
         ))}
       </CardContent>

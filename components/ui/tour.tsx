@@ -10,3 +10,13 @@ export const Tour = () => {
     />
   );
 };
+
+export const PlacementTour = () => {
+  return (
+    <Theme
+      componentName="tour"
+      componentStyle="placement"
+      componentReactView="PlacementTour"
+    />
+  );
+};

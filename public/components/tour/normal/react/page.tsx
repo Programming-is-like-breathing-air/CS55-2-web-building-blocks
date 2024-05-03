@@ -1,12 +1,11 @@
-import { useState, useRef } from "react";
-import { Card, CardContent, CardHeader, CardFooter, CardTitle } from "../../../../../styles/components/ui/card";
+import React, { useRef, useState } from "react";
+import { CardContent, CardHeader, CardTitle } from "../../../../../styles/components/ui/card";
 import { Button } from "../../../../../styles/components/ui/button";
 
 const TourComponent = () => {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
-
   const [tourStep, setTourStep] = useState(0);
 
   const steps = [
@@ -27,17 +26,21 @@ const TourComponent = () => {
     },
   ];
 
-  const handleNext = () =>
+  const handleNext = () => {
     setTourStep((prev) => (prev < steps.length ? prev + 1 : 0));
+  };
 
-  const handlePrevious = () =>
+  const handlePrevious = () => {
     setTourStep((prev) => (prev > 0 ? prev - 1 : 0));
+  };
 
-  const handleFinish = () => setTourStep(0);
+  const handleFinish = () => {
+    setTourStep(0);
+  };
 
   return (
     <div className="p-4">
-      <Card className="w p-4">
+      <div className="w p-4 border rounded-lg shadow-lg">
         <CardHeader>
           <CardTitle>Tour component</CardTitle>
         </CardHeader>
@@ -71,11 +74,11 @@ const TourComponent = () => {
             </Button>
           </div>
         </CardContent>
-      </Card>
+      </div>
 
       {tourStep > 0 && (
         <div
-          className="absolute p-4 border bg-white rounded shadow-lg mt-2"
+          className="absolute p-4 border bg-white rounded-lg shadow-lg mt-2 text-center"
           style={{
             top:
               steps[tourStep - 1].target.current.getBoundingClientRect()
@@ -85,14 +88,10 @@ const TourComponent = () => {
                 .left + window.scrollX,
           }}
         >
-          <Card className="text-center">
-            <CardHeader>
-              <CardTitle>{steps[tourStep - 1].title}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>{steps[tourStep - 1].description}</p>
-            </CardContent>
-            <CardFooter className="flex justify-between p-4">
+          <div className="p-4">
+            <h3 className="text-lg font-bold">{steps[tourStep - 1].title}</h3>
+            <p>{steps[tourStep - 1].description}</p>
+            <div className="flex justify-between mt-4">
               {tourStep > 1 && (
                 <Button onClick={handlePrevious}>Previous</Button>
               )}
@@ -102,8 +101,8 @@ const TourComponent = () => {
               {tourStep === steps.length && (
                 <Button onClick={handleFinish}>Finish</Button>
               )}
-            </CardFooter>
-          </Card>
+            </div>
+          </div>
         </div>
       )}
     </div>

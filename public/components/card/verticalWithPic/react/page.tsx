@@ -18,7 +18,7 @@ export function CardWithPicVer() {
         <img 
           src={imageUrl} 
           alt="University Building" 
-          className="w-full h-full object-cover" // Fill the div, maintain aspect ratio
+          className="w-full h-full object-cover" 
         />
       </div>
       <div className="w-1/2 p-4 flex flex-col justify-between"> {/* The other half for text content */}

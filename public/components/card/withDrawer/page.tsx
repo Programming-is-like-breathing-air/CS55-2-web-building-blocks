@@ -7,18 +7,17 @@ export function CardWithDrawer() {
 
     const imageUrl = 'https://www.woodsbagot.com/wp-content/uploads/legacy/93/0-2048x1739.jpg';
 
-    // Function to navigate to Sydney University's website
     const navigateToSydneyUni = () => {
         window.open('https://www.sydney.edu.au/', '_blank');
     };
 
     return (
         <Card
-            className="relative w-80 h-96 overflow-hidden shadow-lg rounded-lg"
+            className="relative w-40 h-80 overflow-hidden shadow-lg rounded-lg"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <img src={imageUrl} alt="Image Models" className="w-full h-2/3 object-cover rounded-lg" />
+            <img src={imageUrl} alt="Image Models" className="w-full h-1/5 object-cover rounded-lg" />
             <CardContent
                 style={{
                     position: 'absolute',
