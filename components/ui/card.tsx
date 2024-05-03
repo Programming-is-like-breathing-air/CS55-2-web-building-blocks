@@ -65,7 +65,7 @@ export const CardWithDrawer = () => {
   return (
     <Theme
       componentName="card"
-      componentStyle="drawer"
+      componentStyle="withDrawer"
       // backgroundDesktop="#1d1d1d"
       // backgroundMobile="#1d1d1d"
       componentReactView="CardWithDrawer"
@@ -77,7 +77,7 @@ export const DynamicCard = () => {
   return (
     <Theme
       componentName="card"
-      componentStyle="drawer"
+      componentStyle="DynamicCard"
       // backgroundDesktop="#1d1d1d"
       // backgroundMobile="#1d1d1d"
       componentReactView="DynamicCardComponent"
