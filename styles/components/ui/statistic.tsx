@@ -22,14 +22,12 @@ const Statistic = (props) => {
     );
   };
   
-
-
   const ArrowUpOutlined = () => (
     <svg
       viewBox="64 64 896 896"
       focusable="false"
       data-icon="arrow-up"
-      width="1em"
+      width="2em"
       height="1em"
       fill="currentColor"
       aria-hidden="true"
@@ -44,7 +42,7 @@ const ArrowDownOutlined = () => (
       viewBox="64 64 896 896"
       focusable="false"
       data-icon="arrow-down"
-      width="1em"
+      width="2em"
       height="1em"
       fill="currentColor"
       aria-hidden="true"
