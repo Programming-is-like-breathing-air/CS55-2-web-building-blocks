@@ -66,8 +66,8 @@ import TabsDemo from "../../public/components/tabs/normal/react/page"
 import CardWithNormal from "public/components/card/normal/react/page"
 import CardWithPicture from "public/components/card/withPic/react/page";
 import CardWithPicVer from "public/components/card/verticalWithPic/react/page";
-import CardWithDrawer from "public/components/card/withDrawer/page";
-import DynamicCardComponent from "public/components/card/DynamicCard/page";
+import CardWithDrawer from "public/components/card/withDrawer/react/page";
+import DynamicCardComponent from "public/components/card/DynamicCard/react/page";
 import LargeHeaderCard from "public/components/card/header/react/page";
 import EnquirySubmittedCard from "public/components/card/action/react/page";
 import FileUploadComponent from "public/components/fileUpload/basic/react/page";
@@ -146,7 +146,7 @@ import BasicComment from "../../public/components/comment/basic/react/page"
 
 
 
-import AcquisitionsChart from "../../public/components/charts/react/page"
+// import AcquisitionsChart from "../../public/components/charts/react/page"
 import ChartBarchart from "../../public/components/charts/barchart/react/page"
 import ChartLineChart from "../../public/components/charts/linechart/react/page"
 import ChartPieChart from "../../public/components/charts/piechart/react/page"
@@ -306,24 +306,24 @@ export default function Theme({
     NormalChat: NormalChat,
     AttachmentChat: AttachmentChat,
 
-    DatePickerDemo:DatePickerDemo,
-    dateTimeInput:dateTimeInput,
-    MonthPickerDemo:MonthPickerDemo,
-    TimePickerDemo:TimePickerDemo,
-    DatePickerWithRange:DatePickerWithRange,
-    WeekPicker:WeekPicker,
-    ButtonDemo:ButtonDemo,
-    ButtonDestructive:ButtonDestructive,
-    ButtonLoading:ButtonLoading,
-    ButtonIcon:ButtonIcon,
-    ActiveButton:ActiveButton,
-    FocusButton:FocusButton,
-    HoverButton:HoverButton,
-    TriggerButton:TriggerButton,
-    SuccessPanel:SuccessPanel,
-    FailPanel:FailPanel,
-    NormalChat:NormalChat,
-    AttachmentChat:AttachmentChat,
+    // DatePickerDemo:DatePickerDemo,
+    // dateTimeInput:dateTimeInput,
+    // MonthPickerDemo:MonthPickerDemo,
+    // TimePickerDemo:TimePickerDemo,
+    // DatePickerWithRange:DatePickerWithRange,
+    // WeekPicker:WeekPicker,
+    // ButtonDemo:ButtonDemo,
+    // ButtonDestructive:ButtonDestructive,
+    // ButtonLoading:ButtonLoading,
+    // ButtonIcon:ButtonIcon,
+    // ActiveButton:ActiveButton,
+    // FocusButton:FocusButton,
+    // HoverButton:HoverButton,
+    // TriggerButton:TriggerButton,
+    // SuccessPanel:SuccessPanel,
+    // FailPanel:FailPanel,
+    // NormalChat:NormalChat,
+    // AttachmentChat:AttachmentChat,
     AvatarDemo:AvatarDemo,
     Statisticnormal:Statisticnormal,
     IncardStatistic:IncardStatistic,

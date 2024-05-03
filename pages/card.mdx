@@ -10,7 +10,7 @@ import {
 
 # Card Component
 
-**Contributed by Yutong Shi**
+**Contributed by Yutong Shi&Nuojin Zhang**
 
 ## Simple Card
 ### Design:
@@ -152,7 +152,91 @@ import {
      - Users can interact with the button to return to the previous page or take other relevant actions after submitting their enquiry.
 <CardAction />
 
+## Card with Drawer
+
+### Design:
+
+The **CardWithDrawer** is a React functional component designed to display a visually appealing card layout that includes a drawer-like content section which reveals more information upon hovering. It incorporates an image, a title, and interactive elements for enhanced user engagement.
+
+### How to behave:
+
+- **Component Structure**:
+  - **Image**: Provides visual context or illustration relevant to the card.
+  - **Header**: Contains the card's title.
+  - **Content Section**: Includes a description, an avatar, and a button that triggers further actions.
+
+- **User Interaction**:
+  - The content section automatically slides up when hovered over, revealing additional information.
+  - Clicking the button executes predefined actions or navigation commands.
+
+### How to use it:
+
+- Installation
+Ensure your project includes the necessary UI components. If not already installed, you can add them via npm:
+
+```
+npx shadcn-ui@latest add button
+npx shadcn-ui@latest add card
+```
+- Customization
+Developers can customize the image URL, title, description, and button functionality to suit specific application requirements. Interaction details and the visual style can also be adapted to align with different design systems or branding guidelines.
+You can modify this url to navigate to another page
+```
+const navigateToSydneyUni = () => {
+    window.open('https://example.com/another-page', '_blank');
+};
+```
+Also customize the card content here
+```
+<h3 className="font-bold">Your Card Title</h3>
+<span>Custom description text here</span>
+<Button>Click Me</Button>
+```
 <CardWithDrawer />
+
+## Dynamic Card
+
+### Design:
+
+The **DynamicCardComponent** is a React functional component that dynamically updates its content based on user interaction. It shows analytics and emails data with visual indicators that change upon hovering over different parts of the card.
+
+### How to Behave:
+
+- **Component Structure**:
+  - **Header**: Displays the card title and production tag.
+  - **Content Section**: Shows analytics and emails data with respective change indicators and colored bars.
+  - **Footer**: Displays additional information based on hover state.
+
+- **User Interaction**:
+  - Hovering over a card item displays additional information in the footer.
+  - The data section dynamically updates based on hover events.
+
+### How to Use It:
+
+- Installation
+
+Ensure your project includes the necessary UI components. If not already installed, you can add them via npm:
+
+```
+npx shadcn-ui@latest add card
+```
+- Customization
+Developers can customize the names, values, and change indicators in the data section as well as the additional information shown in the footer.
+
+You can modify the data array to customize the displayed data:
+```
+const data = [
+  { name: "analytics", value: "12,403", change: "+15% /wk", color: "#38b2ac", barWidth: '50px' },
+  { name: "emails", value: "112,403", change: "+15% /wk", color: "#f56565", barWidth: '80px' },
+];
+```
+To modify the footer content, update the footerContent object:
+```
+const footerContent = {
+  analytics: { label: "High Latency Detected", time: "8s" },
+  emails: { label: "Total Events Triggered", count: "35,968" },
+};
+```
 <DynamicCard />
 
 ## Version
@@ -160,3 +244,4 @@ import {
 | Version | Editor      | Reviewer      | Date       | Description     |
 |---------|-------------|-------------|------------|-----------------|
 | v1.0    | Nuojin Zhang | Yutong Shi | 25 Apr 2024 | Initial version |
+| v2.0    | Nuojin Zhang | Nuojin Zhang | 2 may 2024 | New variants added |

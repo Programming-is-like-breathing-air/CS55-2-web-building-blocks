@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Card, CardContent } from "../../../../styles/components/ui/card";
-import { Button } from "../../../../styles/components/ui/button";
+import { Card, CardContent } from "../../../../../styles/components/ui/card";
+import { Button } from "../../../../../styles/components/ui/button";
 
 export function CardWithDrawer() {
     const [isHovered, setIsHovered] = useState(false);

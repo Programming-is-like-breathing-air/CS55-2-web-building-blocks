@@ -1,12 +1,12 @@
-import { Card, CardContent, CardHeader, CardFooter, CardTitle, CardDescription } from "../../../../styles/components/ui/card";
+import { Card, CardContent, CardHeader, CardFooter, CardTitle, CardDescription } from "../../../../../styles/components/ui/card";
 import { useState } from "react";
 
 function DynamicCardComponent() {
   const [hovered, setHovered] = useState<string | null>(null);
 
   const data = [
-    { name: "analytics", value: "12,403", change: "+15% /wk", color: "#38b2ac", barWidth: '50px' }, // Shorter bar for analytics
-    { name: "emails", value: "112,403", change: "+15% /wk", color: "#f56565", barWidth: '80px' }, // Longer bar for emails
+    { name: "analytics", value: "12,403", change: "+15% /wk", color: "#38b2ac", barWidth: '50px' }, 
+    { name: "emails", value: "112,403", change: "+15% /wk", color: "#f56565", barWidth: '80px' }, 
   ];
 
   const footerContent = {
@@ -15,7 +15,7 @@ function DynamicCardComponent() {
   };
 
   return (
-    <Card className="w-full p-4"> {/* Full width */}
+    <Card className="w-full p-4"> 
       <CardHeader className="flex justify-between">
         <CardTitle>Events Triggered</CardTitle>
         <span className="text-sm font-medium">Production</span>
@@ -28,14 +28,14 @@ function DynamicCardComponent() {
             onMouseEnter={() => setHovered(item.name)}
             onMouseLeave={() => setHovered(null)}
           >
-            <div className="flex flex-1 items-center space-x-2"> {/* Name and Value closer together */}
+            <div className="flex flex-1 items-center space-x-2"> 
               <span>{item.name}</span>
               <span>{item.value}</span>
             </div>
-            <div className="flex flex-1 items-center justify-end space-x-2"> {/* Change and Color aligned */}
+            <div className="flex flex-1 items-center justify-end space-x-2"> 
               <span>{item.change}</span>
               <div
-                style={{ backgroundColor: item.color, width: item.barWidth }} // Adjusted bar width
+                style={{ backgroundColor: item.color, width: item.barWidth }} 
                 className="h-2 rounded"
               ></div>
             </div>
