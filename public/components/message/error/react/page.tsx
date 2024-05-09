@@ -1,29 +1,28 @@
-import { Button } from "../../../../../styles/components/ui/button"
-import { useToast } from "../../../../../styles/components/ui/toast/use-toast"
-import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
+import React, { useState } from 'react';
+import { Button } from '@/components/ui/button';
 import { CrossCircledIcon } from "@radix-ui/react-icons"
-
+import Messages from "@/components/ui/messages";
 export function MessageError() {
-    const { toast } = useToast();
-    const buttonText = "Normal Show Toast";
+  const [isVisible, setIsVisible] = useState(false);
 
-    return (
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', backgroundColor: 'rgb(255, 255, 255)'}}>
-         <Toaster />
-          <Button onClick={() => {
-            console.log(buttonText, "has clicked");
-            toast({
-              description: (
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <CrossCircledIcon style={{ color: '#FF0B0B', marginRight: '10px' }} />
-                  <span>This is a error message!</span>
-                </div>
-              ),
-              // Ensure the toast container allows for content sizing
-              style: { width: 'auto', maxWidth: '100%' },
-            });
-          }}>Display error message</Button>
-        </div>
-    )
-  }
-  export default MessageError;
+  const showMessage = () => {
+    setIsVisible(true);
+  };
+
+  const hideMessage = () => {
+    setIsVisible(false);
+  };
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', backgroundColor: 'rgb(255, 255, 255)' }}>
+      <Button onClick={showMessage}>Display error message</Button>
+      <Messages
+        icon={<CrossCircledIcon style={{ color: '#FF0B0B', marginRight: '10px' }} />}
+        description="This is a error message!"
+        duration={10000}
+        isVisible={isVisible}
+        hideMessage={hideMessage}
+      />
+    </div>
+  )
+}
+export default MessageError;
