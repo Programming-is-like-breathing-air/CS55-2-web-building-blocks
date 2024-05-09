@@ -11,7 +11,7 @@ function DynamicCardComponent() {
 
   const footerContent = {
     analytics: { label: "High Latency Detected", time: "8s" },
-    emails: { label: "Total Events Triggered", count: "35,968" },
+    emails: { label: "Online Now", count: "1,302" },
   };
 
   return (
