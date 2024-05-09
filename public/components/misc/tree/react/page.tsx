@@ -3,20 +3,8 @@ import { SimpleTreeView } from '@mui/x-tree-view/SimpleTreeView';
 import { TreeItem } from '@mui/x-tree-view/TreeItem';
 import { Button } from "@/components/ui/button";
 import {
-  Cloud,
-  CreditCard,
-  Github,
-  Keyboard,
-  LifeBuoy,
-  LogOut,
-  Mail,
-  MessageSquare,
-  Plus,
-  PlusCircle,
-  Settings,
-  User,
-  UserPlus,
-  Users,
+  Cloud,CreditCard,Github,Keyboard,LifeBuoy,LogOut,Mail, MessageSquare,Plus,PlusCircle,Settings,
+  User, UserPlus,Users, Ellipsis, AppWindow, CalendarDays, ScrollText,LocateFixed,
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -32,10 +20,11 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "../../../../../styles/components/ui/dropdown-menu";
-import DropdownMenuIcon from '@/components/ui/dropdownwithicon';
+
 export function TreeViewDemo() {
   const [treeData, setTreeData] = React.useState([]);
   const [contextMenu, setContextMenu] = React.useState(null);
+  const [hoveredItemId, setHoveredItemId] = React.useState(null);
   React.useEffect(() => {
     async function fetchTreeData() {
       // Replace with your API call
@@ -53,35 +42,93 @@ export function TreeViewDemo() {
       </TreeItem>
     ));
   };
-  // 处理右键点击事件
+
 const handleContextMenu = (event) => {
-  event.preventDefault(); // 阻止默认的上下文菜单
+  event.preventDefault(); 
   setContextMenu({
     mouseX: event.clientX - 2,
     mouseY: event.clientY - 4,
   });
 };
 
-// 关闭菜单
 const handleClose = () => {
   setContextMenu(null);
 };
 
+const renderLabel = (label, itemId) => {
+  let Icon;
+    switch (itemId) {
+      case "1":
+        Icon = AppWindow;
+        break;
+      case "2":
+        Icon = CalendarDays;
+        break;
+      case "5":
+        Icon = ScrollText;
+        break;
+      case "10":
+        Icon = LocateFixed;
+        break;
+      case "6":
+        Icon = Keyboard;
+        break;
+      case "8":
+        Icon = Github;
+        break;
+      default:
+        Icon = AppWindow; // Default icon
+    }
+
+    return (
+      <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between', // This will push the content to the ends
+        width: '100%'
+      }}
+      onMouseEnter={() => setHoveredItemId(itemId)}
+      onMouseLeave={() => setHoveredItemId(null)}
+    >
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <Icon style={{ marginRight: '8px' }} size={16} />
+        {label}
+      </div>
+      {hoveredItemId === itemId && (
+        <Button
+          onClick={(event) => {
+            event.stopPropagation();
+            handleContextMenu(event);
+          }}
+          variant="secondary"
+          style={{ minWidth: 'initial', padding: '4px 6px' }}
+          size="small"
+        >
+          <Ellipsis size={16} />
+        </Button>
+      )}
+    </div>
+    );
+  };
+  
+
+
+
   return (
     <>
-    <SimpleTreeView
+   <SimpleTreeView
       aria-label="file system navigator"
       sx={{ height: 200, flexGrow: 1, maxWidth: 400, overflowY: 'auto' }}
       onContextMenu={handleContextMenu}
     >
-      {renderTreeItems(treeData)}
-      <TreeItem itemId="1" label="Applications">
-        <TreeItem itemId="2" label="Calendar" />
+      <TreeItem itemId="1" label={renderLabel("Applications", "1")}>
+        <TreeItem itemId="2" label={renderLabel("Calendar", "2")} />
       </TreeItem>
-      <TreeItem itemId="5" label="Documents">
-        <TreeItem itemId="10" label="OSS" />
-        <TreeItem itemId="6" label="MUI">
-          <TreeItem itemId="8" label="index.js" />
+      <TreeItem itemId="5" label={renderLabel("Documents", "5")}>
+        <TreeItem itemId="10" label={renderLabel("OSS", "10")} />
+        <TreeItem itemId="6" label={renderLabel("MUI", "6")}>
+          <TreeItem itemId="8" label={renderLabel("index.js", "8")} />
         </TreeItem>
       </TreeItem>
     </SimpleTreeView>
