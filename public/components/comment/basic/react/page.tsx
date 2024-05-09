@@ -117,7 +117,8 @@ export function BasicComment() {
                             </div>
                         </CardHeader>
                         <CardContent>
-                            <div className="text-left" style={{ fontSize: '0.875rem', marginBottom: '10px' }}>{message.content}</div>
+
+                            <div className="text-left" style={{ fontSize: '0.875rem', marginTop: '20px', marginBottom: '10px' }}>{message.content}</div>
                             <div className="flex mt-2 justify-left text-sm text-gray-400 space-x-2">
                                 <Button variant='link' onClick={() => incrementStat(index, 'likes')}>
                                     {message.likes} Likes
