@@ -17,6 +17,8 @@ export function DropdownMenuSelect() {
     setSelectedOptions((prev) =>
       prev.includes(option) ? prev.filter((item) => item !== option) : [...prev, option]
     );
+    // Ensure the menu stays open
+    setOpen(true);
   };
 
   const handleSearchChange = (event) => {
@@ -24,7 +26,7 @@ export function DropdownMenuSelect() {
   };
 
   const handleTriggerClick = () => {
-    setOpen((prev) => !prev);
+    setOpen(!open); // Only toggle the open state on trigger click, not automatically
   };
 
   const removeOption = (option) => {
@@ -69,7 +71,7 @@ export function DropdownMenuSelect() {
   };
 
   return (
-    <DropdownMenu open={open} onOpenChange={setOpen}>
+    <DropdownMenu open={open} onOpenChange={() => setOpen(true)}> {/* Keep menu open */}
       <DropdownMenuTrigger asChild>
         <div onClick={handleTriggerClick} style={{ border: '1px solid #ccc', padding: '2px', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}>
           <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
