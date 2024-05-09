@@ -1,33 +1,31 @@
 import React from 'react';
 import { Bubble } from 'react-chartjs-2';
-import { Chart as ChartJS, Tooltip, Legend, Title, BubbleController } from 'chart.js';
+import {
+  Chart as ChartJS,
+  Tooltip,
+  Legend,
+  Title,
+  LinearScale,
+  CategoryScale,
+  PointElement,
+  BubbleController,
+  ChartOptions
+} from 'chart.js';
 
-// Registering the necessary chart components
+// Register all necessary components for the bubble chart
 ChartJS.register(
-  Tooltip, Legend, Title, BubbleController
+    Tooltip, Legend, Title, LinearScale, CategoryScale, PointElement, BubbleController
 );
 
-// Utility for colors and transparency
-const CHART_COLORS = {
-  grey: 'rgb(201, 203, 207)',  // #212121
-  black: 'rgb(225,225,233)'  // #0d47a1
-};
-
-const transparentize = (color: string, opacity: number) => {
-  const alpha = opacity * 255;
-  const start = color.lastIndexOf(',');
-  return `${color.substring(0, start)}, ${alpha})`;
-};
-
-// Generating random bubbles
-const generateBubbles = (config: {count: number, rmin: number, rmax: number, min: number, max: number}) => {
+// Utility for generating random bubbles
+const generateBubbles = (count: number, rmin: number, rmax: number, min: number, max: number) => {
   const bubbles = [];
-  for (let i = 0; i < config.count; i++) {
-    const value = Math.random() * (config.max - config.min) + config.min;
+  for (let i = 0; i < count; i++) {
+    const value = Math.random() * (max - min) + min;
     bubbles.push({
       x: value,
       y: value,
-      r: Math.random() * (config.rmax - config.rmin) + config.rmin
+      r: Math.random() * (rmax - rmin) + rmin
     });
   }
   return bubbles;
@@ -38,28 +36,79 @@ const data = {
   datasets: [
     {
       label: 'Dataset 1',
-      data: generateBubbles({ count: 7, rmin: 5, rmax: 15, min: 0, max: 100 }),
-      borderColor: "#bdbdbd",
-      backgroundColor: "#bdbdbd",
+      data: generateBubbles(7, 5, 15, 0, 100),
+      borderColor: "rgba(201, 203, 207, 0.8)",  // Using the RGBA format
+      backgroundColor: "rgba(201, 203, 207, 0.5)",
     },
     {
       label: 'Dataset 2',
-      data: generateBubbles({ count: 7, rmin: 5, rmax: 15, min: 0, max: 100 }),
-      borderColor:  "#212121",
-      backgroundColor:  "#212121",
+      data: generateBubbles(7, 5, 15, 0, 100),
+      borderColor: "rgba(33, 33, 33, 0.8)",   // Using the RGBA format
+      backgroundColor: "rgba(33, 33, 33, 0.5)",
     }
   ]
 };
 
-const options = {
+// Chart options with styling
+const options: ChartOptions<'bubble'> = {
   responsive: true,
   plugins: {
     legend: {
-      position: 'top' as const,
+      position: 'top',
+      labels: {
+        color: '#000000', // Black color for legend text
+        font: {
+          weight: 'bold', // Bold font weight for legend text
+        }
+      }
     },
     title: {
       display: true,
-      text: 'Bubble Chart'
+      text: 'Bubble Chart',
+      color: '#000000', // Black color for x-axis title
+      font: {
+        size: 18,
+        weight: 'bold',
+        family: 'Arial',
+      }
+    }
+  },
+  scales: {
+    x: {
+      beginAtZero: true,
+      ticks: {
+        color: '#000000',  // Ensure black color
+        font: {
+          weight: 'bold',
+        }
+      },
+      title: {
+        display: true,
+        text: 'X-Axis',
+        color: '#000000',
+        font: {
+          size: 16,
+          weight: 'bold',
+        }
+      }
+    },
+    y: {
+      beginAtZero: true,
+      ticks: {
+        color: '#000000',  // Ensure black color
+        font: {
+          weight: 'bold',
+        }
+      },
+      title: {
+        display: true,
+        text: 'Y-Axis',
+        color: '#000000',
+        font: {
+          size: 16,
+          weight: 'bold',
+        }
+      }
     }
   }
 };

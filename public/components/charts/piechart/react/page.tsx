@@ -1,6 +1,6 @@
 import React from 'react';
 import { Pie } from 'react-chartjs-2';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend, ChartData } from 'chart.js';
+import {Chart as ChartJS, ArcElement, Tooltip, Legend, ChartData, ChartOptions} from 'chart.js';
 
 // Register the necessary components for the chart
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -36,15 +36,26 @@ const data: ChartData<'pie', number[], string> = {
 
 // Component for the Pie Chart
 const ChartPieChart: React.FC = () => {
-  const options = {
+  const options: ChartOptions<"pie"> = {
     responsive: true,
     plugins: {
       legend: {
         position: 'top' as const,
+        labels: {
+          color: '#000000', // Black color for legend text
+          font: {
+            weight: 'bold', // Bold font weight for legend text
+          }
+        }
       },
       title: {
         display: true,
-        text: 'Pie Chart'
+        text: 'Pie Chart',
+        color: '#000000', // Black color for x-axis title
+        font: {
+          size: 18,
+          family: 'Arial',
+        },
       }
     }
   };
