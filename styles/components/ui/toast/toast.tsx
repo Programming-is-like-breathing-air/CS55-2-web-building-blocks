@@ -66,18 +66,18 @@ const toastVariants = cva(
 const Toast = React.forwardRef<
   React.ElementRef<typeof ToastPrimitives.Root>,
   React.ComponentPropsWithoutRef<typeof ToastPrimitives.Root> &
-    VariantProps<typeof toastVariants> & { position?: 'top-right' | 'bottom-right' }
+  VariantProps<typeof toastVariants> & { position?: 'top-right' | 'bottom-right' }
 >(({ className, variant, position = 'top-right', ...props }, ref) => {
-  // 根据位置添加适当的CSS类
-  const positionClasses = position === 'top-right' ? 
-  "fixed top-0 left-50 z-[100]" : " bottom-0 right-0 z-[100]";
 
-  // const baseClasses = "flex max-h-screen w-full flex-col-reverse p-4 sm:flex-col md:max-w-[420px]";
-  
+  const positionClasses = position === 'top-right' ?
+    "fixed top-0 right-0 left-auto z-[100]" : "bottom-0 right-0 left-auto z-[100]";
+
+  const baseClasses = "flex max-h-screen w-full flex-col-reverse p-4 sm:flex-col md:max-w-[420px]";
+
   return (
     <ToastPrimitives.Root
       ref={ref}
-      className={cn(toastVariants({ variant }), positionClasses,className)}
+      className={cn(toastVariants({ variant }), positionClasses, className)}
       {...props}
     />
   )
@@ -92,7 +92,7 @@ const ToastAction = React.forwardRef<
   <ToastPrimitives.Action
     ref={ref}
     className={cn(
-       "inline-flex items-center justify-center rounded-md border bg-transparent px-3 text-sm font-medium transition-colors hover:bg-secondary focus:outline-none focus:ring-1 disabled:pointer-events-none disabled:opacity-50",
+      "inline-flex items-center justify-center rounded-md border bg-transparent px-3 text-sm font-medium transition-colors hover:bg-secondary focus:outline-none focus:ring-1 disabled:pointer-events-none disabled:opacity-50",
       className
     )}
     onClick={(e) => {
