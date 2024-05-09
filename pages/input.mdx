@@ -14,31 +14,52 @@ Displays a form input field or a component that looks like an input field.
 ## Input With Mention
 
 ### Design
-The `InputMention` component is a functional React component that utilizes the `useState` hook for state management and the `Mentions` component from the `antd` UI library to provide a user input field with dynamic mention capabilities. Styled to occupy 50% of its container's width, this adjustability allows it to fit seamlessly within various layouts. It employs a `MOCK_DATA` object which maps strings to prefixes '@' and '#', enabling quick retrieval and display of relevant options as users type, enhancing interactivity and efficiency in data entry.
+The `InputMention` component is designed as an interactive input control, including an `Input` component imported from the style library and a `DropdownMenu` related component, which is used to display a list of options based on the input trigger character. The component uses state management to track the user's input value (`inputValue`), the display state of the drop-down menu (`showDropdown`), and the currently available list of options (`options`). In addition, the component uses the `inputRef` reference to manage focus, ensuring that the user can continue typing immediately after selecting the drop-down menu item. This design makes option selection during the input process both intuitive and efficient.
 
 ### How to behave
-The `InputMention` component uses a state variable `prefix` to dynamically load mention options—email domains or version numbers—based on user interaction, which updates the prefix and triggers the display of relevant suggestions through the `onSearch` function.
+The `InputMention` component dynamically updates and displays the corresponding drop-down menu options (`options`) by listening to changes in the input box, paying special attention to the trigger characters `@` and `#`. When these specific characters are entered, the component displays the drop-down menu and provides relevant options based on the input trigger characters. If the input no longer contains these trigger characters, the drop-down menu will be hidden. After the user selects an option in the drop-down menu, the option will be automatically added to the corresponding position of the input value, and the drop-down menu will be closed, and the input box will regain focus so that the user can continue to enter. The display position and size of the drop-down menu are precisely controlled by CSS styles to ensure that it is correctly displayed below the input box, providing a clear and intuitive user interaction experience.
 
 ### How to use it
 - Installation 
 Ensure that your project includes all necessary dependencies for the Search component. If they are not already installed, add them via npm with the following command: 
 ``` 
-import { Mentions } from "antd";
-``` 
-- User Interaction:
-Users interact with the Mentions input by typing text. When they type @ or #, the component offers a dropdown with relevant suggestions (gmail.com, icloud.com, qq.com for @ and 1.0, 2.0, 3.0 for #).
-``` 
-const MOCK_DATA = {
-  '@': ['gmail.com', 'icloud.com', 'qq.com'],
-  '#': ['1.0', '2.0', '3.0'],
-};
+npm shadcn-ui@latest add dropdown-menu
 ``` 
 
-- Application Context:
-This component can be used in contexts where users need to quickly insert certain types of data (like email domains or version numbers) into text fields. For example, in an email client for quickly appending domain names, or in a project management tool for referencing version numbers.
+- Usuage
+To integrate the these component into your React application, include the necessary imports from the Shadcn UI library:
+```
+import React, { useState, useRef } from 'react';
+import { Input } from "../../../../../styles/components/ui/input";
+import {
+  DropdownMenu,
+  DropdownMenuItem,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+} from "../../../../../styles/components/ui/dropdown-menu";
+```
 
-- Integration:
-To integrate this component into a larger application, place the InputMention in a form or dialogue where user input is needed. Ensure that the surrounding UI accommodates the dynamic width and the interactive nature of the component.
+- Trigger drop-down menu:
+Users enter @ in the input box to trigger the drop-down menu of email domains (such as "qq.com", "icloud.com", "gmail.com"). Users enter # to trigger the drop-down menu of version numbers (such as "1.0", "2.0", "3.0"). 
+```
+if (lastChar === '@') {
+      setOptions(["qq.com", "icloud.com", "gmail.com"]);
+      setShowDropdown(true);
+    } else if (lastChar === '#') {
+      setOptions(["1.0", "2.0", "3.0"]);
+      setShowDropdown(true);
+    } else {
+      if (!value.includes('@') && !value.includes('#')) {
+        setShowDropdown(false);
+      }
+    }
+```
+
+- Select option:
+Users click on an option in the drop-down menu, which will be automatically added after the trigger character and allow the user to continue editing the input. 
+
+- Style customization:
+The style of the input box and drop-down menu can be adjusted as needed, such as adjusting the width and margins to better fit into the overall design of the page.
 
 <InputWithMention />
 
