@@ -32,6 +32,7 @@ npm shadcn-ui@latest add toast
 npm shadcn-ui@latest add avatar
 npm shadcn-ui@latest add label
 npm shadcn-ui@latest add textarea
+npm insatll lucide-react
 ```
 - Component Imports
 Make sure all components and hooks used in NormalChat are properly imported from their respective libraries or files. Here’s a checklist and example import lines you might need:
@@ -44,6 +45,9 @@ import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
 import { Avatar, AvatarImage } from '../../../../../styles/components/ui/avatar';
 import { Label } from '../../../../../styles/components/ui/label';
 import { Textarea } from "../../../../../styles/components/ui/textarea"
+import { Heart } from "lucide-react";
+import { MessageCircleMore } from "lucide-react";
+import { Forward } from "lucide-react";
 ```
 - Extensibility
 The component is designed for easy modification and extensibility. For example, additional features like editing or deleting comments, or more sophisticated user authentication for interactions, could be implemented by extending the current functionality.
@@ -65,3 +69,4 @@ The component is designed for easy modification and extensibility. For example, 
 | ---- | ---- | ---- | ---- | ---- |
 | v1.0 | Yuqing Wu | Yuqing Wu | 29 Apr 2024 | Framework|
 | v2.0 | Yuqing Wu | Yuqing Wu | 01 May 2024 | Add function and interaction|
+| v3.0 | Yuqing Wu | Yuqing Wu | 09 May 2024 | Optimize the style|
