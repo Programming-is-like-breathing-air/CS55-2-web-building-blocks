@@ -1,5 +1,15 @@
 import React from 'react';
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  ChartOptions
+} from 'chart.js';
 import { Line } from 'react-chartjs-2';
 
 ChartJS.register(
@@ -50,16 +60,62 @@ const ChartLineChart = () => {
     ]
   };
 
-  const options = {
+  const options:ChartOptions<"line"> = {
     responsive: true,
     plugins: {
       legend: {
         position: 'top' as const,
+        labels: {
+          color: '#000000', // Black color for legend text
+          font: {
+            weight: 'bold', // Bold font weight for legend text
+          }
+        }
       },
       title: {
         display: true,
-        text: 'Line Chart'
+        text: 'Line Chart',
+        color: '#000000', // Black color for x-axis title
+        font: {
+          size: 18,
+        },
       }
+    },
+    scales: {
+      x: {
+        ticks: {
+          color: '#000000', // Black color for x-axis ticks
+          font: {
+            weight: 'bold',
+          }
+        },
+        title: {
+          display: true,
+          text: 'Month',
+          color: '#000000', // Black color for x-axis title
+          font: {
+            size: 16,
+            weight: 'bold', // Bold font weight for x-axis title
+          },
+        },
+      },
+      y: {
+        ticks: {
+          color: '#000000', // Black color for y-axis ticks
+          font: {
+            weight: 'bold',
+          }
+        },
+        title: {
+          display: true,
+          text: 'Value',
+          color: '#000000', // Black color for y-axis title
+          font: {
+            size: 16,
+            weight: 'bold', // Bold font weight for y-axis title
+          },
+        },
+      },
     }
   };
 
