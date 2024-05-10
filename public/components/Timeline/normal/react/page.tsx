@@ -1,9 +1,6 @@
 import * as React from 'react';
 import { Timeline, TimelineItem } from "../../../../../styles/components/ui/timeline";
-import { Label } from '@radix-ui/react-label';
-import { Loader2 } from "lucide-react"
 
-import { Button } from "../../../../../styles/components/ui/button"
 const TimelinePage = () => {
     const steps = [
         { label: 'Think' },

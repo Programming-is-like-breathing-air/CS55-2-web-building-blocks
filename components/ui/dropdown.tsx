@@ -52,7 +52,7 @@ export const WithSelect = () => {
   return (
     <Theme
       componentName="dropdown"
-      componentStyle="withSelect"
+      componentStyle="withComboSelect"
       backgroundDesktop="white"
       backgroundMobile="white"
       componentReactView="DropdownMenuwithSelect"

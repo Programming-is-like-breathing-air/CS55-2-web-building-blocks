@@ -13,7 +13,7 @@ import {
 
 # Button Component
 
-**Contributed by Yutong Shi**
+**Contributed by Yutong Shi and Yingjian Di**
 
 ## Basic Component
 ### Design:
@@ -184,10 +184,64 @@ The NewButton component in React showcases a button with destructive behavior, t
      - Toast Styling: Developers can customize the appearance and behavior of the toast notification, including duration, position, and styling.
      - Button Styling: The button's appearance can be customized using the **variant** and **size** props to fit different design requirements.
 <IconButton />
+
+## Popover Button
+### Design:
+ButtonPopover component is button with card and popover to show more information when user click button.
+### How to behave:
+- Click: Users can click the button to see the popover
+### How to use it:
+
+- Installation
+Ensure that your project includes all necessary dependencies for the `Button` component and `Popover` component,If they are not already installed, you can add them via npm:
+```
+npx shadcn-ui@latest add popover 
+npx shadcn-ui@latest add button
+npx shadcn-ui@latest add toast
+
+```
+- Usage:
+To integrate the `ButtonPopover` component into your React application, include the necessary imports:
+```
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/components/ui/toast/use-toast";
+import { Toaster } from "@/components/ui/toast/toaster";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+```
+- Rendering the Component:
+Here is how to use the `Popover` component within your application:
+```
+    <Popover>
+      <PopoverTrigger asChild>
+        <Button variant="outline">Delete</Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-80 p-4 bg-white shadow-lg rounded-lg">
+        <div className="space-y-4">
+          <h4 className="text-lg font-medium">Delete the task</h4>
+          <p>Are you sure to delete this task?</p>
+          <div className="flex justify-end space-x-2">
+            <Button variant="outline" onClick={() => handleNoClick()}>No</Button> 
+            <Button variant="destructive" onClick={handleDelete}>Yes</Button>
+          </div>
+        </div>
+      </PopoverContent>
+    </Popover>
+```
+- Customization:
+Use can change the text in button or popover what they want:
+````
+<h4 className="text-lg font-medium">change here</h4>
+          <p>change here</p>
+````
 <ButtonPopover/>
 
 ## Version
 | Version | Editor      | Reviewer      | Date       | Description     |
 |---------|-------------|-------------|------------|-----------------|
 | v1.0    | Yutong Shi | Yutong Shi | 25 Apr 2024 | Initial version |
+| v2.0    | Yingjian Di | Yutong Shi | 9 May 2024 | New varient |
 

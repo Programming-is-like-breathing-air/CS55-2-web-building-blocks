@@ -130,8 +130,8 @@ import FailPanel from "../../public/components/panel/fail/react/page"
 import NormalChat from "../../public/components/chat/normal/react/page"
 import AttachmentChat from "../../public/components/chat/attachment/react/page"
 
-import DropdownMenuwithSelect from "../../public/components/dropdown/withComboSelect/page"
-import ButtonPopover from "../../public/components/button/popover/page"
+import DropdownMenuwithSelect from "../../public/components/dropdown/withComboSelect/react/page"
+import ButtonPopover from "../../public/components/button/popover/react/page"
 
 import TourComponent from "../../public/components/tour/normal/react/page"
 import PlacementTour from "../../public/components/tour/Placement/react/page"

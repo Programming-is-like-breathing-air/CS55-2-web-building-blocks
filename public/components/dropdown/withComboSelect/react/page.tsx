@@ -6,7 +6,7 @@ import {
   DropdownMenuContent,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../../../../styles/components/ui/dropdown-menu";
+} from "../../../../../styles/components/ui/dropdown-menu";
 
 export function DropdownMenuSelect() {
   const [selectedOptions, setSelectedOptions] = React.useState([]);
@@ -17,8 +17,6 @@ export function DropdownMenuSelect() {
     setSelectedOptions((prev) =>
       prev.includes(option) ? prev.filter((item) => item !== option) : [...prev, option]
     );
-    // Ensure the menu stays open
-    setOpen(true);
   };
 
   const handleSearchChange = (event) => {
@@ -26,7 +24,7 @@ export function DropdownMenuSelect() {
   };
 
   const handleTriggerClick = () => {
-    setOpen(!open); // Only toggle the open state on trigger click, not automatically
+    setOpen((prev) => !prev);
   };
 
   const removeOption = (option) => {
@@ -39,8 +37,8 @@ export function DropdownMenuSelect() {
   );
 
   const tagStyle = {
-    marginRight: "8px",
-    marginBottom: "8px",
+    marginRight: "10px",
+    marginBottom: "10px",
     backgroundColor: "#f0f0f0",
     borderRadius: "12px",
     padding: "4px 8px",
@@ -48,15 +46,6 @@ export function DropdownMenuSelect() {
     alignItems: "center",
     cursor: "default"
   };
-
-  const tagCloseButton = {
-    background: "none",
-    border: "none",
-    color: "#666",
-    cursor: "pointer",
-    marginLeft: "8px"
-  };
-
   const inputStyle = {
     padding: "8px",
     margin: "8px",
@@ -65,32 +54,23 @@ export function DropdownMenuSelect() {
   };
 
   const dropdownItemStyle = {
-    padding: "8px",
+    padding: "20px",
     width: "100%",
     cursor: "pointer"
   };
 
   return (
-    <DropdownMenu open={open} onOpenChange={() => setOpen(true)}> {/* Keep menu open */}
+    <DropdownMenu open={open}>
       <DropdownMenuTrigger asChild>
-        <div onClick={handleTriggerClick} style={{ border: '1px solid #ccc', padding: '2px', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}>
+        <div style={{ border: '1px solid #ccc', padding: '2px', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}>
           <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
             {selectedOptions.map((option) => (
               <div key={option} style={tagStyle}>
                 {option}
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation(); // Prevent dropdown from toggling
-                    removeOption(option);
-                  }}
-                  style={tagCloseButton}
-                >
-                  ×
-                </button>
               </div>
             ))}
           </div>
-          <span>▼</span>
+          <Button onClick={handleTriggerClick}>▼</Button>
         </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
