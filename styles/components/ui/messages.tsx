@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import {X} from "lucide-react";
 interface MessageProps {
-  icon?: JSX.Element; // 接收一个React元素作为图标
-  description: string; // 消息文本内容
-  duration: number; // 消息显示的持续时间，单位为毫秒
-  isVisible: boolean; // 控制消息是否可见
-  hideMessage: () => void; // 外部控制隐藏消息的函数
+  icon?: JSX.Element; 
+  description: string; 
+  duration: number; 
+  isVisible: boolean; 
+  hideMessage: () => void; 
 }
 
 const Messages: React.FC<MessageProps> = ({ icon, description, duration, isVisible, hideMessage }) => {
