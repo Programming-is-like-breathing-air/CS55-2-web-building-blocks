@@ -1,117 +1,95 @@
-import * as React from "react";
-import { Button } from "@/components/ui/button";
+"use client"
+
+import * as React from "react"
+import { Check, ChevronsUpDown } from "lucide-react"
+
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
 import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "../../../../../styles/components/ui/dropdown-menu";
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+} from "../../../../../styles/components/ui/command"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+
+const frameworks = [
+  {
+    value: "next.js",
+    label: "Next.js",
+  },
+  {
+    value: "sveltekit",
+    label: "SvelteKit",
+  },
+  {
+    value: "nuxt.js",
+    label: "Nuxt.js",
+  },
+  {
+    value: "remix",
+    label: "Remix",
+  },
+  {
+    value: "astro",
+    label: "Astro",
+  },
+]
 
 export function DropdownMenuSelect() {
-  const [selectedOptions, setSelectedOptions] = React.useState([]);
-  const [searchTerm, setSearchTerm] = React.useState("");
-  const [open, setOpen] = React.useState(false);
-  const dropdownRef = React.useRef(null); // Ref for the dropdown menu
-
-  const toggleOption = (option) => {
-    setSelectedOptions((prev) =>
-      prev.includes(option) ? prev.filter((item) => item !== option) : [...prev, option]
-    );
-  };
-
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value.toLowerCase());
-  };
-
-  const toggleDropdown = () => {
-    setOpen((prev) => !prev);
-  };
-
-  // This function checks if the clicked area is outside of the dropdown
-  const handleClickOutside = (event) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      setOpen(false);
-    }
-  };
-
-  // Add event listener when component mounts and remove on unmount
-  React.useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
-  const options = ["Account Settings", "Support", "License", "Signout"];
-  const filteredOptions = options.filter((option) =>
-    option.toLowerCase().includes(searchTerm)
-  );
-
-  const tagStyle = {
-    marginRight: "10px",
-    marginBottom: "10px",
-    backgroundColor: "#f0f0f0",
-    borderRadius: "12px",
-    padding: "4px 8px",
-    display: "flex",
-    alignItems: "center",
-    cursor: "default"
-  };
-  const inputStyle = {
-    padding: "8px",
-    margin: "8px",
-    width: "calc(100% - 16px)",
-    border: "1px solid #ccc"
-  };
-
-  const dropdownItemStyle = {
-    padding: "20px",
-    width: "100%",
-    cursor: "pointer"
-  };
+  const [open, setOpen] = React.useState(false)
+  const [value, setValue] = React.useState("")
 
   return (
-    <div ref={dropdownRef}> {/* Attach the ref to the dropdown root */}
-      <DropdownMenu open={open}>
-        <DropdownMenuTrigger asChild>
-          <div style={{ border: '1px solid #ccc', padding: '2px', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}>
-            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
-              {selectedOptions.map((option) => (
-                <div key={option} style={tagStyle}>
-                  {option}
-                </div>
-              ))}
-            </div>
-            <Button onClick={toggleDropdown}>{open ? "Close" : "Open"}</Button>
-          </div>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-56">
-          <input
-            type="text"
-            placeholder="Search..."
-            value={searchTerm}
-            onChange={handleSearchChange}
-            style={inputStyle}
-            onFocus={(e) => e.target.style.borderColor = '#007bff'}
-            onBlur={(e) => e.target.style.borderColor = '#ccc'}
-          />
-          <DropdownMenuSeparator />
-          {filteredOptions.map((option) => (
-            <DropdownMenuCheckboxItem
-              key={option}
-              checked={selectedOptions.includes(option)}
-              onCheckedChange={() => toggleOption(option)}
-              style={dropdownItemStyle}
-            >
-              {option}
-            </DropdownMenuCheckboxItem>
-          ))}
-        </DropdownMenuContent>
-      </DropdownMenu>
-    </div>
-  );
+    <Popover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger asChild>
+        <Button
+          variant="outline"
+          role="combobox"
+          aria-expanded={open}
+          className="w-[200px] justify-between"
+        >
+          {value
+            ? frameworks.find((framework) => framework.value === value)?.label
+            : "Select framework..."}
+          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-[200px] p-0">
+        <Command>
+          <CommandInput placeholder="Search framework..." />
+          <CommandEmpty>No framework found.</CommandEmpty>
+          <CommandGroup>
+            {frameworks.map((framework) => (
+              <CommandItem
+                key={framework.value}
+                value={framework.value}
+                onSelect={(currentValue) => {
+                  setValue(currentValue === value ? "" : currentValue)
+                  setOpen(false)
+                }}
+              >
+                <Check
+                  className={cn(
+                    "mr-2 h-4 w-4",
+                    value === framework.value ? "opacity-100" : "opacity-0"
+                  )}
+                />
+                {framework.label}
+              </CommandItem>
+            ))}
+          </CommandGroup>
+        </Command>
+      </PopoverContent>
+    </Popover>
+  )
 }
+
 
 export default DropdownMenuSelect;
 //hook用设置状态优先级
