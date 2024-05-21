@@ -27,9 +27,9 @@ const itemStyles = cva(['text-sm', 'flex', 'items-center', 'gap-2', 'relative', 
 const dotStyles = cva(['w-4', 'h-4', 'rounded-full', 'border-2', 'border-gray-400', 'relative'], {
     variants: {
         status: {
-            completed: 'bg-green-500',
-            inProgress: 'bg-yellow-500',
-            pending: 'bg-gray-300'
+            completed: 'bg-green-300',
+            inProgress: 'bg-yellow-300',
+            pending: 'bg-gray-100'
         }
     }
 });

@@ -13,11 +13,11 @@ export function CardWithDrawer() {
 
     return (
         <Card
-            className="relative w-40 h-80 overflow-hidden shadow-lg rounded-lg"
+            className="relative w-1/2 h-64 overflow-hidden shadow-lg rounded-lg"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <img src={imageUrl} alt="Image Models" className="w-full h-1/5 object-cover rounded-lg" />
+            <img src={imageUrl} alt="Image Models" className="w-full h-64 object-cover rounded-t-lg" /> 
             <CardContent
                 style={{
                     position: 'absolute',

@@ -6,6 +6,10 @@ import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
 import { Avatar, AvatarImage } from '../../../../../styles/components/ui/avatar';
 import { Label } from '../../../../../styles/components/ui/label';
 import { Textarea } from "../../../../../styles/components/ui/textarea"
+import { Heart } from "lucide-react";
+import { MessageCircleMore } from "lucide-react";
+import { Forward } from "lucide-react";
+
 
 
 export function BasicComment() {
@@ -109,24 +113,27 @@ export function BasicComment() {
                                     <AvatarImage src={message.avatarUrl} alt={message.user} />
                                 </Avatar>
                                 <div className="flex flex-col">
-                                    <Label style={{ fontWeight: 'bold', fontSize: '1rem' }}>{message.user}</Label>
+                                    <Label style={{ fontWeight: 'bold', fontSize: '1.05rem' }}>{message.user}</Label>
                                 </div>
                             </div>
                             <div className="flex flex-col" style={{ marginLeft: '50px' }}>
-                                <Label style={{ fontSize: '0.9rem', color: 'gray' }}>{message.description}</Label>
+                                <Label style={{ fontSize: '0.75rem', color: 'gray' }}>{message.description}</Label>
                             </div>
                         </CardHeader>
                         <CardContent>
-                            <div className="text-left" style={{ fontSize: '0.875rem', marginBottom: '10px' }}>{message.content}</div>
-                            <div className="flex mt-2 justify-left text-sm text-gray-400 space-x-2">
-                                <Button variant='link' onClick={() => incrementStat(index, 'likes')}>
-                                    {message.likes} Likes
+
+                            <div className="text-left" style={{ fontSize: '0.95rem', marginTop: '20px', marginBottom: '10px' }}>{message.content}</div>
+                            <div className="flex mt-2 justify-left text-sm text-gray-400 space-x-1" style={{ marginTop: '20px' }}>
+                                <Button variant='link' onClick={() => incrementStat(index, 'likes')} style={{ color: 'gray' }}>
+                                    <Heart size={20} style={{ marginRight: '5px' }}/>{message.likes}
                                 </Button>
-                                <Button variant='link' onClick={() => incrementStat(index, 'comments')}>
-                                    {message.comments} Comments
+                                <span className="text-gray-100 mx-1" style={{ marginTop: '10px', color: 'gray' }}>|</span>
+                                <Button variant='link' onClick={() => incrementStat(index, 'comments')} style={{ color: 'gray' }}>
+                                    <MessageCircleMore size={20} style={{ marginRight: '5px' }}/>{message.comments}
                                 </Button>
-                                <Button variant='link' onClick={() => incrementStat(index, 'shares')}>
-                                    {message.shares} Shares
+                                <span className="text-gray-400 mx-1" style={{ marginTop: '10px', color: 'gray' }}>|</span>
+                                <Button variant='link' onClick={() => incrementStat(index, 'shares')} style={{ color: 'gray' }}>
+                                    <Forward size={20} style={{ marginRight: '5px' }}/>{message.shares}
                                 </Button>
                             </div>
                             {activeTextarea === index && (
@@ -148,6 +155,57 @@ export function BasicComment() {
     );
 }
 
+
+
+
+// import {
+//     Form,
+//     FormControl,
+//     FormDescription,
+//     FormField,
+//     FormItem,
+//     FormLabel,
+//     FormMessage,
+// } from "../../../../../styles/components/ui/form"
+
+// return (
+//     <>
+//         <Toaster />
+//         <div>
+//             {messages.map((message, index) => (
+//                 <form key={index} className="mb-4 p-4 border rounded">
+//                     <div className="flex items-center mb-2">
+//                         <Avatar style={{ marginRight: '10px' }}>
+//                             <AvatarImage src={message.avatarUrl} alt={message.user} />
+//                         </Avatar>
+//                         <div className="flex flex-col">
+//                             <Label style={{ fontWeight: 'bold', fontSize: '1rem' }}>{message.user}</Label>
+//                         </div>
+//                     </div>
+//                     <div style={{ marginLeft: '50px' }}>
+//                         <Label style={{ fontSize: '0.9rem', color: 'gray' }}>{message.description}</Label>
+//                         <div style={{ fontSize: '0.875rem', marginTop: '20px', marginBottom: '10px' }}>{message.content}</div>
+//                     </div>
+//                     <div className="flex mt-2 justify-left text-sm text-gray-400 space-x-2">
+//                         <Button variant='link' onClick={() => incrementStat(index, 'likes')}>{message.likes} Likes</Button>
+//                         <Button variant='link' onClick={() => incrementStat(index, 'comments')}>{message.comments} Comments</Button>
+//                         <Button variant='link' onClick={() => incrementStat(index, 'shares')}>{message.shares} Shares</Button>
+//                     </div>
+//                     {activeTextarea === index && (
+//                         <div className="grid w-full gap-2 mt-2">
+//                             <Textarea value={commentText[index]} placeholder="Type your comment here." onChange={(e) => handleCommentChange(e.target.value, index)} />
+//                             <div className="flex justify-end space-x-2">
+//                                 <Button onClick={handleClose} variant='secondary'>Close</Button>
+//                                 <Button onClick={() => postComment(index)} variant='default' disabled={!commentText[index].trim()}>Post Comment</Button>
+//                             </div>
+//                         </div>
+//                     )}
+//                 </form>
+//             ))}
+//         </div>
+//     </>
+// );
+// }
 
 
 export default BasicComment;

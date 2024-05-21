@@ -1,31 +1,29 @@
-import { Button } from "../../../../../styles/components/ui/button"
-import { useToast } from "../../../../../styles/components/ui/toast/use-toast"
-import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
-import {  InfoCircledIcon } from "@radix-ui/react-icons"
-
+import React, { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { InfoCircledIcon } from "@radix-ui/react-icons"
+import Messages from "@/components/ui/messages";
 
 export function MessageNormal() {
-    const { toast } = useToast();
-    const buttonText = "Normal Show Toast";
+  const [isVisible, setIsVisible] = useState(false);
+  const showMessage = () => {
+    setIsVisible(true);
+  };
 
-    return (
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', backgroundColor: 'rgb(255, 255, 255)'}}>
-          <Toaster />
-          <Button onClick={() => {
-            console.log(buttonText, "has clicked");
-            toast({
-              description: (
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <InfoCircledIcon style={{ color: '#1890ff', marginRight: '10px' }} />
-                  <span>This is a normal message!</span>
-                </div>
-              ),
-              // Ensure the toast container allows for content sizing
-              style: { width: 'auto', maxWidth: '100%' },
-            });
-          }}>Display normal message</Button>
-        </div>
-    )
+  const hideMessage = () => {
+    setIsVisible(false);
+  };
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', backgroundColor: 'rgb(255, 255, 255)' }}>
+      <Button onClick={showMessage}>Display normal message</Button>
+      <Messages
+        icon={<InfoCircledIcon style={{ color: '#1890ff', marginRight: '10px' }} />}
+        description="This is a normal message!"
+        duration={10000}
+        isVisible={isVisible}
+        hideMessage={hideMessage}
+      />
+    </div>
+  )
 }
 
 export default MessageNormal;

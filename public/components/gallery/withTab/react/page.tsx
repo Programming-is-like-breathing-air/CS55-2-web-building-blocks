@@ -160,13 +160,21 @@ export function GalleryWithTab() {
         <>
             <style>
                 {`
+                .tabs-container {
+                    width: 100%; // Ensure the tabs container fills the width
+                }
+                .tabs-list {
+                    display: flex;
+                    width: 100%; // Ensure the tabs list fills the width
+                    justify-content: space-around; // Distribute tabs evenly
+                }
                 .grid-layout {
                     display: grid;
                     grid-template-columns: repeat(3, 1fr);
                     gap: 20px;
                 }
                 .grid-item {
-                    height: 250px; // 设置固定高度
+                    height: 250px;
                 }
                 .grid-item img {
                     width: 100%;
@@ -178,7 +186,7 @@ export function GalleryWithTab() {
             </style>
             <div className="tabs-container">
                 <Tabs value={activeTab} onValueChange={setActiveTab}>
-                    <TabsList>
+                    <TabsList className="tabs-list">
                         {data.map(({ label, value }) => (
                             <TabsTrigger key={value} value={value}>
                                 {label}

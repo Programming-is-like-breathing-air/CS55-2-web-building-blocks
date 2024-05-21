@@ -212,6 +212,44 @@ import {
          - Implement actions such as account settings, support, license information, and sign out options within the dropdown menu to facilitate user interactions and workflows.
 
 <WithHeader />
+### With ComboSelect
+#### Design:
+This component represents a dropdown menu with a search function and allow use to select combo items.
+
+#### How to behave:
+- Search:
+Open the menu,type what you what search to search the items.
+- It also support multiple select.User can select multiple one time
+
+#### How to use it:
+- Installation
+Ensure that you have the necessary dependencies installed in your project. If not, make sure to install them using npm:
+```
+npx shadcn-ui@latest add dropdown-menu
+npx shadcn-ui@latest add button
+```
+
+
+- Usage: 
+    - Import the required components from `@/components/ui/button` and `@radix-ui/react-dropdown-menu`.
+```
+import { Button } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+  DropdownMenuLabel,
+  DropdownMenuItem,
+} from '../../../../../styles/components/ui/dropdown-menu';
+```
+
+- Rendering the Component: Place the `DropdownMenuwithSelect` component within your JSX to render it on the desired page or component.
+- Customization:
+     - Customize the appearance and behavior of the dropdown menu and its items as needed.
+      - Adjust the content displayed within the dropdown menu, including labels, user information, and menu items, to match your application's design and requirements.
+      - **Example Usage**:
+         - Incorporate this dropdown menu into your web application's navigation bar or user profile menu to provide access to user-related options and settings.
+         - Display user-specific information such as email addresses or usernames within the dropdown menu to personalize the user experience.
 <WithSelect />
 
 ## Version
@@ -220,3 +258,4 @@ import {
 | v1.0 | Nuojin Zhang | Nuojin Zhang | 11 Apr 2024 | React Version |
 | v2.0 | Nuojin Zhang | Nuojin Zhang | 25 Apr 2024 | Documentation |
 | v3.0 | Xinyu Chen | Xinyu Chen | 25 Apr 2024 | Peer review |
+| v4.0 | Yingjian Di | Yingjian Di| 1 May 2024 | New varient |
