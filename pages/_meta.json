@@ -7,40 +7,49 @@
     },
     "accordion": "Accordion",
     "alerts": "Alerts",
+    "avatar": "Avatar",
     "breadcrumbs": "Breadcrumbs",
     "browserwindow": "Browser Window",
     "button": "Button",
     "calendar": "Calendar",
     "card": "Card",
+    "carousel":"Carousel",
+
+    "charts":"Charts",
+
+    "comment":"Comment",
+
     "chat": "Chat",
     "checkbox": "Checkbox",
     "dropdown": "Dropdown",
     "fileUpload": "File Upload",
     "form": "Form",
+
+    "gallery": "Image Gallery",
+
+    "input": "Input",
+
     "links": "Links",
+    "message":"Message",
     "modal": "Modal",
     "navigation": "Navigation",
-    "newlink":"newlink",
     "panel": "Panel",
     "pagination": "Pagination",
     "radioGroup": "Radio Group",
     "search": "Search",
-    "slide": "Slide",
+    "slider": "Slider",
+    "steps": "Steps",
+    "statistic": "Statistic",
     "table": "Table",
     "tabs": "Tabs",
     "tags": "Tags",
+    "timeline": "Timeline",
     "toast": "Toast",
     "tooltip": "Tooltip",
     "treeview": "Tree View",
+    "tour":"Tour",
+    "watermark": "Watermark",
 
-    "-- New Components": {
-        "type": "separator",
-        "title": " New Components"
-    },
-    "newchat": " New Chat",
-    "OTP": "input OTP",
-    "newcard":" New Card",
-    "newaccordion": "New Accordion",
 
     "-- Pages": {
         "type": "separator",

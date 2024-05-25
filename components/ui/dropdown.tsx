@@ -48,3 +48,14 @@ export const WithHeader = () => {
     />
   );
 };
+export const WithSelect = () => {
+  return (
+    <Theme
+      componentName="dropdown"
+      componentStyle="withComboSelect"
+      backgroundDesktop="white"
+      backgroundMobile="white"
+      componentReactView="DropdownMenuwithSelect"
+    />
+  );
+};

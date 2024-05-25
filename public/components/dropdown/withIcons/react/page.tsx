@@ -32,7 +32,6 @@ import {
 } from "../../../../../styles/components/ui/dropdown-menu";
 
 export function DropdownMenuwithIcon() {
-  // Function to open GitHub link
   const openGitHub = () => {
       window.open("https://github.com/Programming-is-like-breathing-air", "_blank");
   };

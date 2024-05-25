@@ -1,0 +1,70 @@
+import {
+MessageNormal,
+MessageSuccess,
+MessageError,
+MessageWarning,
+MessageDuration,
+MessageLoading,
+MessageSequential,
+} from  "../components/ui/message";
+
+# Message Component
+
+**Contributed by Hexin Zheng**
+
+## 1. Design:
+
+The `Message` component is a React component designed to display interactive, customizable toast notifications within a React application (Combine `Toast` and `Button` components). It utilizes a combination of custom hooks and functional components to provide a seamless experience in notifying users about important information or actions. This component is crucial for enhancing user engagement and providing timely feedback in a visually appealing manner.
+
+## 2. How to Behave:
+
+The `Message` component supports various types of messages, including informational, warning, error, and success notifications. It features an easy-to-use interface with the capability to include icons and flexible styling. The component ensures that messages are responsive and accessible, providing users with a clear understanding of the application's states or required actions.
+
+## 3. How to Use the Message Component:
+
+To integrate the `Message` component into your React application, you can follow this sample code snippet. The component leverages a custom hook for toast functionality and a button to trigger the display of the message.
+```
+import { Button } from "../../../../../styles/components/ui/button"
+import { useToast } from "../../../../../styles/components/ui/toast/use-toast"
+import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
+```
+## MessageNormal
+Use `InfoCircledIcon ` to show the basic message here.
+<MessageNormal  />
+
+## MessageSuccess
+Use `CheckCircledIcon ` to show the success message here.
+<MessageSuccess  />
+
+## MessageError
+Use `CrossCircledIcon  ` to show the error message here.
+<MessageError  />
+
+## MessageWarning
+Use `ExclamationTriangleIcon  ` to show the warning message here.
+<MessageWarning  />
+
+## MessageDuration
+Use the attribute `duration` in the toast configuration to define how long the toast notification remains visible on the screen before it automatically disappears.
+<MessageDuration  />
+
+## MessageLoading
+The component uses `LottieAnimation`, a popular library for rendering animation data exported as JSON from Adobe After Effects, specifically animations that indicate loading or processing.
+Use the code below to install `lottie-web`.
+```
+npm install lottie-web
+```
+ And then use `LottieAnimation ` to show the loading message here.
+<MessageLoading  />
+
+
+## MessageSequential
+Combine `loading message` and `success message` together and use `showMessages` function to control message show up and disappears.
+<MessageSequential  />
+
+
+## Version
+
+| Version | Editor | Author | Date | Description |
+| ---- | ---- | ---- | ---- | ---- |
+| v1.0 | Hexin Zheng | Hexin Zheng | 02 May 2024 | Initial version |

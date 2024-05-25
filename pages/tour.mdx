@@ -1,0 +1,76 @@
+import { Tour, PlacementTour } from "../components/ui/tour";
+
+# Tour Component
+
+**Contributed by Nuojin Zhang**
+## Design
+
+The **TourComponent** is a React functional component that guides users through a sequence of interactive elements. It utilizes buttons and visually highlights each element in a sequential flow, allowing users to proceed through the guided tour steps.
+
+## How to Behave
+
+- **Component Structure**:
+  - **Header**: Displays the tour's title.
+  - **Content Section**: Displays the "Begin Tour" button and steps with interactive buttons.
+  - **Tour Steps**: Shows a description of each highlighted step when the tour is active.
+
+- **User Interaction**:
+  - The user starts the tour by clicking the "Begin Tour" button.
+  - Each step is highlighted one at a time, with a tooltip showing its description.
+  - Users navigate between steps using the "Previous" and "Next" buttons.
+  - The tour finishes when the user reaches the last step and clicks "Finish".
+
+## How to Use It
+
+- Installation
+
+Ensure your project includes the necessary UI components. If not already installed, you can add them via npm:
+
+```
+npx shadcn-ui@latest add card
+npx shadcn-ui@latest add button
+```
+- Customization
+Developers can customize the step titles, descriptions, and button styles to suit specific application requirements.
+
+To modify the steps in the tour, update the steps array:
+```
+const steps = [
+    {
+      title: "Upload File",
+      description: "Put your files here.",
+      target: ref1,
+    },
+    {
+      title: "Save",
+      description: "Save your changes.",
+      target: ref2,
+    },
+    {
+      title: "Other Actions",
+      description: "Click to see other actions.",
+      target: ref3,
+    },
+];
+```
+To modify the tour behavior, update the button click handlers:
+```
+const handleNext = () => {
+    setTourStep((prev) => (prev < steps.length ? prev + 1 : 0));
+};
+
+const handlePrevious = () => {
+    setTourStep((prev) => (prev > 0 ? prev - 1 : 0));
+};
+
+const handleFinish = () => {
+    setTourStep(0);
+};
+```
+
+<Tour />
+<PlacementTour />
+
+| Version | Editor          | Reviewer         | Date       | Description |
+| ------- | --------------- | --------------- | ---------- | ----------- |
+| v1.0    | Nuojin Zhang      | Nuojin Zhang      | 2 May 2024 | Version 1   |

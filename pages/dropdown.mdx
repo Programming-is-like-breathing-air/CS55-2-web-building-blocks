@@ -2,74 +2,260 @@ import {
     Dropdown,
     WithDividers,
     WithIcons,
-    WithHeader
+    WithHeader,
+    WithSelect,
 } from "../components/ui/dropdown";
 
 # Dropdown Component
 
-**Contributed by Chaoyang Li**
+**Contributed by Nuojin Zhang**
 
 Dropdown allow users to choose from a list of options in a limited space. The list of options can change based on the context.
 
 ## Basic Component
-The select tag can be used to create a dropdown component.
+
+### Design:
+This component utilizes the DropdownMenu and DropdownMenuCheckboxItem components from the UI library to create a dropdown menu with multiple selectable checkboxes. 
+
+### How to behave:
+- **Checkbox Interaction**: Clicking on a checkbox item toggles its state.
+The toggleOption function manages the state of selected options in the dropdown menu.
+
+### How to use it:
+- Installation
+Ensure that you have the necessary dependencies installed in your project. If not, install them using npm by running the following command in your terminal:
+```
+npx shadcn-ui@latest add dropdown-menu
+npx shadcn-ui@latest add button
+```
+
+- Usage: Copy the code for the `DropdownMenuCheckboxes` component and import it into your React application where you want to use it.
+```
+import { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu"
+
+import { Button } from "@/components/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "../../../../../styles/components/ui/dropdown-menu"
+```
+
+- Rendering the Component:Place the `DropdownMenuCheckboxes` component within your JSX to render it on the desired page or component.
+- Customization:
+      - Customize the appearance and behavior of the dropdown menu and checkbox items as needed.
+      - Adjust the button variant, dropdown menu width, and styling to match your application's design and requirements.
+      - **Example**: Use this component to create a dropdown menu for selecting multiple options, such as preferences, settings, or categories. Customize the options and functionality to suit your specific use case, such as filtering, sorting, or managing user preferences.
+
 <Dropdown />
 
-## Variants
-
 ### With dividers
-The optgroup tag is used to group related options in a drop-down list.
+#### Design:
+This component utilizes the DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuLabel, DropdownMenuContent, and DropdownMenuTrigger components from the UI library to create a dropdown menu with checkboxes and labeled sections.
+
+#### How to behave:
+- Dropdown Menu Interaction:
+Clicking on the button labeled with the selected car opens the dropdown menu.
+- The dropdown menu displays sections labeled "Chinese Cars" and "German Cars," each containing checkbox items representing car brands.
+- Only the car brands "Mercedes" and "Audi" can be selected.
+Clicking on the checkboxes for "BYD" or "GWM" does not change the selection.
+
+
+#### How to use it:
+- Installation
+Ensure that you have the necessary dependencies installed in your project. If not, install them using npm by running the following command in your terminal:
+```
+npx shadcn-ui@latest add dropdown-menu
+npx shadcn-ui@latest add button
+```
+
+- Usage: Copy the code for the `DropdownMenuwithDividers` component and import it into your React application where you want to use it.
+
+```
+import { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu"
+
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuLabel,
+  DropdownMenuContent,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "../../../../../styles/components/ui/dropdown-menu";
+```
+
+- Rendering the Component:Place the `DropdownMenuwithDividers` component within your JSX to render it on the desired page or component.
+- Customization:
+     - Customize the appearance and behavior of the dropdown menu and checkbox items as needed.
+     - Adjust the button variant, dropdown menu width, and styling to match your application's design and requirements.
+     - **Example**: Use this component to create a dropdown menu with checkbox items categorized by car brands. Customize the options and styling to suit your specific use case, such as selecting preferences, categories, or filters with dividers for organization.
+
 <WithDividers />
 
 ### With icons
-You can add icons to the options in the dropdown. The select tag doesn't support this requirement.
+
+#### Design:
+This component implements a dropdown menu with icons and labels for various options. It utilizes icons from the Lucide React library to represent each menu item. The dropdown menu is structured with separators and grouped items for better organization. Shortcut keys are provided for certain menu options, enhancing accessibility and user experience.
+
+#### How to behave:
+- Menu Interaction:
+Clicking on the button labeled "Open" triggers the dropdown menu to appear.
+The menu displays various options categorized under different groups with icons and labels.
+Certain menu items have shortcut keys associated with them, denoted by the symbol "⌘" (Command) for macOS users.
+- Some menu items are disabled and cannot be selected or interacted with.
+
+#### How to use it:
+- Installation
+Ensure that you have the necessary dependencies installed in your project. If not, install them using npm by running the following command in your terminal:
+```
+npm install lucide-react
+npx shadcn-ui@latest add dropdown-menu
+npx shadcn-ui@latest add button
+```
+
+- Usage: 
+      - Import the required components from `lucide-react`
+      - Copy the code for the `DropdownMenuwithIcon` component and import it into your React application where you want to use it.
+
+```
+import {
+  Cloud,
+  CreditCard,
+  Github,
+  Keyboard,
+  LifeBuoy,
+  LogOut,
+  Mail,
+  MessageSquare,
+  Plus,
+  PlusCircle,
+  Settings,
+  User,
+  UserPlus,
+  Users,
+} from "lucide-react";
+
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from "../../../../../styles/components/ui/dropdown-menu";
+```
+
+- Rendering the Component:Place the `DropdownMenuwithIcon` component within your JSX to render it on the desired page or component.
+- Customization:
+     - Customize the appearance and behavior of the dropdown menu and its items as needed.
+      - Adjust the icons, labels, shortcuts, and event handling to match your application's design and requirements.
+      - **Example**:
+      	- Utilize this component to create a dropdown menu with various options categorized under different groups.
+      	- Customize the menu items to include icons, labels, and shortcuts for enhanced user interaction.
+        - Implement actions such as opening external links (e.g., GitHub), accessing support, and logging out within the dropdown menu.
+
+
 <WithIcons />
 
 ### With header
-A Simple header in the dropdown can show the current status. The select tag doesn't support this requirement.
+#### Design:
+This component represents a dropdown menu with a header indicating the user's signed-in status. It utilizes the DropdownMenu component from the UI library to create the dropdown functionality. The dropdown menu contains several menu items for different options, such as account settings, support, license, and sign-out.
+
+#### How to behave:
+- Menu Interaction:
+Clicking on the button labeled "Option" triggers the dropdown menu to appear.
+The dropdown menu displays a header labeled "Signed in as" followed by the user's email address.
+- Below the header, several menu items are listed, including account settings, support, license, and sign-out.
+- Clicking on any menu item performs the corresponding action, such as navigating to a settings page or logging out of the application.
+
+
+#### How to use it:
+- Installation
+Ensure that you have the necessary dependencies installed in your project. If not, make sure to install them using npm:
+```
+npx shadcn-ui@latest add dropdown-menu
+npx shadcn-ui@latest add button
+```
+
+
+- Usage: 
+    - Import the required components from `@/components/ui/button` and `@radix-ui/react-dropdown-menu`.
+    - Copy the code for the `DropdownMenuwithHeader` component and import it into your React application where you want to use it.
+```
+import { Button } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+  DropdownMenuLabel,
+  DropdownMenuItem,
+} from '../../../../../styles/components/ui/dropdown-menu';
+```
+
+- Rendering the Component: Place the `DropdownMenuwithHeader` component within your JSX to render it on the desired page or component.
+- Customization:
+     - Customize the appearance and behavior of the dropdown menu and its items as needed.
+      - Adjust the content displayed within the dropdown menu, including labels, user information, and menu items, to match your application's design and requirements.
+      - **Example Usage**:
+         - Incorporate this dropdown menu into your web application's navigation bar or user profile menu to provide access to user-related options and settings.
+         - Display user-specific information such as email addresses or usernames within the dropdown menu to personalize the user experience.
+         - Implement actions such as account settings, support, license information, and sign out options within the dropdown menu to facilitate user interactions and workflows.
+
 <WithHeader />
+### With ComboSelect
+#### Design:
+This component represents a dropdown menu with a search function and allow use to select combo items.
 
-## Usability
+#### How to behave:
+- Search:
+Open the menu,type what you what search to search the items.
+- It also support multiple select.User can select multiple one time
 
-<details>
-    <summary>Include a label</summary>
-    Every picker should have a label. A picker without a label is ambiguous and not accessible.
-</details>
+#### How to use it:
+- Installation
+Ensure that you have the necessary dependencies installed in your project. If not, make sure to install them using npm:
+```
+npx shadcn-ui@latest add dropdown-menu
+npx shadcn-ui@latest add button
+```
 
-<details>
-    <summary>Keep menu items concise</summary>
-    Keep menu items short and concise. Long menu items that cause text to wrap to multiple lines are discouraged. If text wrapping becomes a frequent concern, consider revising the text or use alternative UI patterns that will give your content more space.
-</details>
 
-<details>
-    <summary>Choose an appropriate width</summary>
-    When possible, the field button width should be wide enough so that any chosen menu items can be displayed in full.
-</details>
+- Usage: 
+    - Import the required components from `@/components/ui/button` and `@radix-ui/react-dropdown-menu`.
+```
+import { Button } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+  DropdownMenuLabel,
+  DropdownMenuItem,
+} from '../../../../../styles/components/ui/dropdown-menu';
+```
 
-## Accessibility
-The select tag supports keyboard operation.
+- Rendering the Component: Place the `DropdownMenuwithSelect` component within your JSX to render it on the desired page or component.
+- Customization:
+     - Customize the appearance and behavior of the dropdown menu and its items as needed.
+      - Adjust the content displayed within the dropdown menu, including labels, user information, and menu items, to match your application's design and requirements.
+      - **Example Usage**:
+         - Incorporate this dropdown menu into your web application's navigation bar or user profile menu to provide access to user-related options and settings.
+         - Display user-specific information such as email addresses or usernames within the dropdown menu to personalize the user experience.
+<WithSelect />
 
-| Key              | Interaction                                                                                                             |
-|------------------|-------------------------------------------------------------------------------------------------------------------------|
-| Space            | Selects the dropdown item in focus, closes the dropdown menu and moves focus to the field button.                       |
-| Up or Down Arrow | Moves focus to previous or next option item in the dropdown. Does not loop when the last or first menu item is reached. |
-| Enter            | Chooses the option item that you selected in the dropdown and close the dropdown menu.                                  |
-| Esc              | Closes the popover menu and moves focus to the field button.                                                            |
-
-## Attributes
-The select tag includes the global attributes.
-
-| Attribute | Description                                                                          | Value   |
-|-----------|--------------------------------------------------------------------------------------|---------|
-| autofocus | Specifies that the drop-down list should automatically get focus when the page loads | Boolean |
-| disabled  | Specifies that a drop-down list should be disabled                                   | Boolean |
-| multiple  | Specifies that multiple options can be selected at once                              | Boolean |
-| name      | Defines a name for the drop-down list                                                | String  |
-| required  | Specifies that the user is required to select a value before submitting the form     | Boolean |
-| size      | Defines the number of visible options in a drop-down list                            | Number  |
-
-## Vision
-| Version | Editor      | Author      | Date       | Description     |
+## Version
+| Version | Editor      | Reviewer      | Date       | Description     |
 |---------|-------------|-------------|------------|-----------------|
-| v1.0    | Chaoyang Li | Chaoyang Li | 28/09/2023 | Initial version |
-
+| v1.0 | Nuojin Zhang | Nuojin Zhang | 11 Apr 2024 | React Version |
+| v2.0 | Nuojin Zhang | Nuojin Zhang | 25 Apr 2024 | Documentation |
+| v3.0 | Xinyu Chen | Xinyu Chen | 25 Apr 2024 | Peer review |
+| v4.0 | Yingjian Di | Yingjian Di| 1 May 2024 | New varient |

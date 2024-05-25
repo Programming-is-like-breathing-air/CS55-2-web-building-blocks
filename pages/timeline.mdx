@@ -1,0 +1,75 @@
+import {
+    Timeline,
+    TimelineLoading,
+}from "../components/ui/timeline";
+
+
+# Timeline Component
+**Contributed by Yingjian Di**
+
+This is an timeline to show progress.
+
+## Basic Component
+### Design:
+The TimelinePage component is a simple React functional component that visualizes the steps of a development process using a custom Timeline and TimelineItem components. The component imports Timeline and TimelineItem from a local style and component library, suggesting that it is part of a larger, possibly internally maintained UI framework. The steps in the development process are hardcoded into the steps array within the component, each represented by a label ('Think', 'Design', 'Code', 'Deploy').
+
+### How to behave:
+The component renders a div that includes a header displaying the text "Development Process" and a Timeline component. Inside the Timeline, a map function iterates over the steps array, creating a TimelineItem for each step. Each TimelineItem is given a unique key using its index in the array and is labeled according to the label property of each step object. This is a standard approach to rendering lists in React, ensuring each item is uniquely identified for React's rendering engine.
+### How to use it:
+- Installation
+Ensure that your project includes all necessary dependencies for the Link component. If they are not already installed, add them via npm with the following command: 
+
+- Usage:
+To integrate the `Timeline` component into your React application, include the necessary imports from the UI library:
+```
+import { Timeline, TimelineItem } from "../../../../../styles/components/ui/timeline";
+```
+```
+<<Timeline>
+                {steps.map((step, index) => (
+                    <TimelineItem key={index} label={step.label} />
+                ))}
+            </Timeline>
+```
+
+- Customization:
+     - Use can change step text what they need and user can add more steps.
+<Timeline />
+
+## Variants
+## With Loading
+### Design:
+WithLoading component is enhance timeline to show more information when user use timeline.
+### How to behave:
+- Click: Users can see the different color show different status
+### How to use it:
+
+- Installation
+Ensure that your project includes all necessary dependencies for component,If they are not already installed, you can add them via npm:
+
+- Usage:
+To integrate the `WithLoading` component into your React application, include the necessary imports:
+```
+import { Timeline, TimelineItem } from "../../../../../styles/components/ui/timeline";
+```
+- Rendering the Component:
+Here is how to use the `WithLoading` component within your application:
+```
+     const steps = [
+        { label: 'Think', status: 'completed' as const }, 
+        { label: 'Design', status: 'completed' as const },
+        { label: 'Code', inProgress: true, status: 'inProgress' as const },
+        { label: 'Deploy', status: 'pending' as const },
+    ];
+```
+- Customization:
+User can change status color what they want.
+
+<TimelineLoading />
+
+
+## Vision
+| Version | Editor      |Reviewer     | Date       | Description     |
+|---------|-------------|-------------|------------|-----------------|
+| v1.0    | Yingjian Di |Yingjian Di  | 1/May/2024 | Initial version |
+

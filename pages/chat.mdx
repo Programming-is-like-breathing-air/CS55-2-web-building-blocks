@@ -9,124 +9,97 @@ import {
 
 # Chat Component
 
-**Contributed by Richard Lee**
+**Contributed by Yuqing Wu & Nuojin Zhang & Xinyu Chen**
 
-## Introduction
+## Normal Chat
+### Design
 
-The **Blocks** **`Chat`** component is a comprehensive and powerful design component and showcase that can be used to build out a chat interface for your app or website. This component is fully customisable with the abaility to set it up and be used to conduct a conversation between its users. On a high level, it contains the title, representative name and their availability, a chat window, and a chat input field. The chat window is where the conversation between the user and the representative is displayed. The chat input field is where the user can type their message and send it to the representative. It is also responsive and has a mobile view.
+The NormalChat component is designed to function as a straightforward messaging interface. It employs a card layout to encapsulate conversation threads between users, providing a clear and concise UI for sending and receiving messages.
 
-The design philosophy of the **`Chat`** component is to be as simple as possible, while still providing a comprehensive and powerful design component and showcase that can be used to build out a chat interface.
+### How to behave:
+- Card: Serves as the outer container with a rounded and shadowed design to elevate the chat interface.
+- CardHeader: Displays user information and sets the context of the conversation.
+- CardContent: Contains the message threads and input form for new messages.
+- Message Display: Messages are displayed in chronological order, with sent messages aligned to the right and received messages aligned to the left. Each message type has distinct background colors to visually separate the user's messages from those received.
+- Sending Messages: Users can type messages into an input field and send them by pressing a button adorned with a send icon. If the input field is empty, the send button is disabled to prevent the sending of empty messages.
+- Notifications: Upon sending a message, a toast notification is displayed, confirming the sent message content, which enhances user feedback and interaction.
 
-However, it is important to note that this is not meant to be a full-featured component. Instead as previously mentioned, it is meant to be a simple component that can be used to build up a chat interface, and at the same time, be fully customisable.
+### How to use it:
+- Install Necessary Packages
+```
+npm install styled-components
+npm install lucide-react
+```
+- Component Imports
+Make sure all components and hooks used in NormalChat are properly imported from their respective libraries or files. Here’s a checklist and example import lines you might need:
+```
+import React, { useState } from 'react';
+import { Input } from "../../../../../styles/components/ui/input";
+import { Card, CardContent, CardHeader } from "../../../../../styles/components/ui/card";
+import { Button } from "../../../../../styles/components/ui/button";
+import { useToast } from "../../../../../styles/components/ui/toast/use-toast";
+import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
+import { SendHorizontal } from "lucide-react";
 
-You can use the **`Chat`** component to conduct chats involving the following scenarios:
-
-- Chat between a user and a representative
-- Chat between a user and a bot
-- Chat with the ability to send images
-- Chat with the ability to send attachments
-- Chat with the ability to send links
-
-The **`Chat`** component has the following optional properties:
-
-- **`title`** - The title of the chat window (in this case, the University Faculty)
-- **`representativeName`** - The name of the representativeName
-- **`representativeAvailability`** - The availability of the representative
-- **`chatList`** - The list of chats between the user and the representative
-- **`chatInputValue`** - The value of the chat input field
-- **`chatInputOnSubmit`** - To send the message to the representative
-- **`chatInputUploadPicture`** - To upload a picture and send to the representative
-- **`chatInputUploadAttachment`** - To upload an attachment and send to the representative
-
-## Simple Chat
-
-The **`Simple Chat`** component contains the title, representative name and their availability, a chat window, and a chat input field. The chat window is where the conversation between the user and the representative is displayed. The chat input field is where the user can type their message and send it to the representative.
-
-You can configure the **`Simple Chat`** component by filling in the properties listed in the **`Introduction`** section.
+```
 
 <Chat />
 
-## Chat With Image
 
-The **`Chat With Image`** component is a variation of the **`Simple Chat`** component. This means it was built on top of the **`Simple Chat`** component. The **`Chat With Image`** component also contains the title, representative name and their availability, a chat window, and a chat input field. The difference is that we added a button next to the chat input field that allows the user to upload an image and send it to the representative.
-
-You can configure the **`Chat With Image`** component by filling in the properties listed in the **`Introduction`** section.
-
-In this example, we added two images to the chat window. The first image is an image of the **United States House of Representatives**, and the second image is the **Australian House of Representatives**.
-
-<ChatWithImage />
 
 ## Chat With Attachment
+### Design
+The AttachmentChat component is designed to enhance a standard chat interface by incorporating file upload functionality, including the ability to send and preview images directly within the chat.
 
-The **`Chat With Attachment`** component is a variation of the **`Simple Chat`** component. This means it was built on top of the **`Simple Chat`** component. The **`Chat With Attachment`** component also contains the title, representative name and their availability, a chat window, and a chat input field. The difference is that we added a button next to the chat input field that allows the user to upload an attachment and send it to the representative.
+### How to behave:
+- Sending Text and Files: Users can type messages in an input field or upload files using a file input hidden behind a button. The chat interface handles both text messages and file uploads, displaying text directly and providing a thumbnail preview for images or a link for other file types.
+- File Upload Feedback: Upon uploading a file, the chat dynamically displays a thumbnail for images or a file name for other types of files. This immediate feedback ensures that users understand what content they have uploaded and are about to send.
+- Interaction: The component provides interactive elements such as the file upload button and the send message button. These are strategically placed to encourage user interaction and facilitate a seamless chat experience. The file links are clickable, opening the file in a new tab for easy access and viewing.
 
-You can configure the **`Chat With Attachment`** component by filling in the properties listed in the **`Introduction`** section.
 
-In this example, we added an attachment to the chat window. The attachment is a **PDF** file of the book **`An Inquiry into the Nature and Causes of the Wealth of Nations`** by **Adam Smith**.
+### How to use it:
+- Installation and Setup:
+Ensure your project is set up with React and has necessary dependencies installed. You'll need to have a proper UI component library for the card, button, input elements, and icons, as well as state management using **`React's`** useState.
+
+- Integrating the Component:
+Include the AttachmentChat in your React application by placing it in a suitable container within your app's component structure.
+
+- Customization
+Message Bubble Styles: You can modify the messageStyles object to change the appearance of message bubbles. This includes adjusting colors, padding, margins, and borders to fit your application's theme.
+```
+const messageStyles = {
+  sent: {
+    backgroundColor: '#007bff', // Example: Change to a different shade for sent messages
+    color: 'white',
+    borderRadius: '10px',
+    padding: '12px',
+    margin: '5px 0',
+    wordBreak: 'break-word',
+    maxWidth: '300px'
+  },
+  received: {
+    backgroundColor: '#e9ecef', // Example: Lighter gray for received messages
+    color: 'black',
+    borderRadius: '10px',
+    padding: '12px',
+    margin: '5px 0',
+    wordBreak: 'break-word',
+    maxWidth: '300px'
+  }
+};
+```
+**Card and Button Styles:** Customize the card container and buttons to match your design system. You can edit the existing styles applied inline or through CSS classes.
+```
+<Card className="w-full max-w-md bg-white rounded-lg shadow-lg overflow-hidden" style={{ width: '500px' }}>
+  // Other components
+</Card>
+```
 
 <ChatWithAttachment />
 
-## Chat With Link
-
-The **`Chat With Link`** component is a variation of the **`Simple Chat`** component. This means it was built on top of the **`Simple Chat`** component. The **`Chat With Link`** component also contains the title, representative name and their availability, a chat window, and a chat input field. The difference is that this component renders the **`URL card`** in the chat window. The **`URL card`** is a card that contains the title and image of the URL.
-
-The **`URL card`** is rendered when the user sends a URL to the representative. The user does not need to send the URL in a specific format. The **`Chat With Link`** component will automatically detect the URL and render the **`URL card`**.
-
-You can configure the **`Chat With Link`** component by filling in the properties listed in the **`Introduction`** section.
-
-In this example, we added a URL to the chat window. The URL is the **`What's on, current events`** page of **`The Sydney Opera House`** website.
-
-<ChatWithLink />
-
-## Chat Finished
-
-The **`Chat Finished`** component is a variation of the **`Simple Chat`** component. This means it was built on top of the **`Simple Chat`** component. The **`Chat Finished`** component also contains the title, representative name and their availability, a chat window, and a chat input field.
-
-The difference is that this component renders a **`Chat Finished`** message in the chat window. The **`Chat Finished`** message is rendered when the representative ends the chat with the user. After the **`Chat Finished`** message is rendered, the user can no longer send messages to the representative. Instead, they can either close the chat window or submit a feedback message.
-
-You can configure the **`Chat Finished`** component by filling in the properties listed in the **`Introduction`** section.
-
-<ChatFinished />
-
-## Chat List
-
-The **`Chat List`** component is a helper component that can be useful in certain situations. In this case, we developed this component to list out the University Faculty the user can chat with. This component is fully customisable, which means the developer can change the titles, representative names, and representative availabilities to suit their needs.
-
-In this example, we added the following University Faculty to the **`Chat List`** component:
-
-- **`Faculty of Arts and Social Sciences`**
-- **`Faculty of Engineering`**
-- **`Faculty of Medicine and Health`**
-- **`Faculty of Science`**
-- **`School of Architecture, Design and Planning`**
-- **`University of Sydney Business School`**
-- **`Conservatorium of Music`**
-- **`Sydney Law School`**
-
-<ChatList />
-
-## Usability
-
-The **`Chat`** component is designed to be responsive and will adjust to the screen size. This component is designed to be used in a variety of situations, and we have followed the official guidelines from W3 to design this component.
-
-The **`Chat`** component is a simple yet powerful component. Specifically, it is great for the users to customise it to build their own app and website. It is also fully customisable, which means the developer can change the title, body, input, and buttons to suit their needs.
-
-For example, when the developer wants to add the ability to send images to the user, they can use the **`Chat With Image`** component. When the developer wants to add the ability to send attachments to the user, they can use the **`Chat With Attachment`** component. So on and so forth.
-
-We also recommend developers to **"mix-and-match"** our components to create their own apps and websites. For example, the developer can combine the **`Chat With Image`** component with the **`Chat With Attachment`** component to create a chat interface that allows the user to send images as well as attachments to the representative.
-
-The font used in this component is `Inter`, which is a font designed for screens. It is a sans-serif font that is easy to read on screens. You can find the font in the `link` tag in the `head` tag of the `index.html` file.
-
-All images in the example include `alt` tags, which is a requirement for accessibility. The `alt` tag is used to describe the image to the users, and it is used by screen readers to describe the image to the users. We strongly recommend the `alt` tags not be deleted or modified when using this component code.
-
-Please include the following HTML code in the `head` tag of your `index.html` file to ensure the component is responsive, this is a requirement for accessibility and is recommended by W3:
-
-```html
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-```
 
 ## Version
 
 | Version | Editor      | Author      | Date       | Description     |
 | ------- | ----------- | ----------- | ---------- | --------------- |
-| v1.0    | Richard Lee | Richard Lee | 20/10/2023 | Initial version |
+|  v1.0   | Xinyu Chen  | Yuqing Wu   | 15 Apr 2024| Initial version |

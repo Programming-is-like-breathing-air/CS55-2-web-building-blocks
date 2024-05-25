@@ -8,6 +8,7 @@ export default function Tabs() {
       componentStyle="normal"
       backgroundDesktop="#fff"
       backgroundMobile="#fff"
+      componentReactView="TabsDemo"
     />
   );
 }

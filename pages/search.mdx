@@ -7,96 +7,43 @@ import {
 
 # Search Component
 
-**Contributed by Harrison**
+**Contributed by Yuqing Wu**
 
 Search component is an input component that can provide users to type words in the search bar and then by clicking the search button, user can get the corresponding results.
 
 ## Basic Search Component
 
-This is the most basic search component.
+### Design:
+The `BasicSearch` component is a React functional component designed for inputting and submitting search queries. It integrates a form validation schema using Zod for input validation, ensuring search queries meet specific criteria. The component is built using a combination of custom UI components from the application's library, including `Button`, `Input`, and various form-related components. The `useToast` hook is also employed to provide user feedback upon form submission. 
+
+### How to behave: 
+When the user submits the form after entering a search query, the form data is validated against the `FormSchema` defined by Zod. If the input meets the criteria (in this case, a minimum of 2 characters for `searchValue`), a toast notification is displayed with the search query, and console logs track the initiation and completion of the search process. If the input does not meet the criteria, a validation message will appear. 
+
+### How to use it: 
+- Installation 
+Ensure that your project includes all necessary dependencies for the Search component. If they are not already installed, add them via npm with the following command: 
+``` 
+npm shadcn-ui@latest add toast 
+npm install @hookform/resolvers/zod 
+npm install react-hook-form 
+npm shadcn-ui@latest add input 
+npm shadcn-ui@latest add button 
+``` 
+- Form Submission:
+Users can enter a search term into the input field and submit the form. The search operation will only proceed if the input passes the validation criteria set by Zod. 
+
+- Input Validation: 
+The form employs Zod validation to ensure that the user inputs at least 2 characters, displaying an error message otherwise. 
+
+- Styling Flexibility: 
+The `Input` component has an extended width style, and the `Button` is styled with a margin-top, showing how styles can be applied directly to components for custom layouts. The `BasicSearch` component facilitates a user-friendly search experience within the application, enforcing input criteria for better search results and user interaction transparency through notifications and messages. 
 
 <BasicSearch />
 
-## Usability
-
-<details>
-  <summary>Put Search Component in the appropriate place</summary>
-  If people set a search box in the upper-right or upper-center region of your layout,
-  they can be sure that users will locate it there because users expect it will be
-  placed there.
-</details>
-
-<details>
-  <summary>Make Search Component simple</summary>
-  Simple search box is more usable and obvious for users. Advanced search box will
-  make users confused.
-</details>
-
-<details>
-  <summary>Appropriate Serach Component Size</summary>
-  As a general guideline, keep text input to 27 characters or less (this would accommodate
-  90% of enquiries). [Nielsen Norman](https://www.nngroup.com/articles/top-ten-guidelines-for-homepage-usability/)
-</details>
-
-<details>
-  <summary>Autocomplete And Suggestions</summary>
-  Provide suggestions for user searching, so that users have a better experience
-  and reduce the occurrence of input errors and reduce the time searching for the
-  same things.
-</details>
-
-<details>
-  <summary>Hint for the search component</summary>
-  Using the placeholder attribute can give users a clearer understanding of what
-  to do to avoid making mistakes.
-</details>
-
-## Accessibility
-
-<details>
-  <summary>Keyboard Interaction</summary>
-  Let the users submit search by using `enter` on the keyboard or clicking the search
-  button. The `Tab` key on a keyboard should allow users to move between the search
-  box and other areas.
-</details>
-
-<details>
-  <summary>Keyboard Shortcut</summary>
-  Allowing users to use shortcuts to achieve their goals can improve the user experience
-  and enable them to search using keyboard shortcuts, improving website accessibility.
-  For the code, we can press `CTRL` and `K` simultaneously to trigger the focus function.
-  We can see that the border change the color to purple and we can directly type
-  words in the search bar.
-  <KeyboardShortcut />
-</details>
-
-<details>
-  <summary>Identify The Purpose Of Search Component</summary>
-  The text input field should have a label identifying its functionality. By adding
-  these aria-label characteristics, we may improve accessibility by giving these
-  crucial page elements clear, illuminating labels. They make sure that visitors,
-  especially those who use screen readers, can more easily comprehend the elements
-  and their purposes, promoting simpler interaction and navigation on the website.
-  {/* ![Aria Label](..\public\components\search\basicSearch\desktop\assets\1695365411690.jpg) */}
-</details>
 
 ## Version
 
 | Version | Editor          | Author          | Date       | Description |
 | ------- | --------------- | --------------- | ---------- | ----------- |
-| v1.0    | Hsiangwen Cheng | Hsiangwen Cheng | 22.09.2023 | version 1   |
+| v1.0    |    Yuqing Wu    | Yuqing Wu       | 16 Apr 2024| version 1   |
 
-## Search Attributes
-
-Here is a table describing some common attributes for the HTML search component.
-
-| Attribute   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| list        | The values of the list attribute is the `id` of a `<datalist>` element located in the same document. The `<datalist>` provides a list of predefined values to suggest to the user for this input. Any values in the list that are not compatible with the `type` are not included in the suggested options. The values provided are suggestions, not requirements: users can select from this predefined list or provide a different value.                                                                          |
-| maxlength   | The maximum string length (measured in UTF-16 code units) that the user can enter into the search field. This must be an integer value of 0 or higher. If no `maxlength` is specified, or an invalid value is specified, the search field has no maximum length. This value must also be greater than or equal to the value of `minlength`.                                                                                                                                                                          |
-| minlength   | The minimum string length (measured in UTF-16 code units) that the user can enter into the search field. This must be a non-negative integer value smaller than or equal to the value specified by `maxlength`. If no `minlength` is specified, or an invalid value is specified, the search input has no minimum length.                                                                                                                                                                                            |
-| pattern     | The `pattern` attribute, when specified, is a regular expression that the input's `value` must match for the value to pass constraint validation. It must be a valid JavaScript regular expression, as used by the `RegExp` type, and as documented in our guide on regular expressions; the `'u'` flag is specified when compiling the regular expression so that the pattern is treated as a sequence of Unicode code points, instead of as ASCII. No forward slashes should be specified around the pattern text. |
-| placeholder | The `placeholder` attribute is a string that provides a brief hint to the user as to what kind of information is expected in the field. It should be a word or short phrase that demonstrates the expected type of data, rather than an explanatory message. The text must not include carriage returns or line feeds.                                                                                                                                                                                               |
-| readonly    | A Boolean attribute which, if present, means this field cannot be edited by the user. Its `value` can, however, still be changed by JavaScript code directly setting the `HTMLInputElement` `value` property.                                                                                                                                                                                                                                                                                                        |
-| size        | The `size` attribute is a numeric value indicating how many characters wide the input field should be. The value must be a number greater than zero, and the default value is 20. Since character widths vary, this may or may not be exact and should not be relied upon to be so; the resulting input may be narrower or wider than the specified number of characters, depending on the characters and the font (`font` settings in use).                                                                         |
-| spellcheck  | spellcheck is a global attribute which is used to indicate whether to enable spell checking for an element. It can be used on any editable content, but here we consider specifics related to the use of spellcheck on `<input>` elements.                                                                                                                                                                                                                                                                           |

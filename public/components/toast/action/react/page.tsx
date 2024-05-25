@@ -8,7 +8,9 @@ import { ToastAction } from "../../../../../styles/components/ui/toast/toast"
 
 export function ToastWithAction() {
     const { toast } = useToast()
-    const buttonText = "Show Toast with action";
+    const FirstButtonText = "Bottom Right";
+    const SecondButtonText = "Top Right";
+
 
     return (
         <>
@@ -19,16 +21,37 @@ export function ToastWithAction() {
                 onClick={() => {
 
                     // Add Interaction
-                    console.log(buttonText, "has clicked");
+                    console.log(FirstButtonText, "has clicked");
 
                     toast({
                         title: "Uh oh! Something went wrong.",
                         description: "There was a problem with your request.",
                         action: <ToastAction altText="Try again">Try again</ToastAction>,
+                        position: 'bottom-right'
                     })
                 }}
             >
-                {buttonText}
+                {FirstButtonText}
+            </Button>
+
+            <div style={{ margin: '10px' }} /> 
+
+            <Button
+                variant="outline"
+                onClick={() => {
+
+                    // Add Interaction
+                    console.log(SecondButtonText, "has clicked");
+
+                    toast({
+                        title: "Uh oh! Something went wrong.",
+                        description: "There was a problem with your request.",
+                        action: <ToastAction altText="Try again">Try again</ToastAction>,
+                        position: 'top-right'
+                    })
+                }}
+            >
+                {SecondButtonText}
             </Button>
         </>
 

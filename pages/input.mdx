@@ -1,0 +1,139 @@
+import {
+  InputWithMention,
+  InputWithNumber,
+  InputWithPhoneNumber
+} from '../components/ui/input';
+
+
+# Input Component
+
+**Contributed by Yuqing Wu**
+
+Displays a form input field or a component that looks like an input field.
+
+## Input With Mention
+
+### Design
+The `InputMention` component is designed as an interactive input control, including an `Input` component imported from the style library and a `DropdownMenu` related component, which is used to display a list of options based on the input trigger character. The component uses state management to track the user's input value (`inputValue`), the display state of the drop-down menu (`showDropdown`), and the currently available list of options (`options`). In addition, the component uses the `inputRef` reference to manage focus, ensuring that the user can continue typing immediately after selecting the drop-down menu item. This design makes option selection during the input process both intuitive and efficient.
+
+### How to behave
+The `InputMention` component dynamically updates and displays the corresponding drop-down menu options (`options`) by listening to changes in the input box, paying special attention to the trigger characters `@` and `#`. When these specific characters are entered, the component displays the drop-down menu and provides relevant options based on the input trigger characters. If the input no longer contains these trigger characters, the drop-down menu will be hidden. After the user selects an option in the drop-down menu, the option will be automatically added to the corresponding position of the input value, and the drop-down menu will be closed, and the input box will regain focus so that the user can continue to enter. The display position and size of the drop-down menu are precisely controlled by CSS styles to ensure that it is correctly displayed below the input box, providing a clear and intuitive user interaction experience.
+
+### How to use it
+- Installation 
+Ensure that your project includes all necessary dependencies for the Search component. If they are not already installed, add them via npm with the following command: 
+``` 
+npm shadcn-ui@latest add dropdown-menu
+``` 
+
+- Usuage
+To integrate the these component into your React application, include the necessary imports from the Shadcn UI library:
+```
+import React, { useState, useRef } from 'react';
+import { Input } from "../../../../../styles/components/ui/input";
+import {
+  DropdownMenu,
+  DropdownMenuItem,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+} from "../../../../../styles/components/ui/dropdown-menu";
+```
+
+- Trigger drop-down menu:
+Users enter @ in the input box to trigger the drop-down menu of email domains (such as "qq.com", "icloud.com", "gmail.com"). Users enter # to trigger the drop-down menu of version numbers (such as "1.0", "2.0", "3.0"). 
+```
+if (lastChar === '@') {
+      setOptions(["qq.com", "icloud.com", "gmail.com"]);
+      setShowDropdown(true);
+    } else if (lastChar === '#') {
+      setOptions(["1.0", "2.0", "3.0"]);
+      setShowDropdown(true);
+    } else {
+      if (!value.includes('@') && !value.includes('#')) {
+        setShowDropdown(false);
+      }
+    }
+```
+
+- Select option:
+Users click on an option in the drop-down menu, which will be automatically added after the trigger character and allow the user to continue editing the input. 
+
+- Style customization:
+The style of the input box and drop-down menu can be adjusted as needed, such as adjusting the width and margins to better fit into the overall design of the page.
+
+<InputWithMention />
+
+## Input With Mention
+
+### Design
+The `InputPhoneNumber` component is a functional React component designed to facilitate phone number input, featuring both a dropdown menu for selecting country codes and an input field. It leverages components from a UI library, including Button, DropdownMenu, DropdownMenuCheckboxItem, and Input, to construct its user interface. The dropdown menu is styled with a fixed width of 56 units, while the input field is set to occupy 50% of its container's width through inline styling, providing a visually balanced and user-friendly input experience.
+
+### How to behave
+The `InputPhoneNumber` component employs React's useState hook to manage the `selectedCountry` state, which dynamically tracks the chosen country code. Users can select a country from the dropdown menu, triggering the `handleCountrySelect` function to update the `selectedCountry` state accordingly. Additionally, the input field enables users to input phone numbers and is visually configured to occupy 50% of its container's width, ensuring a responsive and intuitive input interaction experience.
+
+### How to use it
+- Installation 
+Ensure that your project includes all necessary dependencies for the Search component. If they are not already installed, add them via npm with the following command: 
+``` 
+import * as React from "react";
+import { Button } from "../../../../../styles/components/ui/button";
+import {
+    DropdownMenu,
+    DropdownMenuCheckboxItem,
+    DropdownMenuContent,
+    DropdownMenuTrigger,
+} from "../../../../../styles/components/ui/dropdown-menu";
+import { Input } from "../../../../../styles/components/ui/input"
+``` 
+- User Interaction:
+Users can interact with the dropdown menu by clicking on the button displaying the selected country code. They can then select a different country from the dropdown list.
+``` 
+<DropdownMenuContent className="w-56">
+    <DropdownMenuCheckboxItem
+        checked={selectedCountry === "US"}
+        onCheckedChange={() => handleCountrySelect("+1")}
+    >
+        United States (+1)
+    </DropdownMenuCheckboxItem>
+
+    <DropdownMenuCheckboxItem
+        checked={selectedCountry === "UK"}
+        onCheckedChange={() => handleCountrySelect("+44")}
+    >
+        United Kingdom (+44)
+    </DropdownMenuCheckboxItem>
+
+    <DropdownMenuCheckboxItem
+        checked={selectedCountry === "AUS"}
+        onCheckedChange={() => handleCountrySelect("+61")}
+    >
+        Australia (+61)
+    </DropdownMenuCheckboxItem>
+
+    <DropdownMenuCheckboxItem
+        checked={selectedCountry === "CHN"}
+        onCheckedChange={() => handleCountrySelect("+86")}
+    >
+        China (+86)
+    </DropdownMenuCheckboxItem>
+
+</DropdownMenuContent>
+``` 
+Users can input phone numbers in the input field, which is accompanied by a placeholder text "123-456-7890".
+``` 
+<Input type="number" placeholder="123-456-7890" style={{ width: '50%' }} />
+``` 
+
+- Integration:
+The InputPhoneNumber component can be integrated into a larger application wherever phone number input functionality is required. It provides a user-friendly interface for selecting country codes and entering phone numbers, enhancing the overall user experience. To enhance the extensibility of this component and support special scenarios such as currency input, where only numbers are allowed, you can introduce additional props to customize the dropdown menu's content and position. By allowing users to define the content and position of the dropdown menu, the component becomes more versatile and adaptable to various input requirements.
+
+
+<InputWithPhoneNumber />
+
+
+## Version
+
+| Version | Editor          | Author          | Date       | Description |
+| ------- | --------------- | --------------- | ---------- | ----------- |
+| v1.0    |    Yuqing Wu    | Yuqing Wu       | 01 May 2024| version 1   |
+| v2.0    |    Yuqing Wu    | Yuqing Wu       | 09 May 2024| fixed the bug  |

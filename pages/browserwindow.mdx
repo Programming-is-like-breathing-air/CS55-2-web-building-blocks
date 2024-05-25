@@ -2,55 +2,66 @@ import { BrowserWindow } from "../components/ui/browserwindow";
 
 # Browser Window Component
 
-**Contributed by Ke Louis Liu**
+**Contributed by Yingjian Di**
 
-This is the index page for the Advanced folder!
-
-## Definition and Usage
-
-**BrowserWindow:**
-
--   **Definition:** A BrowserWindow represents the main window of a web browser, providing an interface for users to view and interact with web content.
--   **Usage:** It displays web pages, allows users to navigate to different URLs, manage tabs, bookmarks, and more. It's the primary means through which users access the World Wide Web.
+This is a working web browser that users can use to search!
 
 ## Basic Component
+### Design:
+The `BrowserMockup` component is a React component that simulates a web browser interface within a web application. It incorporates styled components using `styled-components` to create a realistic and interactive browser window. Key styled components include `StyledBrowserWindow`, `BrowserWindow`, `BrowserHeader`, `BrowserButtons`, `BrowserButton`, `BrowserUrlBar`, and `BrowserContent`. These elements collectively form a functional and aesthetically pleasing mock browser. 
+### How to behave:
+- Input: Users can enter the URL in the address bar to jump
+- Display: Users can intuitively see the web page corresponding to the entered URL
+### How to use it:
+- Installation
+Ensure that your project includes all necessary dependencies for the `BrowserMockup` component. If they are not already installed, add them via npm with the following command: 
+```
+npm install styled-components 
+```
+- Usage:
+To integrate the `styled-components` into your React application, include the necessary imports from the Shadcn UI library:
+```
+import styled from 'styled-components';
 
+```
+- Logic:A state named url is created using the useState hook, with an initial value of "https://www.example.com", which is used to store and update the content of the browser address bar.
+The handleUrlChange function handles the input event of the address bar and updates the url state when the user enters the address bar.
+```
+// BrowserMockup 
+const BrowserMockup = () => {
+  const [url, setUrl] = useState('https://www.example.com');  
+  
+  const handleUrlChange = (event) => {
+    setUrl(event.target.value); 
+  };
+
+  return (
+    <StyledBrowserWindow>
+      ...
+    </StyledBrowserWindow>
+  );
+};
+
+```
+
+
+- Customization:
+Styled components defined using styled-components allow users to customize the appearance and behavior of the browser emulator by modifying the style properties of these components.
+```
+const StyledBrowserWindow = styled.div`
+`;
+const BrowserWindow = styled.div`
+`;
+const BrowserHeader = styled.div`
+`;
+const BrowserButton = styled.span`
+`;
+```
 <BrowserWindow />
 
-## Usability
 
-### Intuitive Navigation
 
-A well-designed browser window component should offer intuitive navigation features, such as a user-friendly address bar, back and forward buttons, and bookmarks, making it easy for users to browse the web effortlessly.
-
-### Tabbed Browsing
-
-Tabbed browsing is a key usability feature that allows users to open multiple web pages within a single window. It enhances multitasking and makes it convenient to switch between different websites without opening new windows.
-
-### Customization Options
-
-Usability is improved when users have the freedom to customize their browser window. This includes adjusting the window size, managing toolbars, and setting preferences for the homepage and search engine.
-
-### Quick Access to Features
-
-Essential features like refresh, stop, and print should be easily accessible from the browser window. Usability is enhanced when users can quickly perform common actions without searching through menus.
-
-### Search Functionality
-
-A search bar within the browser window, often linked to a popular search engine, improves usability. It allows users to initiate web searches without visiting a search engine's website separately.
-
-### Error Handling
-
-When users encounter errors, such as broken links or webpage not found (404 errors), the browser should provide clear and helpful error messages, enhancing the overall user experience.
-
-## Accessibility
-
-### Keyboard Navigation
-
-Accessibility is crucial, and the browser window component should be fully navigable using a keyboard alone. Users with mobility impairments or those who rely on screen readers often require keyboard navigation.
-
-## Version
-
-| Version | Editor | Author | Date        | Description     |
-| ------- | ------ | ------ | ----------- | --------------- |
-| v1.0    | Ke Liu | Ke Liu | Oct 16 2023 | Initial version |
+## Vision
+| Version | Editor      | Reviewer    | Date       | Description     |
+|---------|-------------|-------------|------------|-----------------|
+| v1.0    | Yingjian Di | Hexin Zheng | 24/04/2024 | Initial version |

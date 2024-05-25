@@ -1,0 +1,94 @@
+import * as React from 'react';
+import {
+    Slider,
+} from "../components/ui/slider";
+
+# Slide Component
+
+**Contributed by Xinyu Chen**
+
+## Basic Component
+### Design:
+The BasicSlider component is designed to offer a user-friendly and efficient interface for selecting a numerical value within a defined range.
+### How to behave:
+- Initialization: The slider initializes with a default value set, which in this case is 2. This provides users with a starting point, indicating the slider's usage context.
+- User Interaction: Users can click and drag the slider handle to select a value between 1 and 10. As the handle moves, the selected value updates immediately, giving real-time feedback.
+- Step Increment: The slider increments by 1 step as the handle is moved, ensuring precise adjustments and easy quantification of the value change.
+- Responsive: The slider's width adjusts to 60% of its container, making it adaptable to different screen sizes and orientations, maintaining usability and appearance.
+### How to use it:
+- Installation: Ensure your project has the necessary UI components library installed that includes the `Slider` component. If it is not already installed, you might need to first set up your project to include these UI elements.
+```
+import * as React from "react"
+import * as SliderPrimitive from "@radix-ui/react-slider"
+
+import { cn } from "@/lib/utils"
+
+const Slider = React.forwardRef<
+  React.ElementRef<typeof SliderPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>
+>(({ className, ...props }, ref) => {
+  // Add a state to track the slider's value
+  const [value, setValue] = React.useState(props.defaultValue || [0]);
+
+  // Handle events when slider value changes
+  const handleValueChange = (value) => {
+    console.log("Current Slider Value:", value[0]); // Output the current slider value to the console
+    setValue(value); // update status
+  };
+
+  // Handle the event when the slider drag ends
+  const handleDragEnd = () => {
+    console.log("Final Slider Value:", value[0]); // When dragging ends, output the final slider value to the console
+  };
+
+  return (
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <SliderPrimitive.Root
+        ref={ref}
+        className={cn(
+          "relative flex touch-none select-none items-center",
+          className
+        )}
+        style={{ width: '500px' }} // Set the width of the slider to 50% of the parent container
+        onValueChange={handleValueChange} // Set value change event handler function
+        onMouseUp={handleDragEnd} // Set the mouse release event handler function
+        onTouchEnd={handleDragEnd} // Set the touch end event handler function
+        {...props}
+      >
+        <SliderPrimitive.Track className="relative h-1.5 w-full grow overflow-hidden rounded-full bg-gray-300">
+          <SliderPrimitive.Range className="absolute h-full bg-primary" />
+        </SliderPrimitive.Track>
+        <SliderPrimitive.Thumb className="block h-4 w-4 rounded-full border border-primary/50 bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" />
+      </SliderPrimitive.Root>
+    </div>
+  );
+})
+Slider.displayName = SliderPrimitive.Root.displayName
+
+export { Slider }
+```
+
+
+- Component Setup: To use the BasicSlider in your React application, you will need to include the necessary imports and setup:
+```
+import React from "react";
+import { Slider } from "@/components/ui/slider";  // Adjust the import path as necessary
+```
+
+- Usage:
+Here's how you can incorporate the BasicSlider into your application's component structure:
+
+- Customization: Customize the slider by passing additional props or modifying its CSS class to match your application’s design requirements. The className prop can be used to add custom styles:
+```
+defaultValue={[2]}
+max={10}
+step={1}
+```
+```
+// You can define additional styles using the `cn` utility function or direct className strings
+const customStyles = cn("w-[60%]", "custom-slider-class");
+```
+## Vision
+| Version | Editor      | Author      | Date       | Description     |
+|---------|-------------|-------------|------------|-----------------|
+| v1.0    | Xinyu Chen  | Xinyu Chen  | 18/04/2024 | Initial version |

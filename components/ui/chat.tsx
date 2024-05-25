@@ -6,8 +6,9 @@ export const Chat = () => {
     <Theme
       componentName="chat"
       componentStyle="normal"
-      backgroundDesktop="#1d1d1d"
+      // backgroundDesktop="#1d1d1d"
       backgroundMobile="#1d1d1d"
+      componentReactView="NormalChat"
     />
   );
 };
@@ -28,8 +29,9 @@ export const ChatWithAttachment = () => {
     <Theme
       componentName="chat"
       componentStyle="attachment"
-      backgroundDesktop="#1d1d1d"
+      // backgroundDesktop="#1d1d1d"
       backgroundMobile="#1d1d1d"
+      componentReactView="AttachmentChat"
     />
   );
 };

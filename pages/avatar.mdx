@@ -1,0 +1,51 @@
+import {
+   Avatar
+} from "../components/ui/avatar";
+
+# Avatar Component
+
+**Contributed by Yutong Shi**
+
+## Basic Component
+### Design:
+The AvatarDemo component showcases an avatar with a dropdown menu, providing users with access to various options. The avatar displays the user's profile picture and name, sourced from GitHub, and the dropdown menu contains options for profile management and navigation.
+
+### How to behave:
+   - **Avatar Display**:
+     - The avatar exhibits the user's GitHub profile picture and username.
+   - **Dropdown Menu**:
+     - The dropdown menu offers options for profile management, including profile viewing, billing, and settings adjustment.
+     - Additionally, there is a link to the user's GitHub profile within the menu.
+   - **User Interaction**:
+     - Clicking on the avatar opens the dropdown menu, allowing users to navigate through the available options.
+     - Selecting the GitHub option redirects users to the specified GitHub page in a new tab.
+
+### How to use it:
+- Installation: Ensure that your project includes all necessary dependencies for the Avatar component and with setting functionality. If they are not already installed, add them via npm with the following commands:
+```
+npx shadcn-ui@latest add avatar
+npx shadcn-ui@latest add dropdown-menu
+```
+- Usage: Import the related components into your React application.
+```
+import React from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "styles/components/ui/avatar";
+import {  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuShortcut,
+  DropdownMenuTrigger,
+  DropdownMenuLabel,
+  DropdownMenuSeparator} from "styles/components/ui/dropdown-menu";
+import { User, CreditCard, Settings, Keyboard, Users, UserPlus, Mail, MessageSquare, PlusCircle, Plus, Github, LifeBuoy, Cloud, LogOut } from "lucide-react"
+```
+ - **Avatar Integration**:
+     - Developers can utilize the **AvatarDemo** component as a reference for incorporating avatars with dropdown menus in their React applications.
+     - Customization options include modifying the avatar's appearance and adjusting the dropdown menu content to align with specific application requirements.
+     - Users can interact with the avatar to access various functionalities and navigate through the dropdown menu options seamlessly.
+<Avatar />
+
+## Version
+| Version | Editor      | Reviewer      | Date       | Description     |
+|---------|-------------|-------------|------------|-----------------|
+| v1.0    | Yutong Shi | Yutong Shi | 1 May 2024 | Initial version |

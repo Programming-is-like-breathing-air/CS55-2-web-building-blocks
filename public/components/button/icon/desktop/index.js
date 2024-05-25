@@ -1,3 +1,0 @@
-function hanleClick() {
-    alert("clicked");
-}

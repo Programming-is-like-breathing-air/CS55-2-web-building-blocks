@@ -1,0 +1,85 @@
+import {
+ChartBarchart,
+ChartLineChart,
+ChartPieChart,
+ChartBubbleChart,
+} from  "../components/ui/charts";
+  
+# Charts Component
+
+**Contributed by Hexin Zheng**
+
+## 1. Design:
+
+The `Charts` component is a React component designed for visualizing data through interactive charts and graphs. It leverages the capabilities of Chart.js within the React ecosystem to render responsive and customizable charts. This component is key in presenting complex data in an understandable and visually appealing format, enhancing the user’s ability to analyze and interpret data trends.
+
+## 2. How to behave:
+
+The `Charts` component serves as a dynamic tool for data representation that supports various chart types such as bar, line, pie, and scatter plots. It provides interactivity such as tooltips, zooming, and panning to aid in detailed data exploration. Each chart element is interactive, allowing users to delve into specifics by interacting with data points and legends. The focus is on delivering a seamless integration of Chart.js features within a React application, ensuring that users can effectively engage with the data presented.
+
+
+## 3. How to Use the Charts Component
+
+
+### 3.1. Installation:
+  
+Ensure that your project includes all necessary dependencies for the `Charts` component. If they are not already installed, add them via npm with the following command:
+
+```
+npm i react-chartjs-2 chart.js
+```
+### 3.2. Usage:
+
+To integrate the `Charts` component into your React application, copy the provided React code snippet to import basic function:
+
+```tsx
+
+import  React  from  'react';
+import { Bar } from  'react-chartjs-2';
+import {
+Chart  as  ChartJS,
+CategoryScale,
+LinearScale,
+Title,
+Tooltip,
+Legend,
+} from  'chart.js';
+
+```
+  
+## Bar chart
+Visualize your data in a simple way using the `BarElement` chart plugin.
+```tsx
+<Bar options={options} data={data} />
+```
+  <ChartBarchart  />
+
+## Line chart
+Visualize your data in a simple way using the `LineElement,` chart plugin.
+```tsx
+<Line data={data} options={options} />
+```
+<ChartLineChart  />
+
+
+## Pie chart
+Visualize your data in a simple way using the `ArcElement` chart plugin.
+```tsx
+<Pie data={data} options={options} />
+```
+<ChartPieChart  />
+
+## Bubble chart
+Visualize your data in a simple way using the `BubbleController ` chart plugin.
+```tsx
+<Bubble data={data} options={options} />
+```
+<ChartBubbleChart  />
+
+  
+
+## Version
+
+| Version | Editor | Author | Date | Description |
+| ---- | ---- | ---- | ---- | ---- |
+| v1.0 | Hexin Zheng | Hexin Zheng | 01 May 2024 | Initial version |

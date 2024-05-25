@@ -1,0 +1,175 @@
+import {
+    Carousel,
+    WithImages,
+    WithSlideAnimation,
+    WithAuto,
+    WithPreview
+} from "../components/ui/carousel";
+
+# Carousel Component
+**Contributed by Xinyu Chen**
+
+Carousel component is used to display images or words by a switching or sliding window.
+
+## Basic Component
+### Design:
+The ‘Carousel’ component is designed to provide an elegant and interactive way to display quotes. The component uses a carousel layout, allowing users to view one quote at a time and navigate through multiple quotes using previous and next buttons. The visual design is minimalistic, with a focus on readability. Each quote is encapsulated within a card, which features centralized text to ensure the content is the focal point. The card design utilizes a simple color scheme, usually inherited from global styles, to maintain consistency across the interface.
+
+### How to behave:
+- The carousel initializes showing the first quote in the dataset.
+- Users can navigate between quotes using the "Previous" and "Next" arrows positioned on the sides of the carousel.
+- The carousel supports responsive behavior, adapting its size to different devices:
+- On medium devices (md), each item occupies half of the carousel width.
+- On large devices (lg), each item occupies one-third of the carousel width.
+- Each quote smoothly transitions in and out of view as the user navigates, ensuring a seamless user experience.
+- The carousel does not auto-rotate; navigation is manually controlled by the user.
+
+### How to use it:
+- Installation
+Ensure that your project includes all necessary dependencies for the `Carousel` component. If they are not already installed, add them via npm with the following command:
+```
+npm install embla-carousel-react
+```
+- Usage:
+To integrate the `Carousel` component into your React application, include the necessary imports from the Shadcn UI library:
+```
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+```
+```
+<Carousel>
+  <CarouselContent>
+    <CarouselItem>...</CarouselItem>
+    <CarouselItem>...</CarouselItem>
+    <CarouselItem>...</CarouselItem>
+  </CarouselContent>
+  <CarouselPrevious />
+  <CarouselNext />
+</Carousel>
+```
+- Rendering the Component:
+Embed the `Carousel` component within info show on screen:
+```
+<Carousel className="w-full max-w-xs">
+      <CarouselContent>
+        {quotes.map((quote, index) => (
+          <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+            <div className="p-1">
+              <Card>
+                <CardContent className="flex items-center justify-center p-6">
+                  <div className="text-center">
+                    <p className="text-sm italic mb-4">{`"${quote.word}"`}</p>
+                    <p className="text-lg font-semibold">{`- ${quote.author}`}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
+```
+- Customization:
+To set the size of the items, you can use the basis utility class on the `<CarouselItem />`.
+To set the spacing between the items, we use a `pl-[VALUE]` utility on the `<CarouselItem />` and a negative `-ml-[VALUE]` on the `<CarouselContent />`.
+Use the `orientation` prop to set the orientation of the carousel.
+<Carousel />
+
+## With images
+### Design:
+TheCarouselImage component is tailored to elegantly display a series of images within a carousel format.
+### How to behave:
+- Initialization: The carousel starts with the first image visible upon loading.
+- Navigation: Users can navigate through the images using the "Previous" and "Next" arrow buttons positioned on the carousel's sides.
+- Auto-rotation: By default, the carousel cycles through images automatically every 4000 milliseconds. This feature enhances the dynamic presentation of content without user input.
+- Interaction Stops Auto-rotation: When a user hovers over the carousel, auto-rotation pauses to allow for closer examination of the current image. Moving the cursor away from the carousel resumes the auto-rotation.
+### How to use it:
+
+- Installation
+Ensure that your project includes all necessary dependencies for the `Carousel` component, particularly the `embla-carousel-react` and `embla-carousel-autoplay` plugins. If they are not already installed, you can add them via npm:
+```
+npm install embla-carousel-react embla-carousel-autoplay
+```
+- Usage:
+To integrate the `CarouselImage` component into your React application, include the necessary imports:
+```
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+```
+- Rendering the Component:
+Here is how to embed the `CarouselImage` component within your application:
+```
+import CarouselImage from 'path_to_CarouselImage';
+
+function App() {
+  return (
+    <div className="app-container">
+      <CarouselImage />
+    </div>
+  );
+}
+```
+- Customization:
+Adjust the auto-rotation speed, interaction behavior, or visual style by modifying the `Autoplay` settings or CSS. You might change the padding, margin, or maximum dimensions of the images to better fit your design needs:
+```
+const plugin = React.useRef(
+  Autoplay({ delay: 3000, stopOnInteraction: true }) // Adjust the delay as needed
+)
+```
+<WithImages />
+
+
+## With autoplay
+### Design:
+The CarouselAuto component features a modern and simplistic design that automatically showcases numbered items in a sequence.
+### How to behave:
+- Initialization: Upon loading, the carousel displays the first item and automatically starts cycling through the numbers.
+- Automatic Play: The carousel automatically transitions from one number to the next every 2000 milliseconds. This provides a dynamic experience without requiring user input.
+- Interaction Stops Auto-rotation: The auto-rotation pauses when the user hovers over the carousel. This allows users to interact with the content without missing information or feeling rushed. Moving the cursor away resumes the automatic cycling.
+- Navigation: Users can manually navigate through the numbers using the "Previous" and "Next" buttons. This allows for user control in addition to the automated playback.
+- Responsive Adaptation: The carousel adjusts its display based on the device size to ensure optimal layout and visibility across different screens.
+### How to use it:
+Carousel component with Carousel animation can be play automatically.
+- Installation: Ensure your project includes all necessary dependencies. Install the embla-carousel-react and embla-carousel-autoplay if they are not already part of your project:
+```
+npm install embla-carousel-react embla-carousel-autoplay
+```
+- Component Setup: Incorporate the `CarouselAuto` component into your React application by adding the necessary imports from your project’s UI library components:
+```
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+```
+- Customization: Modify the autoplay settings such as delay and interaction behavior by adjusting the Autoplay plugin's parameters:
+```
+const plugin = React.useRef(
+  Autoplay({ delay: 1500, stopOnInteraction: true }) // Adjust delay to speed up or slow down transitions
+)
+```
+<WithAuto />
+
+## Vision
+| Version | Editor      | Author      | Date       | Description     |
+|---------|-------------|-------------|------------|-----------------|
+| v1.0    | Xinyu Chen  | Xinyu Chen  | 24/04/2024 | Initial version |

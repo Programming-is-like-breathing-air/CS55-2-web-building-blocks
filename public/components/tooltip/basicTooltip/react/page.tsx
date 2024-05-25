@@ -12,7 +12,7 @@ export function BasicTooltip() {
 
   const handleOpenChange = (open) => {
     setIsOpen(open);
-    if (open) { 
+    if (open) {
       console.log("Basic Tooltip is now visible");
     }
   };

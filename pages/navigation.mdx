@@ -6,76 +6,136 @@ import {
 
 # Navigation Component
 
-**Contributed by Yitong He**
 
-A navigation bar in web components is a UI element that typically includes links to different sections of a website. It helps users easily navigate and access specific pages or content. The navigation bar enhances user experience by providing a structured and intuitive way to explore the site's offerings.
+**Contributed by Yingjian Di**
 
-In this page, we will show three variations of navigation component, including top navigation bar which usually stick to the top of the screen, side navigation bar usually on the left side of the screen, and navigation bar with dropdown menu that can display the complicated stucture sections in a website.
+This is a function that helps users select what they want.
 
-## Top Navigation Bar
+## Basic Component
+### Design:
+The `NavigationMenuDemo` component is a React component specifically designed to manage navigation through a dropdown menu interface. It is built using several styled components from a UI library, including `NavigationMenu`, `NavigationMenuList`, `NavigationMenuItem`, `NavigationMenuTrigger`, `NavigationMenuContent`, and `NavigationMenuLink`. These components are organized to provide a straightforward and intuitive navigation experience, featuring a collapsible menu that expands upon user interaction. 
+### How to behave:
+- Toggle Functionality: Utilizes a state variable `isOpen` to manage the display of the dropdown menu, which users can open or close by clicking the `NavigationMenuTrigger`. 
+- Event Handling: Includes methods to prevent the dropdown menu from closing inadvertently when a user clicks within the dropdown content, thus enhancing the usability of the menu during interaction. 
+### How to use it:
+- Installation
+Ensure that your project includes all necessary dependencies for the `navigation` component. If they are not already installed, add them via npm with the following command: 
+```
+npx shadcn-ui@latest add navigation-menu 
+```
+- Usage:
+To integrate the `navigation` into your React application, include the necessary imports from the Shadcn UI library:
+```
+import React, { useState } from 'react';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "../../../../../styles/components/ui/navigation-menu";
 
-<TopNavi />
 
-## Side Navigation Bar
+```
 
-<SideNavi />
+```
+<NavigationMenu>
+  <NavigationMenuList>
+    <NavigationMenuItem>
+      <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
+      <NavigationMenuContent>
+        <NavigationMenuLink>Link</NavigationMenuLink>
+      </NavigationMenuContent>
+    </NavigationMenuItem>
+  </NavigationMenuList>
+</NavigationMenu>
 
-## Navigation Bar with Dropdown Menu
 
+```
+- Logic:
+```
+export function NavigationMenuDemo() {
+  const [isOpen, setIsOpen] = useState(false);
+  // Toggle the display state of the drop-down menu on click
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+  // Stop event bubbling to prevent the menu from closing when the drop-down content is clicked
+  const handleDropdownClick = (e) => {
+    e.stopPropagation();
+  };
+```
+- Customization:
+The style of the drop-down menu is set through inline styles, such as minimum width, adaptive width, internal margins, etc.
+Each link also has inline style settings, such as block-level display, internal margins, no text decoration, text color, etc.
 <Dropdown />
 
 
-## Usability
-<details>
-<summary>**When to use this component**</summary>
-- Top-level destinations that need to be accessible anywhere in an app
-- Three to seven main destinations in a product
-- Tablet or desktop layouts
-([Material Design](https://m3.material.io/components/navigation-rail/guidelines))
-</details>
-<details>
-<summary>**When not to use this component**</summary>
-- Small screen sizes
-- Single tasks, such as viewing a single email
-- Secondary navigation destinations
-([Material Design](https://m3.material.io/components/navigation-rail/guidelines))
-</details>
-<details>
-<summary>**Use active indicator for the destination that is chosen**</summary>
-The active indicator can be a background shape or an underline with brighter color communicating which destination of the navigation bar is currently being displayed. It can let user know which part is being shown.  
+## Variants
+## SideNavi
+### Design:
+The component renders as a vertical list of navigation links, centered within a sidebar-style navigation menu. The design is streamlined, focusing on functionality and ease of access within a confined space, typical of side navigation panels. 
 
-Use the active indicator only for the active destination. Don't use the active indicator for more than one destination at a time
-([Material Design](https://m3.material.io/components/navigation-rail/guidelines))
-</details>
-<details>
-<summary>**The labels in the navigation bar should be short**</summary>
-The labels in the navigation bar provides short, meaningful descriptions of navigation destinations. Labels should be short enough to not be truncated. Additionally, the type scale should not be reduced to fit longer text labels.
-([Material Design](https://m3.material.io/components/navigation-rail/guidelines))
-</details>
+The `SideNaviDemo` component offers a straightforward and effective solution for adding a sidebar navigation to a website.  
+### How to behave:
+- Click:user can click to view
+### How to use it:
+
+- Installation
+Ensure that your project includes all necessary dependencies for the `Navigation` components.
+- Usage:
+To integrate the `SideNaviDemo` component into your React application, there is each part :
+```
+<NavigationMenuItem>
+          <NavigationMenuLink style={{ "add style"}} href="#"
+           onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#FFE0D9'}
+           onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'transparent'}>
+            Home
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+```
+- Customization:
+Use can change the style to adapt this project
+```
+<NavigationMenu style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '8px 0' }}>
+      <NavigationMenuList style={{ display: 'flex', flexDirection: 'column', listStyle: 'none', padding: 0, margin: 0 }}>
+```
+
+<SideNavi />
+## TopNavi
+### Design:
+The `TopNavigationBar` presents a linear arrangement of navigation links centered within a horizontal bar. This streamlined design is effective for top-level navigation where immediate access to different site sections is essential.The `TopNavigationBar` component is a fundamental element for websites requiring clear and accessible top-level navigation. 
+### How to behave:
+- Click:user can click to view
+### How to use it:
+
+- Installation
+Ensure that your project includes all necessary dependencies for the `Navigation` components.
+- Usage:
+To integrate the `TopNavigationBar` component into your React application, there is each part :
+```
+<NavigationMenuItem>
+          <NavigationMenuLink style={{ "add style"}} href="#"
+           onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#FFE0D9'}
+           onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'transparent'}>
+            Home
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+```
+- Customization:
+Use can change the style to adapt this project
+```
+<NavigationMenu style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '8px 0' }}>
+      <NavigationMenuList style={{ display: 'flex', listStyle: 'none', padding: 0 }}>
+```
+<TopNavi />
 
 
-## Accessibility
-<details>
-<summary>**Use `aria-label` when applying the navigation bar**</summary>
-Attach an aria-label attribute to your navigation to give users of assistive technology as much information as possible (especially if there are multiple navigations on your site).  
 
-You can also use the semantic `<nav>` tag around your unordered list and links with an ARIA `role='navigation'` attribute.
-([Carnegie Museums of Pittsburgh](http://web-accessibility.carnegiemuseums.org/code/navigation/))
-</details>
-<details>
-<summary>**The location and size of the navigation bar**</summary>
-- You should uses conventional locations for menus, such as across the top of the page or along the left side.
-- Provide generous sizes for clickable areas, generally no smaller than 44px by 44px.
-- Provide clear styles for hover and current states. Menus often do not have styles for visited states.
-([Yale University](https://usability.yale.edu/web-accessibility/articles/navigation))
-</details>
-<details>
-<summary>**When applying icons in the navigation bar**</summary>
-When applying icons in the navigation bar, a label text should also be provided as an alternative way for users to understand an icon's meaning. It is important for usability and accessibility. You should show labels at all times and avoid using icons without labels.
-([Material Design](https://m3.material.io/components/navigation-rail/guidelines))
-</details>
-
-## Version
-| Version | Editor | Author | Date | Description |
-| ---- | ---- | ---- | ---- | ---- |
-| v1.0 | Yitong He(Vivian) | Yitong He(Vivian) | 2023.10.25 | Initial version |
+## Vision
+| Version | Editor      | Reviewer     | Date       | Description     |
+|---------|-------------|-------------|------------|-----------------|
+| v1.0    | Yingjian Di | Nuojin Zhang | 24/04/2024 | Initial version |
