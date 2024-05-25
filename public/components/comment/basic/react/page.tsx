@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Card, CardContent, CardHeader } from "../../../../../styles/components/ui/card";
-import { Button } from "../../../../../styles/components/ui/button";
-import { useToast } from "../../../../../styles/components/ui/toast/use-toast";
-import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
-import { Avatar, AvatarImage } from '../../../../../styles/components/ui/avatar';
-import { Label } from '../../../../../styles/components/ui/label';
-import { Textarea } from "../../../../../styles/components/ui/textarea"
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/components/ui/toast/use-toast";
+import { Toaster } from "@/components/ui/toast/toaster";
+import { Avatar, AvatarImage } from '@/components/ui/avatar';
+import { Label } from '@/components/ui/label';
+import { Textarea } from "@/components/ui/textarea"
 import { Heart } from "lucide-react";
 import { MessageCircleMore } from "lucide-react";
 import { Forward } from "lucide-react";
@@ -166,7 +166,7 @@ export function BasicComment() {
 //     FormItem,
 //     FormLabel,
 //     FormMessage,
-// } from "../../../../../styles/components/ui/form"
+// } from "@/components/ui/form"
 
 // return (
 //     <>

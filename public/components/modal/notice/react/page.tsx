@@ -1,5 +1,5 @@
 
-import { Button } from "../../../../../styles/components/ui/button"
+import { Button } from "@/components/ui/button"
 import {
     Dialog,
     DialogClose,
@@ -9,7 +9,7 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from "../../../../../styles/components/ui/dialog"
+} from "@/components/ui/dialog"
 
 export function NoticeModal() {
 

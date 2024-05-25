@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
-import { CardContent, CardHeader, CardTitle } from "../../../../../styles/components/ui/card";
-import { Button } from "../../../../../styles/components/ui/button";
-import Overlay from "../../../../../styles/components/ui/overlay"; // 引入 Overlay 组件
+import { CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Overlay from "@/components/ui/overlay"; // 引入 Overlay 组件
 
 const TourComponent = () => {
     const ref1 = useRef(null);

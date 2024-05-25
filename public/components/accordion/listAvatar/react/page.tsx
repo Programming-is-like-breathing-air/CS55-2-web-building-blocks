@@ -3,13 +3,13 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "../../../../../styles/components/ui/accordion";
+} from "@/components/ui/accordion";
 import {
   Table,
   TableBody,
   TableCell,
   TableRow,
-} from "../../../../../styles/components/ui/table";
+} from "@/components/ui/table";
 import {
   Dialog,
   DialogContent,
@@ -18,7 +18,7 @@ import {
   DialogDescription,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Avatar, AvatarFallback, AvatarImage } from "../../../../../styles/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import React, { useState } from "react";
 export function AccordionListAvatar() {
   // Define a state to hold the active dialog's content.

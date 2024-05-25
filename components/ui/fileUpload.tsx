@@ -7,7 +7,7 @@ export const FileUpload = () => {
       componentName="fileUpload"
       componentStyle="basic"
       backgroundDesktop="white"
-      backgroundMobile="white"
+      
       componentReactView="FileUploadComponent"
     />
   );
@@ -19,7 +19,7 @@ export const WithIcons = () => {
       componentName="fileUpload"
       componentStyle="withIcons"
       backgroundDesktop="white"
-      backgroundMobile="white"
+      
       componentReactView="FileUploadWithIcon"
     />
   );
@@ -31,7 +31,7 @@ export const WithMultiple = () => {
       componentName="fileUpload"
       componentStyle="withMultiple"
       backgroundDesktop="white"
-      backgroundMobile="white"
+      
       componentReactView="FileUploadMutiple"
     />
   );
@@ -43,7 +43,7 @@ export const WithFormat = () => {
       componentName="fileUpload"
       componentStyle="withFormat"
       backgroundDesktop="white"
-      backgroundMobile="white"
+      
       componentReactView="ImageUploadComponent"
     />
   );
@@ -55,7 +55,7 @@ export const WithSize = () => {
       componentName="fileUpload"
       componentStyle="withSize"
       backgroundDesktop="white"
-      backgroundMobile="white"
+      
       componentReactView="FileUploadLimitSize"
     />
   );
@@ -67,7 +67,7 @@ export const WithPreview = () => {
       componentName="fileUpload"
       componentStyle="withPreview"
       backgroundDesktop="white"
-      backgroundMobile="white"
+      
       componentReactView="FileUploadPreview"
     />
   );

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import LottieAnimation from '../../../../../styles/components/ui/LottieAnimation';
+import LottieAnimation from '@/components/ui/LottieAnimation';
 import Messages from "@/components/ui/messages";
 export function MessageLoading() {
   const [isVisible, setIsVisible] = useState(false);

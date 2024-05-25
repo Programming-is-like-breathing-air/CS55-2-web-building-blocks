@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "../../../../../styles/components/ui/button"; // Replace with the actual path
+import { Button } from "@/components/ui/button"; // Replace with the actual path
 
 function FileUploadComponent() {
   const [selectedFile, setSelectedFile] = useState("");

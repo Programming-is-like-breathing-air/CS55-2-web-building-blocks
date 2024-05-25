@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Button } from "../../../../../styles/components/ui/button";
-import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "../../../../../styles/components/ui/dialog";
-import { Input } from "../../../../../styles/components/ui/input";
-import { Label } from "../../../../../styles/components/ui/label";
-import { useToast } from "../../../../../styles/components/ui/toast/use-toast"; 
-import { Toaster } from "../../../../../styles/components/ui/toast/toaster"; 
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useToast } from "@/components/ui/toast/use-toast"; 
+import { Toaster } from "@/components/ui/toast/toaster"; 
 
 export function LoginModal() {
     const [formMode, setFormMode] = useState("login"); 

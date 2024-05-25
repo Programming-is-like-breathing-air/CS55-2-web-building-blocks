@@ -7,7 +7,7 @@ export const Carousel = () => {
       componentName="carousel"
       componentStyle="basic"
       backgroundDesktop="white"
-      backgroundMobile="white"
+      
       componentReactView="BasicCarousel"
     />
   );
@@ -19,7 +19,7 @@ export const WithImages = () => {
       componentName="carousel"
       componentStyle="withImages"
       backgroundDesktop="white"
-      backgroundMobile="white"
+      
       componentReactView="CarouselImage"
     />
   );
@@ -31,7 +31,7 @@ export const WithSlideAnimation = () => {
       componentName="carousel"
       componentStyle="withSlide"
       backgroundDesktop="white"
-      backgroundMobile="white"
+      
       componentReactView="CarouselCircle"
     />
   );
@@ -43,7 +43,7 @@ export const WithAuto = () => {
       componentName="carousel"
       componentStyle="withAuto"
       backgroundDesktop="white"
-      backgroundMobile="white"
+      
       componentReactView="CarouselAuto"
     />
   );
@@ -55,7 +55,7 @@ export const WithPreview = () => {
       componentName="carousel"
       componentStyle="withPreview"
       backgroundDesktop="white"
-      backgroundMobile="white"
+      
       componentReactView="CarouselPreview"
     />
   );

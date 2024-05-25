@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardFooter, CardTitle, CardDescription } from "../../../../../styles/components/ui/card";
+import { Card, CardContent, CardHeader, CardFooter, CardTitle, CardDescription } from "@/components/ui/card";
 import { useState } from "react";
 
 function DynamicCardComponent() {

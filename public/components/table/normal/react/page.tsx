@@ -7,7 +7,7 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-  } from "../../../../../styles/components/ui/table"
+  } from "@/components/ui/table"
   
   const Plan = [
     {

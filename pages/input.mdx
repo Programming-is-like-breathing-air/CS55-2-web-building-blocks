@@ -30,13 +30,13 @@ npm shadcn-ui@latest add dropdown-menu
 To integrate the these component into your React application, include the necessary imports from the Shadcn UI library:
 ```
 import React, { useState, useRef } from 'react';
-import { Input } from "../../../../../styles/components/ui/input";
+import { Input } from "@/components/ui/input";
 import {
   DropdownMenu,
   DropdownMenuItem,
   DropdownMenuContent,
   DropdownMenuTrigger,
-} from "../../../../../styles/components/ui/dropdown-menu";
+} from "@/components/ui/dropdown-menu";
 ```
 
 - Trigger drop-down menu:
@@ -76,14 +76,14 @@ The `InputPhoneNumber` component employs React's useState hook to manage the `se
 Ensure that your project includes all necessary dependencies for the Search component. If they are not already installed, add them via npm with the following command: 
 ``` 
 import * as React from "react";
-import { Button } from "../../../../../styles/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
     DropdownMenu,
     DropdownMenuCheckboxItem,
     DropdownMenuContent,
     DropdownMenuTrigger,
-} from "../../../../../styles/components/ui/dropdown-menu";
-import { Input } from "../../../../../styles/components/ui/input"
+} from "@/components/ui/dropdown-menu";
+import { Input } from "@/components/ui/input"
 ``` 
 - User Interaction:
 Users can interact with the dropdown menu by clicking on the button displaying the selected country code. They can then select a different country from the dropdown list.

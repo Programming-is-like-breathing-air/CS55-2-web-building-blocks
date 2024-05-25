@@ -1,7 +1,7 @@
 import React from 'react';
-import { Checkbox } from "../../../../../styles/components/ui/checkbox";
-import { useToast } from "../../../../../styles/components/ui/toast/use-toast";
-import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
+import { Checkbox } from "@/components/ui/checkbox";
+import { useToast } from "@/components/ui/toast/use-toast";
+import { Toaster } from "@/components/ui/toast/toaster";
 
 export function CheckboxDemo() {
   const { toast } = useToast();

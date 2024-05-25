@@ -7,7 +7,7 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "../../../../../styles/components/ui/pagination";
+} from "@/components/ui/pagination";
 
 export function PaginationDemo() {
   const totalPages = 10; // Total number of pages.

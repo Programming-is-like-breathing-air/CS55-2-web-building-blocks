@@ -6,8 +6,8 @@ import {
     CardDescription,
     CardHeader,
     CardTitle,
-} from "../../../../../styles/components/ui/card";
-import { Button } from "../../../../../styles/components/ui/button";
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export function FailPanel() {
     return (

@@ -1,5 +1,5 @@
 
-import { Button } from "../../../../../styles/components/ui/button"
+import { Button } from "@/components/ui/button"
 import {
     Dialog,
     DialogClose,
@@ -9,9 +9,9 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from "../../../../../styles/components/ui/dialog"
-import { useToast } from "../../../../../styles/components/ui/toast/use-toast"
-import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
+} from "@/components/ui/dialog"
+import { useToast } from "@/components/ui/toast/use-toast"
+import { Toaster } from "@/components/ui/toast/toaster";
 
 export function ConfirmModal() {
     const { toast } = useToast();

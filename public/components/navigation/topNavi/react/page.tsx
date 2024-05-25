@@ -4,7 +4,7 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-} from "../../../../../styles/components/ui/navigation-menu";
+} from "@/components/ui/navigation-menu";
 
 export function TopNavigationBar() {
   // Directly render the top navigation bar without state management

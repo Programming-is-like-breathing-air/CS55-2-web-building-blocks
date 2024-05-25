@@ -7,7 +7,7 @@ export const Slider = () => {
       componentName="slider"
       componentStyle="basic"
       backgroundDesktop="white"
-      backgroundMobile="white"
+      
       componentReactView="BasicSlider"
     />
   );

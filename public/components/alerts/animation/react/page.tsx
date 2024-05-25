@@ -7,7 +7,7 @@ import {
   Alert,
   AlertDescription,
   AlertTitle,
-} from "../../../../../styles/components/ui/alert"
+} from "@/components/ui/alert"
 
 export function AlertAction() {
   return (

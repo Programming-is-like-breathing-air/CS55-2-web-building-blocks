@@ -6,7 +6,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "../../../../../styles/components/ui/breadcrumb"
+} from "@/components/ui/breadcrumb"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,8 +14,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
-import { useToast } from "../../../../../styles/components/ui/toast/use-toast"
-import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
+import { useToast } from "@/components/ui/toast/use-toast"
+import { Toaster } from "@/components/ui/toast/toaster";
 
 export function BreadcrumbBasic() {
   const { toast } = useToast();

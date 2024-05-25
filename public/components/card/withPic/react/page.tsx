@@ -1,13 +1,13 @@
 import * as React from "react";
 
-import { Button } from "../../../../../styles/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../../../../../styles/components/ui/card";
+} from "@/components/ui/card";
 
 export function CardWithPicture() {
   const imageUrl = 'https://www.woodsbagot.com/wp-content/uploads/legacy/93/0-2048x1739.jpg';

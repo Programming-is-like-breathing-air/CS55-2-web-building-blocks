@@ -1,11 +1,11 @@
 import React, { useState, useRef } from 'react';
-import { Input } from "../../../../../styles/components/ui/input";
+import { Input } from "@/components/ui/input";
 import {
   DropdownMenu,
   DropdownMenuItem,
   DropdownMenuContent,
   DropdownMenuTrigger,
-} from "../../../../../styles/components/ui/dropdown-menu";
+} from "@/components/ui/dropdown-menu";
 
 export function InputMention() {
   const [inputValue, setInputValue] = useState('');

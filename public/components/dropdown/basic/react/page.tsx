@@ -8,7 +8,7 @@ import {
   DropdownMenuContent,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../../../../../styles/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu"
 
 export function DropdownMenuCheckboxes() {
   const [selectedOptions, setSelectedOptions] = React.useState([]);

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Button } from "../../../../../styles/components/ui/button"; 
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "../../../../../styles/components/ui/card"
-import { Input } from "../../../../../styles/components/ui/input";
-import { Label } from "../../../../../styles/components/ui/label";
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "../../../../../styles/components/ui/select";
+import { Button } from "@/components/ui/button"; 
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
 
 export function CheckoutForm() {
   return (

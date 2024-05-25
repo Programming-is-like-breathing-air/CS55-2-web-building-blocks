@@ -8,10 +8,10 @@ import {
   Alert,
   AlertDescription,
   AlertTitle,
-} from "../../../../../styles/components/ui/alert"
+} from "@/components/ui/alert"
 
-import { useToast } from "../../../../../styles/components/ui/toast/use-toast"
-import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
+import { useToast } from "@/components/ui/toast/use-toast"
+import { Toaster } from "@/components/ui/toast/toaster";
 export function AlertDemo() {
   const { toast } = useToast();
   const buttonText = "Normal Show Toast";

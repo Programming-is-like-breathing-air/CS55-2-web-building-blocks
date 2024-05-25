@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Button } from "../../../../../styles/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "../../../../../styles/components/ui/card";
-import { Input } from "../../../../../styles/components/ui/input";
-import { Label } from "../../../../../styles/components/ui/label";
-import { useToast } from "../../../../../styles/components/ui/toast/use-toast"; 
-import { Toaster } from "../../../../../styles/components/ui/toast/toaster"; 
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useToast } from "@/components/ui/toast/use-toast"; 
+import { Toaster } from "@/components/ui/toast/toaster"; 
 
 export function LoginForm() {
     const [formMode, setFormMode] = useState("login"); 

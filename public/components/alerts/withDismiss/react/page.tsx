@@ -2,14 +2,14 @@ import { Terminal } from "lucide-react"
 import { AlertCircle } from "lucide-react"
 import { RocketIcon, InfoCircledIcon, CrossCircledIcon, CheckCircledIcon } from "@radix-ui/react-icons"
 import { ExclamationTriangleIcon } from "@radix-ui/react-icons"
-import { useToast } from "../../../../../styles/components/ui/toast/use-toast"
-import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
+import { useToast } from "@/components/ui/toast/use-toast"
+import { Toaster } from "@/components/ui/toast/toaster";
 import { Button } from "@/components/ui/button"
 import {
   Alert,
   AlertDescription,
   AlertTitle,
-} from "../../../../../styles/components/ui/alert"
+} from "@/components/ui/alert"
 
 export function AlertDemo() {
   const { toast } = useToast();

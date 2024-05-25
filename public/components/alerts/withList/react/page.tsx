@@ -3,7 +3,7 @@ import {
   Alert,
   AlertDescription,
   AlertTitle,
-} from "../../../../../styles/components/ui/alert"
+} from "@/components/ui/alert"
 import {
   Table,
   TableBody,
@@ -12,7 +12,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../../../../../styles/components/ui/table"
+} from "@/components/ui/table"
 export function AlertDemo() {
   return (
     <div style={{width: '500px'}}>

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Input } from "../../../../../styles/components/ui/input";
-import { Card, CardContent, CardHeader } from "../../../../../styles/components/ui/card";
-import { Button } from "../../../../../styles/components/ui/button";
-import { useToast } from "../../../../../styles/components/ui/toast/use-toast";
-import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/components/ui/toast/use-toast";
+import { Toaster } from "@/components/ui/toast/toaster";
 import { Upload, SendHorizontal } from "lucide-react";
 
 export function AttachmentChat() {

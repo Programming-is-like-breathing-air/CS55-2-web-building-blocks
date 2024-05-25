@@ -1,10 +1,10 @@
 
 "use client"
 
-import { Button } from "../../../../../styles/components/ui/button"
-import { useToast } from "../../../../../styles/components/ui/toast/use-toast"
-import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
-import { ToastAction } from "../../../../../styles/components/ui/toast/toast"
+import { Button } from "@/components/ui/button"
+import { useToast } from "@/components/ui/toast/use-toast"
+import { Toaster } from "@/components/ui/toast/toaster";
+import { ToastAction } from "@/components/ui/toast/toast"
 
 export function ToastWithAction() {
     const { toast } = useToast()

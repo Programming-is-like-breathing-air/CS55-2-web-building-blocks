@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Timeline, TimelineItem } from "../../../../../styles/components/ui/timeline";
+import { Timeline, TimelineItem } from "@/components/ui/timeline";
 
 const TimelinePage = () => {
     const steps = [

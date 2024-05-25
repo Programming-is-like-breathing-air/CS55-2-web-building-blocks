@@ -7,7 +7,7 @@ import {
   DropdownMenuContent,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../../../../../styles/components/ui/dropdown-menu";
+} from "@/components/ui/dropdown-menu";
 
 export function DropdownMenuwithDividers() {
   const [selectedCar, setSelectedCar] = React.useState("Select a car");

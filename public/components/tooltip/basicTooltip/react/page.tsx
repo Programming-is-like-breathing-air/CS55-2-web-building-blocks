@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Button } from "../../../../../styles/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Tooltip,
   RightTooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "../../../../../styles/components/ui/tooltip";
+} from "@/components/ui/tooltip";
 
 export function BasicTooltip() {
   const [isOpen, setIsOpen] = useState(false);
