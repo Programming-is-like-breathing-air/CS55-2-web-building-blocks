@@ -1,9 +1,9 @@
 import * as React from "react";
-import { Calendar } from "../../../../../styles/components/ui/calendar";
-import { useToast } from "../../../../../styles/components/ui/toast/use-toast";
-import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
-import { Button } from "../../../../../styles/components/ui/button";
-import { ToastAction } from "../../../../../styles/components/ui/toast/toast";
+import { Calendar } from "@/components/ui/calendar";
+import { useToast } from "@/components/ui/toast/use-toast";
+import { Toaster } from "@/components/ui/toast/toaster";
+import { Button } from "@/components/ui/button";
+import { ToastAction } from "@/components/ui/toast/toast";
 
 export function CalendarDemo() {
   const [date, setDate] = React.useState<Date | undefined>(new Date());

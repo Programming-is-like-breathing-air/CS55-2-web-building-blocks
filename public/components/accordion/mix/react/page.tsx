@@ -3,10 +3,10 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "../../../../../styles/components/ui/accordion"
-import { Button } from "../../../../../styles/components/ui/button"
-import { useToast } from "../../../../../styles/components/ui/toast/use-toast"
-import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
+} from "@/components/ui/accordion"
+import { Button } from "@/components/ui/button"
+import { useToast } from "@/components/ui/toast/use-toast"
+import { Toaster } from "@/components/ui/toast/toaster";
 import React, { useState } from 'react';
 export function AccordionMix() {
   const { toast } = useToast();

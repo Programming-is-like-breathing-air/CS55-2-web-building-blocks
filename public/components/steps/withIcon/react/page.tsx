@@ -1,6 +1,6 @@
 import React from "react";
-import { Stepper, Step } from "../../../../../styles/components/ui/stepper";
-import { Button } from "../../../../../styles/components/ui/button";
+import { Stepper, Step } from "@/components/ui/stepper";
+import { Button } from "@/components/ui/button";
 import { HomeIcon, CogIcon, UserIcon } from "@heroicons/react/24/outline";
 
 export function StepsWithIcon() {

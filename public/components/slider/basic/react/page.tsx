@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils"
 import React, {useState} from "react";
-import { Slider } from "../../../../../styles/components/ui/slider";
+import { Slider } from "@/components/ui/slider";
 
 type SliderProps = React.ComponentProps<typeof Slider>
  

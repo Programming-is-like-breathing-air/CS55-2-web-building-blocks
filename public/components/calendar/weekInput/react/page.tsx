@@ -2,15 +2,15 @@ import * as React from "react";
 import { startOfWeek, addWeeks, format, getISOWeeksInYear } from "date-fns";
 import { Calendar as CalendarIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Button } from "../../../../../styles/components/ui/button";
-import { Calendar } from "../../../../../styles/components/ui/calendar";
+import { Button } from "@/components/ui/button";
+import { Calendar } from "@/components/ui/calendar";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "../../../../../styles/components/ui/popover";
-import { useToast } from "../../../../../styles/components/ui/toast/use-toast";
-import { ToastAction } from "../../../../../styles/components/ui/toast/toast";
+} from "@/components/ui/popover";
+import { useToast } from "@/components/ui/toast/use-toast";
+import { ToastAction } from "@/components/ui/toast/toast";
 
 function getWeeksInYear(year) {
   return getISOWeeksInYear(new Date(year, 11, 31));

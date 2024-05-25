@@ -7,7 +7,6 @@ export const Alert = () => {
       componentName="alerts"
       componentStyle="basic"
       backgroundDesktop="white"
-      backgroundMobile="white"
       componentReactView="AlertDemo"
     />
   );
@@ -19,7 +18,6 @@ export const Animation = () => {
       componentName="alerts"
       componentStyle="animation"
       backgroundDesktop="white"
-      backgroundMobile="white"
       componentReactView="AlertAction"
     />
   );
@@ -31,7 +29,6 @@ export const WithDescription = () => {
       componentName="alerts"
       componentStyle="withDescription"
       backgroundDesktop="white"
-      backgroundMobile="white"
       componentReactView="AlertWithDescription"
     />
   );
@@ -43,7 +40,6 @@ export const WithList = () => {
       componentName="alerts"
       componentStyle="withlist"
       backgroundDesktop="white"
-      backgroundMobile="white"
       componentReactView="AlertWithList"
     />
   );
@@ -55,7 +51,7 @@ export const WithBorder = () => {
       componentName="alerts"
       componentStyle="withBorder"
       backgroundDesktop="white"
-      backgroundMobile="white"
+      
       componentReactView="AlertWithBorder"
     />
   );
@@ -67,7 +63,7 @@ export const WithLink = () => {
       componentName="alerts"
       componentStyle="withLink"
       backgroundDesktop="white"
-      backgroundMobile="white"
+      
       componentReactView="AlertWithLink"
     />
   );
@@ -79,7 +75,7 @@ export const WithDismiss = () => {
       componentName="alerts"
       componentStyle="withDismiss"
       backgroundDesktop="white"
-      backgroundMobile="white"
+      
       componentReactView="AlertWithDismiss"
     />
   );
@@ -91,7 +87,7 @@ export const WithAction = () => {
       componentName="alerts"
       componentStyle="withAction"
       backgroundDesktop="white"
-      backgroundMobile="white"
+      
       componentReactView="AlertWithAction"
     />
   );
@@ -103,7 +99,7 @@ export const SoundAlert = () => {
       componentName="alerts"
       componentStyle="sound"
       backgroundDesktop="white"
-      backgroundMobile="white"
+      
       componentReactView="Alert"
     />
   );

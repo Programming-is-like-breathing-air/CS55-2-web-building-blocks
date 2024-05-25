@@ -8,7 +8,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   NavigationMenuViewport,
-} from "../../../../../styles/components/ui/navigation-menu";
+} from "@/components/ui/navigation-menu";
 export function NavigationMenuDemo() {
   const [isOpen, setIsOpen] = useState(false);
   // Toggle the display state of the drop-down menu on click

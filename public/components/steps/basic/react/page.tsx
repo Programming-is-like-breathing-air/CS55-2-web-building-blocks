@@ -1,6 +1,6 @@
 import React from "react";
-import { Stepper, Step } from "../../../../../styles/components/ui/stepper";
-import { Button } from "../../../../../styles/components/ui/button";
+import { Stepper, Step } from "@/components/ui/stepper";
+import { Button } from "@/components/ui/button";
 
 export function StepsBasic() {
     const [activeStep, setActiveStep] = React.useState(0);

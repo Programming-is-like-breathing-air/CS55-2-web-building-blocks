@@ -1,13 +1,13 @@
 import * as React from "react";
 import Image from 'next/image'; // Only if you're using Next.js
 
-import { Button } from "../../../../../styles/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from "../../../../../styles/components/ui/card";
+} from "@/components/ui/card";
 import checkMarkIcon from './check-mark.png'; // Ensure this is the correct path
 
 export function EnquirySubmittedCard() {

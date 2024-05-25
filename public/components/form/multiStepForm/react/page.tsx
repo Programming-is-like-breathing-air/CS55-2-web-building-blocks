@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Button } from "../../../../../styles/components/ui/button";
-import { Input } from "../../../../../styles/components/ui/input";
-import { Calendar } from "../../../../../styles/components/ui/calendar";
-import { useToast } from "../../../../../styles/components/ui/toast/use-toast";
-import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
-import { Card, CardContent, CardHeader, CardFooter, CardTitle } from "../../../../../styles/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Calendar } from "@/components/ui/calendar";
+import { useToast } from "@/components/ui/toast/use-toast";
+import { Toaster } from "@/components/ui/toast/toaster";
+import { Card, CardContent, CardHeader, CardFooter, CardTitle } from "@/components/ui/card";
 
 function MultiStepForm() {
     const { toast } = useToast();

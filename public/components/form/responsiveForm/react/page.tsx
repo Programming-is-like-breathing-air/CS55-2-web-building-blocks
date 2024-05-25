@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Button } from "../../../../../styles/components/ui/button"; 
-import { Input } from "../../../../../styles/components/ui/input";
-import { Label } from "../../../../../styles/components/ui/label";
-import { Select, SelectItem, SelectContent, SelectTrigger} from "../../../../../styles/components/ui/select";
-import { Textarea } from "../../../../../styles/components/ui/textarea"
+import { Button } from "@/components/ui/button"; 
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Select, SelectItem, SelectContent, SelectTrigger} from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea"
 
 export function ResponsiveForm() {
 

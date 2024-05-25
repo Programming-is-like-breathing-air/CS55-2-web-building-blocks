@@ -9,14 +9,13 @@ import type {
 } from "./toast"
 
 const TOAST_LIMIT = 1
-const TOAST_REMOVE_DELAY = 1000
+const TOAST_REMOVE_DELAY = 1000000
 
 type ToasterToast = ToastProps & {
   id: string
   title?: React.ReactNode
   description?: React.ReactNode
   action?: ToastActionElement
-  position?: 'top-right' | 'bottom-right';
 }
 
 const actionTypes = {
@@ -143,36 +142,7 @@ function dispatch(action: Action) {
 
 type Toast = Omit<ToasterToast, "id">
 
-// function toast({ ...props }: Toast) {
-//   const id = genId()
-
-//   const update = (props: ToasterToast) =>
-//     dispatch({
-//       type: "UPDATE_TOAST",
-//       toast: { ...props, id },
-//     })
-//   const dismiss = () => dispatch({ type: "DISMISS_TOAST", toastId: id })
-
-//   dispatch({
-//     type: "ADD_TOAST",
-//     toast: {
-//       ...props,
-//       id,
-//       open: true,
-//       onOpenChange: (open) => {
-//         if (!open) dismiss()
-//       },
-//     },
-//   })
-
-//   return {
-//     id: id,
-//     dismiss,
-//     update,
-//   }
-// }
-
-function toast({ position = 'top-right', ...props }: Toast & { position?: 'top-right' | 'bottom-right' }) {
+function toast({ ...props }: Toast) {
   const id = genId()
 
   const update = (props: ToasterToast) =>
@@ -188,7 +158,6 @@ function toast({ position = 'top-right', ...props }: Toast & { position?: 'top-r
       ...props,
       id,
       open: true,
-      position,
       onOpenChange: (open) => {
         if (!open) dismiss()
       },
@@ -201,7 +170,6 @@ function toast({ position = 'top-right', ...props }: Toast & { position?: 'top-r
     update,
   }
 }
-
 
 function useToast() {
   const [state, setState] = React.useState<State>(memoryState)
@@ -222,6 +190,5 @@ function useToast() {
     dismiss: (toastId?: string) => dispatch({ type: "DISMISS_TOAST", toastId }),
   }
 }
-
 
 export { useToast, toast }

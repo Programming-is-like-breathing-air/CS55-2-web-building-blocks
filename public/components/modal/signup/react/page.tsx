@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Button } from "../../../../../styles/components/ui/button"
+import { Button } from "@/components/ui/button"
 import {
     Dialog,
     DialogClose,
@@ -10,10 +10,10 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from "../../../../../styles/components/ui/dialog"
-import { Input } from "../../../../../styles/components/ui/input"
-import { Label } from "../../../../../styles/components/ui/label"
-import { useToast } from "../../../../../styles/components/ui/toast/use-toast"
+} from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { useToast } from "@/components/ui/toast/use-toast"
 
 export function SignupModal() {
     const [email, setEmail] = useState('');

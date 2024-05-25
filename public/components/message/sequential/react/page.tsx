@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from "../../../../../styles/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { CheckCircledIcon } from "@radix-ui/react-icons";
-import LottieAnimation from '../../../../../styles/components/ui/LottieAnimation';
-import Messages from "../../../../../styles/components/ui/messages";
+import LottieAnimation from '@/components/ui/LottieAnimation';
+import Messages from "@/components/ui/messages";
 
 export function MessageSequential() {
   const [messageState, setMessageState] = useState({ show: false, content: null });

@@ -29,7 +29,7 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "../../../../../styles/components/ui/dropdown-menu";
+} from "@/components/ui/dropdown-menu";
 
 export function DropdownMenuwithIcon() {
   const openGitHub = () => {

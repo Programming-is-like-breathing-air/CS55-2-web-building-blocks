@@ -3,7 +3,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "../../../../../styles/components/ui/accordion"
+} from "@/components/ui/accordion"
 import {
   Table,
   TableBody,
@@ -12,10 +12,10 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../../../../../styles/components/ui/table"
-import { Button } from "../../../../../styles/components/ui/button"
-import { useToast } from "../../../../../styles/components/ui/toast/use-toast"
-import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
+} from "@/components/ui/table"
+import { Button } from "@/components/ui/button"
+import { useToast } from "@/components/ui/toast/use-toast"
+import { Toaster } from "@/components/ui/toast/toaster";
 
 export function AccordionList() {
   const { toast } = useToast();

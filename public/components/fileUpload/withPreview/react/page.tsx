@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "../../../../../styles/components/ui/button"; 
+import { Button } from "@/components/ui/button"; 
 
 function FileUploadPreview() {
   const [selectedFileName, setSelectedFileName] = useState<string>("");

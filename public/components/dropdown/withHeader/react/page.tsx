@@ -6,7 +6,7 @@ import {
   DropdownMenuTrigger,
   DropdownMenuLabel,
   DropdownMenuItem,
-} from '../../../../../styles/components/ui/dropdown-menu';
+} from '@/components/ui/dropdown-menu';
 
 export function DropdownMenuwithHeader() {
   const userEmail = 'nzha9876@uni.sydney.edu.au';

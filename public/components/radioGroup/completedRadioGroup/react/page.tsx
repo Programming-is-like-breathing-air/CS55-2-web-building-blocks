@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 
-import { Button } from "../../../../../styles/components/ui/button"
+import { Button } from "@/components/ui/button"
 import {
     Form,
     FormControl,
@@ -13,10 +13,10 @@ import {
     FormItem,
     FormLabel,
     FormMessage,
-} from "../../../../../styles/components/ui/form"
-import { RadioGroup, RadioGroupItem } from "../../../../../styles/components/ui/radio-group"
-import { useToast } from "../../../../../styles/components/ui/toast/use-toast"
-import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
+} from "@/components/ui/form"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { useToast } from "@/components/ui/toast/use-toast"
+import { Toaster } from "@/components/ui/toast/toaster";
 
 
 const FormSchema = z.object({

@@ -1,12 +1,12 @@
 import * as React from "react";
-import { Button } from "../../../../../styles/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuTrigger,
-} from "../../../../../styles/components/ui/dropdown-menu";
-import { Input } from "../../../../../styles/components/ui/input"
+} from "@/components/ui/dropdown-menu";
+import { Input } from "@/components/ui/input"
 
 export function InputNumber() {
   const [selectedCountry, setSelectedCountry] = React.useState("+61");

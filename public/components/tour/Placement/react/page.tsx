@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Button } from "../../../../../styles/components/ui/button";
+import { Button } from "@/components/ui/button";
 
 const PlacementTour = () => {
   const ref = useRef(null);

@@ -1,4 +1,4 @@
-import { Badge } from "../../../../../styles/components/ui/badge"
+import { Badge } from "@/components/ui/badge"
  
 export function NormalTags() {
   return <Badge variant="default">Badge</Badge>

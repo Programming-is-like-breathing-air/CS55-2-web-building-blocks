@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Button } from "../../../../../styles/components/ui/button"; 
-import { toast } from "../../../../../styles/components/ui/use-toast"; 
+import { Button } from "@/components/ui/button"; 
+import { toast } from "@/components/ui/use-toast"; 
 
 function ImageUploadComponent() {
   const [selectedFileName, setSelectedFileName] = useState("");

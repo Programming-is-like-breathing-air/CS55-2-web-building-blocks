@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Button } from "../../../../../styles/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Tooltip,
   TopTooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "../../../../../styles/components/ui/tooltip";
+} from "@/components/ui/tooltip";
 
 // Check whether tooltip is open
 export function TopTooltip() {

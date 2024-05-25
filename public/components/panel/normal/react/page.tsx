@@ -6,11 +6,11 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../../../../../styles/components/ui/card";
+} from "@/components/ui/card";
 
-import { Button } from "../../../../../styles/components/ui/button";
-import { Label } from "../../../../../styles/components/ui/label";
-import { Avatar, AvatarImage } from '../../../../../styles/components/ui/avatar';
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { Avatar, AvatarImage } from '@/components/ui/avatar';
 
 
 export function SuccessPanel() {

@@ -5,13 +5,13 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../../../../../styles/components/ui/card"
+} from "@/components/ui/card"
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "../../../../../styles/components/ui/tabs"
+} from "@/components/ui/tabs"
 
 export function TabsDemo() {
     return (

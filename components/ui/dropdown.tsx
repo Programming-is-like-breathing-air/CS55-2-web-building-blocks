@@ -7,7 +7,7 @@ export const Dropdown = () => {
       componentName="dropdown"
       componentStyle="basic"
       backgroundDesktop="white"
-      backgroundMobile="white"
+      
       componentReactView="DropdownMenuCheckboxes"
     />
   );
@@ -19,7 +19,7 @@ export const WithDividers = () => {
       componentName="dropdown"
       componentStyle="withDividers"
       backgroundDesktop="white"
-      backgroundMobile="white"
+      
       componentReactView="DropdownMenuwithDividers"
     />
   );
@@ -31,7 +31,7 @@ export const WithIcons = () => {
       componentName="dropdown"
       componentStyle="withIcons"
       backgroundDesktop="white"
-      backgroundMobile="white"
+      
       componentReactView="DropdownMenuwithIcon"
     />
   );
@@ -43,7 +43,7 @@ export const WithHeader = () => {
       componentName="dropdown"
       componentStyle="withHeader"
       backgroundDesktop="white"
-      backgroundMobile="white"
+      
       componentReactView="DropdownMenuwithHeader"
     />
   );
@@ -54,7 +54,7 @@ export const WithSelect = () => {
       componentName="dropdown"
       componentStyle="withComboSelect"
       backgroundDesktop="white"
-      backgroundMobile="white"
+      
       componentReactView="DropdownMenuwithSelect"
     />
   );

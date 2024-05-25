@@ -11,10 +11,10 @@ import {
     FormItem,
     FormLabel,
     FormMessage,
-} from "../../../../../styles/components/ui/form";
-import { Input } from "../../../../../styles/components/ui/input";
-import { useToast } from "../../../../../styles/components/ui/toast/use-toast";
-import { Toaster } from "../../../../../styles/components/ui/toast/toaster";
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { useToast } from "@/components/ui/toast/use-toast";
+import { Toaster } from "@/components/ui/toast/toaster";
 
 const FormSchema = z.object({
     searchValue: z.string().min(2, {
