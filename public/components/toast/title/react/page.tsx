@@ -25,7 +25,6 @@ export function ToastWithTitle() {
           toast({
             title: "Uh oh! Something went wrong.",
             description: "There was a problem with your request.",
-            position: 'bottom-right'
           })
         }}
       >
