@@ -10,6 +10,7 @@ export function ToastWithAction() {
     const { toast } = useToast()
     const FirstButtonText = "Bottom Right";
     const SecondButtonText = "Top Right";
+    const ButtonText = "Toast Button"
 
 
     return (
@@ -27,14 +28,16 @@ export function ToastWithAction() {
                         title: "Uh oh! Something went wrong.",
                         description: "There was a problem with your request.",
                         action: <ToastAction altText="Try again">Try again</ToastAction>,
-                        position: 'bottom-right'
+
                     })
                 }}
             >
-                {FirstButtonText}
+                {/* {FirstButtonText} */}
+                {ButtonText}
+
             </Button>
 
-            <div style={{ margin: '10px' }} /> 
+            {/* <div style={{ margin: '10px' }} /> 
 
             <Button
                 variant="outline"
@@ -47,12 +50,11 @@ export function ToastWithAction() {
                         title: "Uh oh! Something went wrong.",
                         description: "There was a problem with your request.",
                         action: <ToastAction altText="Try again">Try again</ToastAction>,
-                        position: 'top-right'
                     })
                 }}
             >
                 {SecondButtonText}
-            </Button>
+            </Button> */}
         </>
 
     )
