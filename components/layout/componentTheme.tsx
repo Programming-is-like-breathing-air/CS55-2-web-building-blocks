@@ -134,7 +134,6 @@ import DropdownMenuwithSelect from "../../public/components/dropdown/withComboSe
 import ButtonPopover from "../../public/components/button/popover/react/page"
 
 import TourComponent from "../../public/components/tour/normal/react/page"
-import PlacementTour from "../../public/components/tour/Placement/react/page"
 
 import TimelinePage from "../../public/components/Timeline/normal/react/page"
 import Timelineloading from "../../public/components/Timeline/withloading/react/page"
@@ -354,7 +353,6 @@ export default function Theme({
 
 
     TourComponent:TourComponent,
-    PlacementTour:PlacementTour,
   };
 
   const ReactComponent = componentReactMap[componentReactView];

@@ -14,14 +14,14 @@ export function CardWithPicVer() {
 
   return (
     <Card className="max-w-lg bg-white rounded-lg shadow-sm overflow-hidden flex">
-      <div className="w-1/2"> {/* This will take up half the card's width */}
+      <div className="w-1/2"> 
         <img 
           src={imageUrl} 
           alt="University Building" 
           className="w-full h-full object-cover" 
         />
       </div>
-      <div className="w-1/2 p-4 flex flex-col justify-between"> {/* The other half for text content */}
+      <div className="w-1/2 p-4 flex flex-col justify-between"> 
         <div>
           <CardHeader className="mb-2">
             <CardTitle className="text-lg font-semibold">Contact us</CardTitle>

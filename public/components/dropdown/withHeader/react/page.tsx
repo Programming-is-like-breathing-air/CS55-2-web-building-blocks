@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 
 export function DropdownMenuwithHeader() {
-  const userEmail = 'nzha9876@uni.sydney.edu.au';
+  const userEmail = 'abcd1234@uni.sydney.edu.au';
 
   return (
     <DropdownMenu>
