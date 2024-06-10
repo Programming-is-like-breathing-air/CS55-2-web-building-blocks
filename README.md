@@ -1,6 +1,6 @@
 # Blocks
 
-# This is the capstone project for The University of Sydney COMP5703 Semester 2, 2023
+# This is the capstone project for The University of Sydney COMP5703 Semester 1, 2024 - Component part
 
 ## Getting Started
 
@@ -80,33 +80,18 @@ During the development of this project, we have utilised the **Skullcandy** Git 
 
 <hr />
 
-#### Heran Wang: Tags, Links, Checkbox, Table
+#### Xinyu Chen: Carousel, Chat, Charts, Image Gallery, Slider, Stepper, Table.
 
-#### Harrison: Tooltip, Search, Radio Group, Form
+#### Yuqing Wu: Comment, Chat, Input, Modal, Panel, Pagination, Radio Group, Tags, Toast Tooltip.
 
-#### Vivian Yitong He: Tabs, Panel, Breadcrumbs, Navigation
+#### Yingjian Di: Browser, Link, Navigation, Pagination, Timeline, Dropdown, Search.
 
-#### Ke Louis Liu: Button, Calendar, Toast, Misc
+#### Nuojin Zhang: Card, Checkbox, Dropdown menu, File Upload, Form, Tabs, Tour.
 
-#### Chaoyang Li: Alerts, Dropdown, File Upload, Slide
+#### Hexin Zheng: Site Switching using Dropdown Menu; Components: Accordion, Alerts, Breadcrumbs, Charts, Message, Tree View.
 
-#### Richard Lee: Accordion, Card, Modal, Chat
+#### Yutong Shi: Avatar, Button, Calendar, Statistic, Watermark.
 
-### Pages
-
-<hr />
-
-#### Heran Wang: Page 5 - Utilities
-
-#### Harrison: Page 3 - Portfolio
-
-#### Vivian Yitong He: Page 1 - Basic Layout
-
-#### Ke Louis Liu: Page 6 - Responsive Layout
-
-#### Chaoyang Li: Page 2 - Static Layout
-
-#### Richard Lee: Page 4 - Business
 
 ## Components Available
 
